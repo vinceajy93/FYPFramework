@@ -32,10 +32,10 @@ public class CharacterControl : MonoBehaviour {
 		if (this.gameObject.tag == "Player1") {
 			
 			if (this.transform.position.x >= -2.5f && onPointerDownL == true) {
-				this.transform.Translate (new Vector3 (-0.1f, 0, 0));
+				this.transform.Translate (new Vector3 (-2.0f, 0, 0));
 			}
 			else if (this.transform.position.x <= 2.5f && onPointerDownR == true) {
-				this.transform.Translate (new Vector3 (0.1f, 0, 0));
+				this.transform.Translate (new Vector3 (2.0f, 0, 0));
 			}
 		}
 
@@ -61,7 +61,7 @@ public class CharacterControl : MonoBehaviour {
 
 	}
 
-	public void OnMouseDown(){
+	/*public void OnMouseDown(){
 		screenPoint = Camera.main.WorldToScreenPoint (gameObject.transform.position);
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y));
 	}
@@ -71,7 +71,7 @@ public class CharacterControl : MonoBehaviour {
 		//Vector3 curScreenPoint = new Vector3 (Input.mousePosition.x, -3.5f);
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint (curScreenPoint) + offset;
 		this.transform.position = curPosition;
-	}
+	}*/
 
 	public void onButtonDownLeft(){
 		onPointerDownL = true;
