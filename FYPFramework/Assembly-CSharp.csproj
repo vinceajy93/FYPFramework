@@ -65,6 +65,7 @@
      <Compile Include="Assets\Turret Game\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Turret Game\Scripts\ControllingCameraAspectScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Shoot.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\debugging.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

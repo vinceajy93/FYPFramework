@@ -2,62 +2,38 @@
 using UnityEngine.UI;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D))]
+//[RequireComponent(typeof(CircleCollider2D))]
 
 public class CharacterControl : MonoBehaviour {
-
-	public Button LButton;
-	public Button RButton;
 
 	private Vector3 screenPoint;
 	private Vector3 offset;
 
 	private bool onPointerDownL = false;
 	private bool onPointerDownR = false;
+	private bool isInCanvas = false;
 
-	void start(){
-		
+	//Start is called at the start of the script
+	void Start(){
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-	
+		if (Input.GetKeyDown(KeyCode.W)) {
+			Debug.Log ("transform pos" + this.transform.localPosition.x);
+			Debug.Log ("Screen width" + Screen.width);
+		}
 	}
 		
 	void FixedUpdate(){
-
-		//Debug.Log ("y: " + this.transform.position.y);
 		//restrict character from moving out of view
-		if (this.gameObject.tag == "Player1") {
-			
-			if (this.transform.position.x >= -2.5f && onPointerDownL == true) {
+			if (this.transform.localPosition.x >= -345.0f && onPointerDownL == true) {
 				this.transform.Translate (new Vector3 (-2.0f, 0, 0));
 			}
-			else if (this.transform.position.x <= 2.5f && onPointerDownR == true) {
+			else if (this.transform.localPosition.x <= 345.0f && onPointerDownR == true) {
 				this.transform.Translate (new Vector3 (2.0f, 0, 0));
 			}
-		}
-
-		if(this.gameObject.tag == "Player2"){
-			
-			if (this.transform.position.x <= 2.5f && onPointerDownL == true) {
-				this.transform.Translate (new Vector3 (-0.1f, 0, 0));
-			}
-			else if (this.transform.position.x >= -2.5f && onPointerDownR == true) {
-				this.transform.Translate (new Vector3 (0.1f, 0, 0));
-			}
-		}
-
-		//To move the player when the button pressed
-		/*if (onPointerDownL == true) {
-			this.transform.Translate(new Vector3 (-0.1f, 0, 0));
-		}
-		if (onPointerDownR == true) {
-			this.transform.Translate (new Vector3(0.1f, 0, 0));
-		}*/
-
-
 
 	}
 
@@ -90,5 +66,13 @@ public class CharacterControl : MonoBehaviour {
 	public void onButtonUpRight(){
 		onPointerDownR = false;
 	}
-		
+
+	void OnTriggerEnter2D(Collider2D other){
+		Debug.Log ("working");
+		if (other.gameObject.tag == "Canvas") {
+			isInCanvas = true;
+		} else {
+			isInCanvas = false;
+		}
+	}
 }

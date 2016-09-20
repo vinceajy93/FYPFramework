@@ -23,6 +23,7 @@ public class Shoot : MonoBehaviour {
 	}
 
 	public void onClick(){
+		Debug.Log ("pew pew jessica");
 		GameObject smt = Instantiate (Bullet, new Vector3 (Shooting_Position.transform.position.x, Shooting_Position.transform.position.y, Shooting_Position.transform.position.z + 10.0f), Shooting_Position.transform.rotation) as GameObject;
 		smt.tag = gameObject.tag;
 	}
