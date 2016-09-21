@@ -5,11 +5,13 @@ public class ControllingCameraAspectScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		//set the desired aspect ratio (the values in this example are
 		//hard-coded for 16:9, but you could make them into public
 		//variables instead so ou can set them at design time
 		float targetaspect = 9.0f / 16.0f;
-
+		Camera.main.aspect = 10.0f / 16.0f;
+		/*
 		//determine the game window's current aspect ratio
 		float windowaspect =(float)Screen.width / (float)Screen.height;
 
@@ -41,7 +43,7 @@ public class ControllingCameraAspectScript : MonoBehaviour {
 			rect.y = 0;
 
 			camera.rect = rect;
-		}
+		}*/
 	}
 	
 	// Update is called once per frame
