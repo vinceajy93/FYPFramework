@@ -12,7 +12,6 @@ public class CharacterControl : MonoBehaviour {
 	private bool onPointerDownR = false;
 	private bool isInCanvas = false;
 
-	public GameObject Border;
 	public Canvas canvas;
 	//Start is called at the start of the script
 	void Start(){
@@ -29,19 +28,27 @@ public class CharacterControl : MonoBehaviour {
 		float height = 2f * cam.orthographicSize;
 		float width = height * cam.aspect;
 
+		// Get Background Size in worldspace
+		GameObject player_sprite = GameObject.Find("Player1");
+		Vector2 sprite_size = player_sprite.GetComponent<SpriteRenderer> ().sprite.rect.size;
+		Vector2 local_sprite_size = sprite_size / player_sprite.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+		Vector3 player_world_size = local_sprite_size;
+		player_world_size.x *= player_sprite.transform.lossyScale.x;
+		player_world_size.y *= player_sprite.transform.lossyScale.y;
+
 		if(PlayerPrefs.HasKey("Control")){
 			// Move turret
 			if (PlayerPrefs.GetInt ("Control") == 0) {
 				GameObject player = GameObject.Find ("Player1");
 				if (onPointerDownL) {
-					if (player.transform.position.x >= 26f) {
-						player.transform.position += Vector3.left * Time.deltaTime * 200;
+					if (player.transform.localPosition.x >= -width / 2 + player_world_size.x / 2) {
+						player.transform.localPosition += Vector3.left * Time.deltaTime * 5;
 					}
 				}
 
 				if (onPointerDownR) {
-					if (player.transform.position.x <= width - 26f) {
-						player.transform.position += Vector3.right * Time.deltaTime * 200;
+					if (player.transform.localPosition.x <= width / 2 - player_world_size.x / 2) {
+						player.transform.localPosition += Vector3.right * Time.deltaTime * 5;
 					}
 				}
 			} else { // Move bullet

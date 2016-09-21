@@ -53,7 +53,7 @@ public class Shoot : MonoBehaviour {
 			}
 			PlayerPrefs.SetInt ("Control", 1);
 		} else {
-			Camera.main.transform.position = new Vector3 (width / 2, height / 2, -10);
+			//Camera.main.transform.position = new Vector3 (width / 2, height / 2, -10);
 			PlayerPrefs.SetInt ("Control", 0);
 		}
 	}
