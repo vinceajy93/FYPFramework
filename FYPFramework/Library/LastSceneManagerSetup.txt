@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Turret Game/Scenes/Logbook.unity
+  isLoaded: 1
+  isActive: 1
