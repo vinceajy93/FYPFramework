@@ -61,6 +61,7 @@
      <Compile Include="Assets\Auto Letterbox\Demos\Multi-Cam Demo\Scripts\MenuSpin.cs" />
      <Compile Include="Assets\Auto Letterbox\Demos\Util.cs" />
      <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
      <Compile Include="Assets\Turret Game\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Turret Game\Scripts\ControllingCameraAspectScript.cs" />
@@ -68,7 +69,6 @@
      <Compile Include="Assets\Turret Game\Scripts\Shoot.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashLoader.cs" />
-     <Compile Include="Assets\Turret Game\Scripts\debugging.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

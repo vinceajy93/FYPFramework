@@ -26,6 +26,10 @@ public class LevelController : MonoBehaviour {
 		SceneManager.LoadScene ("Mode Selection");
 	}
 
+	//load the campaign scene
+	public void loadCampaign(){
+		//SceneManager.LoadScene ("Loadout");
+	}
 	//load the loadout scene
 	public void loadLoadout(){
 		SceneManager.LoadScene ("Loadout");
