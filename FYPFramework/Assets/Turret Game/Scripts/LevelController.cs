@@ -11,10 +11,6 @@ public class LevelController : MonoBehaviour {
 	void Start () {
 		debugText.text = ("Stage: " + SceneManager.GetActiveScene().name);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
 	//load the main menu scene
 	public void loadMenu(){
@@ -48,5 +44,10 @@ public class LevelController : MonoBehaviour {
 	//load the options scene
 	public void loadOptions(){
 		SceneManager.LoadScene ("Options");
+	}
+
+	//Local 2 - player
+	public void loadLocal2P(){
+		SceneManager.LoadScene ("Local_Multiplayer");
 	}
 }
