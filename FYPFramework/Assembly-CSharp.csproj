@@ -66,6 +66,7 @@
      <Compile Include="Assets\Turret Game\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Turret Game\Scripts\ControllingCameraAspectScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LevelController.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Player_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Shoot.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashLoader.cs" />

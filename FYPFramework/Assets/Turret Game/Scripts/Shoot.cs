@@ -5,27 +5,23 @@ public class Shoot : MonoBehaviour {
 	public GameObject Shooting_Position;
 	public GameObject Bullet;
 
-	public GameObject Bg;
 	private bool shoot = false;
 	private GameObject mBull;
+	private GameObject Bg;
+	private int num_bg;
 
-	//private float nextfire = 0.3f;
-	//private float firerate = 0.1f;
-	//private float dt;
 	// Use this for initialization
 	void Start () {
-		//dt = 0;
 		PlayerPrefs.SetInt ("NoBullet", 0);
+		Bg = GameObject.FindGameObjectWithTag ("Background");
+		foreach (GameObject all_background in GameObject.FindGameObjectsWithTag("Background")) {
+			num_bg += 1;
+		}
+		//Debug.Log (num_bg);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*dt += Time.deltaTime;
-		if (dt > nextfire) {
-			nextfire += firerate;
-			Instantiate (Bullet, new Vector3(Shooting_Position.transform.position.x, Shooting_Position.transform.position.y, Shooting_Position.transform.position.z + 10.0f), Shooting_Position.transform.rotation);
-		}*/
-
 		// Get Camera Size in worldspace
 		Camera cam = Camera.main;
 		float height = 2f * cam.orthographicSize;
@@ -36,26 +32,24 @@ public class Shoot : MonoBehaviour {
 		Vector2 local_sprite_size = sprite_size / Bg.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 		Vector3 world_size = local_sprite_size;
 		world_size.x *= Bg.transform.lossyScale.x;
-		world_size.y *= Bg.transform.lossyScale.y;
-
-		/*if (Camera.main.transform.position.y < world_size.y - (height / 2)) {
-			Camera.main.transform.position += Vector3.up * Time.deltaTime * 100;
-		}*/
+		world_size.y *= Bg.transform.lossyScale.y * num_bg;
 
 		if (shoot == true) {
 			shoot = false;
-			Camera.main.transform.position = new Vector3 (width / 2, height / 2, -10);
+			Camera.main.transform.position = new Vector3 (0, 0, -10);
 		}
 
 		if (mBull != null) {
-			if (Camera.main.transform.position.y < world_size.y - (height / 2) && mBull.transform.position.y > (height / 2)) {
-				Camera.main.transform.position = new Vector3 (width / 2, mBull.transform.position.y, -10);
-			}
+			Camera.main.transform.position = new Vector3 (width / 2, mBull.transform.position.y, -10);
 			PlayerPrefs.SetInt ("Control", 1);
 		} else {
-			//Camera.main.transform.position = new Vector3 (width / 2, height / 2, -10);
+			//Camera.main.transform.position = new Vector3 (0, 0, -10);
 			PlayerPrefs.SetInt ("Control", 0);
 		}
+
+		// TO DO: Change Camera to Bullet
+		//if (Camera.main.transform.position.y < world_size.y - height)
+			//Camera.main.transform.position += Vector3.up * Time.deltaTime * 5;
 	}
 
 	public void onClick(){
