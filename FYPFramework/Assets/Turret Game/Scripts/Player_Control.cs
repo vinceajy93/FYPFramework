@@ -6,6 +6,10 @@ public class Player_Control : MonoBehaviour {
 	private bool overSprite = false;
 	private Vector3 offset;
 
+	//Array of cameras
+	int cameraCounts;
+	//private Camera[] cameras;
+
 	// Check interver between each mouse down
 	private const float set_cooldown = 0.5f; //half a sec
 	private float button_cooldown = 0f;
@@ -13,6 +17,12 @@ public class Player_Control : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//set the sze of the Camera array
+		cameraCounts = Camera.allCamerasCount;
+		Camera[] cameras = new Camera [cameraCounts];
+
+		Debug.Log ("Camera Counts: " + cameraCounts);
+		Debug.Log ("Camera array size: " + cameras.Length);
 	}
 	
 	// Update is called once per frame
