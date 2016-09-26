@@ -6,48 +6,99 @@ public class Player_Control : MonoBehaviour {
 	private bool overSprite = false;
 	private Vector3 offset;
 
-	//Array of cameras
-	int cameraCounts;
-	//private Camera[] cameras;
+	//Cameras
+	protected Camera P1Camera;
+	protected Camera P2Camera;
+
 
 	// Check interver between each mouse down
 	private const float set_cooldown = 0.5f; //half a sec
 	private float button_cooldown = 0f;
 	private int button_count = 0;
 
+
+	Vector3 new_pos;
+
 	// Use this for initialization
 	void Start () {
-		//set the sze of the Camera array
-		cameraCounts = Camera.allCamerasCount;
-		Camera[] cameras = new Camera [cameraCounts];
+		P1Camera = GameObject.Find("P1 Camera").GetComponent<Camera>();
+		P2Camera = GameObject.Find ("P2 Camera").GetComponent<Camera> ();
 
-		Debug.Log ("Camera Counts: " + cameraCounts);
-		Debug.Log ("Camera array size: " + cameras.Length);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Get Camera's width and height (only in orthographic mode)
-		Camera cam = Camera.main;
-		float height = 2f * cam.orthographicSize;
-		float width = height * cam.aspect;
 
-		// Get Player_1 Size in worldspace
-		Vector2 sprite_size = this.GetComponent<SpriteRenderer> ().sprite.rect.size;
-		Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
-		Vector3 player_world_size = local_sprite_size;
-		player_world_size.x *= this.transform.lossyScale.x;
-		player_world_size.y *= this.transform.lossyScale.y;
+		//player 1
+		if (gameObject.tag == "Player1") {
+			Camera cam = P1Camera;
+			float height = 2f * cam.orthographicSize;
+			float width = height * cam.aspect;
 
-		Control (width, height, player_world_size);	
+			// Get Player_1 Size in worldspace
+			Vector2 sprite_size = this.GetComponent<SpriteRenderer> ().sprite.rect.size;
+			Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+			Vector3 player_world_size = local_sprite_size;
+			player_world_size.x *= this.transform.lossyScale.x;
+			player_world_size.y *= this.transform.lossyScale.y;
+
+			Control (width, height, player_world_size);	
+		}
+		//player 2 
+		else if (gameObject.tag == "Player2") {
+			Camera cam = P2Camera;
+			float height = 2f * cam.orthographicSize;
+			float width = height * cam.aspect;
+
+			// Get Player_2 Size in worldspace
+			Vector2 sprite_size = this.GetComponent<SpriteRenderer> ().sprite.rect.size;
+			Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+			Vector3 player_world_size = local_sprite_size;
+			player_world_size.x *= this.transform.lossyScale.x;
+			player_world_size.y *= this.transform.lossyScale.y;
+
+			Control (width, height, player_world_size);	
+		}
+		//main camera (single player)
+		else {
+			Camera cam = Camera.main;
+			float height = 2f * cam.orthographicSize;
+			float width = height * cam.aspect;
+
+			// Get Player_1 Size in worldspace
+			Vector2 sprite_size = this.GetComponent<SpriteRenderer> ().sprite.rect.size;
+			Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+			Vector3 player_world_size = local_sprite_size;
+			player_world_size.x *= this.transform.lossyScale.x;
+			player_world_size.y *= this.transform.lossyScale.y;
+
+			Control (width, height, player_world_size);	
+		}
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)
 	{
 		if (Input.GetMouseButtonDown (0)) {
-			Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (mousePosition);
-			offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 0, 0);
+			//player 1
+			if (gameObject.tag == "Player1") {
+				Vector2 mousePosition = P1Camera.ScreenToWorldPoint (Input.mousePosition);
+				overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (mousePosition);
+				offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 0, 0);
+			}
+			//player 2
+			else if (gameObject.tag == "Player2") {
+				Vector2 mousePosition = P2Camera.ScreenToWorldPoint (Input.mousePosition);
+				overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (mousePosition);
+				offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 0, 0);
+			}
+			//main camera (single player)
+			else {
+				Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (mousePosition);
+				offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 0, 0);
+			}
+		
 
 			if (overSprite) {
 				button_count += 1;
@@ -78,7 +129,12 @@ public class Player_Control : MonoBehaviour {
 	{
 		// Dragging of Player turret
 		Vector3 prev_pos = this.transform.position;
-		Vector3 new_pos = new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, prev_pos.y, prev_pos.z) + offset;
+
+		if (gameObject.tag == "Player1")
+			new_pos = new Vector3 (P1Camera.ScreenToWorldPoint (Input.mousePosition).x, prev_pos.y, prev_pos.z) + offset;
+		if (gameObject.tag == "Player2")
+			new_pos = new Vector3 (P2Camera.ScreenToWorldPoint (Input.mousePosition).x, prev_pos.y, prev_pos.z) + offset;
+			 
 
 		if (new_pos.x >= -width / 2 + player_world_size.x / 2 &&
 		    new_pos.x <= width / 2 - player_world_size.x / 2) {

@@ -70,6 +70,7 @@
      <Compile Include="Assets\Turret Game\Scripts\Shoot.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashLoader.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\testDrag.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
