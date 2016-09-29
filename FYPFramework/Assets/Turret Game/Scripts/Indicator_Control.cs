@@ -45,7 +45,6 @@ public class Indicator_Control : MonoBehaviour {
 			// Get Camera's width and height (only in orthographic mode)
 			Camera cam = Camera.main;
 			float height = 2f * cam.orthographicSize;
-			float width = height * cam.aspect;
 
 			if (this.transform.parent.position.y > (height / 2) + cam.transform.position.y) {
 				this.transform.localEulerAngles = new Vector3 (0, 0, 180);
@@ -67,7 +66,6 @@ public class Indicator_Control : MonoBehaviour {
 			if (this.transform.parent.tag == "Bullet_1") {
 				Camera cam = P2Cam;
 				float height = 2f * cam.orthographicSize;
-				float width = height * cam.aspect;
 
 				if (this.transform.parent.position.y > (height / 2) + cam.transform.position.y) {
 					this.transform.localEulerAngles = new Vector3 (0, 0, 180);
@@ -90,7 +88,6 @@ public class Indicator_Control : MonoBehaviour {
 			if (this.transform.parent.tag == "Bullet_2") {
 				Camera cam = P1Cam;
 				float height = 2f * cam.orthographicSize;
-				float width = height * cam.aspect;
 
 				if (this.transform.parent.position.y > (height / 2) + cam.transform.position.y) {
 					this.transform.localEulerAngles = new Vector3 (0, 0, 0);

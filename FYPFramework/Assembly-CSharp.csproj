@@ -63,6 +63,7 @@
      <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
      <Compile Include="Assets\Turret Game\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Camera_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Indicator_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Level_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Overlay_Control.cs" />
