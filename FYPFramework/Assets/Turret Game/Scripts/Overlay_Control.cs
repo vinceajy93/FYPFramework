@@ -19,13 +19,11 @@ public class Overlay_Control : MonoBehaviour {
 		panel = GameObject.Find("panel overlay");
 
 		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
-			pControl.mode = true;
+			pControl.game_mode_Single = true;
 		} else {
 			p1Timer = GameObject.Find ("P1 Timer").GetComponent<Text> ();
 			p2Timer = GameObject.Find ("P2 Timer").GetComponent<Text> ();
 		}
-
-
 	}
 	
 	// Update is called once per frame

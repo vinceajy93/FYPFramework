@@ -21,7 +21,7 @@ public class Player_Control : Overlay_Control {
 
 	private Camera P1Cam;
 	private Camera P2Cam;
-	private bool game_mode_Single = false; // True - Single, False - Multiplayer
+	public bool game_mode_Single = false; // True - Single, False - Multiplayer
 	private int touch_point = -1;
 
 	// Use this for initialization
