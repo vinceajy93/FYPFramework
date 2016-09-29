@@ -2,7 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Player_Control : MonoBehaviour {
+public class Player_Control : Overlay_Control {
+	//Access overlay control's scripts variable
+	private Overlay_Control m_Overlay_Control;
 	// Check mouse and player's turret position
 	private bool overSprite = false;
 	private Vector3 offset;
@@ -14,11 +16,13 @@ public class Player_Control : MonoBehaviour {
 
 	private Camera P1Cam;
 	private Camera P2Cam;
-	private bool mode = false; // True - Single, False - Multiplayer
+	public bool mode = false; // True - Single, False - Multiplayer
 	private int touch_point = -1;
 
 	// Use this for initialization
 	void Start () {
+
+		m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
 			mode = true;
 		} else {
@@ -41,7 +45,12 @@ public class Player_Control : MonoBehaviour {
 		player_world_size.x *= this.transform.lossyScale.x;
 		player_world_size.y *= this.transform.lossyScale.y;
 
-		Control (width, height, player_world_size);	
+		//Debug.Log ("panel isActive " + PanelisActive);
+		//Allow players to play only when overlay panel is gone
+		if(!m_Overlay_Control.PanelisActive){
+			Control (width, height, player_world_size);	
+		}
+
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)

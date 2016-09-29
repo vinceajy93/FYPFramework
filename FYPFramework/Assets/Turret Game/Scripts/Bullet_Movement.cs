@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
+
 public class Bullet_Movement : MonoBehaviour {
+
+	public Text debugtext;
 	private GameObject Bg;
 	private int num_bg;
 
@@ -12,6 +16,10 @@ public class Bullet_Movement : MonoBehaviour {
 	private GameObject indicator;
 	// Use this for initialization
 	void Start () {
+
+		//debugtext
+		debugtext = GameObject.Find("debugtext").GetComponent<Text>();
+		debugtext.text = ("bullet works");
 		Bg = GameObject.FindGameObjectWithTag ("Background");
 		num_bg = GameObject.FindGameObjectsWithTag ("Background").Length;
 
@@ -29,9 +37,9 @@ public class Bullet_Movement : MonoBehaviour {
 			}
 		}
 	}
-	
 	// Update is called once per frame
 	void Update () {
+		
 		Camera cam = Camera.main;
 		float height = 2f * cam.orthographicSize;
 
@@ -81,5 +89,14 @@ public class Bullet_Movement : MonoBehaviour {
 					indicator.SetActive (false);
 			}
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Bullet_1") {
+			Debug.Log ("bullet collided");
+		}
+			
+			//coll.gameObject.SendMessage("ApplyDamage", 10);
+
 	}
 }
