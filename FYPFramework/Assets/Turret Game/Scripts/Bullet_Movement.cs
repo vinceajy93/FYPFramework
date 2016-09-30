@@ -5,6 +5,13 @@ using System.Collections;
 
 public class Bullet_Movement : MonoBehaviour {
 
+	//list of bullets and its dmg
+	/*struct ProjectileDmg{
+		int bulletDmg = 2; 
+	}*/
+
+	private HealthManager _HealthManager;
+
 	public Text debugtext;
 	private GameObject Bg;
 	private int num_bg;
@@ -19,12 +26,19 @@ public class Bullet_Movement : MonoBehaviour {
 
 	private Camera cam;
 	private float cam_height; // Size of camera in y
+
+	//ProjectileDmg projectileDmg;
+
 	// Use this for initialization
 	void Start () {
 
 		//debugtext
 		debugtext = GameObject.Find("debugtext").GetComponent<Text>();
 		debugtext.text = ("bullet works");
+
+		//pass by reference from health Manaager
+		_HealthManager = GameObject.Find("Scripts").GetComponent<HealthManager>();
+
 		Bg = GameObject.FindGameObjectWithTag ("Background");
 		num_bg = GameObject.FindGameObjectsWithTag ("Background").Length;
 
@@ -102,11 +116,38 @@ public class Bullet_Movement : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Bullet_1") {
-			Debug.Log ("bullet collided");
+		//bullet 1
+		if (coll.gameObject.CompareTag("Bullet_1")) {
+			Destroy (coll.gameObject);
+			Destroy (gameObject);
 		}
-			
-			//coll.gameObject.SendMessage("ApplyDamage", 10);
+		//bullet 2
+		if (coll.gameObject.CompareTag("Bullet_2")) {
+			Destroy (coll.gameObject);
+			Destroy (gameObject);
+		}
+		//wall 1
+		if(coll.gameObject.CompareTag("player1_wall")){
+			Destroy (gameObject); //bullet
+		}
+		//wall 2
+		if(coll.gameObject.CompareTag("player2_wall")){
+			_HealthManager.objHealth = HealthManager.ObjectsHealth.wall2;
+			_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+			Destroy (gameObject); //bullet
+		}
+		//player 1
+		if(coll.gameObject.CompareTag("Player1")){
+			_HealthManager.objHealth = HealthManager.ObjectsHealth.player1;
+			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
+			Destroy (gameObject); //bullet
 
+		}
+		//player 2
+		if(coll.gameObject.CompareTag("Player2")){
+			_HealthManager.objHealth = HealthManager.ObjectsHealth.player2;
+			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
+			Destroy (gameObject); //bullet
+		}
 	}
 }

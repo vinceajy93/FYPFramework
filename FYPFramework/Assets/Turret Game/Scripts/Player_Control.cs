@@ -52,8 +52,10 @@ public class Player_Control : Overlay_Control {
 
 		//Debug.Log ("panel isActive " + PanelisActive);
 		//Allow players to play only when overlay panel is gone
-		if(!m_Overlay_Control.PanelisActive)
-			Control (width, height, player_world_size);	// Get input data from player to do according -Dragging, Double Tapping to Shoot, Etc...
+		if(!m_Overlay_Control.PanelisActive){
+			Control (width, height, player_world_size);	
+		}
+
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)
@@ -88,7 +90,6 @@ public class Player_Control : Overlay_Control {
 
 							button_count += 1;
 							button_cooldown = set_cooldown;
-							Debug.Log (button_count);
 							if (button_count > 1) {
 								Shoot ();
 								button_count = 0;
