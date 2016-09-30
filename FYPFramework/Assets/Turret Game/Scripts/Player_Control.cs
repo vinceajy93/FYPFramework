@@ -7,7 +7,8 @@ using UnityEngine.UI;
  * 					different dragging code depending on the mode
  * 
 */
-public class Player_Control : Overlay_Control {
+public class Player_Control : Mode_Control {
+
 	//Access overlay control's scripts variable
 	private Overlay_Control m_Overlay_Control;
 	// Check mouse and player's turret position
@@ -21,14 +22,13 @@ public class Player_Control : Overlay_Control {
 
 	private Camera P1Cam;
 	private Camera P2Cam;
-	public bool game_mode_Single = false; // True - Single, False - Multiplayer
 	private int touch_point = -1;
 
 	// Use this for initialization
 	void Start () {
 
 		m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
-		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
+		if (GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) {
 			game_mode_Single = true;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
@@ -50,7 +50,6 @@ public class Player_Control : Overlay_Control {
 		player_world_size.x *= this.transform.lossyScale.x;
 		player_world_size.y *= this.transform.lossyScale.y;
 
-		//Debug.Log ("panel isActive " + PanelisActive);
 		//Allow players to play only when overlay panel is gone
 		if(!m_Overlay_Control.PanelisActive){
 			Control (width, height, player_world_size);	
@@ -60,7 +59,7 @@ public class Player_Control : Overlay_Control {
 		
 	void Control(float width, float height, Vector3 player_world_size)
 	{
-		if (!game_mode_Single) {
+		if (!game_mode_Single) { //multiplayer
 			int nbTouches = Input.touchCount;
 
 			if (nbTouches > 0) {
@@ -125,7 +124,7 @@ public class Player_Control : Overlay_Control {
 					}
 				}
 			}
-		} else {
+		} else { //single player
 			if (Input.GetMouseButtonDown (0)) {				
 				Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 				overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (mousePosition);

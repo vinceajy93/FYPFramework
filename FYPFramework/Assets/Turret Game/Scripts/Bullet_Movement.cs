@@ -27,8 +27,6 @@ public class Bullet_Movement : MonoBehaviour {
 	private Camera cam;
 	private float cam_height; // Size of camera in y
 
-	//ProjectileDmg projectileDmg;
-
 	// Use this for initialization
 	void Start () {
 
@@ -52,13 +50,16 @@ public class Bullet_Movement : MonoBehaviour {
 		cam = Camera.main;
 		cam_height = 2f * cam.orthographicSize;
 
-		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
+		//Debug.Log (GameObject.Find ("Scripts").GetComponent<Mode_Control> ().game_mode_Single);
+		//single player
+		if (GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) 
 			mode = true;
-		} else {
+		//multiplayer
+		else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
 		}
-
+		//Debug.Log ("mode " + mode);
 		object_max_height = (bg_world_size.y * num_bg) - (cam_height / 2);
 
 		foreach (Transform child in transform) {
@@ -86,11 +87,13 @@ public class Bullet_Movement : MonoBehaviour {
 		}
 
 		// Indicator's code
+		//single player
 		if (mode) {
 			if (this.transform.position.y > (cam_height / 2) + cam.transform.position.y || this.transform.position.y < (-cam_height / 2) + cam.transform.position.y) {
 				indicator.SetActive (true);
 			} else
 				indicator.SetActive (false);
+		//multiplayer
 		} else {
 			// Player1's bullet to be shown Player2's screen
 			Camera Player_Cam = null;

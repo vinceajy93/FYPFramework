@@ -67,6 +67,7 @@
      <Compile Include="Assets\Turret Game\Scripts\HealthManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Indicator_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Level_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Mode_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Overlay_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Player_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
