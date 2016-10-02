@@ -24,15 +24,28 @@ public class Player_Control : Mode_Control {
 	private Camera P2Cam;
 	private int touch_point = -1;
 
+	private string bullet_name = "Bullet/Bullet";
+	private GameObject[] rest_bullet;
+	private GameObject shoot_location;
+
 	// Use this for initialization
 	void Start () {
-
 		m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) {
 			game_mode_Single = true;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
+		}
+
+		shoot_location = this.transform.Find ("bullet_pos").gameObject;
+	}
+
+	void Awake() {
+		for (int i = 0; i < 10; i++) {
+			GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+			new_clone.tag = "Bullet_Rest";
+			new_clone.transform.parent = GameObject.Find ("Bullet_Rest").transform;
 		}
 	}
 	
@@ -54,7 +67,6 @@ public class Player_Control : Mode_Control {
 		if(!m_Overlay_Control.PanelisActive){
 			Control (width, height, player_world_size);	
 		}
-
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)
@@ -81,7 +93,6 @@ public class Player_Control : Mode_Control {
 							overSprite = this.GetComponent<SpriteRenderer> ().bounds.Contains (touchPosition);
 							offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (touchPosition.x, 0, 0);
 						}
-
 
 						// if player tap on the player 2 twice, shoot. Else, increase tap_count(button_count)++
 						if (overSprite) {
@@ -204,15 +215,19 @@ public class Player_Control : Mode_Control {
 
 	void Shoot()
 	{
-		GameObject shoot_location = this.transform.Find ("bullet_pos").gameObject;
 		Vector3 shoot_position = shoot_location.transform.position;
-		GameObject new_bullet = Instantiate (Resources.Load ("Bullet/Bullet 1"), new Vector3 (shoot_position.x, shoot_position.y, 0f), shoot_location.transform.rotation) as GameObject; 
-		if (this.tag == "Player1") {
-			new_bullet.layer = LayerMask.NameToLayer ("Player 1");
-			new_bullet.tag = "Bullet_1";
-		} else {
-			new_bullet.layer = LayerMask.NameToLayer ("Player 2");
-			new_bullet.tag = "Bullet_2";
+		GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
+		new_bullet.transform.parent = null;
+		new_bullet.transform.position = shoot_position;
+		new_bullet.transform.rotation = shoot_location.transform.rotation;
+		if (new_bullet != null) {
+			if (this.tag == "Player1") {
+				new_bullet.layer = LayerMask.NameToLayer ("Player 1");
+				new_bullet.tag = "Bullet_1";
+			} else {
+				new_bullet.layer = LayerMask.NameToLayer ("Player 2");
+				new_bullet.tag = "Bullet_2";
+			}
 		}
 	}
 }

@@ -48,23 +48,23 @@ public class Camera_Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!game_mode_Single) {
-			if (current_gameobject != null) {
+			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				float height = 0f;
 				if (this.tag == "Player1") {
 					height = 2f * P1Cam.GetComponent<Camera>().orthographicSize;
 
 					Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
 					// Limit the camera within the background zone
-					if (new_pos.y < bg_world_size.y * num_bg - height - height / 2) {	
+					if ((new_pos.y < bg_world_size.y * num_bg - height - height / 2) && (new_pos.y > -height / 2)) {	
 						P1Cam.transform.position = new Vector3 (P1Cam.transform.position.x, new_pos.y, P1Cam.transform.position.z);
 					}
 				}
 				if (this.tag == "Player2") {
 					height = 2f * P2Cam.GetComponent<Camera> ().orthographicSize;
 
-					Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
+					Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, -2, -10);
 					// Limit the camera within the background zone
-					if (new_pos.y > -height / 2) {	
+					if ((new_pos.y > -height / 2) && (new_pos.y < bg_world_size.y * num_bg - height - height / 2)) {	
 						P2Cam.transform.position = new Vector3 (P2Cam.transform.position.x, new_pos.y, P2Cam.transform.position.z);;
 					}
 				}
@@ -79,18 +79,19 @@ public class Camera_Control : MonoBehaviour {
 				}
 			}
 		} else {
-			if (current_gameobject != null) {
+			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				Camera cam = Camera.main;
 				float height = 2f * cam.orthographicSize;
 
 				Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
 				// Limit the camera within the background zone
-				if (new_pos.y < bg_world_size.y * num_bg - height) {	
+				if ((new_pos.y < bg_world_size.y * num_bg - height) && (new_pos.y > 0)) {	
 					Camera.main.transform.position = new Vector3 (cam.transform.position.x, new_pos.y, cam.transform.position.z);;
 				}
 			} else {
 				camera_switch_no = 0;
 				Camera.main.transform.position = Single_OriginalPos;
+				Debug.Log (Camera.main.transform.position);
 			}
 		}
 	}
@@ -121,7 +122,6 @@ public class Camera_Control : MonoBehaviour {
 		if (camera_switch_no > 0) {
 			current_gameobject = all_bullets [camera_switch_no - 1];
 		} else {
-			Camera.main.transform.position = Single_OriginalPos;
 			current_gameobject = null;
 		}
 	}
@@ -146,7 +146,6 @@ public class Camera_Control : MonoBehaviour {
 
 		if (camera_switch_no > nbBullet) {
 			camera_switch_no = 0;
-			Camera.main.transform.position = Single_OriginalPos;
 			current_gameobject = null;
 		} else {
 			current_gameobject = all_bullets [camera_switch_no - 1];

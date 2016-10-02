@@ -25,8 +25,6 @@ public class HealthManager : MonoBehaviour {
 	public ObjectsHealth objHealth;
 	// Use this for initialization
 	void Start (){
-
-
 		_p1HealthText = GameObject.Find ("Txt_Player1Health").GetComponent<Text> ();
 		_p2HealthText = GameObject.Find ("Txt_Player2Health").GetComponent<Text> ();
 	}
