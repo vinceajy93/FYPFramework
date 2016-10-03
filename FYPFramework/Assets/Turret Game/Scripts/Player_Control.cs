@@ -26,10 +26,14 @@ public class Player_Control : MonoBehaviour {
 	private GameObject[] rest_bullet;
 	private GameObject shoot_location;
 
+	private Mode_Control mcontrol;
+
 	// Use this for initialization
 	void Start () {
+		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
+
 		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
-		if (GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) {
+		if (mcontrol.game_mode_Single) {
 			//game_mode_Single = true;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
@@ -69,7 +73,7 @@ public class Player_Control : MonoBehaviour {
 		
 	void Control(float width, float height, Vector3 player_world_size)
 	{
-		if (!GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) { //multiplayer
+		if (!mcontrol.game_mode_Single) { //multiplayer
 			int nbTouches = Input.touchCount;
 
 			if (nbTouches > 0) {
@@ -77,6 +81,10 @@ public class Player_Control : MonoBehaviour {
 					Touch touch = Input.GetTouch (i);
 
 					TouchPhase phase = touch.phase;
+
+					if (!mcontrol.move_player) {
+						phase = TouchPhase.Ended;
+					}
 
 					switch (phase) {
 					case TouchPhase.Began:

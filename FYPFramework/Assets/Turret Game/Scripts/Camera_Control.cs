@@ -5,7 +5,6 @@ using System.Collections;
  *  Camera_Control : Switch between each Bullet's Camera and Base Camera (Turret)
 */
 public class Camera_Control : MonoBehaviour {
-	private bool game_mode_Single = false; // True = Single, False = Multiplayer
 	private GameObject P1Cam;
 	private GameObject P2Cam;
 
@@ -21,6 +20,7 @@ public class Camera_Control : MonoBehaviour {
 	Vector3 bg_world_size; // Get Background size in world size
 
 	// Move current bullet
+	private Mode_Control mcontrol;
 	private bool Move_Left = false;
 	private bool Move_Right = false;
 
@@ -36,9 +36,9 @@ public class Camera_Control : MonoBehaviour {
 		bg_world_size.x *= Bg.transform.lossyScale.x;
 		bg_world_size.y *= Bg.transform.lossyScale.y;
 
+		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
 		// Get Camera depending on the Game_Play Mode
-		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
-			game_mode_Single = true;
+		if (mcontrol.game_mode_Single) {
 			Single_OriginalPos = Camera.main.transform.position;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera"); // Get gameobject as a whole such that variable is still updated and able to change
@@ -51,17 +51,17 @@ public class Camera_Control : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!game_mode_Single) { // Multiplayer
+		if (!mcontrol.game_mode_Single) { // Multiplayer
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				float height = 0f;
 				if(Move_Left)
 				{
-
+					current_gameobject.transform.position += Vector3.left * 0.1f;
 				}
 
 				if(Move_Right)
 				{
-
+					current_gameobject.transform.position += Vector3.right * 0.1f;
 				}
 
 				if (this.tag == "Player1") {
@@ -84,6 +84,7 @@ public class Camera_Control : MonoBehaviour {
 				}
 			} else { // Single
 				camera_switch_no = 0;
+				mcontrol.move_player = true;
 				if (this.tag == "Player1") {
 					P1Cam.transform.position = P1Cam_OriginalPos;
 				}
@@ -99,12 +100,12 @@ public class Camera_Control : MonoBehaviour {
 
 				if(Move_Left)
 				{
-
+					current_gameobject.transform.position += Vector3.left * 0.1f;
 				}
 
 				if(Move_Right)
 				{
-
+					current_gameobject.transform.position += Vector3.right * 0.1f;
 				}
 
 				Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
@@ -114,6 +115,7 @@ public class Camera_Control : MonoBehaviour {
 				}
 			} else {
 				camera_switch_no = 0;
+				mcontrol.move_player = true;
 				Camera.main.transform.position = Single_OriginalPos;
 			}
 		}
@@ -144,8 +146,10 @@ public class Camera_Control : MonoBehaviour {
 
 		if (camera_switch_no > 0) {
 			current_gameobject = all_bullets [camera_switch_no - 1];
+			mcontrol.move_player = false;
 		} else {
 			current_gameobject = null;
+			mcontrol.move_player = true;
 		}
 	}
 
@@ -170,8 +174,10 @@ public class Camera_Control : MonoBehaviour {
 		if (camera_switch_no > nbBullet) {
 			camera_switch_no = 0;
 			current_gameobject = null;
+			mcontrol.move_player = true;
 		} else {
 			current_gameobject = all_bullets [camera_switch_no - 1];
+			mcontrol.move_player = false;
 		}
 	}
 
