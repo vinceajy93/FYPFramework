@@ -7,10 +7,8 @@ using UnityEngine.UI;
  * 					different dragging code depending on the mode
  * 
 */
-public class Player_Control : Mode_Control {
+public class Player_Control : MonoBehaviour {
 
-	//Access overlay control's scripts variable
-	private Overlay_Control m_Overlay_Control;
 	// Check mouse and player's turret position
 	private bool overSprite = false;
 	private Vector3 offset;
@@ -30,9 +28,9 @@ public class Player_Control : Mode_Control {
 
 	// Use this for initialization
 	void Start () {
-		m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
+		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) {
-			game_mode_Single = true;
+			//game_mode_Single = true;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
@@ -64,14 +62,14 @@ public class Player_Control : Mode_Control {
 		player_world_size.y *= this.transform.lossyScale.y;
 
 		//Allow players to play only when overlay panel is gone
-		if(!m_Overlay_Control.PanelisActive){
+		if(!GameObject.Find("Scripts").GetComponent<Overlay_Control>().PanelisActive){
 			Control (width, height, player_world_size);	
 		}
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)
 	{
-		if (!game_mode_Single) { //multiplayer
+		if (!GameObject.Find("Scripts").GetComponent<Mode_Control>().game_mode_Single) { //multiplayer
 			int nbTouches = Input.touchCount;
 
 			if (nbTouches > 0) {

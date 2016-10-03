@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: ce05e4b94e09cd544bfd3a1eeb385020
+timeCreated: 1475468509
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Main menu button - Pressed anim_0
+    21300002: Main menu button - Pressed anim_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Main menu button - Pressed anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 548
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 252, y: -151}
+        - {x: 264, y: -144}
+        - {x: 270, y: -140}
+        - {x: 274, y: -135}
+        - {x: 274, y: 135}
+        - {x: 269, y: 141}
+        - {x: 43, y: 285}
+        - {x: 18, y: 300}
+        - {x: -16, y: 300}
+        - {x: -23, y: 297}
+        - {x: -45, y: 283}
+        - {x: -231, y: 164}
+        - {x: -242, y: 157}
+        - {x: -265, y: 143}
+        - {x: -274, y: 135}
+        - {x: -274, y: -134}
+        - {x: -270, y: -139}
+        - {x: -24, y: -296}
+        - {x: -15, y: -300}
+        - {x: 17, y: -300}
+        - {x: 20, y: -299}
+        - {x: 33, y: -291}
+        - {x: 54, y: -277}
+      - - {x: -10, y: -264}
+        - {x: -41, y: -246}
+        - {x: -54, y: -237}
+        - {x: -109, y: -202}
+        - {x: -129, y: -190}
+        - {x: -139, y: -183}
+        - {x: -153, y: -174}
+        - {x: -184, y: -155}
+        - {x: -198, y: -146}
+        - {x: -227, y: -127}
+        - {x: -240, y: -119}
+        - {x: -242, y: -113}
+        - {x: -243, y: -112}
+        - {x: -243, y: 110}
+        - {x: -242, y: 111}
+        - {x: -238, y: 120}
+        - {x: -234, y: 122}
+        - {x: -212, y: 136}
+        - {x: -182, y: 155}
+        - {x: -154, y: 173}
+        - {x: -113, y: 199}
+        - {x: -69, y: 227}
+        - {x: -56, y: 236}
+        - {x: -39, y: 246}
+        - {x: -12, y: 264}
+        - {x: 6, y: 265}
+        - {x: 13, y: 263}
+        - {x: 27, y: 255}
+        - {x: 57, y: 236}
+        - {x: 71, y: 227}
+        - {x: 126, y: 192}
+        - {x: 162, y: 170}
+        - {x: 181, y: 157}
+        - {x: 225, y: 129}
+        - {x: 243, y: 118}
+        - {x: 244, y: 114}
+        - {x: 245, y: 113}
+        - {x: 245, y: -113}
+        - {x: 244, y: -114}
+        - {x: 241, y: -120}
+        - {x: 185, y: -155}
+        - {x: 161, y: -171}
+        - {x: 141, y: -183}
+        - {x: 86, y: -218}
+        - {x: 62, y: -234}
+        - {x: 42, y: -246}
+        - {x: 29, y: -255}
+        - {x: 11, y: -265}
+        - {x: -1, y: -266}
+      - - {x: 199, y: -115}
+        - {x: 210, y: -108}
+        - {x: 215, y: -102}
+        - {x: 215, y: 104}
+        - {x: 208, y: 111}
+        - {x: 200, y: 117}
+        - {x: 189, y: 124}
+        - {x: 161, y: 141}
+        - {x: 134, y: 159}
+        - {x: 104, y: 178}
+        - {x: 46, y: 215}
+        - {x: 15, y: 234}
+        - {x: 10, y: 236}
+        - {x: -9, y: 236}
+        - {x: -18, y: 232}
+        - {x: -34, y: 222}
+        - {x: -62, y: 204}
+        - {x: -128, y: 162}
+        - {x: -169, y: 136}
+        - {x: -199, y: 117}
+        - {x: -208, y: 111}
+        - {x: -213, y: 106}
+        - {x: -214, y: 103}
+        - {x: -214, y: -101}
+        - {x: -207, y: -110}
+        - {x: -190, y: -120}
+        - {x: -167, y: -134}
+        - {x: -143, y: -150}
+        - {x: -132, y: -157}
+        - {x: -116, y: -167}
+        - {x: -80, y: -190}
+        - {x: -55, y: -206}
+        - {x: -17, y: -230}
+        - {x: -10, y: -233}
+        - {x: 12, y: -233}
+        - {x: 23, y: -227}
+        - {x: 86, y: -187}
+        - {x: 171, y: -133}
+    - name: Main menu button - Pressed anim_1
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 548
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 253, y: -151}
+        - {x: 265, y: -144}
+        - {x: 271, y: -140}
+        - {x: 274, y: -136}
+        - {x: 274, y: 136}
+        - {x: 270, y: 141}
+        - {x: 44, y: 285}
+        - {x: 19, y: 300}
+        - {x: -15, y: 300}
+        - {x: -22, y: 297}
+        - {x: -44, y: 283}
+        - {x: -252, y: 150}
+        - {x: -267, y: 142}
+        - {x: -274, y: 134}
+        - {x: -274, y: -133}
+        - {x: -269, y: -139}
+        - {x: -23, y: -296}
+        - {x: -14, y: -300}
+        - {x: 18, y: -300}
+        - {x: 21, y: -299}
+        - {x: 34, y: -291}
+        - {x: 121, y: -235}
+      - - {x: -9, y: -264}
+        - {x: -40, y: -246}
+        - {x: -53, y: -237}
+        - {x: -152, y: -174}
+        - {x: -183, y: -155}
+        - {x: -196, y: -146}
+        - {x: -239, y: -119}
+        - {x: -241, y: -113}
+        - {x: -242, y: -112}
+        - {x: -242, y: 110}
+        - {x: -241, y: 111}
+        - {x: -233, y: 122}
+        - {x: -211, y: 136}
+        - {x: -181, y: 155}
+        - {x: -153, y: 173}
+        - {x: -68, y: 227}
+        - {x: -55, y: 236}
+        - {x: -38, y: 246}
+        - {x: -11, y: 264}
+        - {x: 7, y: 265}
+        - {x: 14, y: 263}
+        - {x: 28, y: 255}
+        - {x: 58, y: 236}
+        - {x: 72, y: 227}
+        - {x: 226, y: 129}
+        - {x: 244, y: 118}
+        - {x: 245, y: 114}
+        - {x: 246, y: 113}
+        - {x: 246, y: -113}
+        - {x: 245, y: -114}
+        - {x: 242, y: -120}
+        - {x: 186, y: -155}
+        - {x: 43, y: -246}
+        - {x: 30, y: -255}
+        - {x: 12, y: -265}
+        - {x: 0, y: -266}
+      - - {x: 108, y: -140}
+        - {x: 169, y: -102}
+        - {x: 181, y: -94}
+        - {x: 186, y: -88}
+        - {x: 186, y: 89}
+        - {x: 185, y: 92}
+        - {x: 176, y: 99}
+        - {x: 151, y: 115}
+        - {x: 63, y: 171}
+        - {x: 17, y: 200}
+        - {x: 10, y: 203}
+        - {x: -9, y: 203}
+        - {x: -19, y: 197}
+        - {x: -49, y: 178}
+        - {x: -126, y: 129}
+        - {x: -172, y: 99}
+        - {x: -182, y: 92}
+        - {x: -183, y: 89}
+        - {x: -183, y: -88}
+        - {x: -178, y: -94}
+        - {x: -164, y: -103}
+        - {x: -105, y: -140}
+        - {x: -51, y: -175}
+        - {x: -29, y: -189}
+        - {x: -9, y: -201}
+        - {x: 11, y: -201}
+        - {x: 16, y: -199}
+        - {x: 21, y: -196}
+        - {x: 95, y: -149}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

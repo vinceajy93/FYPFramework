@@ -16,8 +16,6 @@ public class Mode_Control : MonoBehaviour {
 		else {
 			game_mode_Single = false; 
 		}
-
-		//Debug.Log (game_mode_Single);
 	}
 
 }

@@ -59,7 +59,6 @@ public class Indicator : Mode_Control {
 
 		// Clone a indicator on Canvas and Set to false since bullet is not within game screen view
 		canvas_indicator = Instantiate (Resources.Load (indicator_name), Vector3.zero, Quaternion.identity) as GameObject;
-		Debug.Log (canvas_indicator);
 		canvas_indicator.transform.SetParent (MainCanvas.transform, false);
 		canvas_indicator_height = canvas_indicator.GetComponent<RectTransform> ().rect.height;
 		canvas_indicator.SetActive (false);

@@ -24,17 +24,34 @@ public class HealthManager : MonoBehaviour {
 
 	public ObjectsHealth objHealth;
 	// Use this for initialization
-	void Start (){
-		_p1HealthText = GameObject.Find ("Txt_Player1Health").GetComponent<Text> ();
-		_p2HealthText = GameObject.Find ("Txt_Player2Health").GetComponent<Text> ();
+	void Start ()
+	{
+		//single player
+		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
+			_p1HealthText = GameObject.Find ("Txt_Player1Health").GetComponent<Text> ();
+		}
+		//multiplayer
+		else {
+			_p1HealthText = GameObject.Find ("Txt_Player1Health").GetComponent<Text> ();
+			_p2HealthText = GameObject.Find ("Txt_Player2Health").GetComponent<Text> ();
+		}
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		//display the health of objects
-		_p1HealthText.text = (health_p1.ToString ()); //player 1 health (Number)
-		_p2HealthText.text = (health_p2.ToString ()); //player 2 health (Number)
+
+		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
+			_p1HealthText.text = (health_p1.ToString ()); //player 1 health (Number)
+		} else {
+			_p1HealthText.text = (health_p1.ToString ()); //player 1 health (Number)
+			_p2HealthText.text = (health_p2.ToString ()); //player 2 health (Number)
+
+		}
 	}
+
 	public void ApplyDamage(int damage){
 
 		switch(objHealth){

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 
-public class Bullet_Movement : Mode_Control {
+public class Bullet_Movement : MonoBehaviour {
 
 	//list of bullets and its dmg
 	/*struct ProjectileDmg{
@@ -28,10 +28,6 @@ public class Bullet_Movement : Mode_Control {
 	// Use this for initialization
 	void Start () {
 
-		//debugtext
-		//debugtext = GameObject.Find("debugtext").GetComponent<Text>();
-		//debugtext.text = ("bullet works");
-
 		//pass by reference from health Manaager
 		_HealthManager = GameObject.Find("Scripts").GetComponent<HealthManager>();
 
@@ -48,7 +44,6 @@ public class Bullet_Movement : Mode_Control {
 		cam = Camera.main;
 		cam_height = 2f * cam.orthographicSize;
 
-		//Debug.Log ("mode " + mode);
 		object_max_height = (bg_world_size.y * num_bg) - (cam_height / 2);
 
 		Bullet_Rest = GameObject.Find ("Bullet_Rest");

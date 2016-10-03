@@ -91,7 +91,6 @@ public class Camera_Control : MonoBehaviour {
 			} else {
 				camera_switch_no = 0;
 				Camera.main.transform.position = Single_OriginalPos;
-				Debug.Log (Camera.main.transform.position);
 			}
 		}
 	}
