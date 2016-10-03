@@ -112,7 +112,7 @@ public class Bullet_Movement : MonoBehaviour {
 			gameObject.transform.parent = Bullet_Rest.transform;
 		}
 		//player 1
-		if(coll.gameObject.CompareTag("Player1")){
+		if(coll.gameObject.CompareTag("Player1") && this.tag != "Bullet_1"){
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.player1;
 			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
 
@@ -122,7 +122,7 @@ public class Bullet_Movement : MonoBehaviour {
 
 		}
 		//player 2
-		if(coll.gameObject.CompareTag("Player2")){
+		if(coll.gameObject.CompareTag("Player2") && this.tag != "Bullet_2"){
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.player2;
 			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
 
