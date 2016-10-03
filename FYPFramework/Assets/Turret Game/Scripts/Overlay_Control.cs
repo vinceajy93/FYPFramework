@@ -8,7 +8,7 @@ public class Overlay_Control : MonoBehaviour
 	private GameObject panel;
 	private Text p1Timer;
 	private Text p2Timer;
-	float countdownTimer = 0.5f; //change this time for debugging
+	float countdownTimer = 3.5f; //change this time for debugging
 	public bool PanelisActive = true;
 	private bool P1Touched, P2Touched = false;
 
@@ -112,14 +112,11 @@ public class Overlay_Control : MonoBehaviour
 					if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 						
 						//player 1 touched
-						if (touchPosition.y < 0) {
-							P1Touched = true;
-							p1Timer.text = ("waiting for player 2!");
-						}
+						P1Touched = true;
+						p1Timer.text = ("waiting for player 2!");
 					}
-						//multiplayer
-						else {
-
+					//multiplayer
+					else {
 						//player 1 touched
 						if (touchPosition.y < 0) {
 							P1Touched = true;
@@ -160,6 +157,12 @@ public class Overlay_Control : MonoBehaviour
 
 					break;
 				}
+			}
+		}
+
+		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
+			if (Input.GetMouseButtonDown (0)) {
+				P1Touched = true;
 			}
 		}
 	}
