@@ -4,7 +4,8 @@ using System.Collections;
 public class Mode_Control : MonoBehaviour {
 
 	// True - Single, False - Multiplayer
-	public bool game_mode_Single; 
+	public bool game_mode_Single;
+	public bool move_player = true;
 
 	// Use this for initialization
 	void Start () {

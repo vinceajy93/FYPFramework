@@ -20,6 +20,10 @@ public class Camera_Control : MonoBehaviour {
 	private int num_bg; // Number of bg place together
 	Vector3 bg_world_size; // Get Background size in world size
 
+	// Move current bullet
+	private bool Move_Left = false;
+	private bool Move_Right = false;
+
 	// Use this for initialization
 	void Start () {
 		// Get Background and the number of background using tag
@@ -47,9 +51,19 @@ public class Camera_Control : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!game_mode_Single) {
+		if (!game_mode_Single) { // Multiplayer
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				float height = 0f;
+				if(Move_Left)
+				{
+
+				}
+
+				if(Move_Right)
+				{
+
+				}
+
 				if (this.tag == "Player1") {
 					height = 2f * P1Cam.GetComponent<Camera>().orthographicSize;
 
@@ -68,7 +82,7 @@ public class Camera_Control : MonoBehaviour {
 						P2Cam.transform.position = new Vector3 (P2Cam.transform.position.x, new_pos.y, P2Cam.transform.position.z);;
 					}
 				}
-			} else {
+			} else { // Single
 				camera_switch_no = 0;
 				if (this.tag == "Player1") {
 					P1Cam.transform.position = P1Cam_OriginalPos;
@@ -82,6 +96,16 @@ public class Camera_Control : MonoBehaviour {
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				Camera cam = Camera.main;
 				float height = 2f * cam.orthographicSize;
+
+				if(Move_Left)
+				{
+
+				}
+
+				if(Move_Right)
+				{
+
+				}
 
 				Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
 				// Limit the camera within the background zone
@@ -149,5 +173,25 @@ public class Camera_Control : MonoBehaviour {
 		} else {
 			current_gameobject = all_bullets [camera_switch_no - 1];
 		}
+	}
+
+	public void BulletMove_PressDown_Left()
+	{
+		Move_Left = true;
+	}
+
+	public void BulletMove_PressUp_Left()
+	{
+		Move_Left = false;
+	}
+
+	public void BulletMove_PressDown_Right()
+	{
+		Move_Right = true;
+	}
+
+	public void BulletMove_PressUp_Right()
+	{
+		Move_Right = false;
 	}
 }
