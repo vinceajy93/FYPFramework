@@ -5,8 +5,11 @@ using System.Collections;
  *  Camera_Control : Switch between each Bullet's Camera and Base Camera (Turret)
 */
 public class Camera_Control : MonoBehaviour {
+	// Getting some camera varibles
 	private GameObject P1Cam;
 	private GameObject P2Cam;
+	private float PCam_Height;
+	private float PCam_Width;
 
 	private Vector3 Single_OriginalPos; // Single Player Original Camera Position
 	private Vector3 P1Cam_OriginalPos;
@@ -18,6 +21,7 @@ public class Camera_Control : MonoBehaviour {
 	private GameObject Bg; // To get the size of the background in worldspace
 	private int num_bg; // Number of bg place together
 	Vector3 bg_world_size; // Get Background size in world size
+	float total_bg_height;
 
 	// Move current bullet
 	private Mode_Control mcontrol;
@@ -35,6 +39,7 @@ public class Camera_Control : MonoBehaviour {
 		bg_world_size = local_sprite_size;
 		bg_world_size.x *= Bg.transform.lossyScale.x;
 		bg_world_size.y *= Bg.transform.lossyScale.y;
+		total_bg_height = bg_world_size.y * num_bg;
 
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
 		// Get Camera depending on the Game_Play Mode
@@ -46,6 +51,9 @@ public class Camera_Control : MonoBehaviour {
 
 			P2Cam_OriginalPos = GameObject.Find ("Top Camera").transform.position; // Get the value and won't change according to the Gameobject
 			P1Cam_OriginalPos = GameObject.Find ("Bottom Camera").transform.position;
+
+			PCam_Height = 2f * P1Cam.GetComponent<Camera>().orthographicSize;
+			PCam_Width = PCam_Height * P1Cam.GetComponent<Camera> ().aspect;
 		}
 	}
 	
@@ -53,32 +61,45 @@ public class Camera_Control : MonoBehaviour {
 	void Update () {
 		if (!mcontrol.game_mode_Single) { // Multiplayer
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
-				float height = 0f;
-				if(Move_Left)
-				{
-					current_gameobject.transform.position += Vector3.left * 0.1f;
-				}
+				if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
+					if (Move_Left) {
+						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+						Vector3 current_world_size = local_sprite_size;
+						current_world_size.x *= Bg.transform.lossyScale.x;
 
-				if(Move_Right)
-				{
-					current_gameobject.transform.position += Vector3.right * 0.1f;
+						Vector3 new_pos = current_gameobject.transform.position + (Vector3.left * 0.1f);
+						if (new_pos.x > -PCam_Width / 2 + current_world_size.x / 2) {
+							current_gameobject.transform.position = new_pos;
+							//current_gameobject.transform.position += Vector3.left * 0.1f;
+						}
+					}
+
+					if (Move_Right) {
+						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+						Vector3 current_world_size = local_sprite_size;
+						current_world_size.x *= Bg.transform.lossyScale.x;
+
+						Vector3 new_pos = current_gameobject.transform.position + (Vector3.right * 0.1f);
+						if (new_pos.x < PCam_Width / 2 - current_world_size.x / 2) {
+							current_gameobject.transform.position = new_pos;
+							//current_gameobject.transform.position += Vector3.right * 0.1f;
+						}
+					}
 				}
 
 				if (this.tag == "Player1") {
-					height = 2f * P1Cam.GetComponent<Camera>().orthographicSize;
-
 					Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
 					// Limit the camera within the background zone
-					if ((new_pos.y < bg_world_size.y * num_bg - height - height / 2) && (new_pos.y > -height / 2)) {	
+					if ((new_pos.y < bg_world_size.y * num_bg - PCam_Height - PCam_Height / 2) && (new_pos.y > -PCam_Height / 2)) {	
 						P1Cam.transform.position = new Vector3 (P1Cam.transform.position.x, new_pos.y, P1Cam.transform.position.z);
 					}
 				}
 				if (this.tag == "Player2") {
-					height = 2f * P2Cam.GetComponent<Camera> ().orthographicSize;
-
 					Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, -2, -10);
 					// Limit the camera within the background zone
-					if ((new_pos.y > -height / 2) && (new_pos.y < bg_world_size.y * num_bg - height - height / 2)) {	
+					if ((new_pos.y > -PCam_Height / 2) && (new_pos.y < bg_world_size.y * num_bg - PCam_Height - PCam_Height / 2)) {	
 						P2Cam.transform.position = new Vector3 (P2Cam.transform.position.x, new_pos.y, P2Cam.transform.position.z);;
 					}
 				}
@@ -144,6 +165,14 @@ public class Camera_Control : MonoBehaviour {
 			camera_switch_no = nbBullet;
 		}
 
+		if (camera_switch_no > 0 && current_gameobject == all_bullets [camera_switch_no - 1]) {
+			while (current_gameobject == all_bullets [camera_switch_no - 1]) {
+				camera_switch_no--;
+				if (camera_switch_no <= 0)
+					break;
+			}
+		}
+
 		if (camera_switch_no > 0) {
 			current_gameobject = all_bullets [camera_switch_no - 1];
 			mcontrol.move_player = false;
@@ -169,6 +198,14 @@ public class Camera_Control : MonoBehaviour {
 			// Find all gameobject with tag : bullet_2
 			all_bullets = GameObject.FindGameObjectsWithTag ("Bullet_2");
 			nbBullet = all_bullets.Length;
+		}
+
+		if (camera_switch_no <= nbBullet && current_gameobject == all_bullets [camera_switch_no - 1]) {
+			while (current_gameobject == all_bullets [camera_switch_no - 1]) {
+				camera_switch_no++;
+				if (camera_switch_no > nbBullet)
+					break;
+			}
 		}
 
 		if (camera_switch_no > nbBullet) {
