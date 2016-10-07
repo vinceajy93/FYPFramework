@@ -80,27 +80,30 @@ public class Bullet_Movement : MonoBehaviour {
 		if (coll.gameObject.CompareTag("Bullet_1")) {
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 
 			coll.gameObject.tag = "Bullet_Rest";
 			coll.gameObject.transform.position = Bullet_Rest.transform.position;
-			coll.gameObject.transform.parent = Bullet_Rest.transform;
+			coll.gameObject.transform.SetParent(Bullet_Rest.transform);
 		}
 		//bullet 2
 		if (coll.gameObject.CompareTag("Bullet_2")) {
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 
 			coll.gameObject.tag = "Bullet_Rest";
 			coll.gameObject.transform.position = Bullet_Rest.transform.position;
-			coll.gameObject.transform.parent = Bullet_Rest.transform;
+			coll.gameObject.transform.SetParent(Bullet_Rest.transform);
 		}
 		//wall 1
 		if(coll.gameObject.CompareTag("player1_wall")){
+			_HealthManager.objHealth = HealthManager.ObjectsHealth.wall1;
+			_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 		}
 		//wall 2
 		if(coll.gameObject.CompareTag("player2_wall")){
@@ -109,7 +112,7 @@ public class Bullet_Movement : MonoBehaviour {
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 		}
 		//player 1
 		if(coll.gameObject.CompareTag("Player1") && this.tag != "Bullet_1"){
@@ -118,7 +121,7 @@ public class Bullet_Movement : MonoBehaviour {
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 
 		}
 		//player 2
@@ -128,7 +131,7 @@ public class Bullet_Movement : MonoBehaviour {
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
-			gameObject.transform.parent = Bullet_Rest.transform;
+			gameObject.transform.SetParent(Bullet_Rest.transform);
 		}
 	}
 }

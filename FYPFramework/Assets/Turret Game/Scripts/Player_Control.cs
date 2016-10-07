@@ -28,16 +28,19 @@ public class Player_Control : MonoBehaviour {
 
 	private Mode_Control mcontrol;
 
+	private Animator Turret_anim;
+
 	// Use this for initialization
 	void Start () {
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
-
+		Turret_anim = GetComponent<Animator> ();
 		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (mcontrol.game_mode_Single) {
 			//game_mode_Single = true;
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
+
 		}
 
 		shoot_location = this.transform.Find ("bullet_pos").gameObject;
@@ -47,7 +50,8 @@ public class Player_Control : MonoBehaviour {
 		for (int i = 0; i < 10; i++) {
 			GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
 			new_clone.tag = "Bullet_Rest";
-			new_clone.transform.parent = GameObject.Find ("Bullet_Rest").transform;
+			//new_clone.transform.parent = GameObject.Find ("Bullet_Rest").transform;
+			new_clone.transform.SetParent(GameObject.Find ("Bullet_Rest").transform);
 		}
 	}
 	
@@ -86,6 +90,7 @@ public class Player_Control : MonoBehaviour {
 						phase = TouchPhase.Ended;
 					}
 
+
 					switch (phase) {
 					case TouchPhase.Began:
 						if (this.tag == "Player1") {
@@ -107,8 +112,17 @@ public class Player_Control : MonoBehaviour {
 							button_count += 1;
 							button_cooldown = set_cooldown;
 							if (button_count > 1) {
+								
+								//reset to turret idle animation
+								//Turret_anim.SetInteger("turretState", 0);
+
+
+
 								Shoot ();
 								button_count = 0;
+
+
+
 							}
 						}
 						break;
@@ -223,7 +237,7 @@ public class Player_Control : MonoBehaviour {
 	{
 		Vector3 shoot_position = shoot_location.transform.position;
 		GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
-		new_bullet.transform.parent = null;
+		new_bullet.transform.SetParent( null);
 		new_bullet.transform.position = shoot_position;
 		new_bullet.transform.rotation = shoot_location.transform.rotation;
 		if (new_bullet != null) {
