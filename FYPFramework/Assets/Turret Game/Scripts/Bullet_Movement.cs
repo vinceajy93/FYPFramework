@@ -59,7 +59,7 @@ public class Bullet_Movement : MonoBehaviour {
 			if (gameObject.transform.position.y > object_max_height) {
 				gameObject.tag = "Bullet_Rest";
 				gameObject.transform.position = Bullet_Rest.transform.position;
-				gameObject.transform.parent = Bullet_Rest.transform;
+				gameObject.transform.SetParent(Bullet_Rest.transform);
 			}
 		} 
 		else if (gameObject.tag == "Bullet_2") {
@@ -69,7 +69,7 @@ public class Bullet_Movement : MonoBehaviour {
 			if (gameObject.transform.position.y < (-cam_height / 2)) {
 				gameObject.tag = "Bullet_Rest";
 				gameObject.transform.position = Bullet_Rest.transform.position;
-				gameObject.transform.parent = Bullet_Rest.transform;
+				gameObject.transform.SetParent(Bullet_Rest.transform);
 			}
 		}
 			

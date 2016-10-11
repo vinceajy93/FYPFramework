@@ -36,6 +36,9 @@ public class Player_Control : MonoBehaviour
 	float fireRate = 1.0f;
 	float nextFire = 0.0f;
 
+	private GameObject Reload;
+	private bool Reload_Complete = true;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -48,6 +51,15 @@ public class Player_Control : MonoBehaviour
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
 
+			if (this.tag == "Player1") {
+				Reload = GameObject.Find ("Reload P1");
+				Reload.SetActive (false);
+			}
+
+			if (this.tag == "Player2") {
+				Reload = GameObject.Find ("Reload P2");
+				Reload.SetActive (false);
+			}
 		}
 
 		shoot_location = this.transform.Find ("bullet_pos").gameObject;
@@ -82,6 +94,16 @@ public class Player_Control : MonoBehaviour
 		if (!GameObject.Find ("Scripts").GetComponent<Overlay_Control> ().PanelisActive) {
 
 			Control (width, height, player_world_size);	
+		}
+
+		if (Reload.activeSelf) {
+			if (Reload.GetComponent<RectTransform> ().localScale.x > 0) {
+				Reload.GetComponent<RectTransform> ().localScale += Vector3.left * 0.01f;
+			}
+			else {
+				Reload.SetActive (false);
+				Reload_Complete = true;
+			}
 		}
 	}
 
@@ -126,6 +148,10 @@ public class Player_Control : MonoBehaviour
 								if (Time.time > nextFire) {
 									nextFire = Time.time + fireRate;
 									Shoot ();
+
+									Reload.SetActive (true);
+									Reload.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
+									Reload_Complete = false;
 								}
 								button_count = 0;
 							}

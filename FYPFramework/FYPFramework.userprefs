@@ -2,6 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Player_Control.cs">
     <Files>
+<<<<<<< d839462846eb12d0d36cf2a5c8b717d0e8172416
       <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="177" Column="8" />
       <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="65" Column="38" />
       <File FileName="Assets\Turret Game\Scripts\Health\HealthManager.cs" Line="1" Column="1" />
@@ -10,6 +11,15 @@
       <File FileName="Assets\Turret Game\Scripts\Indicator.cs" Line="1" Column="1" />
       <File FileName="Assets\Turret Game\Scripts\Health\BarScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Turret Game\Scripts\Camera_Control.cs" Line="120" Column="46" />
+=======
+      <File FileName="Assets\Turret Game\Scripts\Health\BarScript.cs" Line="32" Column="2" />
+      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="62" Column="58" />
+      <File FileName="Assets\Turret Game\Scripts\Health\Stat.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="91" Column="76" />
+      <File FileName="Assets\Turret Game\Scripts\Health\HealthManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Indicator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Camera_Control.cs" Line="1" Column="1" />
+>>>>>>> 5ea11527b0c1efa739c471a81b78c7464b6ed10c
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

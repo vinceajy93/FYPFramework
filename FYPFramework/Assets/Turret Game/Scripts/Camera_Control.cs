@@ -118,15 +118,32 @@ public class Camera_Control : MonoBehaviour {
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				Camera cam = Camera.main;
 				float height = 2f * cam.orthographicSize;
+				float width = height * Camera.main.GetComponent<Camera> ().aspect;
 
-				if(Move_Left)
-				{
-					current_gameobject.transform.position += Vector3.left * 0.1f;
+				if (Move_Left) {
+					Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+					Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+					Vector3 current_world_size = local_sprite_size;
+					current_world_size.x *= Bg.transform.lossyScale.x;
+
+					Vector3 new_pos2 = current_gameobject.transform.position + (Vector3.left * 0.1f);
+					if (new_pos2.x > - width / 2 + current_world_size.x / 2) {
+						current_gameobject.transform.position = new_pos2;
+						//current_gameobject.transform.position += Vector3.left * 0.1f;
+					}
 				}
 
-				if(Move_Right)
-				{
-					current_gameobject.transform.position += Vector3.right * 0.1f;
+				if (Move_Right) {
+					Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+					Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+					Vector3 current_world_size = local_sprite_size;
+					current_world_size.x *= Bg.transform.lossyScale.x;
+
+					Vector3 new_pos2 = current_gameobject.transform.position + (Vector3.right * 0.1f);
+					if (new_pos2.x < width / 2 - current_world_size.x / 2) {
+						current_gameobject.transform.position = new_pos2;
+						//current_gameobject.transform.position += Vector3.right * 0.1f;
+					}
 				}
 
 				Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
