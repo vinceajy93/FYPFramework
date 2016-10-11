@@ -72,6 +72,11 @@ public class Bullet_Movement : MonoBehaviour {
 				gameObject.transform.parent = Bullet_Rest.transform;
 			}
 		}
+
+		//for testing purpose (remove when done)
+		if(Input.GetKeyDown(KeyCode.W)){
+			Debug.Log (_HealthManager.obstacle1_health);
+		}
 	}
 
 	// "Destroy" by placing them back to bullet_rest gameobject
@@ -132,6 +137,46 @@ public class Bullet_Movement : MonoBehaviour {
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
 			gameObject.transform.SetParent(Bullet_Rest.transform);
+		}
+		//obstacle 1
+		if (coll.gameObject.CompareTag ("Obstacle")) {
+
+			if (coll.gameObject.name == "OBSTY TEST") {
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle1;
+
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
+				if (_HealthManager.obstacle1_health <= 0)
+					Destroy (coll.gameObject);
+				
+			} else if (coll.gameObject.name == "OBSTY TEST 2") {
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle2;
+
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
+				if (_HealthManager.obstacle2_health <= 0)
+					Destroy (coll.gameObject);
+				
+			} else if (coll.gameObject.name == "OBSTY TEST 3") {
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle3;
+
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
+				if (_HealthManager.obstacle3_health <= 0)
+					Destroy (coll.gameObject);
+				
+			} else if (coll.gameObject.name == "OBSTY TEST 4") {
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle4;
+
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
+				if(_HealthManager.obstacle4_health <= 0)
+					Destroy (coll.gameObject);
+			}
+
+			gameObject.tag = "Bullet_Rest";
+			gameObject.transform.position = Bullet_Rest.transform.position;
+			gameObject.transform.SetParent (Bullet_Rest.transform);
 		}
 	}
 }

@@ -24,7 +24,7 @@ public class Level_Control : MonoBehaviour {
 
 	//load the campaign scene
 	public void loadCampaign(){
-		//SceneManager.LoadScene ("Loadout");
+		SceneManager.LoadScene ("Single");
 	}
 	//load the loadout scene
 	public void loadLoadout(){
@@ -44,6 +44,11 @@ public class Level_Control : MonoBehaviour {
 	//load the options scene
 	public void loadOptions(){
 		SceneManager.LoadScene ("Options");
+	}
+
+	//load the Stage select scene
+	public void loadStageSelect(){
+		SceneManager.LoadScene ("Stage_Select");
 	}
 
 	//Local 2 - player

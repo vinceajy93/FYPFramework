@@ -36,6 +36,6 @@ C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\Temp\bin\Debug\UnityEngine.
 C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\Temp\bin\Debug\UnityEditor.xml
 C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\obj\Debug\Assembly-CSharp.dll
 C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\obj\Debug\Assembly-CSharp.pdb
-C:\Users\vincent's\Desktop\FYPFramework\FYPFramework\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

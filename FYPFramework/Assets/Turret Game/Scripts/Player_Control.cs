@@ -73,6 +73,7 @@ public class Player_Control : MonoBehaviour {
 		if(!GameObject.Find("Scripts").GetComponent<Overlay_Control>().PanelisActive){
 			Control (width, height, player_world_size);	
 		}
+
 	}
 		
 	void Control(float width, float height, Vector3 player_world_size)
@@ -112,17 +113,8 @@ public class Player_Control : MonoBehaviour {
 							button_count += 1;
 							button_cooldown = set_cooldown;
 							if (button_count > 1) {
-								
-								//reset to turret idle animation
-								//Turret_anim.SetInteger("turretState", 0);
-
-
-
 								Shoot ();
 								button_count = 0;
-
-
-
 							}
 						}
 						break;
@@ -235,6 +227,7 @@ public class Player_Control : MonoBehaviour {
 
 	void Shoot()
 	{
+		Turret_anim.SetInteger ("turretState", 1);
 		Vector3 shoot_position = shoot_location.transform.position;
 		GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
 		new_bullet.transform.SetParent( null);
@@ -249,5 +242,13 @@ public class Player_Control : MonoBehaviour {
 				new_bullet.tag = "Bullet_2";
 			}
 		}
+	}
+
+	public void PlayAnimationIdle(){
+
+		//reset the animation to idle
+		//to be called in the animation_fire
+
+		Turret_anim.SetInteger("turretState" ,0);
 	}
 }

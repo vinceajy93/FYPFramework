@@ -8,7 +8,7 @@ public class Overlay_Control : MonoBehaviour
 	private GameObject panel;
 	private Text p1Timer;
 	private Text p2Timer;
-	float countdownTimer = 3.5f; //change this time for debugging
+	float countdownTimer = 0.5f; //change this time for debugging
 	public bool PanelisActive = true;
 	private bool P1Touched, P2Touched = false;
 

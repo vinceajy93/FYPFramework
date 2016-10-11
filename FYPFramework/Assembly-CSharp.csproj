@@ -64,6 +64,8 @@
      <Compile Include="Assets\Turret Game\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Camera_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\CombatText.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\CombatTextManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Health\BarScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Health\HealthManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Health\Stat.cs" />
