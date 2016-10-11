@@ -72,11 +72,7 @@ public class Bullet_Movement : MonoBehaviour {
 				gameObject.transform.parent = Bullet_Rest.transform;
 			}
 		}
-
-		//for testing purpose (remove when done)
-		if(Input.GetKeyDown(KeyCode.W)){
-			Debug.Log (_HealthManager.obstacle1_health);
-		}
+			
 	}
 
 	// "Destroy" by placing them back to bullet_rest gameobject

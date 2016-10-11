@@ -7,14 +7,16 @@ using UnityEngine.UI;
  * 					different dragging code depending on the mode
  * 
 */
-public class Player_Control : MonoBehaviour {
+public class Player_Control : MonoBehaviour
+{
 
 	// Check mouse and player's turret position
 	private bool overSprite = false;
 	private Vector3 offset;
 
 	// Check interver between each mouse down
-	private const float set_cooldown = 0.5f; //half a sec
+	private const float set_cooldown = 0.5f;
+	//half a sec
 	private float button_cooldown = 0f;
 	private int button_count = 0;
 
@@ -30,8 +32,13 @@ public class Player_Control : MonoBehaviour {
 
 	private Animator Turret_anim;
 
+	//bullet cooldown
+	float fireRate = 1.0f;
+	float nextFire = 0.0f;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
 		Turret_anim = GetComponent<Animator> ();
 		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
@@ -46,17 +53,19 @@ public class Player_Control : MonoBehaviour {
 		shoot_location = this.transform.Find ("bullet_pos").gameObject;
 	}
 
-	void Awake() {
+	void Awake ()
+	{
 		for (int i = 0; i < 10; i++) {
 			GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
 			new_clone.tag = "Bullet_Rest";
 			//new_clone.transform.parent = GameObject.Find ("Bullet_Rest").transform;
-			new_clone.transform.SetParent(GameObject.Find ("Bullet_Rest").transform);
+			new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
 		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		// Get Camera's width and height (only in orthographic mode)
 		Camera cam = Camera.main;
 		float height = 2f * cam.orthographicSize;
@@ -70,13 +79,13 @@ public class Player_Control : MonoBehaviour {
 		player_world_size.y *= this.transform.lossyScale.y;
 
 		//Allow players to play only when overlay panel is gone
-		if(!GameObject.Find("Scripts").GetComponent<Overlay_Control>().PanelisActive){
+		if (!GameObject.Find ("Scripts").GetComponent<Overlay_Control> ().PanelisActive) {
+
 			Control (width, height, player_world_size);	
 		}
-
 	}
-		
-	void Control(float width, float height, Vector3 player_world_size)
+
+	void Control (float width, float height, Vector3 player_world_size)
 	{
 		if (!mcontrol.game_mode_Single) { //multiplayer
 			int nbTouches = Input.touchCount;
@@ -113,7 +122,11 @@ public class Player_Control : MonoBehaviour {
 							button_count += 1;
 							button_cooldown = set_cooldown;
 							if (button_count > 1) {
-								Shoot ();
+
+								if (Time.time > nextFire) {
+									nextFire = Time.time + fireRate;
+									Shoot ();
+								}
 								button_count = 0;
 							}
 						}
@@ -158,7 +171,10 @@ public class Player_Control : MonoBehaviour {
 					button_cooldown = set_cooldown;
 
 					if (button_count > 1) {
-						Shoot ();
+						if (Time.time > nextFire) {
+							nextFire = Time.time + fireRate;
+							Shoot ();
+						}
 						button_count = 0;
 					}
 				}
@@ -180,7 +196,7 @@ public class Player_Control : MonoBehaviour {
 	}
 
 	//Single PLayer Dragging
-	void Dragging(float width, float height, Vector3 player_world_size)
+	void Dragging (float width, float height, Vector3 player_world_size)
 	{
 		// Dragging of Player turret
 		Vector3 prev_pos = this.transform.position;
@@ -206,13 +222,13 @@ public class Player_Control : MonoBehaviour {
 	}
 
 	//Multiplayer Dragging : Added Touch_position to deduce repeated calculation
-	void Dragging_touch(float width, float height, Vector3 player_world_size, Vector2 touch_position)
+	void Dragging_touch (float width, float height, Vector3 player_world_size, Vector2 touch_position)
 	{
 		Vector3 prev_pos = this.transform.position;
-		Vector3 new_pos = new Vector3(touch_position.x, prev_pos.y, prev_pos.z);
+		Vector3 new_pos = new Vector3 (touch_position.x, prev_pos.y, prev_pos.z);
 
 		if (new_pos.x >= -width / 2 + player_world_size.x / 2 &&
-			new_pos.x <= width / 2 - player_world_size.x / 2) {
+		    new_pos.x <= width / 2 - player_world_size.x / 2) {
 			this.transform.position = new_pos;
 		} else { 
 			if (new_pos.x < -width / 2 + player_world_size.x / 2) {
@@ -225,12 +241,12 @@ public class Player_Control : MonoBehaviour {
 		} 
 	}
 
-	void Shoot()
+	void Shoot ()
 	{
 		Turret_anim.SetInteger ("turretState", 1);
 		Vector3 shoot_position = shoot_location.transform.position;
 		GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
-		new_bullet.transform.SetParent( null);
+		new_bullet.transform.SetParent (null);
 		new_bullet.transform.position = shoot_position;
 		new_bullet.transform.rotation = shoot_location.transform.rotation;
 		if (new_bullet != null) {
@@ -244,11 +260,12 @@ public class Player_Control : MonoBehaviour {
 		}
 	}
 
-	public void PlayAnimationIdle(){
+	public void PlayAnimationIdle ()
+	{
 
 		//reset the animation to idle
 		//to be called in the animation_fire
 
-		Turret_anim.SetInteger("turretState" ,0);
+		Turret_anim.SetInteger ("turretState", 0);
 	}
 }
