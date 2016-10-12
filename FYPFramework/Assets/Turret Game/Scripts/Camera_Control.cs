@@ -64,7 +64,11 @@ public class Camera_Control : MonoBehaviour {
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
 					if (Move_Left) {
-						animator.SetBool ("Left", true);
+						if (current_gameobject.tag == "Bullet_1")
+							animator.SetBool ("Right", true);
+
+						if (current_gameobject.tag == "Bullet_2")
+							animator.SetBool ("Left", true);
 						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 						Vector3 current_world_size = local_sprite_size;
@@ -78,7 +82,11 @@ public class Camera_Control : MonoBehaviour {
 					}
 
 					if (Move_Right) {
-						animator.SetBool ("Right", true);
+						if (current_gameobject.tag == "Bullet_1")
+							animator.SetBool ("Left", true);
+
+						if (current_gameobject.tag == "Bullet_2")
+							animator.SetBool ("Right", true);
 						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 						Vector3 current_world_size = local_sprite_size;
@@ -262,8 +270,13 @@ public class Camera_Control : MonoBehaviour {
 		Move_Left = true;
 
 		if (animator != null) {
-			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
-				animator.SetBool ("Left", true);
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
+				if (current_gameobject.tag == "Bullet_1")
+					animator.SetBool ("Right", true);
+				
+				if (current_gameobject.tag == "Bullet_2")
+					animator.SetBool ("Left", true);
+			}
 			else {
 				animator.SetBool ("Left", false);
 				animator.SetBool ("Right", false);
@@ -276,8 +289,13 @@ public class Camera_Control : MonoBehaviour {
 		Move_Left = false;
 
 		if (animator != null) {
-			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
-				animator.SetBool ("Left", false);
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
+				if (current_gameobject.tag == "Bullet_1")
+					animator.SetBool ("Right", false);
+
+				if (current_gameobject.tag == "Bullet_2")
+					animator.SetBool ("Left", false);
+			}
 			else {
 				animator.SetBool ("Left", false);
 				animator.SetBool ("Right", false);
@@ -290,8 +308,13 @@ public class Camera_Control : MonoBehaviour {
 		Move_Right = true;
 
 		if (animator != null) {
-			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
-				animator.SetBool ("Right", true);
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
+				if (current_gameobject.tag == "Bullet_1")
+					animator.SetBool ("Left", true);
+
+				if (current_gameobject.tag == "Bullet_2")
+					animator.SetBool ("Right", true);
+			}
 			else {
 				animator.SetBool ("Left", false);
 				animator.SetBool ("Right", false);
@@ -304,8 +327,13 @@ public class Camera_Control : MonoBehaviour {
 		Move_Right = false;
 
 		if (animator != null) {
-			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
-				animator.SetBool ("Right", false);
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
+				if (current_gameobject.tag == "Bullet_1")
+					animator.SetBool ("Left", false);
+
+				if (current_gameobject.tag == "Bullet_2")
+					animator.SetBool ("Right", false);
+			}
 			else {
 				animator.SetBool ("Left", false);
 				animator.SetBool ("Right", false);
