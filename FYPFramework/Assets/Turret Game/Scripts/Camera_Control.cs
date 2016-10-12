@@ -27,6 +27,7 @@ public class Camera_Control : MonoBehaviour {
 	private Mode_Control mcontrol;
 	private bool Move_Left = false;
 	private bool Move_Right = false;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +64,7 @@ public class Camera_Control : MonoBehaviour {
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
 					if (Move_Left) {
+						animator.SetBool ("Left", true);
 						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 						Vector3 current_world_size = local_sprite_size;
@@ -76,6 +78,7 @@ public class Camera_Control : MonoBehaviour {
 					}
 
 					if (Move_Right) {
+						animator.SetBool ("Right", true);
 						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 						Vector3 current_world_size = local_sprite_size;
@@ -87,6 +90,9 @@ public class Camera_Control : MonoBehaviour {
 							//current_gameobject.transform.position += Vector3.right * 0.1f;
 						}
 					}
+				} else {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
 				}
 
 				if (this.tag == "Player1") {
@@ -190,11 +196,19 @@ public class Camera_Control : MonoBehaviour {
 			}
 		}
 
+		if (animator != null) {
+			animator = current_gameobject.GetComponent<Animator> ();
+			animator.SetBool ("Left", false);
+			animator.SetBool ("Right", false);
+		}
+
 		if (camera_switch_no > 0) {
 			current_gameobject = all_bullets [camera_switch_no - 1];
+			animator = current_gameobject.GetComponent<Animator> ();
 			mcontrol.move_player = false;
 		} else {
 			current_gameobject = null;
+			animator = null;
 			mcontrol.move_player = true;
 		}
 	}
@@ -225,12 +239,20 @@ public class Camera_Control : MonoBehaviour {
 			}
 		}
 
+		if (animator != null) {
+			animator = current_gameobject.GetComponent<Animator> ();
+			animator.SetBool ("Left", false);
+			animator.SetBool ("Right", false);
+		}
+
 		if (camera_switch_no > nbBullet) {
 			camera_switch_no = 0;
 			current_gameobject = null;
+			animator = null;
 			mcontrol.move_player = true;
 		} else {
 			current_gameobject = all_bullets [camera_switch_no - 1];
+			animator = current_gameobject.GetComponent<Animator> ();
 			mcontrol.move_player = false;
 		}
 	}
@@ -238,20 +260,56 @@ public class Camera_Control : MonoBehaviour {
 	public void BulletMove_PressDown_Left()
 	{
 		Move_Left = true;
+
+		if (animator != null) {
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
+				animator.SetBool ("Left", true);
+			else {
+				animator.SetBool ("Left", false);
+				animator.SetBool ("Right", false);
+			}
+		}
 	}
 
 	public void BulletMove_PressUp_Left()
 	{
 		Move_Left = false;
+
+		if (animator != null) {
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
+				animator.SetBool ("Left", false);
+			else {
+				animator.SetBool ("Left", false);
+				animator.SetBool ("Right", false);
+			}
+		}
 	}
 
 	public void BulletMove_PressDown_Right()
 	{
 		Move_Right = true;
+
+		if (animator != null) {
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
+				animator.SetBool ("Right", true);
+			else {
+				animator.SetBool ("Left", false);
+				animator.SetBool ("Right", false);
+			}
+		}
 	}
 
 	public void BulletMove_PressUp_Right()
 	{
 		Move_Right = false;
+
+		if (animator != null) {
+			if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
+				animator.SetBool ("Right", false);
+			else {
+				animator.SetBool ("Left", false);
+				animator.SetBool ("Right", false);
+			}
+		}
 	}
 }

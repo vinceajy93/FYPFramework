@@ -37,7 +37,7 @@ public class Player_Control : MonoBehaviour
 	float nextFire = 0.0f;
 
 	private GameObject Reload;
-	private bool Reload_Complete = true;
+	private Image Reload_Alpha;
 
 	// Use this for initialization
 	void Start ()
@@ -47,18 +47,30 @@ public class Player_Control : MonoBehaviour
 		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (mcontrol.game_mode_Single) {
 			//game_mode_Single = true;
+			if (GameObject.Find ("Reload") != null) {
+				Reload = GameObject.Find ("Reload");
+				Reload.GetComponent<Slider> ().minValue = 0;
+				Reload.GetComponent<Slider> ().maxValue = -1;
+				Reload_Alpha = Reload.transform.GetChild (1).GetChild(0).GetComponent<Image> ();
+			}
 		} else {
 			P2Cam = GameObject.Find ("Top Camera").GetComponent<Camera> ();
 			P1Cam = GameObject.Find ("Bottom Camera").GetComponent<Camera> ();
 
-			if (this.tag == "Player1") {
+			if (this.tag == "Player1" && GameObject.Find ("Reload P1") != null) {
 				Reload = GameObject.Find ("Reload P1");
-				Reload.SetActive (false);
+
+				Reload.GetComponent<Slider> ().minValue = 0;
+				Reload.GetComponent<Slider> ().maxValue = -1;
+				Reload_Alpha = Reload.transform.GetChild (1).GetChild(0).GetComponent<Image> ();
 			}
 
-			if (this.tag == "Player2") {
+			if (this.tag == "Player2" && GameObject.Find ("Reload P2") != null) {
 				Reload = GameObject.Find ("Reload P2");
-				Reload.SetActive (false);
+
+				Reload.GetComponent<Slider> ().minValue = 0;
+				Reload.GetComponent<Slider> ().maxValue = -1;
+				Reload_Alpha = Reload.transform.GetChild (1).GetChild(0).GetComponent<Image> ();
 			}
 		}
 
@@ -93,16 +105,10 @@ public class Player_Control : MonoBehaviour
 		//Allow players to play only when overlay panel is gone
 		if (!GameObject.Find ("Scripts").GetComponent<Overlay_Control> ().PanelisActive) {
 
-			Control (width, height, player_world_size);	
-		}
+			Control (width, height, player_world_size);
 
-		if (Reload.activeSelf) {
-			if (Reload.GetComponent<RectTransform> ().localScale.x > 0) {
-				Reload.GetComponent<RectTransform> ().localScale += Vector3.left * 0.01f;
-			}
-			else {
-				Reload.SetActive (false);
-				Reload_Complete = true;
+			if (Reload.GetComponent<Slider> ().value < Reload.GetComponent<Slider> ().maxValue) {
+				Reload.GetComponent<Slider> ().value = Time.time;
 			}
 		}
 	}
@@ -147,11 +153,11 @@ public class Player_Control : MonoBehaviour
 
 								if (Time.time > nextFire) {
 									nextFire = Time.time + fireRate;
+									Reload.GetComponent<Slider> ().minValue = Time.time;
+									Reload.GetComponent<Slider> ().maxValue = nextFire;
+									Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
+									Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
 									Shoot ();
-
-									Reload.SetActive (true);
-									Reload.GetComponent<RectTransform> ().localScale = new Vector3 (1, 1, 1);
-									Reload_Complete = false;
 								}
 								button_count = 0;
 							}
@@ -199,6 +205,10 @@ public class Player_Control : MonoBehaviour
 					if (button_count > 1) {
 						if (Time.time > nextFire) {
 							nextFire = Time.time + fireRate;
+							Reload.GetComponent<Slider> ().minValue = Time.time;
+							Reload.GetComponent<Slider> ().maxValue = nextFire;
+							Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
+							Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
 							Shoot ();
 						}
 						button_count = 0;
