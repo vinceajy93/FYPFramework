@@ -18,7 +18,7 @@ public class Level_Control : MonoBehaviour {
 	}
 
 	//load the play scene
-	public void loadPlay(){
+	public void loadModeSelect(){
 		SceneManager.LoadScene ("Mode Selection");
 	}
 

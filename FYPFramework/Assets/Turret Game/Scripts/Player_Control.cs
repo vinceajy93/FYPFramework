@@ -29,7 +29,7 @@ public class Player_Control : MonoBehaviour
 	private GameObject shoot_location;
 
 	private Mode_Control mcontrol;
-
+	private PauseScript _pauseScript;
 	private Animator Turret_anim;
 
 	//bullet cooldown
@@ -39,10 +39,16 @@ public class Player_Control : MonoBehaviour
 	private GameObject Reload;
 	private Image Reload_Alpha;
 
+
+	//deltaTime
+	private float delTime;
+
 	// Use this for initialization
 	void Start ()
 	{
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
+		_pauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
+
 		Turret_anim = GetComponent<Animator> ();
 		//m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
 		if (mcontrol.game_mode_Single) {
@@ -86,7 +92,7 @@ public class Player_Control : MonoBehaviour
 			new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -103,14 +109,16 @@ public class Player_Control : MonoBehaviour
 		player_world_size.y *= this.transform.lossyScale.y;
 
 		//Allow players to play only when overlay panel is gone
-		if (!GameObject.Find ("Scripts").GetComponent<Overlay_Control> ().PanelisActive) {
+		if (!GameObject.Find ("Scripts").GetComponent<Overlay_Control> ().PanelisActive && _pauseScript.Paused == false) {
 
+			delTime += Time.deltaTime;
 			Control (width, height, player_world_size);
-
+		
 			if (Reload.GetComponent<Slider> ().value < Reload.GetComponent<Slider> ().maxValue) {
-				Reload.GetComponent<Slider> ().value = Time.time;
+				Reload.GetComponent<Slider> ().value = delTime;
 			}
 		}
+			
 	}
 
 	void Control (float width, float height, Vector3 player_world_size)
@@ -151,9 +159,9 @@ public class Player_Control : MonoBehaviour
 							button_cooldown = set_cooldown;
 							if (button_count > 1) {
 
-								if (Time.time > nextFire) {
-									nextFire = Time.time + fireRate;
-									Reload.GetComponent<Slider> ().minValue = Time.time;
+								if (delTime > nextFire) {
+									nextFire = delTime + fireRate;
+									Reload.GetComponent<Slider> ().minValue = delTime;
 									Reload.GetComponent<Slider> ().maxValue = nextFire;
 									Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
 									Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
@@ -203,9 +211,9 @@ public class Player_Control : MonoBehaviour
 					button_cooldown = set_cooldown;
 
 					if (button_count > 1) {
-						if (Time.time > nextFire) {
-							nextFire = Time.time + fireRate;
-							Reload.GetComponent<Slider> ().minValue = Time.time;
+						if (delTime > nextFire) {
+							nextFire = delTime + fireRate;
+							Reload.GetComponent<Slider> ().minValue = delTime;
 							Reload.GetComponent<Slider> ().maxValue = nextFire;
 							Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
 							Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);

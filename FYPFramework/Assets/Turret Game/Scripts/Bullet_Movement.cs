@@ -12,7 +12,7 @@ public class Bullet_Movement : MonoBehaviour {
 
 	private HealthManager _HealthManager;
 
-	public Text debugtext;
+	//public Text debugtext;
 	private GameObject Bg;
 	private int num_bg;
 
@@ -25,9 +25,12 @@ public class Bullet_Movement : MonoBehaviour {
 
 	private GameObject Bullet_Rest;
 
+	private PauseScript _pauseScript;
+
 	// Use this for initialization
 	void Start () {
-
+		//pass by reference from pauseScript
+		_pauseScript = GameObject.Find("Scripts").GetComponent<PauseScript>();
 		//pass by reference from health Manaager
 		_HealthManager = GameObject.Find("Scripts").GetComponent<HealthManager>();
 
@@ -51,25 +54,27 @@ public class Bullet_Movement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//Bullet movement, Delete if outside of background (Y axis)
-		if (gameObject.tag == "Bullet_1") {
-			gameObject.transform.localPosition += Vector3.up * 0.1f;
+		if (_pauseScript.Paused == false) {
 
-			// "Destroy" by placing them back to bullet_rest gameobject
-			if (gameObject.transform.position.y > object_max_height) {
-				gameObject.tag = "Bullet_Rest";
-				gameObject.transform.position = Bullet_Rest.transform.position;
-				gameObject.transform.SetParent(Bullet_Rest.transform);
-			}
-		} 
-		else if (gameObject.tag == "Bullet_2") {
-			gameObject.transform.localPosition += Vector3.down * 0.1f;
+			//Bullet movement, Delete if outside of background (Y axis)
+			if (gameObject.tag == "Bullet_1") {
+				gameObject.transform.localPosition += Vector3.up * 0.1f;
 
-			// "Destroy" by placing them back to bullet_rest gameobject
-			if (gameObject.transform.position.y < (-cam_height / 2)) {
-				gameObject.tag = "Bullet_Rest";
-				gameObject.transform.position = Bullet_Rest.transform.position;
-				gameObject.transform.SetParent(Bullet_Rest.transform);
+				// "Destroy" by placing them back to bullet_rest gameobject
+				if (gameObject.transform.position.y > object_max_height) {
+					gameObject.tag = "Bullet_Rest";
+					gameObject.transform.position = Bullet_Rest.transform.position;
+					gameObject.transform.SetParent (Bullet_Rest.transform);
+				}
+			} else if (gameObject.tag == "Bullet_2") {
+				gameObject.transform.localPosition += Vector3.down * 0.1f;
+
+				// "Destroy" by placing them back to bullet_rest gameobject
+				if (gameObject.transform.position.y < (-cam_height / 2)) {
+					gameObject.tag = "Bullet_Rest";
+					gameObject.transform.position = Bullet_Rest.transform.position;
+					gameObject.transform.SetParent (Bullet_Rest.transform);
+				}
 			}
 		}
 			

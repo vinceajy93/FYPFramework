@@ -5,17 +5,26 @@ using System.Collections;
 public class Overlay_Control : MonoBehaviour
 {
 
-	private GameObject panel;
+	public GameObject panel;
 	private Text p1Timer;
 	private Text p2Timer;
-	float countdownTimer = 0.5f; //change this time for debugging
+	public float setTimerTime = 0.5f;
+	public float countdownTimer;
+	//change this time for debugging
 	public bool PanelisActive = true;
 	private bool P1Touched, P2Touched = false;
+
+	private PauseScript _PauseScript;
 
 	// Use this for initialization
 	void Start ()
 	{
-		panel = GameObject.Find ("panel overlay");
+		//start the timer
+		countdownTimer = setTimerTime;
+
+		//panel = GameObject.Find ("panel overlay");
+		_PauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
+
 
 		//single player
 		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
@@ -29,18 +38,24 @@ public class Overlay_Control : MonoBehaviour
 			p1Timer.text = ("Player 1 place finger here!");
 			p2Timer.text = ("Player 2 place finger here!");
 		}
-
-
-
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+
+		Debug.Log ("p1 touch: " + P1Touched); 
+		Debug.Log ("p2 touch: " + P2Touched); 
 		//start countdown timer only when finger is on screen
 		CheckPress ();
 
+
+
+		//bring the overlay back to game if game is paused
+		if (_PauseScript.Paused == true) {
+			PanelisActive = true;
+		}
+			
 		//single player
 		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 			if (P1Touched == true) {
@@ -53,10 +68,10 @@ public class Overlay_Control : MonoBehaviour
 
 				Panel ();
 			}
-			//multiplayer (2P)
+		//multiplayer (2P)
 		} else {
 			if (P1Touched == true && P2Touched == true) {
-				
+
 				//countdown timer
 				countdownTimer -= Time.deltaTime;
 				//Set Panel to false when timer hits 0
@@ -71,6 +86,7 @@ public class Overlay_Control : MonoBehaviour
 	void Panel ()
 	{
 		if (PanelisActive == true) {
+
 			//single player
 			if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 				p1Timer.GetComponent<Text> ().fontSize = 120;
@@ -88,14 +104,26 @@ public class Overlay_Control : MonoBehaviour
 				p2Timer.text = p1Timer.text;
 			}
 		} else {
-			panel.SetActive (false);
+			//Set booleans back to false
+			P1Touched = false;
+			P2Touched = false;
+
+			//Deactivate the pause mode
+			_PauseScript.Paused = false;
+
+			//Set font size back to 50
+			p1Timer.GetComponent<Text> ().fontSize = 50;
+			p2Timer.GetComponent<Text> ().fontSize = 50;
+
+			//Set panel to inactive
+			panel.SetActive(false);
+
 		}
 				
 	}
 
 	void CheckPress ()
 	{
-
 		int nbTouches = Input.touchCount;
 
 		if (nbTouches > 0) {

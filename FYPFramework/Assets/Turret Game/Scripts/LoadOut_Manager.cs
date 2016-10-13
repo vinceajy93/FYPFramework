@@ -47,14 +47,13 @@ public class LoadOut_Manager : MonoBehaviour {
 	void Update () {
 		//for debugging
 		if (Input.GetKeyDown (KeyCode.W)) {
-
+			Debug.Log(EventSystem.current.currentSelectedGameObject.name);
 		}
 	}
 
 	public void togglePanels(){
 		//Get the name of the GameObject(GO) and set it to GO_Name string
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
-
 
 		switch(GO_Name){
 		case "Turret_Icon_P1":
