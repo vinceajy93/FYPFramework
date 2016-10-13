@@ -30,6 +30,9 @@ public class Indicator : Mode_Control {
 	public Sprite green;
 	public Sprite original;
 
+	// Size of Hp Bar
+	private float Hp;
+
 	// Size of Map
 	private GameObject Map;
 	private int num_Map;
@@ -73,6 +76,8 @@ public class Indicator : Mode_Control {
 		Map_world_size.y *= Map.transform.lossyScale.y;
 
 		Map_TotalHeight = Map_world_size.y * num_Map;
+
+		Hp = GameObject.Find ("Canvas/HealthBar P1").GetComponent<RectTransform>().rect.height;
 	}
 	
 	// Update is called once per frame
@@ -117,7 +122,7 @@ public class Indicator : Mode_Control {
 					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, MainCanvas_Height / 2 - canvas_indicator_height / 2);
 				} else {
 					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, canvas_indicator_height / 2);
+					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, canvas_indicator_height / 2 + Hp);
 				}
 
 				// Check sprite depending on the position of the bullet
@@ -131,7 +136,7 @@ public class Indicator : Mode_Control {
 			} else if(this.CompareTag("Bullet_2")) { // If Bullet 2, check in camera 1
 				if (this.transform.position.y > (PCam_Height / 2) + P1Cam.transform.position.y) {
 					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -canvas_indicator_height / 2);
+					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -canvas_indicator_height / 2 - Hp);
 				} else {
 					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
 					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -MainCanvas_Height / 2 + canvas_indicator_height / 2);
