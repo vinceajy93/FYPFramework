@@ -84,9 +84,23 @@ public class Bullet_Movement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		//bullet 1
 		if (coll.gameObject.CompareTag("Bullet_1")) {
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
+
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
 			gameObject.transform.SetParent(Bullet_Rest.transform);
+
+			GameObject Bullet_Destroy_2 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_2.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_2.transform.position = coll.gameObject.transform.position;
+			Bullet_Destroy_2.transform.rotation = coll.gameObject.transform.rotation;
+			Bullet_Destroy_2.GetComponent<Animator> ().SetBool ("Destroy", true);
 
 			coll.gameObject.tag = "Bullet_Rest";
 			coll.gameObject.transform.position = Bullet_Rest.transform.position;
@@ -94,9 +108,23 @@ public class Bullet_Movement : MonoBehaviour {
 		}
 		//bullet 2
 		if (coll.gameObject.CompareTag("Bullet_2")) {
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
+
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
 			gameObject.transform.SetParent(Bullet_Rest.transform);
+
+			GameObject Bullet_Destroy_2 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_2.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_2.transform.position = coll.gameObject.transform.position;
+			Bullet_Destroy_2.transform.rotation = coll.gameObject.transform.rotation;
+			Bullet_Destroy_2.GetComponent<Animator> ().SetBool ("Destroy", true);
 
 			coll.gameObject.tag = "Bullet_Rest";
 			coll.gameObject.transform.position = Bullet_Rest.transform.position;
@@ -107,6 +135,13 @@ public class Bullet_Movement : MonoBehaviour {
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.wall1;
 			_HealthManager.SendMessage("ApplyDamage", 1); //damage done
 
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
+
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
 			gameObject.transform.SetParent(Bullet_Rest.transform);
@@ -115,6 +150,13 @@ public class Bullet_Movement : MonoBehaviour {
 		if(coll.gameObject.CompareTag("player2_wall")){
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.wall2;
 			_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
@@ -125,6 +167,13 @@ public class Bullet_Movement : MonoBehaviour {
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.player1;
 			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
 
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
+
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
 			gameObject.transform.SetParent(Bullet_Rest.transform);
@@ -134,6 +183,13 @@ public class Bullet_Movement : MonoBehaviour {
 		if(coll.gameObject.CompareTag("Player2") && this.tag != "Bullet_2"){
 			_HealthManager.objHealth = HealthManager.ObjectsHealth.player2;
 			_HealthManager.SendMessage("ApplyDamage", 2); //damage done
+
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;
@@ -174,6 +230,13 @@ public class Bullet_Movement : MonoBehaviour {
 				if(_HealthManager.obstacle4_health <= 0)
 					Destroy (coll.gameObject);
 			}
+
+			GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag ("Bullet_Effect_Stop");
+			Bullet_Destroy_1.tag = "Bullet_Effect_Play";
+			Bullet_Destroy_1.transform.SetParent (null);
+			Bullet_Destroy_1.transform.position = gameObject.transform.position;
+			Bullet_Destroy_1.transform.rotation = gameObject.transform.rotation;
+			Bullet_Destroy_1.GetComponent<Animator> ().SetBool ("Destroy", true);
 
 			gameObject.tag = "Bullet_Rest";
 			gameObject.transform.position = Bullet_Rest.transform.position;

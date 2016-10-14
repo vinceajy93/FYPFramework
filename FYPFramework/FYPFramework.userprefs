@@ -1,12 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\PauseScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Bullet_Movement.cs">
     <Files>
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="57" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Bullet_Destroy.cs" Line="20" Column="31" />
       <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Overlay_Control.cs" Line="116" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Overlay_Control.cs" Line="48" Column="5" />
       <File FileName="Assets\Turret Game\Scripts\PauseScript.cs" Line="47" Column="3" />
-      <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="299" Column="50" />
+      <File FileName="Assets\Turret Game\Scripts\Camera_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="65" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

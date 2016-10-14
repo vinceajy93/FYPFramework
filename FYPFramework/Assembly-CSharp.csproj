@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Turret Game\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Bullet_Destroy.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Camera_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Health\BarScript.cs" />

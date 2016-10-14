@@ -1,0 +1,744 @@
+fileFormatVersion: 2
+guid: 24af2c724af5a95459827406c3d8fd7f
+timeCreated: 1476422026
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bullet_2_crash_256_test_0
+    21300002: Bullet_2_crash_256_test_1
+    21300004: Bullet_2_crash_256_test_2
+    21300006: Bullet_2_crash_256_test_3
+    21300008: Bullet_2_crash_256_test_4
+    21300010: Bullet_2_crash_256_test_5
+    21300012: Bullet_2_crash_256_test_6
+    21300014: Bullet_2_crash_256_test_7
+    21300016: Bullet_2_crash_256_test_8
+    21300018: Bullet_2_crash_256_test_9
+    21300020: Bullet_2_crash_256_test_10
+    21300022: Bullet_2_crash_256_test_11
+    21300024: Bullet_2_crash_256_test_12
+    21300026: Bullet_2_crash_256_test_13
+    21300028: Bullet_2_crash_256_test_14
+    21300030: Bullet_2_crash_256_test_15
+    21300032: Bullet_2_crash_256_test_16
+    21300034: Bullet_2_crash_256_test_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bullet_2_crash_256_test_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 0}
+        - {x: -73, y: -24}
+        - {x: -73, y: -66}
+        - {x: -52, y: -79}
+        - {x: -6, y: -79}
+        - {x: 7, y: -60}
+        - {x: 7, y: -20}
+        - {x: -8, y: 0}
+      - - {x: 43, y: 21}
+        - {x: 21, y: 8}
+        - {x: 21, y: -42}
+        - {x: 35, y: -52}
+        - {x: 69, y: -52}
+        - {x: 88, y: -48}
+        - {x: 94, y: -34}
+        - {x: 94, y: 0}
+        - {x: 78, y: 21}
+      - - {x: 3, y: 8}
+        - {x: -4, y: 4}
+        - {x: -5, y: -2}
+        - {x: -5, y: -11}
+        - {x: -2, y: -18}
+        - {x: 15, y: -18}
+        - {x: 21, y: -17}
+        - {x: 21, y: 1}
+        - {x: 15, y: 8}
+      - - {x: -47, y: 19}
+        - {x: -60, y: 19}
+        - {x: -67, y: 16}
+        - {x: -67, y: -1}
+        - {x: -59, y: -4}
+        - {x: -48, y: -4}
+        - {x: -43, y: 2}
+        - {x: -43, y: 14}
+      - - {x: -53, y: 94}
+        - {x: -69, y: 79}
+        - {x: -69, y: 33}
+        - {x: -49, y: 19}
+        - {x: -4, y: 19}
+        - {x: 5, y: 22}
+        - {x: 5, y: 94}
+      - - {x: 27, y: 74}
+        - {x: 13, y: 68}
+        - {x: 13, y: 39}
+        - {x: 24, y: 28}
+        - {x: 27, y: 27}
+        - {x: 46, y: 27}
+        - {x: 59, y: 38}
+        - {x: 59, y: 62}
+        - {x: 51, y: 74}
+    - name: Bullet_2_crash_256_test_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1008
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 0}
+        - {x: -73, y: -24}
+        - {x: -73, y: -66}
+        - {x: -52, y: -79}
+        - {x: -6, y: -79}
+        - {x: 7, y: -60}
+        - {x: 7, y: -20}
+        - {x: -8, y: 0}
+      - - {x: 43, y: 21}
+        - {x: 21, y: 8}
+        - {x: 21, y: -42}
+        - {x: 35, y: -52}
+        - {x: 69, y: -52}
+        - {x: 88, y: -48}
+        - {x: 94, y: -34}
+        - {x: 94, y: 0}
+        - {x: 78, y: 21}
+      - - {x: 3, y: 8}
+        - {x: -4, y: 4}
+        - {x: -5, y: -2}
+        - {x: -5, y: -11}
+        - {x: -2, y: -18}
+        - {x: 15, y: -18}
+        - {x: 21, y: -17}
+        - {x: 21, y: 1}
+        - {x: 15, y: 8}
+      - - {x: -47, y: 19}
+        - {x: -60, y: 19}
+        - {x: -67, y: 16}
+        - {x: -67, y: -1}
+        - {x: -59, y: -4}
+        - {x: -48, y: -4}
+        - {x: -43, y: 2}
+        - {x: -43, y: 14}
+      - - {x: -53, y: 94}
+        - {x: -69, y: 79}
+        - {x: -69, y: 33}
+        - {x: -49, y: 19}
+        - {x: -4, y: 19}
+        - {x: 5, y: 22}
+        - {x: 5, y: 94}
+      - - {x: 27, y: 74}
+        - {x: 13, y: 68}
+        - {x: 13, y: 39}
+        - {x: 24, y: 28}
+        - {x: 27, y: 27}
+        - {x: 46, y: 27}
+        - {x: 59, y: 38}
+        - {x: 59, y: 62}
+        - {x: 51, y: 74}
+    - name: Bullet_2_crash_256_test_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1008
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 114, y: 27}
+        - {x: 56, y: 93}
+        - {x: -10, y: 113}
+        - {x: -50, y: 113}
+        - {x: -76, y: 100}
+        - {x: -92, y: 70}
+        - {x: -100, y: 39}
+        - {x: -100, y: -69}
+        - {x: -93, y: -94}
+        - {x: -70, y: -101}
+        - {x: -56, y: -106}
+        - {x: 19, y: -106}
+        - {x: 76, y: -82}
+        - {x: 112, y: -49}
+        - {x: 114, y: -38}
+    - name: Bullet_2_crash_256_test_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1008
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 140, y: -42}
+        - {x: 140, y: 14}
+        - {x: 118, y: 43}
+        - {x: 69, y: 94}
+        - {x: 27, y: 123}
+        - {x: -17, y: 138}
+        - {x: -52, y: 138}
+        - {x: -54, y: 137}
+        - {x: -83, y: 124}
+        - {x: -107, y: 99}
+        - {x: -117, y: 65}
+        - {x: -114, y: 35}
+        - {x: -134, y: -3}
+        - {x: -138, y: -37}
+        - {x: -138, y: -62}
+        - {x: -133, y: -82}
+        - {x: -110, y: -116}
+        - {x: -83, y: -137}
+        - {x: -61, y: -145}
+        - {x: -4, y: -145}
+        - {x: 17, y: -140}
+        - {x: 57, y: -107}
+        - {x: 102, y: -90}
+        - {x: 132, y: -62}
+    - name: Bullet_2_crash_256_test_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1008
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 140, y: -42}
+        - {x: 140, y: 14}
+        - {x: 118, y: 43}
+        - {x: 69, y: 94}
+        - {x: 27, y: 123}
+        - {x: -17, y: 138}
+        - {x: -52, y: 138}
+        - {x: -54, y: 137}
+        - {x: -83, y: 124}
+        - {x: -107, y: 99}
+        - {x: -117, y: 65}
+        - {x: -114, y: 35}
+        - {x: -134, y: -3}
+        - {x: -138, y: -37}
+        - {x: -138, y: -62}
+        - {x: -133, y: -82}
+        - {x: -110, y: -116}
+        - {x: -83, y: -137}
+        - {x: -61, y: -145}
+        - {x: -4, y: -145}
+        - {x: 17, y: -140}
+        - {x: 57, y: -107}
+        - {x: 102, y: -90}
+        - {x: 132, y: -62}
+    - name: Bullet_2_crash_256_test_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 139, y: -39}
+        - {x: 139, y: 14}
+        - {x: 117, y: 43}
+        - {x: 92, y: 61}
+        - {x: 64, y: 97}
+        - {x: 13, y: 128}
+        - {x: -14, y: 137}
+        - {x: -53, y: 137}
+        - {x: -82, y: 124}
+        - {x: -116, y: 90}
+        - {x: -115, y: 37}
+        - {x: -136, y: -12}
+        - {x: -136, y: -66}
+        - {x: -131, y: -83}
+        - {x: -110, y: -115}
+        - {x: -88, y: -134}
+        - {x: -47, y: -145}
+        - {x: -19, y: -145}
+        - {x: -6, y: -143}
+        - {x: 37, y: -123}
+        - {x: 112, y: -80}
+        - {x: 128, y: -60}
+    - name: Bullet_2_crash_256_test_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 672
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 7}
+        - {x: 10, y: 6}
+        - {x: 12, y: 1}
+        - {x: 18, y: -7}
+        - {x: 29, y: -13}
+        - {x: 47, y: 1}
+        - {x: 46, y: 12}
+        - {x: 37, y: 26}
+        - {x: 23, y: 27}
+        - {x: 34, y: 30}
+        - {x: 64, y: 44}
+        - {x: 73, y: 64}
+        - {x: 75, y: 92}
+        - {x: 48, y: 118}
+        - {x: 10, y: 118}
+        - {x: -11, y: 99}
+        - {x: -12, y: 89}
+        - {x: -12, y: 85}
+        - {x: -13, y: 84}
+        - {x: -13, y: 76}
+        - {x: -13, y: 85}
+        - {x: -12, y: 88}
+        - {x: -12, y: 99}
+        - {x: -33, y: 118}
+        - {x: -51, y: 118}
+        - {x: -97, y: 64}
+        - {x: -97, y: -24}
+        - {x: -16, y: -108}
+        - {x: 64, y: -108}
+        - {x: 76, y: -102}
+        - {x: 76, y: -36}
+        - {x: 71, y: -27}
+        - {x: 19, y: -15}
+        - {x: 10, y: 5}
+    - name: Bullet_2_crash_256_test_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 672
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 7}
+        - {x: 10, y: 6}
+        - {x: 12, y: 1}
+        - {x: 18, y: -7}
+        - {x: 29, y: -13}
+        - {x: 47, y: 1}
+        - {x: 46, y: 12}
+        - {x: 37, y: 26}
+        - {x: 23, y: 27}
+        - {x: 34, y: 30}
+        - {x: 64, y: 44}
+        - {x: 73, y: 64}
+        - {x: 75, y: 92}
+        - {x: 48, y: 118}
+        - {x: 10, y: 118}
+        - {x: -11, y: 99}
+        - {x: -12, y: 89}
+        - {x: -12, y: 85}
+        - {x: -13, y: 84}
+        - {x: -13, y: 76}
+        - {x: -13, y: 85}
+        - {x: -12, y: 88}
+        - {x: -12, y: 99}
+        - {x: -33, y: 118}
+        - {x: -51, y: 118}
+        - {x: -97, y: 64}
+        - {x: -97, y: -24}
+        - {x: -16, y: -108}
+        - {x: 64, y: -108}
+        - {x: 76, y: -102}
+        - {x: 76, y: -36}
+        - {x: 71, y: -27}
+        - {x: 19, y: -15}
+        - {x: 10, y: 5}
+    - name: Bullet_2_crash_256_test_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 672
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 23}
+        - {x: 88, y: 51}
+        - {x: 91, y: 112}
+        - {x: 52, y: 134}
+        - {x: 8, y: 134}
+        - {x: -95, y: 84}
+        - {x: -106, y: 66}
+        - {x: -116, y: 45}
+        - {x: -116, y: 3}
+        - {x: -110, y: -22}
+        - {x: -54, y: -65}
+        - {x: -14, y: -122}
+        - {x: 0, y: -126}
+        - {x: 70, y: -126}
+        - {x: 93, y: -89}
+        - {x: 93, y: -42}
+        - {x: 90, y: -33}
+    - name: Bullet_2_crash_256_test_9
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 672
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: -47}
+        - {x: 114, y: -37}
+        - {x: 94, y: -2}
+        - {x: 114, y: 54}
+        - {x: 111, y: 104}
+        - {x: 90, y: 134}
+        - {x: 65, y: 153}
+        - {x: 44, y: 157}
+        - {x: 2, y: 157}
+        - {x: -86, y: 120}
+        - {x: -117, y: 104}
+        - {x: -142, y: 63}
+        - {x: -146, y: 44}
+        - {x: -146, y: -1}
+        - {x: -137, y: -30}
+        - {x: -117, y: -49}
+        - {x: -91, y: -72}
+        - {x: -49, y: -92}
+        - {x: -39, y: -112}
+        - {x: -11, y: -139}
+        - {x: 13, y: -147}
+        - {x: 18, y: -148}
+        - {x: 50, y: -148}
+        - {x: 79, y: -142}
+        - {x: 108, y: -111}
+        - {x: 115, y: -84}
+    - name: Bullet_2_crash_256_test_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: -47}
+        - {x: 114, y: -37}
+        - {x: 94, y: -2}
+        - {x: 114, y: 54}
+        - {x: 111, y: 104}
+        - {x: 90, y: 134}
+        - {x: 65, y: 153}
+        - {x: 44, y: 157}
+        - {x: 2, y: 157}
+        - {x: -86, y: 120}
+        - {x: -117, y: 104}
+        - {x: -142, y: 63}
+        - {x: -146, y: 44}
+        - {x: -146, y: -1}
+        - {x: -137, y: -30}
+        - {x: -117, y: -49}
+        - {x: -91, y: -72}
+        - {x: -49, y: -92}
+        - {x: -39, y: -112}
+        - {x: -11, y: -139}
+        - {x: 13, y: -147}
+        - {x: 18, y: -148}
+        - {x: 50, y: -148}
+        - {x: 79, y: -142}
+        - {x: 108, y: -111}
+        - {x: 115, y: -84}
+    - name: Bullet_2_crash_256_test_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 336
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92, y: -5}
+        - {x: 75, y: 5}
+        - {x: 97, y: 25}
+        - {x: 113, y: 54}
+        - {x: 113, y: 56}
+        - {x: 112, y: 105}
+        - {x: 76, y: 148}
+        - {x: 54, y: 156}
+        - {x: 10, y: 156}
+        - {x: -6, y: 151}
+        - {x: -46, y: 135}
+        - {x: -108, y: 115}
+        - {x: -136, y: 81}
+        - {x: -144, y: 52}
+        - {x: -144, y: 2}
+        - {x: -136, y: -30}
+        - {x: -117, y: -47}
+        - {x: -95, y: -66}
+        - {x: -23, y: -131}
+        - {x: 13, y: -148}
+        - {x: 50, y: -148}
+        - {x: 66, y: -144}
+        - {x: 96, y: -124}
+        - {x: 113, y: -92}
+        - {x: 113, y: -35}
+    - name: Bullet_2_crash_256_test_12
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 336
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 90}
+        - {x: 13, y: 124}
+        - {x: 17, y: 99}
+        - {x: 17, y: 84}
+        - {x: 17, y: 85}
+        - {x: 15, y: 96}
+        - {x: 7, y: 111}
+        - {x: -7, y: 126}
+        - {x: -78, y: 126}
+        - {x: -85, y: 88}
+        - {x: -85, y: -105}
+        - {x: -84, y: -106}
+        - {x: -68, y: -110}
+        - {x: 37, y: -110}
+        - {x: 41, y: -104}
+        - {x: 103, y: -35}
+        - {x: 103, y: 60}
+    - name: Bullet_2_crash_256_test_13
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 336
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 90}
+        - {x: 13, y: 124}
+        - {x: 17, y: 99}
+        - {x: 17, y: 84}
+        - {x: 17, y: 85}
+        - {x: 15, y: 96}
+        - {x: 7, y: 111}
+        - {x: -7, y: 126}
+        - {x: -78, y: 126}
+        - {x: -85, y: 88}
+        - {x: -85, y: -105}
+        - {x: -84, y: -106}
+        - {x: -68, y: -110}
+        - {x: 37, y: -110}
+        - {x: 41, y: -104}
+        - {x: 103, y: -35}
+        - {x: 103, y: 60}
+    - name: Bullet_2_crash_256_test_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 336
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120, y: 7}
+        - {x: 121, y: 17}
+        - {x: 121, y: 66}
+        - {x: 21, y: 143}
+        - {x: -61, y: 143}
+        - {x: -100, y: 118}
+        - {x: -93, y: 3}
+        - {x: -103, y: -25}
+        - {x: -103, y: -82}
+        - {x: -74, y: -116}
+        - {x: 24, y: -116}
+        - {x: 37, y: -111}
+        - {x: 68, y: -55}
+        - {x: 117, y: -16}
+    - name: Bullet_2_crash_256_test_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: -34}
+        - {x: 153, y: 0}
+        - {x: 153, y: 54}
+        - {x: 139, y: 88}
+        - {x: 108, y: 114}
+        - {x: 68, y: 131}
+        - {x: 7, y: 159}
+        - {x: -17, y: 162}
+        - {x: -51, y: 162}
+        - {x: -87, y: 144}
+        - {x: -104, y: 125}
+        - {x: -116, y: 72}
+        - {x: -108, y: 46}
+        - {x: -94, y: 18}
+        - {x: -116, y: -12}
+        - {x: -123, y: -34}
+        - {x: -123, y: -66}
+        - {x: -121, y: -75}
+        - {x: -118, y: -87}
+        - {x: -103, y: -114}
+        - {x: -69, y: -137}
+        - {x: -21, y: -137}
+        - {x: -12, y: -136}
+        - {x: 33, y: -124}
+        - {x: 52, y: -89}
+        - {x: 120, y: -61}
+    - name: Bullet_2_crash_256_test_16
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: -34}
+        - {x: 153, y: 0}
+        - {x: 153, y: 54}
+        - {x: 139, y: 88}
+        - {x: 108, y: 114}
+        - {x: 68, y: 131}
+        - {x: 7, y: 159}
+        - {x: -17, y: 162}
+        - {x: -51, y: 162}
+        - {x: -87, y: 144}
+        - {x: -104, y: 125}
+        - {x: -116, y: 72}
+        - {x: -108, y: 46}
+        - {x: -94, y: 18}
+        - {x: -116, y: -12}
+        - {x: -123, y: -34}
+        - {x: -123, y: -66}
+        - {x: -121, y: -75}
+        - {x: -118, y: -87}
+        - {x: -103, y: -114}
+        - {x: -69, y: -137}
+        - {x: -21, y: -137}
+        - {x: -12, y: -136}
+        - {x: 33, y: -124}
+        - {x: 52, y: -89}
+        - {x: 120, y: -61}
+    - name: Bullet_2_crash_256_test_17
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: -57}
+        - {x: 138, y: -32}
+        - {x: 152, y: -4}
+        - {x: 152, y: 39}
+        - {x: 149, y: 62}
+        - {x: 127, y: 96}
+        - {x: 105, y: 112}
+        - {x: 77, y: 127}
+        - {x: -10, y: 161}
+        - {x: -50, y: 161}
+        - {x: -86, y: 143}
+        - {x: -102, y: 124}
+        - {x: -115, y: 77}
+        - {x: -93, y: 11}
+        - {x: -116, y: -11}
+        - {x: -122, y: -33}
+        - {x: -122, y: -68}
+        - {x: -119, y: -87}
+        - {x: -99, y: -124}
+        - {x: -60, y: -137}
+        - {x: -13, y: -137}
+        - {x: 29, y: -125}
+        - {x: 47, y: -88}
+        - {x: 75, y: -78}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

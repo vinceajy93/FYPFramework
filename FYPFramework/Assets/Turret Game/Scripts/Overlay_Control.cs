@@ -44,8 +44,8 @@ public class Overlay_Control : MonoBehaviour
 	void Update ()
 	{
 
-		Debug.Log ("p1 touch: " + P1Touched); 
-		Debug.Log ("p2 touch: " + P2Touched); 
+		//Debug.Log ("p1 touch: " + P1Touched); 
+		//Debug.Log ("p2 touch: " + P2Touched); 
 		//start countdown timer only when finger is on screen
 		CheckPress ();
 
