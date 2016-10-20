@@ -25,10 +25,10 @@ public class Player_Control : MonoBehaviour
 	private int touch_point = -1;
 
 	private string bullet_name = "Bullet/Bullet";
+	private string bullet_name_2 = "Bullet/Bullet"; // Player_2
 	private GameObject shoot_location;
 
 	private string effect_name = "Bullet/Bullet_Destroy";
-	private GameObject effect_location;
 
 	private Mode_Control mcontrol;
 	private PauseScript _pauseScript;
@@ -88,9 +88,18 @@ public class Player_Control : MonoBehaviour
 	void Awake ()
 	{
 		for (int i = 0; i < 10; i++) {
-			GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
-			new_clone.tag = "Bullet_Rest";
-			new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+			
+			if (this.CompareTag ("Player1")) {
+				GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+				new_clone.tag = "Bullet_Rest";
+				new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+			}
+			else if (this.CompareTag("Player2")) {
+				GameObject new_clone = Instantiate (Resources.Load (bullet_name_2), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+				new_clone.tag = "Bullet_Rest_2";
+				new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+			}
+			
 
 			GameObject new_effect = Instantiate (Resources.Load (effect_name), GameObject.Find ("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
 			new_effect.tag = "Bullet_Effect_Stop";
@@ -294,16 +303,21 @@ public class Player_Control : MonoBehaviour
 	{
 		Turret_anim.SetInteger ("turretState", 1);
 		Vector3 shoot_position = shoot_location.transform.position;
-		GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
-		new_bullet.transform.SetParent (null);
-		new_bullet.transform.position = shoot_position;
-		new_bullet.transform.rotation = shoot_location.transform.rotation;
-		if (new_bullet != null) {
-			if (this.tag == "Player1") {
-				new_bullet.layer = LayerMask.NameToLayer ("Player 1");
+
+		if (this.CompareTag ("Player1")) {
+			GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest");
+			new_bullet.transform.SetParent (null);
+			new_bullet.transform.position = shoot_position;
+			new_bullet.transform.rotation = shoot_location.transform.rotation;
+			if (new_bullet != null) {
 				new_bullet.tag = "Bullet_1";
-			} else {
-				new_bullet.layer = LayerMask.NameToLayer ("Player 2");
+			}
+		} else if (this.CompareTag ("Player2")) {
+			GameObject new_bullet = GameObject.FindGameObjectWithTag ("Bullet_Rest_2");
+			new_bullet.transform.SetParent (null);
+			new_bullet.transform.position = shoot_position;
+			new_bullet.transform.rotation = shoot_location.transform.rotation;
+			if (new_bullet != null) {
 				new_bullet.tag = "Bullet_2";
 			}
 		}

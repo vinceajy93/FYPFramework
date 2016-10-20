@@ -91,7 +91,6 @@ public class Overlay_Control : MonoBehaviour
 			if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 				p1Timer.GetComponent<Text> ().fontSize = 120;
 				p1Timer.text = countdownTimer.ToString ("f0");
-
 			}
 
 			//multiplayer
@@ -104,16 +103,28 @@ public class Overlay_Control : MonoBehaviour
 				p2Timer.text = p1Timer.text;
 			}
 		} else {
-			//Set booleans back to false
-			P1Touched = false;
-			P2Touched = false;
+			//single player
+			if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
+				//Set booleans back to false
+				P1Touched = false;
+
+				//Set font size back to 50
+				p1Timer.GetComponent<Text> ().fontSize = 50;
+			} 
+
+			// multiplayer
+			else {
+				//Set booleans back to false
+				P1Touched = false;
+				P2Touched = false;
+
+				//Set font size back to 50
+				p1Timer.GetComponent<Text> ().fontSize = 50;
+				p2Timer.GetComponent<Text> ().fontSize = 50;
+			}
 
 			//Deactivate the pause mode
 			_PauseScript.Paused = false;
-
-			//Set font size back to 50
-			p1Timer.GetComponent<Text> ().fontSize = 50;
-			p2Timer.GetComponent<Text> ().fontSize = 50;
 
 			//Set panel to inactive
 			panel.SetActive(false);

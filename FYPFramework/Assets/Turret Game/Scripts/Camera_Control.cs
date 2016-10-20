@@ -61,7 +61,7 @@ public class Camera_Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!mcontrol.game_mode_Single) { // Multiplayer
-			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
+			if (current_gameobject != null && (current_gameobject.tag != "Bullet_Rest" || current_gameobject.tag != "Bullet_Rest_2")) {
 				if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
 					if (Move_Left) {
 						if (current_gameobject.tag == "Bullet_1")
@@ -117,7 +117,7 @@ public class Camera_Control : MonoBehaviour {
 						P2Cam.transform.position = new Vector3 (P2Cam.transform.position.x, new_pos.y, P2Cam.transform.position.z);;
 					}
 				}
-			} else { // Single
+			} else {
 				camera_switch_no = 0;
 				mcontrol.move_player = true;
 				if (this.tag == "Player1") {
@@ -128,42 +128,55 @@ public class Camera_Control : MonoBehaviour {
 					P2Cam.transform.position = P2Cam_OriginalPos;
 				}
 			}
-		} else {
+		} else { // Single
 			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest") {
 				Camera cam = Camera.main;
 				float height = 2f * cam.orthographicSize;
 				float width = height * Camera.main.GetComponent<Camera> ().aspect;
+				if (current_gameobject.transform.position.y < (total_bg_height - height) && current_gameobject.transform.position.y > 0) {
+					if (Move_Left) {
+						if (current_gameobject.tag == "Bullet_1")
+							animator.SetBool ("Right", true);
 
-				if (Move_Left) {
-					Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
-					Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
-					Vector3 current_world_size = local_sprite_size;
-					current_world_size.x *= Bg.transform.lossyScale.x;
+						if (current_gameobject.tag == "Bullet_2")
+							animator.SetBool ("Left", true);
+						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+						Vector3 current_world_size = local_sprite_size;
+						current_world_size.x *= Bg.transform.lossyScale.x;
 
-					Vector3 new_pos2 = current_gameobject.transform.position + (Vector3.left * 0.1f);
-					if (new_pos2.x > - width / 2 + current_world_size.x / 2) {
-						current_gameobject.transform.position = new_pos2;
-						//current_gameobject.transform.position += Vector3.left * 0.1f;
+						Vector3 new_pos = current_gameobject.transform.position + (Vector3.left * 0.1f);
+						if (new_pos.x > -width / 2 + current_world_size.x / 2) {
+							current_gameobject.transform.position = new_pos;
+						}
+					}
+
+					if (Move_Right) {
+						if (current_gameobject.tag == "Bullet_1")
+							animator.SetBool ("Left", true);
+
+						if (current_gameobject.tag == "Bullet_2")
+							animator.SetBool ("Right", true);
+						Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
+						Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
+						Vector3 current_world_size = local_sprite_size;
+						current_world_size.x *= Bg.transform.lossyScale.x;
+
+						Vector3 new_pos = current_gameobject.transform.position + (Vector3.right * 0.1f);
+						if (new_pos.x < width / 2 - current_world_size.x / 2) {
+							current_gameobject.transform.position = new_pos;
+						}
 					}
 				}
-
-				if (Move_Right) {
-					Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
-					Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
-					Vector3 current_world_size = local_sprite_size;
-					current_world_size.x *= Bg.transform.lossyScale.x;
-
-					Vector3 new_pos2 = current_gameobject.transform.position + (Vector3.right * 0.1f);
-					if (new_pos2.x < width / 2 - current_world_size.x / 2) {
-						current_gameobject.transform.position = new_pos2;
-						//current_gameobject.transform.position += Vector3.right * 0.1f;
-					}
+				else {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
 				}
 
-				Vector3 new_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
+				Vector3 new_cam_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
 				// Limit the camera within the background zone
-				if ((new_pos.y < bg_world_size.y * num_bg - height) && (new_pos.y > 0)) {	
-					Camera.main.transform.position = new Vector3 (cam.transform.position.x, new_pos.y, cam.transform.position.z);;
+				if ((new_cam_pos.y > 0) && (new_cam_pos.y < bg_world_size.y * num_bg - height)) {	
+					Camera.main.transform.position = new Vector3 (Camera.main.transform.position.x, new_cam_pos.y, Camera.main.transform.position.z);;
 				}
 			} else {
 				camera_switch_no = 0;
