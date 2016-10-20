@@ -61,7 +61,7 @@ public class Camera_Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!mcontrol.game_mode_Single) { // Multiplayer
-			if (current_gameobject != null && (current_gameobject.tag != "Bullet_Rest" || current_gameobject.tag != "Bullet_Rest_2")) {
+			if (current_gameobject != null && current_gameobject.tag != "Bullet_Rest" && current_gameobject.tag != "Bullet_Rest_2") {
 				if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0) {
 					if (Move_Left) {
 						if (current_gameobject.tag == "Bullet_1")

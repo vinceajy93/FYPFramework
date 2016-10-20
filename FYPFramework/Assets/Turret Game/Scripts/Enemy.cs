@@ -202,7 +202,6 @@ public class Enemy : MonoBehaviour {
 			Enemy_Turret.transform.position = new Vector3 (next_pos.x, Enemy_Turret.transform.position.y, Enemy_Turret.transform.position.z);
 
 			pos_set = false;
-			GameObject[] enemy_bullet = GameObject.FindGameObjectsWithTag ("Bullet_E");
 			currentEnemyState = EnemyState.Turret_Shoot;
 		} else {
 			fixed_diff = diff;
