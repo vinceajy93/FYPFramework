@@ -60,12 +60,21 @@ public class Indicator : Mode_Control {
 		MainCam_Height = 2f * MainCam.orthographicSize;
 		MainCam_Width = MainCam_Height * MainCam.aspect;
 
-		// Clone a indicator on Canvas and Set to false since bullet is not within game screen view
-		canvas_indicator = Instantiate (Resources.Load (indicator_name), Vector3.zero, Quaternion.identity) as GameObject;
-		canvas_indicator.transform.SetParent (MainCanvas.transform, false);
-		canvas_indicator_height = canvas_indicator.GetComponent<RectTransform> ().rect.height;
-		canvas_indicator.SetActive (false);
-
+		if (game_mode_Single) {
+			if (this.CompareTag ("Bullet_Rest_E")) { // There is no nid for indicator for player 1 in single player
+				// Clone a indicator on Canvas and Set to false since bullet is not within game screen view
+				canvas_indicator = Instantiate (Resources.Load (indicator_name), Vector3.zero, Quaternion.identity) as GameObject;
+				canvas_indicator.transform.SetParent (MainCanvas.transform, false);
+				canvas_indicator_height = canvas_indicator.GetComponent<RectTransform> ().rect.height;
+				canvas_indicator.SetActive (false);
+			}
+		} else {
+			// Clone a indicator on Canvas and Set to false since bullet is not within game screen view
+			canvas_indicator = Instantiate (Resources.Load (indicator_name), Vector3.zero, Quaternion.identity) as GameObject;
+			canvas_indicator.transform.SetParent (MainCanvas.transform, false);
+			canvas_indicator_height = canvas_indicator.GetComponent<RectTransform> ().rect.height;
+			canvas_indicator.SetActive (false);
+		}
 		Map = GameObject.FindGameObjectWithTag ("Background");
 		num_Map = GameObject.FindGameObjectsWithTag ("Background").Length;
 
@@ -78,6 +87,7 @@ public class Indicator : Mode_Control {
 		Map_TotalHeight = Map_world_size.y * num_Map;
 
 		Hp = GameObject.Find ("Canvas/HealthBar P1").GetComponent<RectTransform>().rect.height;
+		Debug.Log (Hp);
 	}
 	
 	// Update is called once per frame
@@ -88,18 +98,19 @@ public class Indicator : Mode_Control {
 			On_X = true;
 		} else {
 			On_X = false;
-			canvas_indicator.GetComponent<Image> ().sprite = original;
+			if(canvas_indicator != null)
+				canvas_indicator.GetComponent<Image> ().sprite = original;
 		}
 
 		// If Bullet is in Camera View, Check for 
-		if (On_X) {
+		if (On_X && canvas_indicator != null) {
 			// Multiple PLayer
 			if (!game_mode_Single) {
 				Camera temp_cam = null;
 
 				if (this.CompareTag ("Bullet_1")) { // If Bullet 1, check in camera 2
 					temp_cam = P2Cam;
-				} else if(this.CompareTag("Bullet_2")){ // If Bullet 2, check in camera 1
+				} else if (this.CompareTag ("Bullet_2")) { // If Bullet 2, check in camera 1
 					temp_cam = P1Cam;
 				}
 
@@ -108,50 +119,79 @@ public class Indicator : Mode_Control {
 				} else {
 					On_Y = true;
 				}
+			} else {
+				if (this.CompareTag ("Bullet_E")) {
+					if (this.transform.position.y > (-MainCam_Height / 2) + MainCam.transform.position.y && this.transform.position.y < (MainCam_Height / 2) + MainCam.transform.position.y) {
+						On_Y = false;
+					} else {
+						On_Y = true;
+					}
+				}
 			}
 		}
 
 		// If bullet is in Camera X and outside Camera Y, active = true
-		if (On_X && On_Y) {
+		if (On_X && On_Y && canvas_indicator != null) {
 			canvas_indicator.SetActive (true);
 			canvas_indicator.transform.position = new Vector3 (MainCam.WorldToScreenPoint (this.transform.position).x, 0, 0);
 
-			if (this.CompareTag ("Bullet_1")) { // If Bullet 1, check in camera 2
-				if (this.transform.position.y > (PCam_Height / 2) + P2Cam.transform.position.y) {
-					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, MainCanvas_Height / 2 - canvas_indicator_height / 2);
-				} else {
-					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, canvas_indicator_height / 2 + Hp);
-				}
+			if (!game_mode_Single) {
+				if (this.CompareTag ("Bullet_1")) { // If Bullet 1, check in camera 2
+					if (this.transform.position.y > (PCam_Height / 2) + P2Cam.transform.position.y) {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, MainCanvas_Height / 2 - canvas_indicator_height / 2);
+					} else {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, canvas_indicator_height / 2 + Hp);
+					}
 
-				// Check sprite depending on the position of the bullet
-				if (this.transform.position.y > ((Map_TotalHeight / 3) * 2) - (PCam_Height / 2)) {
-					canvas_indicator.GetComponent<Image> ().sprite = red;
-				} else if (this.transform.position.y > (Map_TotalHeight / 3) - (PCam_Height / 2)) {
-					canvas_indicator.GetComponent<Image> ().sprite = yellow;
-				} else {
-					canvas_indicator.GetComponent<Image> ().sprite = green;
-				}
-			} else if(this.CompareTag("Bullet_2")) { // If Bullet 2, check in camera 1
-				if (this.transform.position.y > (PCam_Height / 2) + P1Cam.transform.position.y) {
-					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -canvas_indicator_height / 2 - Hp);
-				} else {
-					canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
-					canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -MainCanvas_Height / 2 + canvas_indicator_height / 2);
-				}
+					// Check sprite depending on the position of the bullet
+					if (this.transform.position.y > ((Map_TotalHeight / 3) * 2) - (PCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = red;
+					} else if (this.transform.position.y > (Map_TotalHeight / 3) - (PCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = yellow;
+					} else {
+						canvas_indicator.GetComponent<Image> ().sprite = green;
+					}
+				} else if (this.CompareTag ("Bullet_2")) { // If Bullet 2, check in camera 1
+					if (this.transform.position.y > (PCam_Height / 2) + P1Cam.transform.position.y) {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -canvas_indicator_height / 2 - Hp);
+					} else {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -MainCanvas_Height / 2 + canvas_indicator_height / 2);
+					}
 
-				if (this.transform.position.y > ((Map_TotalHeight / 3) * 2) - (PCam_Height / 2)) {
-					canvas_indicator.GetComponent<Image> ().sprite = green;
-				} else if (this.transform.position.y > (Map_TotalHeight / 3) - (PCam_Height / 2)) {
-					canvas_indicator.GetComponent<Image> ().sprite = yellow;
-				} else {
-					canvas_indicator.GetComponent<Image> ().sprite = red;
+					if (this.transform.position.y > ((Map_TotalHeight / 3) * 2) - (PCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = green;
+					} else if (this.transform.position.y > (Map_TotalHeight / 3) - (PCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = yellow;
+					} else {
+						canvas_indicator.GetComponent<Image> ().sprite = red;
+					}
+				} 
+			} else {
+				if (this.CompareTag ("Bullet_E")) {
+					if (this.transform.position.y > (MainCam_Height / 2) + MainCam.transform.position.y) {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 180);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, MainCanvas_Height / 2 - canvas_indicator_height / 2 - Hp);
+					} else {
+						canvas_indicator.GetComponent<RectTransform> ().localEulerAngles = new Vector3 (0, 0, 0);
+						canvas_indicator.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (canvas_indicator.GetComponent<RectTransform> ().anchoredPosition.x, -MainCanvas_Height / 2 + canvas_indicator_height / 2);
+					}
+
+					if (this.transform.position.y > ((Map_TotalHeight / 3) * 2) - (MainCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = green;
+					} else if (this.transform.position.y > (Map_TotalHeight / 3) - (MainCam_Height / 2)) {
+						canvas_indicator.GetComponent<Image> ().sprite = yellow;
+					} else {
+						canvas_indicator.GetComponent<Image> ().sprite = red;
+					}
 				}
 			}
 		} else {
-			canvas_indicator.SetActive (false);
+			if(canvas_indicator != null)
+				canvas_indicator.SetActive (false);
 		}
 	}
 
