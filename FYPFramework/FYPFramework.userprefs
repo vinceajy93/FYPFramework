@@ -1,14 +1,9 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Indicator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\GUIScripts\PauseScript.cs">
     <Files>
-      <File FileName="Assets\Turret Game\Scripts\Indicator.cs" Line="190" Column="6" />
-      <File FileName="Assets\Turret Game\Scripts\Camera_Control.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Destroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Mode_Control.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\GUIScripts\PauseScript.cs" Line="61" Column="19" />
+      <File FileName="Assets\Turret Game\Scripts\GUIScripts\Overlay_Control.cs" Line="106" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

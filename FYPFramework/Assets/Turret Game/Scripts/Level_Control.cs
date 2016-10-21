@@ -9,7 +9,7 @@ public class Level_Control : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		debugText.text = ("Stage: " + SceneManager.GetActiveScene().name);
+		//debugText.text = ("Stage: " + SceneManager.GetActiveScene().name);
 	}
 
 	//load the main menu scene
@@ -54,5 +54,9 @@ public class Level_Control : MonoBehaviour {
 	//Local 2 - player
 	public void loadLocal2P(){
 		SceneManager.LoadScene ("Local_Multiplayer");
+	}
+	//for testing purpose
+	public void loadTest(){
+		SceneManager.LoadScene ("test scene");
 	}
 }

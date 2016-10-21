@@ -87,7 +87,6 @@ public class Indicator : Mode_Control {
 		Map_TotalHeight = Map_world_size.y * num_Map;
 
 		Hp = GameObject.Find ("Canvas/HealthBar P1").GetComponent<RectTransform>().rect.height;
-		Debug.Log (Hp);
 	}
 	
 	// Update is called once per frame

@@ -12,7 +12,6 @@ public class Mode_Control : MonoBehaviour {
 		//single player mode 
 		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
 			game_mode_Single = true;
-			Debug.Log ("Single");
 		}
 		//multiplayer mode 
 		else {

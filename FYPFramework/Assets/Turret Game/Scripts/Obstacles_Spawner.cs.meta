@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: be9ce9e805c9fe04bb3a551396379f36
+timeCreated: 1476757986
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - obstacles_Prefab: {fileID: 195588, guid: ff04d8e1c9bb980429c10cf8b2deda69, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
