@@ -27,7 +27,6 @@ public class BarScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//content = GameObject.Find ("HealthBar P1").GetComponent<Image> ();
 	}
 	
 	// Update is called once per frame

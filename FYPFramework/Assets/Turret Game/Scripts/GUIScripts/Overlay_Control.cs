@@ -27,7 +27,7 @@ public class Overlay_Control : MonoBehaviour
 
 		//start the timer
 		countdownTimer = setTimerTime;
-		inGameCountdownTimer = 5.0f;
+		inGameCountdownTimer = PlayerPrefs.GetInt ("time");
 		_PauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
 
 

@@ -12,7 +12,7 @@ public class SplashLoader : MonoBehaviour {
 	}
 	
 	private IEnumerator Countdown(){
-		yield return new WaitForSeconds (6);
+		yield return new WaitForSeconds (7);
 		//Application.LoadLevel ("main menu");
 		SceneManager.LoadScene("Main Menu");
 	}

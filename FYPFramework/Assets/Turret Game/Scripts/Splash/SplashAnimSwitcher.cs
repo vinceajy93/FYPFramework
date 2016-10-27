@@ -28,7 +28,7 @@ public class SplashAnimSwitcher : MonoBehaviour {
 
 
 	IEnumerator Countdown(){
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (3.5f);
 		CompanyLogoAndName.SetActive (false);
 		GameLogoAndName.SetActive (true);
 	}

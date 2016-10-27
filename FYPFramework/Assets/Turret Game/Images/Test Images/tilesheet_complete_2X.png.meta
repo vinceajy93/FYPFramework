@@ -1,0 +1,3032 @@
+fileFormatVersion: 2
+guid: 877b866eca9562946a268cc033d930c9
+timeCreated: 1477382418
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tilesheet_complete_2X_0
+    21300002: tilesheet_complete_2X_1
+    21300004: tilesheet_complete_2X_2
+    21300006: tilesheet_complete_2X_3
+    21300008: tilesheet_complete_2X_4
+    21300010: tilesheet_complete_2X_5
+    21300012: tilesheet_complete_2X_6
+    21300014: tilesheet_complete_2X_7
+    21300016: tilesheet_complete_2X_8
+    21300018: tilesheet_complete_2X_9
+    21300020: tilesheet_complete_2X_10
+    21300022: tilesheet_complete_2X_11
+    21300024: tilesheet_complete_2X_12
+    21300026: tilesheet_complete_2X_13
+    21300028: tilesheet_complete_2X_14
+    21300030: tilesheet_complete_2X_15
+    21300032: tilesheet_complete_2X_16
+    21300034: tilesheet_complete_2X_17
+    21300036: tilesheet_complete_2X_18
+    21300038: tilesheet_complete_2X_19
+    21300040: tilesheet_complete_2X_20
+    21300042: tilesheet_complete_2X_21
+    21300044: tilesheet_complete_2X_22
+    21300046: tilesheet_complete_2X_23
+    21300048: tilesheet_complete_2X_24
+    21300050: tilesheet_complete_2X_25
+    21300052: tilesheet_complete_2X_26
+    21300054: tilesheet_complete_2X_27
+    21300056: tilesheet_complete_2X_28
+    21300058: tilesheet_complete_2X_29
+    21300060: tilesheet_complete_2X_30
+    21300062: tilesheet_complete_2X_31
+    21300064: tilesheet_complete_2X_32
+    21300066: tilesheet_complete_2X_33
+    21300068: tilesheet_complete_2X_34
+    21300070: tilesheet_complete_2X_35
+    21300072: tilesheet_complete_2X_36
+    21300074: tilesheet_complete_2X_37
+    21300076: tilesheet_complete_2X_38
+    21300078: tilesheet_complete_2X_39
+    21300080: tilesheet_complete_2X_40
+    21300082: tilesheet_complete_2X_41
+    21300084: tilesheet_complete_2X_42
+    21300086: tilesheet_complete_2X_43
+    21300088: tilesheet_complete_2X_44
+    21300090: tilesheet_complete_2X_45
+    21300092: tilesheet_complete_2X_46
+    21300094: tilesheet_complete_2X_47
+    21300096: tilesheet_complete_2X_48
+    21300098: tilesheet_complete_2X_49
+    21300100: tilesheet_complete_2X_50
+    21300102: tilesheet_complete_2X_51
+    21300104: tilesheet_complete_2X_52
+    21300106: tilesheet_complete_2X_53
+    21300108: tilesheet_complete_2X_54
+    21300110: tilesheet_complete_2X_55
+    21300112: tilesheet_complete_2X_56
+    21300114: tilesheet_complete_2X_57
+    21300116: tilesheet_complete_2X_58
+    21300118: tilesheet_complete_2X_59
+    21300120: tilesheet_complete_2X_60
+    21300122: tilesheet_complete_2X_61
+    21300124: tilesheet_complete_2X_62
+    21300126: tilesheet_complete_2X_63
+    21300128: tilesheet_complete_2X_64
+    21300130: tilesheet_complete_2X_65
+    21300132: tilesheet_complete_2X_66
+    21300134: tilesheet_complete_2X_67
+    21300136: tilesheet_complete_2X_68
+    21300138: tilesheet_complete_2X_69
+    21300140: tilesheet_complete_2X_70
+    21300142: tilesheet_complete_2X_71
+    21300144: tilesheet_complete_2X_72
+    21300146: tilesheet_complete_2X_73
+    21300148: tilesheet_complete_2X_74
+    21300150: tilesheet_complete_2X_75
+    21300152: tilesheet_complete_2X_76
+    21300154: tilesheet_complete_2X_77
+    21300156: tilesheet_complete_2X_78
+    21300158: tilesheet_complete_2X_79
+    21300160: tilesheet_complete_2X_80
+    21300162: tilesheet_complete_2X_81
+    21300164: tilesheet_complete_2X_82
+    21300166: tilesheet_complete_2X_83
+    21300168: tilesheet_complete_2X_84
+    21300170: tilesheet_complete_2X_85
+    21300172: tilesheet_complete_2X_86
+    21300174: tilesheet_complete_2X_87
+    21300176: tilesheet_complete_2X_88
+    21300178: tilesheet_complete_2X_89
+    21300180: tilesheet_complete_2X_90
+    21300182: tilesheet_complete_2X_91
+    21300184: tilesheet_complete_2X_92
+    21300186: tilesheet_complete_2X_93
+    21300188: tilesheet_complete_2X_94
+    21300190: tilesheet_complete_2X_95
+    21300192: tilesheet_complete_2X_96
+    21300194: tilesheet_complete_2X_97
+    21300196: tilesheet_complete_2X_98
+    21300198: tilesheet_complete_2X_99
+    21300200: tilesheet_complete_2X_100
+    21300202: tilesheet_complete_2X_101
+    21300204: tilesheet_complete_2X_102
+    21300206: tilesheet_complete_2X_103
+    21300208: tilesheet_complete_2X_104
+    21300210: tilesheet_complete_2X_105
+    21300212: tilesheet_complete_2X_106
+    21300214: tilesheet_complete_2X_107
+    21300216: tilesheet_complete_2X_108
+    21300218: tilesheet_complete_2X_109
+    21300220: tilesheet_complete_2X_110
+    21300222: tilesheet_complete_2X_111
+    21300224: tilesheet_complete_2X_112
+    21300226: tilesheet_complete_2X_113
+    21300228: tilesheet_complete_2X_114
+    21300230: tilesheet_complete_2X_115
+    21300232: tilesheet_complete_2X_116
+    21300234: tilesheet_complete_2X_117
+    21300236: tilesheet_complete_2X_118
+    21300238: tilesheet_complete_2X_119
+    21300240: tilesheet_complete_2X_120
+    21300242: tilesheet_complete_2X_121
+    21300244: tilesheet_complete_2X_122
+    21300246: tilesheet_complete_2X_123
+    21300248: tilesheet_complete_2X_124
+    21300250: tilesheet_complete_2X_125
+    21300252: tilesheet_complete_2X_126
+    21300254: tilesheet_complete_2X_127
+    21300256: tilesheet_complete_2X_128
+    21300258: tilesheet_complete_2X_129
+    21300260: tilesheet_complete_2X_130
+    21300262: tilesheet_complete_2X_131
+    21300264: tilesheet_complete_2X_132
+    21300266: tilesheet_complete_2X_133
+    21300268: tilesheet_complete_2X_134
+    21300270: tilesheet_complete_2X_135
+    21300272: tilesheet_complete_2X_136
+    21300274: tilesheet_complete_2X_137
+    21300276: tilesheet_complete_2X_138
+    21300278: tilesheet_complete_2X_139
+    21300280: tilesheet_complete_2X_140
+    21300282: tilesheet_complete_2X_141
+    21300284: tilesheet_complete_2X_142
+    21300286: tilesheet_complete_2X_143
+    21300288: tilesheet_complete_2X_144
+    21300290: tilesheet_complete_2X_145
+    21300292: tilesheet_complete_2X_146
+    21300294: tilesheet_complete_2X_147
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tilesheet_complete_2X_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 57.988037}
+        - {x: -49, y: 32.988037}
+        - {x: -49, y: -30.011963}
+        - {x: -14, y: -56.011963}
+        - {x: 6, y: -56.011963}
+        - {x: 49, y: -35.011963}
+        - {x: 49, y: 37.988037}
+        - {x: 7, y: 57.988037}
+    - name: tilesheet_complete_2X_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.976189, y: 57.988037}
+        - {x: -48.97619, y: 41.988037}
+        - {x: -48.97619, y: -35.011963}
+        - {x: -47.97619, y: -41.011963}
+        - {x: -16.976189, y: -56.011963}
+        - {x: 6.0238113, y: -56.011963}
+        - {x: 50.02381, y: -34.011963}
+        - {x: 50.02381, y: 37.988037}
+        - {x: 8.023811, y: 57.988037}
+    - name: tilesheet_complete_2X_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.952377, y: 57.988037}
+        - {x: -48.952377, y: 33.988037}
+        - {x: -48.952377, y: -35.011963}
+        - {x: -7.9523773, y: -56.011963}
+        - {x: 24.047623, y: -56.011963}
+        - {x: 49.047623, y: -47.011963}
+        - {x: 49.047623, y: 35.988037}
+        - {x: 43.047623, y: 57.988037}
+    - name: tilesheet_complete_2X_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.9285583, y: 57.988037}
+        - {x: -48.92856, y: 37.988037}
+        - {x: -48.92856, y: -35.011963}
+        - {x: -5.9285583, y: -56.011963}
+        - {x: 15.071442, y: -56.011963}
+        - {x: 50.07144, y: -29.011963}
+        - {x: 50.07144, y: 32.988037}
+        - {x: 15.071442, y: 57.988037}
+    - name: tilesheet_complete_2X_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.904755, y: 57.988037}
+        - {x: -48.904755, y: 32.988037}
+        - {x: -48.904755, y: -30.011963}
+        - {x: -13.904755, y: -56.011963}
+        - {x: 6.0952454, y: -56.011963}
+        - {x: 49.095245, y: -34.011963}
+        - {x: 49.095245, y: 39.988037}
+        - {x: 9.095245, y: 57.988037}
+    - name: tilesheet_complete_2X_5
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.880951, y: 57.988037}
+        - {x: -48.88095, y: 37.988037}
+        - {x: -48.88095, y: -30.011963}
+        - {x: -10.880951, y: -56.011963}
+        - {x: 6.119049, y: -56.011963}
+        - {x: 21.11905, y: -50.011963}
+        - {x: 50.11905, y: -29.011963}
+        - {x: 50.11905, y: 32.988037}
+        - {x: 15.119049, y: 57.988037}
+    - name: tilesheet_complete_2X_6
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.142883, y: 54.988037}
+        - {x: 7.1428833, y: 57.988037}
+        - {x: -9.857117, y: 57.988037}
+        - {x: -48.857117, y: 32.988037}
+        - {x: -48.857117, y: -30.011963}
+        - {x: -6.8571167, y: -56.011963}
+        - {x: 5.1428833, y: -56.011963}
+        - {x: 44.142883, y: -33.011963}
+        - {x: 49.142883, y: -29.011963}
+        - {x: 49.142883, y: 32.988037}
+    - name: tilesheet_complete_2X_7
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.833313, y: 57.988037}
+        - {x: -48.833313, y: 37.988037}
+        - {x: -48.833313, y: -30.011963}
+        - {x: -12.833313, y: -56.011963}
+        - {x: 7.166687, y: -56.011963}
+        - {x: 50.166687, y: -34.011963}
+        - {x: 50.166687, y: 32.988037}
+        - {x: 15.166687, y: 57.988037}
+    - name: tilesheet_complete_2X_8
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.809509, y: 57.988037}
+        - {x: -48.80951, y: 38.988037}
+        - {x: -48.80951, y: -35.011963}
+        - {x: -10.809509, y: -56.011963}
+        - {x: 16.19049, y: -56.011963}
+        - {x: 49.19049, y: -30.011963}
+        - {x: 49.19049, y: 33.988037}
+        - {x: 19.19049, y: 57.988037}
+    - name: tilesheet_complete_2X_9
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.7857056, y: 57.988037}
+        - {x: -48.785706, y: 37.988037}
+        - {x: -48.785706, y: -36.011963}
+        - {x: -12.785706, y: -56.011963}
+        - {x: 19.214294, y: -56.011963}
+        - {x: 50.214294, y: -29.011963}
+        - {x: 50.214294, y: 32.988037}
+        - {x: 15.214294, y: 57.988037}
+    - name: tilesheet_complete_2X_10
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.238098, y: 57.988037}
+        - {x: -9.761902, y: 57.988037}
+        - {x: -48.7619, y: 32.988037}
+        - {x: -48.7619, y: -34.011963}
+        - {x: -5.761902, y: -56.011963}
+        - {x: 12.238098, y: -56.011963}
+        - {x: 49.2381, y: -30.011963}
+        - {x: 49.2381, y: 33.988037}
+        - {x: 20.238098, y: 53.988037}
+    - name: tilesheet_complete_2X_11
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.738037, y: 57.988037}
+        - {x: -48.738037, y: 37.988037}
+        - {x: -48.738037, y: -40.011963}
+        - {x: -7.738037, y: -56.011963}
+        - {x: 13.261963, y: -56.011963}
+        - {x: 50.261963, y: -29.011963}
+        - {x: 50.261963, y: 41.988037}
+        - {x: 12.261963, y: 57.988037}
+    - name: tilesheet_complete_2X_12
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.714233, y: 57.988037}
+        - {x: -48.714233, y: 32.988037}
+        - {x: -48.714233, y: -34.011963}
+        - {x: -5.7142334, y: -56.011963}
+        - {x: 13.285767, y: -56.011963}
+        - {x: 49.285767, y: -30.011963}
+        - {x: 49.285767, y: 38.988037}
+        - {x: 12.285767, y: 57.988037}
+    - name: tilesheet_complete_2X_13
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.69043, y: 57.988037}
+        - {x: -48.69043, y: 36.988037}
+        - {x: -48.69043, y: -29.011963}
+        - {x: -12.69043, y: -56.011963}
+        - {x: 7.3095703, y: -56.011963}
+        - {x: 50.30957, y: -34.011963}
+        - {x: 50.30957, y: 33.988037}
+        - {x: 16.30957, y: 57.988037}
+    - name: tilesheet_complete_2X_14
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.666626, y: 57.988037}
+        - {x: -48.666626, y: 33.988037}
+        - {x: -48.666626, y: -31.011963}
+        - {x: -14.666626, y: -56.011963}
+        - {x: 8.333374, y: -56.011963}
+        - {x: 49.333374, y: -35.011963}
+        - {x: 49.333374, y: 36.988037}
+        - {x: 8.333374, y: 57.988037}
+    - name: tilesheet_complete_2X_15
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.6428223, y: 57.988037}
+        - {x: -48.642822, y: 38.988037}
+        - {x: -48.642822, y: -29.011963}
+        - {x: -39.642822, y: -35.011963}
+        - {x: -4.6428223, y: -56.011963}
+        - {x: 6.3571777, y: -56.011963}
+        - {x: 50.357178, y: -29.011963}
+        - {x: 50.357178, y: 33.988037}
+        - {x: 15.357178, y: 57.988037}
+    - name: tilesheet_complete_2X_16
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.619019, y: 57.988037}
+        - {x: -48.61902, y: 37.988037}
+        - {x: -48.61902, y: -30.011963}
+        - {x: -12.619019, y: -56.011963}
+        - {x: 7.3809814, y: -56.011963}
+        - {x: 49.38098, y: -36.011963}
+        - {x: 49.38098, y: 37.988037}
+        - {x: 16.380981, y: 57.988037}
+    - name: tilesheet_complete_2X_17
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.404785, y: 57.988037}
+        - {x: -7.595215, y: 57.988037}
+        - {x: -48.595215, y: 37.988037}
+        - {x: -48.595215, y: -29.011963}
+        - {x: -39.595215, y: -35.011963}
+        - {x: -5.595215, y: -56.011963}
+        - {x: 7.404785, y: -56.011963}
+        - {x: 50.404785, y: -29.011963}
+        - {x: 50.404785, y: 32.988037}
+        - {x: 28.404785, y: 45.988037}
+    - name: tilesheet_complete_2X_18
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.571411, y: 57.988037}
+        - {x: -48.57141, y: 33.988037}
+        - {x: -48.57141, y: -31.011963}
+        - {x: -14.571411, y: -56.011963}
+        - {x: 9.428589, y: -56.011963}
+        - {x: 49.42859, y: -35.011963}
+        - {x: 49.42859, y: 37.988037}
+        - {x: 9.428589, y: 57.988037}
+    - name: tilesheet_complete_2X_19
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.547607, y: 57.988037}
+        - {x: -48.547607, y: 32.988037}
+        - {x: -48.547607, y: -29.011963}
+        - {x: -12.547607, y: -56.011963}
+        - {x: 7.4523926, y: -56.011963}
+        - {x: 50.452393, y: -35.011963}
+        - {x: 50.452393, y: 37.988037}
+        - {x: 8.452393, y: 57.988037}
+    - name: tilesheet_complete_2X_20
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 1793.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.523804, y: 57.988037}
+        - {x: -48.523804, y: 32.988037}
+        - {x: -48.523804, y: -30.011963}
+        - {x: -14.523804, y: -56.011963}
+        - {x: 8.476196, y: -56.011963}
+        - {x: 49.476196, y: -35.011963}
+        - {x: 49.476196, y: 37.988037}
+        - {x: 9.476196, y: 57.988037}
+    - name: tilesheet_complete_2X_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 57.528137}
+        - {x: -49, y: 32.528137}
+        - {x: -49, y: -30.471863}
+        - {x: -12, y: -56.471863}
+        - {x: 5, y: -56.471863}
+        - {x: 49, y: -34.471863}
+        - {x: 49, y: 34.528137}
+        - {x: 6, y: 57.528137}
+    - name: tilesheet_complete_2X_22
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.976189, y: 57.528137}
+        - {x: -48.97619, y: 31.528137}
+        - {x: -48.97619, y: -30.471863}
+        - {x: -12.976189, y: -54.471863}
+        - {x: -6.9761887, y: -56.471863}
+        - {x: 9.023811, y: -56.471863}
+        - {x: 50.02381, y: -30.471863}
+        - {x: 50.02381, y: 35.528137}
+        - {x: 10.023811, y: 57.528137}
+    - name: tilesheet_complete_2X_23
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.952377, y: 57.528137}
+        - {x: -48.952377, y: 32.528137}
+        - {x: -48.952377, y: -30.471863}
+        - {x: -39.952377, y: -36.471863}
+        - {x: -4.9523773, y: -56.471863}
+        - {x: 6.0476227, y: -56.471863}
+        - {x: 49.047623, y: -31.471863}
+        - {x: 49.047623, y: 32.528137}
+        - {x: 6.0476227, y: 57.528137}
+    - name: tilesheet_complete_2X_24
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.9285583, y: 57.528137}
+        - {x: -21.928558, y: 51.528137}
+        - {x: -48.92856, y: 31.528137}
+        - {x: -48.92856, y: -30.471863}
+        - {x: -10.928558, y: -56.471863}
+        - {x: 6.0714417, y: -56.471863}
+        - {x: 50.07144, y: -34.471863}
+        - {x: 50.07144, y: 32.528137}
+        - {x: 10.071442, y: 57.528137}
+    - name: tilesheet_complete_2X_25
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.9047546, y: 57.528137}
+        - {x: -48.904755, y: 32.528137}
+        - {x: -48.904755, y: -30.471863}
+        - {x: -8.904755, y: -56.471863}
+        - {x: 5.0952454, y: -56.471863}
+        - {x: 20.095245, y: -50.471863}
+        - {x: 49.095245, y: -30.471863}
+        - {x: 49.095245, y: 32.528137}
+        - {x: 7.0952454, y: 57.528137}
+    - name: tilesheet_complete_2X_26
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.880951, y: 57.528137}
+        - {x: -48.88095, y: 32.528137}
+        - {x: -48.88095, y: -30.471863}
+        - {x: -11.880951, y: -52.471863}
+        - {x: -3.880951, y: -56.471863}
+        - {x: 5.119049, y: -56.471863}
+        - {x: 50.11905, y: -30.471863}
+        - {x: 50.11905, y: 31.528137}
+        - {x: 7.119049, y: 57.528137}
+    - name: tilesheet_complete_2X_27
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.857117, y: 57.528137}
+        - {x: -48.857117, y: 36.528137}
+        - {x: -48.857117, y: -44.471863}
+        - {x: -13.857117, y: -56.471863}
+        - {x: 5.1428833, y: -56.471863}
+        - {x: 20.142883, y: -50.471863}
+        - {x: 49.142883, y: -30.471863}
+        - {x: 49.142883, y: 32.528137}
+        - {x: 11.142883, y: 57.528137}
+    - name: tilesheet_complete_2X_28
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.833313, y: 57.528137}
+        - {x: -48.833313, y: 37.528137}
+        - {x: -48.833313, y: -30.471863}
+        - {x: -11.833313, y: -56.471863}
+        - {x: 11.166687, y: -56.471863}
+        - {x: 50.166687, y: -40.471863}
+        - {x: 50.166687, y: 36.528137}
+        - {x: 16.166687, y: 57.528137}
+    - name: tilesheet_complete_2X_29
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.809509, y: 57.528137}
+        - {x: -48.80951, y: 44.528137}
+        - {x: -48.80951, y: -56.471863}
+        - {x: 29.19049, y: -56.471863}
+        - {x: 49.19049, y: -31.471863}
+        - {x: 49.19049, y: 32.528137}
+        - {x: 9.190491, y: 57.528137}
+    - name: tilesheet_complete_2X_30
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.2142944, y: 57.528137}
+        - {x: -8.785706, y: 57.528137}
+        - {x: -48.785706, y: 32.528137}
+        - {x: -48.785706, y: -30.471863}
+        - {x: -31.785706, y: -44.471863}
+        - {x: -5.7857056, y: -56.471863}
+        - {x: 11.214294, y: -56.471863}
+        - {x: 50.214294, y: -30.471863}
+        - {x: 50.214294, y: 31.528137}
+        - {x: 21.214294, y: 51.528137}
+    - name: tilesheet_complete_2X_31
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.238098, y: 57.528137}
+        - {x: -17.761902, y: 57.528137}
+        - {x: -48.7619, y: 48.528137}
+        - {x: -48.7619, y: -33.471863}
+        - {x: -42.7619, y: -56.471863}
+        - {x: 10.238098, y: -56.471863}
+        - {x: 46.2381, y: -51.471863}
+        - {x: 49.2381, y: -34.471863}
+        - {x: 49.2381, y: 45.528137}
+    - name: tilesheet_complete_2X_32
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.261963, y: 57.528137}
+        - {x: -5.738037, y: 57.528137}
+        - {x: -48.738037, y: 32.528137}
+        - {x: -48.738037, y: -30.471863}
+        - {x: -13.738037, y: -56.471863}
+        - {x: 10.261963, y: -56.471863}
+        - {x: 50.261963, y: -34.471863}
+        - {x: 50.261963, y: 31.528137}
+        - {x: 27.261963, y: 45.528137}
+    - name: tilesheet_complete_2X_33
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.714233, y: 57.528137}
+        - {x: -13.714233, y: 55.528137}
+        - {x: -48.714233, y: 32.528137}
+        - {x: -48.714233, y: -30.471863}
+        - {x: -26.714233, y: -47.471863}
+        - {x: -4.7142334, y: -56.471863}
+        - {x: 11.285767, y: -56.471863}
+        - {x: 49.285767, y: -30.471863}
+        - {x: 49.285767, y: 32.528137}
+        - {x: 10.285767, y: 57.528137}
+    - name: tilesheet_complete_2X_34
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.6904297, y: 57.528137}
+        - {x: -48.69043, y: 31.528137}
+        - {x: -48.69043, y: -30.471863}
+        - {x: -3.6904297, y: -56.471863}
+        - {x: 5.3095703, y: -56.471863}
+        - {x: 50.30957, y: -30.471863}
+        - {x: 50.30957, y: 31.528137}
+        - {x: 7.3095703, y: 57.528137}
+    - name: tilesheet_complete_2X_35
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.333374, y: 57.528137}
+        - {x: -5.666626, y: 57.528137}
+        - {x: -15.666626, y: 52.528137}
+        - {x: -48.666626, y: 31.528137}
+        - {x: -48.666626, y: -34.471863}
+        - {x: -4.666626, y: -56.471863}
+        - {x: 16.333374, y: -56.471863}
+        - {x: 49.333374, y: -42.471863}
+        - {x: 49.333374, y: 36.528137}
+        - {x: 46.333374, y: 51.528137}
+    - name: tilesheet_complete_2X_36
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.6428223, y: 57.528137}
+        - {x: -48.642822, y: 34.528137}
+        - {x: -48.642822, y: -39.471863}
+        - {x: -7.6428223, y: -56.471863}
+        - {x: 23.357178, y: -56.471863}
+        - {x: 50.357178, y: -30.471863}
+        - {x: 50.357178, y: 31.528137}
+        - {x: 13.357178, y: 57.528137}
+    - name: tilesheet_complete_2X_37
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.619019, y: 57.528137}
+        - {x: -48.61902, y: 32.528137}
+        - {x: -48.61902, y: -34.471863}
+        - {x: -4.6190186, y: -56.471863}
+        - {x: 12.380981, y: -56.471863}
+        - {x: 49.38098, y: -31.471863}
+        - {x: 49.38098, y: 34.528137}
+        - {x: 11.380981, y: 57.528137}
+    - name: tilesheet_complete_2X_38
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.404785, y: 57.528137}
+        - {x: -7.595215, y: 57.528137}
+        - {x: -48.595215, y: 32.528137}
+        - {x: -48.595215, y: -34.471863}
+        - {x: -8.595215, y: -56.471863}
+        - {x: 15.404785, y: -56.471863}
+        - {x: 50.404785, y: -30.471863}
+        - {x: 50.404785, y: 31.528137}
+        - {x: 16.404785, y: 54.528137}
+    - name: tilesheet_complete_2X_39
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.571411, y: 57.528137}
+        - {x: -48.57141, y: 38.528137}
+        - {x: -48.57141, y: -34.471863}
+        - {x: -5.571411, y: -56.471863}
+        - {x: 12.428589, y: -56.471863}
+        - {x: 49.42859, y: -30.471863}
+        - {x: 49.42859, y: 32.528137}
+        - {x: 18.428589, y: 57.528137}
+    - name: tilesheet_complete_2X_40
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5476074, y: 57.528137}
+        - {x: -48.547607, y: 34.528137}
+        - {x: -48.547607, y: -31.471863}
+        - {x: -12.547607, y: -56.471863}
+        - {x: 8.452393, y: -56.471863}
+        - {x: 50.452393, y: -35.471863}
+        - {x: 50.452393, y: 32.528137}
+        - {x: 13.452393, y: 57.528137}
+    - name: tilesheet_complete_2X_41
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 1537.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.523804, y: 57.528137}
+        - {x: -48.523804, y: 32.528137}
+        - {x: -48.523804, y: -30.471863}
+        - {x: -12.523804, y: -56.471863}
+        - {x: 6.4761963, y: -56.471863}
+        - {x: 49.476196, y: -35.471863}
+        - {x: 49.476196, y: 35.528137}
+        - {x: 11.476196, y: 57.528137}
+    - name: tilesheet_complete_2X_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 56.568237}
+        - {x: -9, y: 56.568237}
+        - {x: -49, y: 32.568237}
+        - {x: -49, y: -31.431763}
+        - {x: -8, y: -56.431763}
+        - {x: 7, y: -56.431763}
+        - {x: 43, y: -34.431763}
+        - {x: 49, y: -30.431763}
+        - {x: 49, y: 31.568237}
+    - name: tilesheet_complete_2X_43
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.976189, y: 56.568237}
+        - {x: -48.97619, y: 42.568237}
+        - {x: -48.97619, y: -42.431763}
+        - {x: -8.976189, y: -56.431763}
+        - {x: 11.023811, y: -56.431763}
+        - {x: 50.02381, y: -30.431763}
+        - {x: 50.02381, y: 31.568237}
+        - {x: 17.023811, y: 56.568237}
+    - name: tilesheet_complete_2X_44
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.047623, y: 56.568237}
+        - {x: -9.952377, y: 56.568237}
+        - {x: -14.952377, y: 54.568237}
+        - {x: -48.952377, y: 33.568237}
+        - {x: -48.952377, y: -33.431763}
+        - {x: -6.9523773, y: -56.431763}
+        - {x: 7.0476227, y: -56.431763}
+        - {x: 43.047623, y: -34.431763}
+        - {x: 49.047623, y: -30.431763}
+        - {x: 49.047623, y: 31.568237}
+    - name: tilesheet_complete_2X_45
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.928558, y: 56.568237}
+        - {x: -48.92856, y: 38.568237}
+        - {x: -48.92856, y: -35.431763}
+        - {x: -8.928558, y: -56.431763}
+        - {x: 14.071442, y: -56.431763}
+        - {x: 50.07144, y: -30.431763}
+        - {x: 50.07144, y: 31.568237}
+        - {x: 18.071442, y: 56.568237}
+    - name: tilesheet_complete_2X_46
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.0952454, y: 56.568237}
+        - {x: -7.9047546, y: 56.568237}
+        - {x: -48.904755, y: 31.568237}
+        - {x: -48.904755, y: -32.431763}
+        - {x: -6.9047546, y: -56.431763}
+        - {x: 7.0952454, y: -56.431763}
+        - {x: 49.095245, y: -31.431763}
+        - {x: 49.095245, y: 30.568237}
+        - {x: 48.095245, y: 32.568237}
+    - name: tilesheet_complete_2X_47
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.880951, y: 56.568237}
+        - {x: -48.88095, y: 38.568237}
+        - {x: -48.88095, y: -33.431763}
+        - {x: -12.880951, y: -56.431763}
+        - {x: 7.119049, y: -56.431763}
+        - {x: 50.11905, y: -33.431763}
+        - {x: 50.11905, y: 31.568237}
+        - {x: 18.11905, y: 56.568237}
+    - name: tilesheet_complete_2X_48
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.8571167, y: 56.568237}
+        - {x: -48.857117, y: 31.568237}
+        - {x: -48.857117, y: -38.431763}
+        - {x: -9.857117, y: -56.431763}
+        - {x: 20.142883, y: -56.431763}
+        - {x: 49.142883, y: -34.431763}
+        - {x: 49.142883, y: 35.568237}
+        - {x: 7.1428833, y: 56.568237}
+    - name: tilesheet_complete_2X_49
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.833313, y: 56.568237}
+        - {x: -48.833313, y: 33.568237}
+        - {x: -48.833313, y: -33.431763}
+        - {x: -5.833313, y: -56.431763}
+        - {x: 8.166687, y: -56.431763}
+        - {x: 50.166687, y: -31.431763}
+        - {x: 50.166687, y: 35.568237}
+        - {x: 7.166687, y: 56.568237}
+    - name: tilesheet_complete_2X_50
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.80951, y: 56.568237}
+        - {x: -48.80951, y: 31.568237}
+        - {x: -48.80951, y: -32.431763}
+        - {x: -13.809509, y: -56.431763}
+        - {x: 8.190491, y: -56.431763}
+        - {x: 49.19049, y: -34.431763}
+        - {x: 49.19049, y: 39.568237}
+        - {x: 11.190491, y: 56.568237}
+    - name: tilesheet_complete_2X_51
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.785706, y: 56.568237}
+        - {x: -48.785706, y: 31.568237}
+        - {x: -48.785706, y: -35.431763}
+        - {x: -5.7857056, y: -56.431763}
+        - {x: 12.214294, y: -56.431763}
+        - {x: 50.214294, y: -31.431763}
+        - {x: 50.214294, y: 31.568237}
+        - {x: 9.214294, y: 56.568237}
+    - name: tilesheet_complete_2X_52
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.761902, y: 56.568237}
+        - {x: -48.7619, y: 40.568237}
+        - {x: -48.7619, y: -38.431763}
+        - {x: -12.761902, y: -56.431763}
+        - {x: 8.238098, y: -56.431763}
+        - {x: 49.2381, y: -31.431763}
+        - {x: 49.2381, y: 32.568237}
+        - {x: 12.238098, y: 56.568237}
+    - name: tilesheet_complete_2X_53
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.738037, y: 56.568237}
+        - {x: -48.738037, y: 32.568237}
+        - {x: -48.738037, y: -33.431763}
+        - {x: -15.738037, y: -56.431763}
+        - {x: 12.261963, y: -56.431763}
+        - {x: 50.261963, y: -37.431763}
+        - {x: 50.261963, y: 35.568237}
+        - {x: 10.261963, y: 56.568237}
+    - name: tilesheet_complete_2X_54
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.714233, y: 56.568237}
+        - {x: -48.714233, y: 33.568237}
+        - {x: -48.714233, y: -32.431763}
+        - {x: -13.714233, y: -56.431763}
+        - {x: 8.285767, y: -56.431763}
+        - {x: 49.285767, y: -35.431763}
+        - {x: 49.285767, y: 48.568237}
+        - {x: 20.285767, y: 56.568237}
+    - name: tilesheet_complete_2X_55
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.6904297, y: 56.568237}
+        - {x: -48.69043, y: 31.568237}
+        - {x: -48.69043, y: -30.431763}
+        - {x: -42.69043, y: -34.431763}
+        - {x: -18.69043, y: -51.431763}
+        - {x: -4.6904297, y: -56.431763}
+        - {x: 9.30957, y: -56.431763}
+        - {x: 50.30957, y: -30.431763}
+        - {x: 50.30957, y: 31.568237}
+        - {x: 9.30957, y: 56.568237}
+    - name: tilesheet_complete_2X_56
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.666626, y: 56.568237}
+        - {x: -48.666626, y: 37.568237}
+        - {x: -48.666626, y: -34.431763}
+        - {x: -9.666626, y: -56.431763}
+        - {x: 15.333374, y: -56.431763}
+        - {x: 49.333374, y: -31.431763}
+        - {x: 49.333374, y: 32.568237}
+        - {x: 17.333374, y: 56.568237}
+    - name: tilesheet_complete_2X_57
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.357178, y: 56.568237}
+        - {x: -9.642822, y: 56.568237}
+        - {x: -48.642822, y: 37.568237}
+        - {x: -48.642822, y: -30.431763}
+        - {x: -35.642822, y: -38.431763}
+        - {x: -17.642822, y: -49.431763}
+        - {x: -6.6428223, y: -55.431763}
+        - {x: -3.6428223, y: -56.431763}
+        - {x: 15.357178, y: -56.431763}
+        - {x: 46.357178, y: -52.431763}
+        - {x: 50.357178, y: -34.431763}
+        - {x: 50.357178, y: 44.568237}
+    - name: tilesheet_complete_2X_58
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.619019, y: 56.568237}
+        - {x: -48.61902, y: 35.568237}
+        - {x: -48.61902, y: -35.431763}
+        - {x: -16.619019, y: -56.431763}
+        - {x: 10.380981, y: -56.431763}
+        - {x: 49.38098, y: -36.431763}
+        - {x: 49.38098, y: 36.568237}
+        - {x: 15.380981, y: 56.568237}
+    - name: tilesheet_complete_2X_59
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.404785, y: 56.568237}
+        - {x: -18.595215, y: 56.568237}
+        - {x: -48.595215, y: 42.568237}
+        - {x: -48.595215, y: -34.431763}
+        - {x: -45.595215, y: -47.431763}
+        - {x: -8.595215, y: -56.431763}
+        - {x: 7.404785, y: -56.431763}
+        - {x: 26.404785, y: -46.431763}
+        - {x: 50.404785, y: -30.431763}
+        - {x: 50.404785, y: 35.568237}
+    - name: tilesheet_complete_2X_60
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.571411, y: 56.568237}
+        - {x: -48.57141, y: 41.568237}
+        - {x: -48.57141, y: -40.431763}
+        - {x: -10.571411, y: -56.431763}
+        - {x: 23.428589, y: -56.431763}
+        - {x: 49.42859, y: -31.431763}
+        - {x: 49.42859, y: 32.568237}
+        - {x: 22.428589, y: 56.568237}
+    - name: tilesheet_complete_2X_61
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5476074, y: 56.568237}
+        - {x: -48.547607, y: 34.568237}
+        - {x: -48.547607, y: -37.431763}
+        - {x: -6.5476074, y: -56.431763}
+        - {x: 19.452393, y: -56.431763}
+        - {x: 50.452393, y: -30.431763}
+        - {x: 50.452393, y: 32.568237}
+        - {x: 13.452393, y: 56.568237}
+    - name: tilesheet_complete_2X_62
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 1281.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.523804, y: 56.568237}
+        - {x: -48.523804, y: 32.568237}
+        - {x: -48.523804, y: -35.431763}
+        - {x: -7.5238037, y: -56.431763}
+        - {x: 15.476196, y: -56.431763}
+        - {x: 49.476196, y: -32.431763}
+        - {x: 49.476196, y: 34.568237}
+        - {x: 7.4761963, y: 56.568237}
+    - name: tilesheet_complete_2X_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 57.608337}
+        - {x: -49, y: 48.608337}
+        - {x: -49, y: -34.391663}
+        - {x: -9, y: -56.391663}
+        - {x: 24, y: -56.391663}
+        - {x: 49, y: -48.391663}
+        - {x: 49, y: 57.608337}
+    - name: tilesheet_complete_2X_64
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.976189, y: 57.608337}
+        - {x: -48.97619, y: 36.608337}
+        - {x: -48.97619, y: -35.391663}
+        - {x: -8.976189, y: -56.391663}
+        - {x: 14.023811, y: -56.391663}
+        - {x: 50.02381, y: -30.391663}
+        - {x: 50.02381, y: 31.608337}
+        - {x: 17.023811, y: 57.608337}
+    - name: tilesheet_complete_2X_65
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.0476227, y: 57.608337}
+        - {x: -12.952377, y: 57.608337}
+        - {x: -48.952377, y: 40.608337}
+        - {x: -48.952377, y: -39.391663}
+        - {x: -5.9523773, y: -56.391663}
+        - {x: 5.0476227, y: -56.391663}
+        - {x: 49.047623, y: -30.391663}
+        - {x: 49.047623, y: 31.608337}
+        - {x: 14.047623, y: 53.608337}
+    - name: tilesheet_complete_2X_66
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.928558, y: 57.608337}
+        - {x: -48.92856, y: 31.608337}
+        - {x: -48.92856, y: -31.391663}
+        - {x: -5.9285583, y: -56.391663}
+        - {x: 5.0714417, y: -56.391663}
+        - {x: 50.07144, y: -30.391663}
+        - {x: 50.07144, y: 35.608337}
+        - {x: 10.071442, y: 57.608337}
+    - name: tilesheet_complete_2X_67
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.904755, y: 57.608337}
+        - {x: -48.904755, y: 31.608337}
+        - {x: -48.904755, y: -30.391663}
+        - {x: -44.904755, y: -33.391663}
+        - {x: -11.904755, y: -56.391663}
+        - {x: 5.0952454, y: -56.391663}
+        - {x: 49.095245, y: -34.391663}
+        - {x: 49.095245, y: 36.608337}
+        - {x: 9.095245, y: 57.608337}
+    - name: tilesheet_complete_2X_68
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.880951, y: 57.608337}
+        - {x: -48.88095, y: 37.608337}
+        - {x: -48.88095, y: -34.391663}
+        - {x: -8.880951, y: -56.391663}
+        - {x: 15.119049, y: -56.391663}
+        - {x: 50.11905, y: -30.391663}
+        - {x: 50.11905, y: 32.608337}
+        - {x: 15.119049, y: 57.608337}
+    - name: tilesheet_complete_2X_69
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.8571167, y: 57.608337}
+        - {x: -46.857117, y: 37.608337}
+        - {x: -48.857117, y: 32.608337}
+        - {x: -48.857117, y: -30.391663}
+        - {x: -11.857117, y: -56.391663}
+        - {x: 5.1428833, y: -56.391663}
+        - {x: 49.142883, y: -34.391663}
+        - {x: 49.142883, y: 31.608337}
+        - {x: 11.142883, y: 57.608337}
+    - name: tilesheet_complete_2X_70
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.833313, y: 57.608337}
+        - {x: -48.833313, y: 32.608337}
+        - {x: -48.833313, y: -31.391663}
+        - {x: -13.833313, y: -56.391663}
+        - {x: 10.166687, y: -56.391663}
+        - {x: 50.166687, y: -33.391663}
+        - {x: 50.166687, y: 33.608337}
+        - {x: 6.166687, y: 57.608337}
+    - name: tilesheet_complete_2X_71
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.809509, y: 57.608337}
+        - {x: -47.80951, y: 37.608337}
+        - {x: -48.80951, y: 33.608337}
+        - {x: -48.80951, y: -30.391663}
+        - {x: -11.809509, y: -56.391663}
+        - {x: 6.1904907, y: -56.391663}
+        - {x: 49.19049, y: -34.391663}
+        - {x: 49.19049, y: 32.608337}
+        - {x: 14.190491, y: 57.608337}
+    - name: tilesheet_complete_2X_72
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.785706, y: 57.608337}
+        - {x: -48.785706, y: 31.608337}
+        - {x: -48.785706, y: -31.391663}
+        - {x: -9.785706, y: -56.391663}
+        - {x: 5.2142944, y: -56.391663}
+        - {x: 50.214294, y: -33.391663}
+        - {x: 50.214294, y: 40.608337}
+        - {x: 10.214294, y: 57.608337}
+    - name: tilesheet_complete_2X_73
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.761902, y: 57.608337}
+        - {x: -48.7619, y: 31.608337}
+        - {x: -48.7619, y: -30.391663}
+        - {x: -11.761902, y: -56.391663}
+        - {x: 5.238098, y: -56.391663}
+        - {x: 49.2381, y: -34.391663}
+        - {x: 49.2381, y: 35.608337}
+        - {x: 9.238098, y: 57.608337}
+    - name: tilesheet_complete_2X_74
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.738037, y: 57.608337}
+        - {x: -48.738037, y: 35.608337}
+        - {x: -48.738037, y: -34.391663}
+        - {x: -8.738037, y: -56.391663}
+        - {x: 15.261963, y: -56.391663}
+        - {x: 50.261963, y: -31.391663}
+        - {x: 50.261963, y: 31.608337}
+        - {x: 13.261963, y: 57.608337}
+    - name: tilesheet_complete_2X_75
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.714233, y: 57.608337}
+        - {x: -48.714233, y: 33.608337}
+        - {x: -48.714233, y: -30.391663}
+        - {x: -12.714233, y: -56.391663}
+        - {x: 7.2857666, y: -56.391663}
+        - {x: 49.285767, y: -35.391663}
+        - {x: 49.285767, y: 46.608337}
+        - {x: 13.285767, y: 57.608337}
+    - name: tilesheet_complete_2X_76
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.6904297, y: 57.608337}
+        - {x: -48.69043, y: 35.608337}
+        - {x: -48.69043, y: -30.391663}
+        - {x: -10.69043, y: -56.391663}
+        - {x: 6.3095703, y: -56.391663}
+        - {x: 50.30957, y: -34.391663}
+        - {x: 50.30957, y: 32.608337}
+        - {x: 13.30957, y: 57.608337}
+    - name: tilesheet_complete_2X_77
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.666626, y: 57.608337}
+        - {x: -48.666626, y: 35.608337}
+        - {x: -48.666626, y: -30.391663}
+        - {x: -12.666626, y: -56.391663}
+        - {x: 7.333374, y: -56.391663}
+        - {x: 49.333374, y: -36.391663}
+        - {x: 49.333374, y: 32.608337}
+        - {x: 12.333374, y: 57.608337}
+    - name: tilesheet_complete_2X_78
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.642822, y: 57.608337}
+        - {x: -48.642822, y: 32.608337}
+        - {x: -48.642822, y: -32.391663}
+        - {x: -45.642822, y: -40.391663}
+        - {x: -6.6428223, y: -56.391663}
+        - {x: 17.357178, y: -56.391663}
+        - {x: 50.357178, y: -30.391663}
+        - {x: 50.357178, y: 35.608337}
+        - {x: 12.357178, y: 57.608337}
+    - name: tilesheet_complete_2X_79
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.6190186, y: 57.608337}
+        - {x: -24.619019, y: 50.608337}
+        - {x: -48.61902, y: 31.608337}
+        - {x: -48.61902, y: -30.391663}
+        - {x: -12.619019, y: -56.391663}
+        - {x: 7.3809814, y: -56.391663}
+        - {x: 49.38098, y: -36.391663}
+        - {x: 49.38098, y: 32.608337}
+        - {x: 11.380981, y: 57.608337}
+    - name: tilesheet_complete_2X_80
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.595215, y: 57.608337}
+        - {x: -48.595215, y: 32.608337}
+        - {x: -48.595215, y: -37.391663}
+        - {x: -6.595215, y: -56.391663}
+        - {x: 18.404785, y: -56.391663}
+        - {x: 50.404785, y: -30.391663}
+        - {x: 50.404785, y: 35.608337}
+        - {x: 7.404785, y: 57.608337}
+    - name: tilesheet_complete_2X_81
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.428589, y: 57.608337}
+        - {x: -6.571411, y: 57.608337}
+        - {x: -48.57141, y: 32.608337}
+        - {x: -48.57141, y: -30.391663}
+        - {x: -32.57141, y: -40.391663}
+        - {x: -4.571411, y: -56.391663}
+        - {x: 5.428589, y: -56.391663}
+        - {x: 40.42859, y: -36.391663}
+        - {x: 49.42859, y: -30.391663}
+        - {x: 49.42859, y: 32.608337}
+    - name: tilesheet_complete_2X_82
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5476074, y: 57.608337}
+        - {x: -48.547607, y: 35.608337}
+        - {x: -48.547607, y: -32.391663}
+        - {x: -4.5476074, y: -56.391663}
+        - {x: 11.452393, y: -56.391663}
+        - {x: 50.452393, y: -31.391663}
+        - {x: 50.452393, y: 32.608337}
+        - {x: 12.452393, y: 57.608337}
+    - name: tilesheet_complete_2X_83
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 1025.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.523804, y: 57.608337}
+        - {x: -48.523804, y: 47.608337}
+        - {x: -48.523804, y: -56.391663}
+        - {x: 20.476196, y: -56.391663}
+        - {x: 49.476196, y: -53.391663}
+        - {x: 49.476196, y: 45.608337}
+        - {x: 17.476196, y: 57.608337}
+    - name: tilesheet_complete_2X_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 56.648438}
+        - {x: -49, y: 43.648438}
+        - {x: -49, y: -51.351562}
+        - {x: -23, y: -56.351562}
+        - {x: 33, y: -56.351562}
+        - {x: 49, y: -31.351562}
+        - {x: 49, y: 31.648438}
+        - {x: 9, y: 56.648438}
+    - name: tilesheet_complete_2X_85
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.9761887, y: 56.648438}
+        - {x: -47.97619, y: 37.648438}
+        - {x: -48.97619, y: 34.648438}
+        - {x: -48.97619, y: -32.351562}
+        - {x: -10.976189, y: -56.351562}
+        - {x: 8.023811, y: -56.351562}
+        - {x: 50.02381, y: -31.351562}
+        - {x: 50.02381, y: 32.648438}
+        - {x: 15.023811, y: 56.648438}
+    - name: tilesheet_complete_2X_86
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.952377, y: 56.648438}
+        - {x: -48.952377, y: 30.648438}
+        - {x: -48.952377, y: -31.351562}
+        - {x: -14.952377, y: -56.351562}
+        - {x: 8.047623, y: -56.351562}
+        - {x: 49.047623, y: -34.351562}
+        - {x: 49.047623, y: 36.648438}
+        - {x: 12.047623, y: 56.648438}
+    - name: tilesheet_complete_2X_87
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.928558, y: 56.648438}
+        - {x: -48.92856, y: 31.648438}
+        - {x: -48.92856, y: -31.351562}
+        - {x: -14.928558, y: -56.351562}
+        - {x: 12.071442, y: -56.351562}
+        - {x: 50.07144, y: -35.351562}
+        - {x: 50.07144, y: 36.648438}
+        - {x: 10.071442, y: 56.648438}
+    - name: tilesheet_complete_2X_88
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.095245, y: 56.648438}
+        - {x: -9.904755, y: 56.648438}
+        - {x: -48.904755, y: 36.648438}
+        - {x: -48.904755, y: -31.351562}
+        - {x: -7.9047546, y: -56.351562}
+        - {x: 8.095245, y: -56.351562}
+        - {x: 49.095245, y: -31.351562}
+        - {x: 49.095245, y: 31.648438}
+        - {x: 48.095245, y: 32.648438}
+    - name: tilesheet_complete_2X_89
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.880951, y: 56.648438}
+        - {x: -48.88095, y: 31.648438}
+        - {x: -48.88095, y: -32.351562}
+        - {x: -11.880951, y: -56.351562}
+        - {x: 8.119049, y: -56.351562}
+        - {x: 50.11905, y: -34.351562}
+        - {x: 50.11905, y: 35.648438}
+        - {x: 11.119049, y: 56.648438}
+    - name: tilesheet_complete_2X_90
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.857117, y: 56.648438}
+        - {x: -48.857117, y: 35.648438}
+        - {x: -48.857117, y: -31.351562}
+        - {x: -11.857117, y: -56.351562}
+        - {x: 24.142883, y: -56.351562}
+        - {x: 46.142883, y: -52.351562}
+        - {x: 49.142883, y: -36.351562}
+        - {x: 49.142883, y: 42.648438}
+        - {x: 21.142883, y: 56.648438}
+    - name: tilesheet_complete_2X_91
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.833313, y: 56.648438}
+        - {x: -48.833313, y: 31.648438}
+        - {x: -48.833313, y: -33.351562}
+        - {x: -18.833313, y: -51.351562}
+        - {x: -5.833313, y: -56.351562}
+        - {x: 10.166687, y: -56.351562}
+        - {x: 50.166687, y: -30.351562}
+        - {x: 50.166687, y: 32.648438}
+        - {x: 8.166687, y: 56.648438}
+    - name: tilesheet_complete_2X_92
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.80951, y: 56.648438}
+        - {x: -48.80951, y: 32.648438}
+        - {x: -48.80951, y: -31.351562}
+        - {x: -13.809509, y: -56.351562}
+        - {x: 8.190491, y: -56.351562}
+        - {x: 49.19049, y: -34.351562}
+        - {x: 49.19049, y: 41.648438}
+        - {x: 12.190491, y: 56.648438}
+    - name: tilesheet_complete_2X_93
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.2142944, y: 56.648438}
+        - {x: -6.7857056, y: 56.648438}
+        - {x: -48.785706, y: 31.648438}
+        - {x: -48.785706, y: -33.351562}
+        - {x: -14.785706, y: -56.351562}
+        - {x: 10.214294, y: -56.351562}
+        - {x: 50.214294, y: -37.351562}
+        - {x: 50.214294, y: 31.648438}
+        - {x: 28.214294, y: 44.648438}
+    - name: tilesheet_complete_2X_94
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.7619, y: 56.648438}
+        - {x: -48.7619, y: 40.648438}
+        - {x: -48.7619, y: -37.351562}
+        - {x: -8.761902, y: -56.351562}
+        - {x: 6.238098, y: -56.351562}
+        - {x: 49.2381, y: -31.351562}
+        - {x: 49.2381, y: 46.648438}
+        - {x: 18.238098, y: 56.648438}
+    - name: tilesheet_complete_2X_95
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.738037, y: 56.648438}
+        - {x: -48.738037, y: 31.648438}
+        - {x: -48.738037, y: -32.351562}
+        - {x: -12.738037, y: -56.351562}
+        - {x: 8.261963, y: -56.351562}
+        - {x: 50.261963, y: -32.351562}
+        - {x: 50.261963, y: 36.648438}
+        - {x: 10.261963, y: 56.648438}
+    - name: tilesheet_complete_2X_96
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.714233, y: 56.648438}
+        - {x: -48.714233, y: 40.648438}
+        - {x: -48.714233, y: -38.351562}
+        - {x: -17.714233, y: -56.351562}
+        - {x: 9.285767, y: -56.351562}
+        - {x: 49.285767, y: -36.351562}
+        - {x: 49.285767, y: 31.648438}
+        - {x: 12.285767, y: 56.648438}
+    - name: tilesheet_complete_2X_97
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.69043, y: 56.648438}
+        - {x: -48.69043, y: 36.648438}
+        - {x: -48.69043, y: -35.351562}
+        - {x: -11.69043, y: -56.351562}
+        - {x: 17.30957, y: -56.351562}
+        - {x: 50.30957, y: -30.351562}
+        - {x: 50.30957, y: 32.648438}
+        - {x: 17.30957, y: 56.648438}
+    - name: tilesheet_complete_2X_98
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.666626, y: 56.648438}
+        - {x: -48.666626, y: 34.648438}
+        - {x: -48.666626, y: -33.351562}
+        - {x: -12.666626, y: -56.351562}
+        - {x: 7.333374, y: -56.351562}
+        - {x: 48.333374, y: -37.351562}
+        - {x: 49.333374, y: -34.351562}
+        - {x: 49.333374, y: 32.648438}
+        - {x: 14.333374, y: 56.648438}
+    - name: tilesheet_complete_2X_99
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.642822, y: 56.648438}
+        - {x: -48.642822, y: 37.648438}
+        - {x: -48.642822, y: -39.351562}
+        - {x: -9.642822, y: -56.351562}
+        - {x: 20.357178, y: -56.351562}
+        - {x: 50.357178, y: -30.351562}
+        - {x: 50.357178, y: 31.648438}
+        - {x: 17.357178, y: 56.648438}
+    - name: tilesheet_complete_2X_100
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.380981, y: 56.648438}
+        - {x: -6.6190186, y: 56.648438}
+        - {x: -48.61902, y: 34.648438}
+        - {x: -48.61902, y: -39.351562}
+        - {x: -8.619019, y: -56.351562}
+        - {x: 19.380981, y: -56.351562}
+        - {x: 49.38098, y: -38.351562}
+        - {x: 49.38098, y: 37.648438}
+    - name: tilesheet_complete_2X_101
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.595215, y: 56.648438}
+        - {x: -48.595215, y: 32.648438}
+        - {x: -48.595215, y: -33.351562}
+        - {x: -19.595215, y: -56.351562}
+        - {x: 12.404785, y: -56.351562}
+        - {x: 50.404785, y: -42.351562}
+        - {x: 50.404785, y: 32.648438}
+        - {x: 9.404785, y: 56.648438}
+    - name: tilesheet_complete_2X_102
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.571411, y: 56.648438}
+        - {x: -48.57141, y: 35.648438}
+        - {x: -48.57141, y: -34.351562}
+        - {x: -13.571411, y: -56.351562}
+        - {x: 9.428589, y: -56.351562}
+        - {x: 49.42859, y: -36.351562}
+        - {x: 49.42859, y: 37.648438}
+        - {x: 9.428589, y: 56.648438}
+    - name: tilesheet_complete_2X_103
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.547607, y: 56.648438}
+        - {x: -48.547607, y: 31.648438}
+        - {x: -48.547607, y: -35.351562}
+        - {x: -5.5476074, y: -56.351562}
+        - {x: 15.452393, y: -56.351562}
+        - {x: 50.452393, y: -33.351562}
+        - {x: 50.452393, y: 36.648438}
+        - {x: 8.452393, y: 56.648438}
+    - name: tilesheet_complete_2X_104
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 769.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.523804, y: 56.648438}
+        - {x: -48.523804, y: 46.648438}
+        - {x: -48.523804, y: -35.351562}
+        - {x: -8.523804, y: -56.351562}
+        - {x: 15.476196, y: -56.351562}
+        - {x: 49.476196, y: -31.351562}
+        - {x: 49.476196, y: 34.648438}
+        - {x: 35.476196, y: 56.648438}
+    - name: tilesheet_complete_2X_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 57.688553}
+        - {x: -49, y: 32.688553}
+        - {x: -49, y: -31.311447}
+        - {x: -15, y: -56.311447}
+        - {x: 9, y: -56.311447}
+        - {x: 49, y: -34.311447}
+        - {x: 49, y: 34.688553}
+        - {x: 6, y: 57.688553}
+    - name: tilesheet_complete_2X_106
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.0238113, y: 57.688553}
+        - {x: -8.976189, y: 57.688553}
+        - {x: -48.97619, y: 31.688553}
+        - {x: -48.97619, y: -30.311447}
+        - {x: -11.976189, y: -54.311447}
+        - {x: -5.9761887, y: -56.311447}
+        - {x: 9.023811, y: -56.311447}
+        - {x: 50.02381, y: -30.311447}
+        - {x: 50.02381, y: 31.688553}
+        - {x: 28.023811, y: 47.688553}
+    - name: tilesheet_complete_2X_107
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.9523773, y: 57.688553}
+        - {x: -48.952377, y: 32.688553}
+        - {x: -48.952377, y: -30.311447}
+        - {x: -44.952377, y: -33.311447}
+        - {x: -11.952377, y: -56.311447}
+        - {x: 6.0476227, y: -56.311447}
+        - {x: 49.047623, y: -34.311447}
+        - {x: 49.047623, y: 32.688553}
+        - {x: 5.0476227, y: 57.688553}
+    - name: tilesheet_complete_2X_108
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.928558, y: 57.688553}
+        - {x: -48.92856, y: 31.688553}
+        - {x: -48.92856, y: -34.311447}
+        - {x: -7.9285583, y: -56.311447}
+        - {x: 14.071442, y: -56.311447}
+        - {x: 50.07144, y: -30.311447}
+        - {x: 50.07144, y: 34.688553}
+        - {x: 8.071442, y: 57.688553}
+    - name: tilesheet_complete_2X_109
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.9047546, y: 57.688553}
+        - {x: -11.904755, y: 56.688553}
+        - {x: -48.904755, y: 31.688553}
+        - {x: -48.904755, y: -30.311447}
+        - {x: -44.904755, y: -33.311447}
+        - {x: -39.904755, y: -36.311447}
+        - {x: -4.9047546, y: -56.311447}
+        - {x: 5.0952454, y: -56.311447}
+        - {x: 49.095245, y: -31.311447}
+        - {x: 49.095245, y: 31.688553}
+        - {x: 7.0952454, y: 57.688553}
+    - name: tilesheet_complete_2X_110
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.880951, y: 57.688553}
+        - {x: -48.88095, y: 36.688553}
+        - {x: -48.88095, y: -34.311447}
+        - {x: -9.880951, y: -56.311447}
+        - {x: 15.119049, y: -56.311447}
+        - {x: 50.11905, y: -30.311447}
+        - {x: 50.11905, y: 31.688553}
+        - {x: 17.11905, y: 57.688553}
+    - name: tilesheet_complete_2X_111
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.857117, y: 57.688553}
+        - {x: -48.857117, y: 33.688553}
+        - {x: -48.857117, y: -30.311447}
+        - {x: -11.857117, y: -56.311447}
+        - {x: 5.1428833, y: -56.311447}
+        - {x: 49.142883, y: -34.311447}
+        - {x: 49.142883, y: 34.688553}
+        - {x: 10.142883, y: 57.688553}
+    - name: tilesheet_complete_2X_112
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.833313, y: 57.688553}
+        - {x: -48.833313, y: 53.688553}
+        - {x: -48.833313, y: -32.311447}
+        - {x: -38.833313, y: -56.311447}
+        - {x: 24.166687, y: -56.311447}
+        - {x: 49.166687, y: -43.311447}
+        - {x: 50.166687, y: -36.311447}
+        - {x: 50.166687, y: 42.688553}
+        - {x: 8.166687, y: 57.688553}
+    - name: tilesheet_complete_2X_113
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.809509, y: 57.688553}
+        - {x: -48.80951, y: 32.688553}
+        - {x: -48.80951, y: -30.311447}
+        - {x: -11.809509, y: -56.311447}
+        - {x: 6.1904907, y: -56.311447}
+        - {x: 49.19049, y: -34.311447}
+        - {x: 49.19049, y: 36.688553}
+        - {x: 10.190491, y: 57.688553}
+    - name: tilesheet_complete_2X_114
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.214294, y: 43.688553}
+        - {x: 8.214294, y: 57.688553}
+        - {x: -5.7857056, y: 57.688553}
+        - {x: -48.785706, y: 31.688553}
+        - {x: -48.785706, y: -30.311447}
+        - {x: -5.7857056, y: -56.311447}
+        - {x: 7.2142944, y: -56.311447}
+        - {x: 45.214294, y: -33.311447}
+        - {x: 50.214294, y: -29.311447}
+        - {x: 50.214294, y: 32.688553}
+    - name: tilesheet_complete_2X_115
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.7619019, y: 57.688553}
+        - {x: -1.7619019, y: 54.688553}
+        - {x: 1.2380981, y: 54.688553}
+        - {x: 3.2380981, y: 56.688553}
+        - {x: 3.2380981, y: 57.688553}
+    - name: tilesheet_complete_2X_116
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.738037, y: 57.688553}
+        - {x: -1.7380371, y: 54.688553}
+        - {x: 2.261963, y: 54.688553}
+        - {x: 4.261963, y: 56.688553}
+        - {x: 4.261963, y: 57.688553}
+    - name: tilesheet_complete_2X_117
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.7142334, y: 57.688553}
+        - {x: -1.7142334, y: 54.688553}
+        - {x: 1.2857666, y: 54.688553}
+        - {x: 3.2857666, y: 56.688553}
+        - {x: 3.2857666, y: 57.688553}
+    - name: tilesheet_complete_2X_118
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.6904297, y: 57.688553}
+        - {x: -1.6904297, y: 54.688553}
+        - {x: 2.3095703, y: 54.688553}
+        - {x: 4.3095703, y: 56.688553}
+        - {x: 4.3095703, y: 57.688553}
+    - name: tilesheet_complete_2X_119
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.666626, y: 57.688553}
+        - {x: -1.666626, y: 54.688553}
+        - {x: 1.333374, y: 54.688553}
+        - {x: 3.333374, y: 56.688553}
+        - {x: 3.333374, y: 57.688553}
+    - name: tilesheet_complete_2X_120
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.6428223, y: 57.688553}
+        - {x: -1.6428223, y: 54.688553}
+        - {x: 2.3571777, y: 54.688553}
+        - {x: 4.3571777, y: 56.688553}
+        - {x: 4.3571777, y: 57.688553}
+    - name: tilesheet_complete_2X_121
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.6190186, y: 57.688553}
+        - {x: -1.6190186, y: 54.688553}
+        - {x: 1.3809814, y: 54.688553}
+        - {x: 3.3809814, y: 56.688553}
+        - {x: 3.3809814, y: 57.688553}
+    - name: tilesheet_complete_2X_122
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5952148, y: 57.688553}
+        - {x: -1.5952148, y: 54.688553}
+        - {x: 2.4047852, y: 54.688553}
+        - {x: 4.404785, y: 56.688553}
+        - {x: 4.404785, y: 57.688553}
+    - name: tilesheet_complete_2X_123
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5714111, y: 57.688553}
+        - {x: -1.5714111, y: 54.688553}
+        - {x: 1.4285889, y: 54.688553}
+        - {x: 3.4285889, y: 56.688553}
+        - {x: 3.4285889, y: 57.688553}
+    - name: tilesheet_complete_2X_124
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5476074, y: 57.688553}
+        - {x: -1.5476074, y: 54.688553}
+        - {x: 2.4523926, y: 54.688553}
+        - {x: 4.4523926, y: 56.688553}
+        - {x: 4.4523926, y: 57.688553}
+    - name: tilesheet_complete_2X_125
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 513.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5238037, y: 57.688553}
+        - {x: -1.5238037, y: 54.688553}
+        - {x: 1.4761963, y: 54.688553}
+        - {x: 3.4761963, y: 56.688553}
+        - {x: 3.4761963, y: 57.688553}
+    - name: tilesheet_complete_2X_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 56.72866}
+        - {x: -49, y: 40.72866}
+        - {x: -49, y: -34.27134}
+        - {x: -6, y: -56.27134}
+        - {x: 12, y: -56.27134}
+        - {x: 49, y: -31.27134}
+        - {x: 49, y: 31.72866}
+        - {x: 23, y: 56.72866}
+    - name: tilesheet_complete_2X_127
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.97619, y: 56.72866}
+        - {x: -48.97619, y: 35.72866}
+        - {x: -48.97619, y: -50.27134}
+        - {x: -26.976189, y: -56.27134}
+        - {x: 8.023811, y: -56.27134}
+        - {x: 50.02381, y: -36.27134}
+        - {x: 50.02381, y: 31.72866}
+        - {x: 14.023811, y: 56.72866}
+    - name: tilesheet_complete_2X_128
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.952377, y: 56.72866}
+        - {x: -48.952377, y: 35.72866}
+        - {x: -48.952377, y: -35.27134}
+        - {x: -7.9523773, y: -56.27134}
+        - {x: 14.047623, y: -56.27134}
+        - {x: 49.047623, y: -31.27134}
+        - {x: 49.047623, y: 32.72866}
+        - {x: 16.047623, y: 56.72866}
+    - name: tilesheet_complete_2X_129
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.0714417, y: 56.72866}
+        - {x: -5.9285583, y: 56.72866}
+        - {x: -48.92856, y: 32.72866}
+        - {x: -48.92856, y: -33.27134}
+        - {x: -15.928558, y: -56.27134}
+        - {x: 10.071442, y: -56.27134}
+        - {x: 50.07144, y: -37.27134}
+        - {x: 50.07144, y: 30.72866}
+        - {x: 45.07144, y: 34.72866}
+    - name: tilesheet_complete_2X_130
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.904755, y: 56.72866}
+        - {x: -48.904755, y: 36.72866}
+        - {x: -48.904755, y: -34.27134}
+        - {x: -5.9047546, y: -56.27134}
+        - {x: 12.095245, y: -56.27134}
+        - {x: 49.095245, y: -31.27134}
+        - {x: 49.095245, y: 32.72866}
+        - {x: 16.095245, y: 56.72866}
+    - name: tilesheet_complete_2X_131
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.880951, y: 56.72866}
+        - {x: -48.88095, y: 35.72866}
+        - {x: -48.88095, y: -33.27134}
+        - {x: -4.880951, y: -56.27134}
+        - {x: 9.119049, y: -56.27134}
+        - {x: 50.11905, y: -31.27134}
+        - {x: 50.11905, y: 31.72866}
+        - {x: 15.119049, y: 56.72866}
+    - name: tilesheet_complete_2X_132
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.857117, y: 56.72866}
+        - {x: -48.857117, y: 31.72866}
+        - {x: -48.857117, y: -33.27134}
+        - {x: -15.857117, y: -56.27134}
+        - {x: 9.142883, y: -56.27134}
+        - {x: 49.142883, y: -36.27134}
+        - {x: 49.142883, y: 36.72866}
+        - {x: 13.142883, y: 56.72866}
+    - name: tilesheet_complete_2X_133
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.833313, y: 56.72866}
+        - {x: -48.833313, y: 31.72866}
+        - {x: -48.833313, y: -35.27134}
+        - {x: -10.833313, y: -56.27134}
+        - {x: 15.166687, y: -56.27134}
+        - {x: 50.166687, y: -31.27134}
+        - {x: 50.166687, y: 31.72866}
+        - {x: 10.166687, y: 56.72866}
+    - name: tilesheet_complete_2X_134
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.809509, y: 56.72866}
+        - {x: -48.80951, y: 37.72866}
+        - {x: -48.80951, y: -33.27134}
+        - {x: -15.809509, y: -56.27134}
+        - {x: 9.190491, y: -56.27134}
+        - {x: 49.19049, y: -36.27134}
+        - {x: 49.19049, y: 31.72866}
+        - {x: 16.19049, y: 56.72866}
+    - name: tilesheet_complete_2X_135
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.7857056, y: 56.72866}
+        - {x: -48.785706, y: 32.72866}
+        - {x: -48.785706, y: -33.27134}
+        - {x: -12.785706, y: -54.27134}
+        - {x: -5.7857056, y: -56.27134}
+        - {x: 9.214294, y: -56.27134}
+        - {x: 50.214294, y: -31.27134}
+        - {x: 50.214294, y: 32.72866}
+        - {x: 8.214294, y: 56.72866}
+    - name: tilesheet_complete_2X_136
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 257.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: tilesheet_complete_2X_137
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 57.76877}
+        - {x: -49, y: 41.76877}
+        - {x: -49, y: -37.23123}
+        - {x: -12, y: -56.23123}
+        - {x: 6, y: -56.23123}
+        - {x: 49, y: -32.23123}
+        - {x: 49, y: 32.76877}
+        - {x: 10, y: 57.76877}
+    - name: tilesheet_complete_2X_138
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.023811, y: 57.76877}
+        - {x: -12.976189, y: 57.76877}
+        - {x: -48.97619, y: 31.768768}
+        - {x: -48.97619, y: -30.231232}
+        - {x: -4.9761887, y: -56.23123}
+        - {x: 5.0238113, y: -56.23123}
+        - {x: 18.023811, y: -49.23123}
+        - {x: 50.02381, y: -30.231232}
+        - {x: 50.02381, y: 34.76877}
+    - name: tilesheet_complete_2X_139
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.952377, y: 57.76877}
+        - {x: -48.952377, y: 36.76877}
+        - {x: -48.952377, y: -38.23123}
+        - {x: -8.952377, y: -56.23123}
+        - {x: 17.047623, y: -56.23123}
+        - {x: 49.047623, y: -30.231232}
+        - {x: 49.047623, y: 31.768768}
+        - {x: 13.047623, y: 57.76877}
+    - name: tilesheet_complete_2X_140
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.071442, y: 47.76877}
+        - {x: 6.0714417, y: 57.76877}
+        - {x: -8.928558, y: 57.76877}
+        - {x: -48.92856, y: 31.768768}
+        - {x: -48.92856, y: -30.231232}
+        - {x: -4.9285583, y: -56.23123}
+        - {x: 5.0714417, y: -56.23123}
+        - {x: 18.071442, y: -49.23123}
+        - {x: 50.07144, y: -30.231232}
+        - {x: 50.07144, y: 31.768768}
+    - name: tilesheet_complete_2X_141
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.904755, y: 57.76877}
+        - {x: -48.904755, y: 45.76877}
+        - {x: -48.904755, y: -35.23123}
+        - {x: -6.9047546, y: -56.23123}
+        - {x: 12.095245, y: -56.23123}
+        - {x: 49.095245, y: -30.231232}
+        - {x: 49.095245, y: 32.76877}
+        - {x: 27.095245, y: 57.76877}
+    - name: tilesheet_complete_2X_142
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.880951, y: 57.76877}
+        - {x: -48.88095, y: 31.768768}
+        - {x: -48.88095, y: -30.231232}
+        - {x: -33.88095, y: -47.23123}
+        - {x: -9.880951, y: -56.23123}
+        - {x: 17.11905, y: -56.23123}
+        - {x: 50.11905, y: -30.231232}
+        - {x: 50.11905, y: 31.768768}
+        - {x: 8.119049, y: 57.76877}
+    - name: tilesheet_complete_2X_143
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.857117, y: 57.76877}
+        - {x: -48.857117, y: 32.76877}
+        - {x: -48.857117, y: -31.231232}
+        - {x: -6.8571167, y: -56.23123}
+        - {x: 5.1428833, y: -56.23123}
+        - {x: 49.142883, y: -30.231232}
+        - {x: 49.142883, y: 34.76877}
+        - {x: 10.142883, y: 57.76877}
+    - name: tilesheet_complete_2X_144
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.833313, y: 57.76877}
+        - {x: -48.833313, y: 36.76877}
+        - {x: -48.833313, y: -38.23123}
+        - {x: -8.833313, y: -56.23123}
+        - {x: 19.166687, y: -56.23123}
+        - {x: 50.166687, y: -30.231232}
+        - {x: 50.166687, y: 32.76877}
+        - {x: 17.166687, y: 57.76877}
+    - name: tilesheet_complete_2X_145
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.809509, y: 57.76877}
+        - {x: -48.80951, y: 32.76877}
+        - {x: -48.80951, y: -31.231232}
+        - {x: -9.809509, y: -56.23123}
+        - {x: 6.1904907, y: -56.23123}
+        - {x: 49.19049, y: -33.23123}
+        - {x: 49.19049, y: 37.76877}
+        - {x: 10.190491, y: 57.76877}
+    - name: tilesheet_complete_2X_146
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.214294, y: 57.76877}
+        - {x: -9.785706, y: 57.76877}
+        - {x: -48.785706, y: 38.76877}
+        - {x: -48.785706, y: -30.231232}
+        - {x: -37.785706, y: -37.23123}
+        - {x: -23.785706, y: -46.23123}
+        - {x: -3.7857056, y: -56.23123}
+        - {x: 5.2142944, y: -56.23123}
+        - {x: 37.214294, y: -39.23123}
+        - {x: 50.214294, y: -32.23123}
+        - {x: 50.214294, y: 35.76877}
+    - name: tilesheet_complete_2X_147
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1.75
+        width: 222
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
