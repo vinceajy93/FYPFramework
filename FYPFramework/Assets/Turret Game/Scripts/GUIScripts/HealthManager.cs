@@ -23,10 +23,8 @@ public class HealthManager : MonoBehaviour {
 
 	//obstacles health
 
-	[SerializeField]
-	private Stat P1Health;
-	[SerializeField]
-	private Stat P2Health;
+	public Stat P1Health;
+    public Stat P2Health;
 
 	[HideInInspector]
 	public ObjectsHealth objHealth;
@@ -54,7 +52,6 @@ public class HealthManager : MonoBehaviour {
 	}
 
 	public void ApplyDamage(int damage){
-
 		switch(objHealth){
 		case ObjectsHealth.player1:
 			if (P1Health.CurrentVal > 0)
@@ -87,10 +84,28 @@ public class HealthManager : MonoBehaviour {
 		case ObjectsHealth.obstacle4:
 			if (obstacle4_health > 0)
 				obstacle4_health -= damage;
-
 			break;
-
 		}
-
 	}
+
+    public void AddHealth(int amount)
+    {
+        switch (objHealth)
+        {
+            case ObjectsHealth.player1:
+                if (P1Health.CurrentVal == P1Health.MaxVal)
+                {
+                    P1Health.MaxVal += amount;
+                }
+                P1Health.CurrentVal += amount;
+                break;
+            case ObjectsHealth.player2:
+                if (P2Health.CurrentVal == P2Health.MaxVal)
+                {
+                    P2Health.MaxVal += amount;
+                }
+                P2Health.CurrentVal += amount;
+                break;
+        }
+    }
 }

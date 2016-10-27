@@ -5,7 +5,10 @@ public class Mode_Control : MonoBehaviour {
 
 	// True - Single, False - Multiplayer
 	public bool game_mode_Single;
-	public bool move_player = true;
+	public bool move_player_P1 = true;
+	public bool move_player_P2 = true;
+	public bool card_menu_P1 = false;
+	public bool card_menu_P2 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,5 +21,4 @@ public class Mode_Control : MonoBehaviour {
 			game_mode_Single = false; 
 		}
 	}
-
 }
