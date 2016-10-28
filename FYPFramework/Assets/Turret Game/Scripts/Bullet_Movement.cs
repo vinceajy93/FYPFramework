@@ -37,6 +37,8 @@ public class Bullet_Movement : MonoBehaviour
     public bool bullet_burstshot = false;
     public bool bullet_ghost = false;
     public GameObject ghost_owner;
+	private Color32 Ghost_Color = new Color32 (150, 150, 150, 180);
+	private Color Solid_Color = new Color(1f, 1f, 1f, 1f);
 
     // Use this for initialization
     void Start()
@@ -822,6 +824,7 @@ public class Bullet_Movement : MonoBehaviour
         }
         Rest_Bullet.transform.position = Bullet_Rest.transform.position;
         Rest_Bullet.transform.SetParent(Bullet_Rest.transform);
+		Rest_Bullet.GetComponent<SpriteRenderer> ().color = Solid_Color;
 
         Bullet_Movement Bullet_Script = Rest_Bullet.GetComponent<Bullet_Movement>();
         Bullet_Script.bullet_burstshot = false;
@@ -921,6 +924,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x + (bullet_world_size.x / 2), this.transform.position.y + bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Left";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
             }
             else
             {
@@ -931,6 +935,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x + (bullet_world_size.x / 2), this.transform.position.y + bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Left";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
 
                 if (GameObject.FindGameObjectWithTag("Bullet_Effect_Stop") != null)
                 {
@@ -956,6 +961,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x - (bullet_world_size.x / 2), this.transform.position.y + bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Right";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
             }
             else
             {
@@ -966,6 +972,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x - (bullet_world_size.x / 2), this.transform.position.y + bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Right";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
 
                 if (GameObject.FindGameObjectWithTag("Bullet_Effect_Stop") != null)
                 {
@@ -993,6 +1000,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x + (bullet_world_size.x / 2), this.transform.position.y - bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Left";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
             }
             else
             {
@@ -1003,6 +1011,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x + (bullet_world_size.x / 2), this.transform.position.y - bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Left";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
 
                 if (GameObject.FindGameObjectWithTag("Bullet_Effect_Stop") != null)
                 {
@@ -1028,6 +1037,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x - (bullet_world_size.x / 2), this.transform.position.y - bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Right";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
             }
             else
             {
@@ -1038,6 +1048,7 @@ public class Bullet_Movement : MonoBehaviour
                 ghost.transform.position = new Vector3(this.transform.position.x - (bullet_world_size.x / 2), this.transform.position.y - bullet_world_size.y, this.transform.position.z);
                 ghost.transform.rotation = this.transform.rotation;
                 ghost.tag = "Bullet_Ghost_Right";
+				ghost.GetComponent<SpriteRenderer> ().color = Ghost_Color;
 
                 if (GameObject.FindGameObjectWithTag("Bullet_Effect_Stop") != null)
                 {

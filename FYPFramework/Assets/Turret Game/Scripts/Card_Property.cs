@@ -38,13 +38,20 @@ public class Card_Property : MonoBehaviour {
 			Image color = this.GetComponent<Image> ();
 			color.color = Useless;
 		}
+
+		if (b_Barrier) {
+			if (b_Ghost_BurstShot) {
+				Image color = this.GetComponent<Image> ();
+				color.color = Useable;
+			}
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (mcontrol.game_mode_Single) { // Single Player
 			if (b_Health) {
-				if ((this.CompareTag ("Card_P1") && _HealthManager.P1Health.CurrentVal == _HealthManager.P1Health.MaxVal)) {
+				if (_HealthManager.P1Health.CurrentVal == _HealthManager.P1Health.MaxVal) {
 					Image color = this.GetComponent<Image> ();
 					color.color = Useless;
 				} else {
@@ -82,6 +89,16 @@ public class Card_Property : MonoBehaviour {
 				if (mcontrol.move_player_P1) {
 					Image color = this.GetComponent<Image> ();
 					color.color = Useless;
+				}
+			}
+
+			if (b_Barrier) {
+				if (!mcontrol.move_player_P1) {
+					Image color = this.GetComponent<Image> ();
+					color.color = Useless;
+				} else {
+					Image color = this.GetComponent<Image> ();
+					color.color = Useable;
 				}
 			}
 		}
@@ -155,6 +172,19 @@ public class Card_Property : MonoBehaviour {
 					}
 				}
 			}
+
+			if (b_Barrier) {
+				if (this.CompareTag ("Card_P1") && !mcontrol.move_player_P1) { // If not moveing player = moving player
+					Image color = this.GetComponent<Image> ();
+					color.color = Useless;
+				} else if (this.CompareTag ("Card_P2") && !mcontrol.move_player_P2) { // If not moveing player = moving player
+					Image color = this.GetComponent<Image> ();
+					color.color = Useless;
+				} else {
+					Image color = this.GetComponent<Image> ();
+					color.color = Useable;
+				}
+			}
 		}
 	}
 
@@ -200,10 +230,10 @@ public class Card_Property : MonoBehaviour {
 				foreach (GameObject bullet in all_bullet) {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) { // If bullet is being followed, and burst shot has not been done be4
 						bullet.SendMessage ("SetBurstShot", true);
-						button.gameObject.SetActive (false);
+						//button.gameObject.SetActive (false);
 
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-						all_Card.SendMessage ("DisableMenu", true);
+						//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
+						//all_Card.SendMessage ("DisableMenu", true);
 						break;
 					}
 				}
@@ -215,10 +245,10 @@ public class Card_Property : MonoBehaviour {
 				foreach (GameObject bullet in all_bullet) {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) {
 						bullet.SendMessage ("SetBurstShot", true);
-						button.gameObject.SetActive (false);
+						//button.gameObject.SetActive (false);
 
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-						all_Card.SendMessage ("DisableMenu", false);
+						//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
+						//all_Card.SendMessage ("DisableMenu", false);
 						break;
 					}
 				}
@@ -250,19 +280,23 @@ public class Card_Property : MonoBehaviour {
 
 	private void Barrier (Button button) {
 		if (button.CompareTag ("Card_P1")) {
-			GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P1");
-			barrier.SendMessage("SetBarrier" ,true);
-			button.gameObject.SetActive (false);
+			if (mcontrol.move_player_P1) {
+				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P1");
+				barrier.SendMessage ("SetBarrier", true);
+				//button.gameObject.SetActive (false);
 
-			GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-			all_Card.SendMessage ("DisableMenu", true);
+				//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
+				//all_Card.SendMessage ("DisableMenu", true);
+			}
 		} else {
-			GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P2");
-			barrier.SendMessage("SetBarrier" ,true);
-			button.gameObject.SetActive (false);
+			if (mcontrol.move_player_P1) {
+				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P2");
+				barrier.SendMessage ("SetBarrier", true);
+				//button.gameObject.SetActive (false);
 
-			GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-			all_Card.SendMessage ("DisableMenu", false);
+				//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
+				//all_Card.SendMessage ("DisableMenu", false);
+			}
 		}
 	}
 
