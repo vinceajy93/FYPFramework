@@ -8,10 +8,12 @@ public class LevelSelectScript : MonoBehaviour {
 
 	private string GO_Name;
 	private Image GO_Scale;
-
+	private static int scrollSpeed = 1000;
 
 	static int max_Obstacle = 10;
 	public int time, rounds, no_obstacles;
+	private bool isPanelMoving = false;
+	private bool isToSettingsPanel = true;
 
 	//time buttons
 	[SerializeField]
@@ -28,9 +30,6 @@ public class LevelSelectScript : MonoBehaviour {
 	[SerializeField]
 	private Text obstacles_Text, Displayrounds_Text, Displayobstacles_Text;
 
-	[SerializeField]
-	private GameObject Settings_panel, Stage_panel;
-
 	//color for selected buttons (changable)
 	private Color color = new Color(0.9f, 0.9f, 0.5f);
 
@@ -38,12 +37,13 @@ public class LevelSelectScript : MonoBehaviour {
 	ColorBlock colorBlockSelected = ColorBlock.defaultColorBlock;
 	ColorBlock colorBlockDefault = ColorBlock.defaultColorBlock;
 
+	[SerializeField]
+	private GameObject Panel;
+
+	private GameObject[] buttons;
+
 	// Use this for initialization
 	void Start () {
-		//Set panel to default active state
-		Settings_panel.SetActive(false);
-		Stage_panel.SetActive (true);
-
 		//change the color of the selected button to highlighted color (yellow)
 		colorBlockSelected.normalColor = color;
 		colorBlockSelected.highlightedColor = color;
@@ -95,6 +95,37 @@ public class LevelSelectScript : MonoBehaviour {
 
 		//Set the numer of Obstacles to match the one shown in the setting
 		Displayobstacles_Text.text = no_obstacles.ToString();
+
+		//Move the panel if ispanelmoving = true 
+		if (isPanelMoving) {
+			DisableAllButtons (); //disable the interactability of all buttons
+
+			// translate the panel if Settings button is pressed (going <<)
+			if (Panel.transform.localPosition.x >= 0 && Panel.transform.localPosition.x < 793 && isToSettingsPanel) {
+				Panel.transform.Translate (Time.deltaTime * scrollSpeed, 0, 0);
+
+				if (Panel.transform.localPosition.x >= 793) {
+					EnableAllButtons (); //enable the interactablility of all buttons
+					isToSettingsPanel = false;
+					isPanelMoving = false;
+					Panel.transform.localPosition = new Vector3 (793, 0, 0);
+				}
+
+			}
+			// translate the panel if Settings button is pressed (going >>)
+			else if (Panel.transform.localPosition.x > 0 && Panel.transform.localPosition.x <= 793 && !isToSettingsPanel) {
+				Panel.transform.Translate (-Time.deltaTime * scrollSpeed, 0, 0);
+
+				//if panel is out of place, put it back in place
+				if (Panel.transform.localPosition.x <= 0) {
+					EnableAllButtons(); //enable the interactability of all buttons
+					isToSettingsPanel = true;
+					isPanelMoving = false;
+					Panel.transform.localPosition = new Vector3 (0, 0, 0);
+				}
+
+			}
+		}
 	}
 
 	public void SetTime(){
@@ -179,111 +210,112 @@ public class LevelSelectScript : MonoBehaviour {
 		}
 	}
 
-	//visual feedback on button press
+	//visual feedback on button press /mouse down
 	public void OnButtonDown(){
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 		GO_Scale = EventSystem.current.currentSelectedGameObject.GetComponent<Image> ();
 
 		switch (GO_Name) {
 		case "Button_30s":
-			GO_Scale.transform.localScale = new Vector2 (1.4f, 1.4f);
+			GO_Scale.transform.localScale = new Vector2 (2.5f, 2.5f);
 			break;
 		case "Button_60s":
-			GO_Scale.transform.localScale = new Vector2 (1.4f, 1.4f);
+			GO_Scale.transform.localScale = new Vector2 (2.5f, 2.5f);
 			break;
 		case "Button_90s":
-			GO_Scale.transform.localScale = new Vector2 (1.4f, 1.4f);
+			GO_Scale.transform.localScale = new Vector2 (2.5f, 2.5f);
 			break;
 		case "Button_round1":
-			GO_Scale.transform.localScale = new Vector2 (0.7f, 0.7f);
+			GO_Scale.transform.localScale = new Vector2 (1.5f, 1.5f);
 			break;
 		case "Button_round2":
-			GO_Scale.transform.localScale = new Vector2 (0.7f, 0.7f);
+			GO_Scale.transform.localScale = new Vector2 (1.5f, 1.5f);
 			break;
 		case "Button_round3":
-			GO_Scale.transform.localScale = new Vector2 (0.7f, 0.7f);
+			GO_Scale.transform.localScale = new Vector2 (1.5f, 1.5f);
 			break;
 		case "plusObstacles":
-			GO_Scale.transform.localScale = new Vector2 (2.0f, 2.0f);
+			GO_Scale.transform.localScale = new Vector2 (4.5f, 4.5f);
 			break;
 		case "minusObstacles":
-			GO_Scale.transform.localScale = new Vector2 (2.0f, 2.0f);
-			break;
-		case "Back_Button":
-			GO_Scale.transform.localScale = new Vector2 (0.45f, 0.45f);
-			break;
-		case "Settings_Button":
-			GO_Scale.transform.localScale = new Vector2 (0.45f, 0.45f);
+			GO_Scale.transform.localScale = new Vector2 (4.5f, 4.5f);
 			break;
 		}
 	}
 
+	//on button release /mouse up
 	public void OnButtonUp(){
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 		GO_Scale = EventSystem.current.currentSelectedGameObject.GetComponent<Image> ();
 
 		switch (GO_Name) {
 		case "Button_30s":
-			GO_Scale.transform.localScale = new Vector2 (1.7f, 1.7f);
+			GO_Scale.transform.localScale = new Vector2 (3.0f, 3.0f);
 			break;
 		case "Button_60s":
-			GO_Scale.transform.localScale = new Vector2 (1.7f, 1.7f);
+			GO_Scale.transform.localScale = new Vector2 (3.0f, 3.0f);
 			break;
 		case "Button_90s":
-			GO_Scale.transform.localScale = new Vector2 (1.7f, 1.7f);
+			GO_Scale.transform.localScale = new Vector2 (3.0f, 3.0f);
 			break;
 		case "Button_round1":
-			GO_Scale.transform.localScale = new Vector2 (1.0f, 1.0f);
+			GO_Scale.transform.localScale = new Vector2 (1.75f, 1.75f);
 			break;
 		case "Button_round2":
-			GO_Scale.transform.localScale = new Vector2 (1.0f, 1.0f);
+			GO_Scale.transform.localScale = new Vector2 (1.75f, 1.75f);
 			break;
 		case "Button_round3":
-			GO_Scale.transform.localScale = new Vector2 (1.0f, 1.0f);
+			GO_Scale.transform.localScale = new Vector2 (1.75f, 1.75f);
 			break;
 		case "plusObstacles":
-			GO_Scale.transform.localScale = new Vector2 (3.0f, 3.0f);
+			GO_Scale.transform.localScale = new Vector2 (5.0f, 5.0f);
 			break;
 		case "minusObstacles":
-			GO_Scale.transform.localScale = new Vector2 (3.0f, 3.0f);
-			break;
-		case "Back_Button":
-			GO_Scale.transform.localScale = new Vector2 (0.5f, 0.5f);
-			break;
-		case "Settings_Button":
-			GO_Scale.transform.localScale = new Vector2 (0.5f, 0.5f);
+			GO_Scale.transform.localScale = new Vector2 (5.0f, 5.0f);
 			break;
 		}
 	}
 
+	//Increase the amount of obstacles in the game
 	public void Increment_Obstacles(){
 		if (no_obstacles < max_Obstacle) {
 			no_obstacles += 2;
 		}
 	}
 
+	//Decrease the amount of obstacles in the game
 	public void Decrement_Obstacles(){
 		if (no_obstacles > 0) {
 			no_obstacles -= 2;
 		}
 	}
 
-	public void EnterExitSettingsFunction(){
-		if (Settings_panel.activeSelf == true) {
-			Settings_panel.SetActive (false);
-			Stage_panel.SetActive (true);
+	//function used to switch between panels
+	public void EnterExitSettingsFunction ()
+	{
+		isPanelMoving = true;
 
-			//Send settings to playerprefs
-			PlayerPrefs.SetInt("no_obstacles", no_obstacles);
-			PlayerPrefs.SetInt ("time", time);
-			PlayerPrefs.SetInt("rounds", rounds);
-		}
-			
-		else{
-			Settings_panel.SetActive (true);
-			Stage_panel.SetActive (false);
-		}
-			
+		//Send settings to playerprefs
+		PlayerPrefs.SetInt ("no_obstacles", no_obstacles);
+		PlayerPrefs.SetInt ("time", time);
+		PlayerPrefs.SetInt ("rounds", rounds);
 
+
+	}
+
+	public void DisableAllButtons(){
+		buttons = GameObject.FindGameObjectsWithTag("Buttons");
+
+		foreach (GameObject button in buttons) {
+			button.GetComponent<Button> ().interactable = false;
+		}
+	}
+
+	public void EnableAllButtons(){
+		buttons = GameObject.FindGameObjectsWithTag("Buttons");
+
+		foreach (GameObject button in buttons) {
+			button.GetComponent<Button> ().interactable = true;
+		}
 	}
 }

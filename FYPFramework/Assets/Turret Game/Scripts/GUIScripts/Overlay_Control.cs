@@ -104,7 +104,6 @@ public class Overlay_Control : MonoBehaviour
 		//single player
 		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 			if (P1Touched == true) {
-				Debug.Log ("p1 timer" + countdownTimer);
 				//countdown timer
 				countdownTimer -= Time.deltaTime;
 				//Set Panel to false when timer hits 0

@@ -15,7 +15,7 @@ public class PauseScript : MonoBehaviour
 	private string GO_Name;
 
 	[SerializeField]
-	private Button _Pause_P1, _Pause_P2;
+	private Button _Pause_P1, _Pause_P2, backButton;
 
 
 	private Overlay_Control _OverlayControl;
@@ -32,10 +32,15 @@ public class PauseScript : MonoBehaviour
 		//single player
 		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
 			//hide the pause button when the overlay panel is active
-			if (_OverlayControl.PanelisActive == true)
+			if (_OverlayControl.PanelisActive == true) {
 				_Pause_P1.transform.localScale = Vector3.zero;
-			else
+				backButton.transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
+			} 
+			else {
 				_Pause_P1.transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
+				backButton.transform.localScale = Vector3.zero;
+			}
+				
 			
 			//Set panel active if paused button is pressed
 			if (pausePressed_P1 == true) {
@@ -51,9 +56,11 @@ public class PauseScript : MonoBehaviour
 			if (_OverlayControl.PanelisActive == true) {
 				_Pause_P1.transform.localScale = Vector3.zero;
 				_Pause_P2.transform.localScale = Vector3.zero;
+				backButton.transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
 			} else {
 				_Pause_P1.transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
 				_Pause_P2.transform.localScale = new Vector3 (0.4f, 0.4f, 1.0f);
+				backButton.transform.localScale = Vector3.zero;
 			}
 	
 			//if both players pressed the pause button

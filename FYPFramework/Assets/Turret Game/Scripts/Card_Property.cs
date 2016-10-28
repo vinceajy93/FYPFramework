@@ -230,10 +230,10 @@ public class Card_Property : MonoBehaviour {
 				foreach (GameObject bullet in all_bullet) {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) { // If bullet is being followed, and burst shot has not been done be4
 						bullet.SendMessage ("SetBurstShot", true);
-						//button.gameObject.SetActive (false);
+						button.gameObject.SetActive (false);
 
-						//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-						//all_Card.SendMessage ("DisableMenu", true);
+						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
+						all_Card.SendMessage ("DisableMenu", true);
 						break;
 					}
 				}
@@ -245,10 +245,10 @@ public class Card_Property : MonoBehaviour {
 				foreach (GameObject bullet in all_bullet) {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) {
 						bullet.SendMessage ("SetBurstShot", true);
-						//button.gameObject.SetActive (false);
+						button.gameObject.SetActive (false);
 
-						//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-						//all_Card.SendMessage ("DisableMenu", false);
+						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
+						all_Card.SendMessage ("DisableMenu", false);
 						break;
 					}
 				}
@@ -283,19 +283,19 @@ public class Card_Property : MonoBehaviour {
 			if (mcontrol.move_player_P1) {
 				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P1");
 				barrier.SendMessage ("SetBarrier", true);
-				//button.gameObject.SetActive (false);
+				button.gameObject.SetActive (false);
 
-				//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-				//all_Card.SendMessage ("DisableMenu", true);
+				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
+				all_Card.SendMessage ("DisableMenu", true);
 			}
 		} else {
 			if (mcontrol.move_player_P1) {
 				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P2");
 				barrier.SendMessage ("SetBarrier", true);
-				//button.gameObject.SetActive (false);
+				button.gameObject.SetActive (false);
 
-				//GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-				//all_Card.SendMessage ("DisableMenu", false);
+				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
+				all_Card.SendMessage ("DisableMenu", false);
 			}
 		}
 	}

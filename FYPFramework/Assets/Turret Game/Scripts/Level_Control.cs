@@ -55,6 +55,12 @@ public class Level_Control : MonoBehaviour {
 	public void loadLocal2P(){
 		SceneManager.LoadScene ("Local_Multiplayer");
 	}
+
+	//for testing purpose
+	public void loadLoadout2pSelect(){
+		SceneManager.LoadScene ("Loadout Select");
+	}
+
 	//for testing purpose
 	public void loadTest(){
 		SceneManager.LoadScene ("test scene");
