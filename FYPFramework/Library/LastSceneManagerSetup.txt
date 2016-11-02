@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< 042cf67bc76688d1fb489a180df1a83da6f63166
-- path: Assets/Turret Game/Scenes/Loadout.unity
-=======
 - path: Assets/Turret Game/Scenes/Local_Multiplayer.unity
->>>>>>> 3e741292148fef5c601d5c80c67b2a381c47a318
   isLoaded: 1
   isActive: 1

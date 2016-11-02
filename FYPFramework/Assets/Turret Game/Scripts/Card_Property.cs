@@ -302,14 +302,14 @@ public class Card_Property : MonoBehaviour {
 
 	private void FireRate (Button button) {
 		if (button.CompareTag ("Card_P1")) {
-			GameObject Player = GameObject.FindGameObjectWithTag ("Player1");
+			GameObject Player = GameObject.FindGameObjectWithTag ("Player1").transform.GetChild(0).gameObject;
 			Player.SendMessage ("SetFireRate", new_fireRate);
 			button.gameObject.SetActive (false);
 
 			GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
 			all_Card.SendMessage ("DisableMenu", true);
 		} else {
-			GameObject Player = GameObject.FindGameObjectWithTag ("Player2");
+			GameObject Player = GameObject.FindGameObjectWithTag ("Player2").transform.GetChild(0).gameObject;
 			Player.SendMessage ("SetFireRate", new_fireRate);
 			button.gameObject.SetActive (false);
 

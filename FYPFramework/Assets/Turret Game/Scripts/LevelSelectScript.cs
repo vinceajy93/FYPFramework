@@ -318,7 +318,7 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			DisplayEnlargeImage.sprite = GO.transform.FindGetComponent<Image>().sprite;
+			//DisplayEnlargeImage.sprite = GO.transform.FindGetComponent<Image>().sprite;
 			break;
 		case "stage_2":
 			//set the description text 
