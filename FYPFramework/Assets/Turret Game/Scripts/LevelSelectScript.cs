@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class LevelSelectScript : MonoBehaviour {
@@ -8,12 +9,15 @@ public class LevelSelectScript : MonoBehaviour {
 
 	private string GO_Name;
 	private Image GO_Scale;
+	private GameObject GO;
 	private static int scrollSpeed = 1000;
 
 	static int max_Obstacle = 10;
 	public int time, rounds, no_obstacles;
 	private bool isPanelMoving = false;
 	private bool isToSettingsPanel = true;
+
+	private string[] Description_String = new string[4];
 
 	//time buttons
 	[SerializeField]
@@ -23,15 +27,15 @@ public class LevelSelectScript : MonoBehaviour {
 	private Button button_round1, button_round2, button_round3;
 	//show settings chosen by user at the main screen
 	[SerializeField]
-	private Image Displaytime_Image;
+	private Image Displaytime_Image, DisplayEnlargeImage;
 	[SerializeField]
 	private Sprite spr_30s, spr_60s, spr_90s;
 	//number of obstacles
 	[SerializeField]
-	private Text obstacles_Text, Displayrounds_Text, Displayobstacles_Text;
+	private Text obstacles_Text, Displayrounds_Text, Displayobstacles_Text, Description_Text;
 
 	//color for selected buttons (changable)
-	private Color color = new Color(0.9f, 0.9f, 0.5f);
+	private Color color = new Color(0.5f, 0.83f, 0.88f);
 
 	//Color block to set the color of UI buttons (highlighted)
 	ColorBlock colorBlockSelected = ColorBlock.defaultColorBlock;
@@ -44,6 +48,16 @@ public class LevelSelectScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		//Set the text of the string array
+		Description_String[0] = "Stage: Ice Studio \n\n conditions are harsh. \n beware of lifeforms floating about. Give sweets if needed";
+		Description_String [1] = "Stage: Hakuna Marteena \n\n Hail the queen of marteena!";
+		Description_String[2] = "Stage: Arki Island \n\n Your turret give me cancer";
+		Description_String [3] = "Stage: Random \n\n Venture into warp vortex and appear on a random map";
+
+		//Set the description text to show the first stage description
+		Description_Text.text = Description_String[0];
+
 		//change the color of the selected button to highlighted color (yellow)
 		colorBlockSelected.normalColor = color;
 		colorBlockSelected.highlightedColor = color;
@@ -61,7 +75,13 @@ public class LevelSelectScript : MonoBehaviour {
 		//default obstacles in round
 		no_obstacles = 4;
 
+		//reset the number of rounds won by each player to 0
+		if(PlayerPrefs.HasKey("roundWon_P1"))
+			PlayerPrefs.SetInt("roundWon_P1", 0);
 
+		if(PlayerPrefs.HasKey("roundWon_P2"))
+			PlayerPrefs.SetInt("roundWon_P2", 0);
+		
 		//Set current selected button color to selected color
 		button_60s.colors = colorBlockSelected;
 		button_round2.colors = colorBlockSelected;
@@ -273,6 +293,46 @@ public class LevelSelectScript : MonoBehaviour {
 		case "minusObstacles":
 			GO_Scale.transform.localScale = new Vector2 (5.0f, 5.0f);
 			break;
+		}
+	}
+
+	public void SelectStageFunction(){
+		GO_Name = EventSystem.current.currentSelectedGameObject.name;
+		GO = EventSystem.current.currentSelectedGameObject;
+
+		switch(GO_Name){
+		case "stage_1":
+			//set the description text 
+			Description_Text.text = Description_String [0];
+
+			//change the color of the selected rest to white, selected image to blue
+			Component[] tempCol;
+
+			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = Color.white;
+			}
+			tempCol = GO.GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = color;
+			}
+
+			//Set the enlarge image to be the select image one
+			DisplayEnlargeImage.sprite = GO.transform.FindGetComponent<Image>().sprite;
+			break;
+		case "stage_2":
+			//set the description text 
+			Description_Text.text = Description_String [1];
+			break;
+		case "stage_3":
+			//set the description text 
+			Description_Text.text = Description_String [2];
+			break;
+		case "stage_4":
+			//set the description text 
+			Description_Text.text = Description_String [3];
+			break;
+
 		}
 	}
 

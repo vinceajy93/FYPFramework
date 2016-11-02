@@ -1,40 +1,45 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class Overlay_Control : MonoBehaviour
 {
 
 	public GameObject panel;
-	private Text p1Timer, p2Timer;
+	private Text p1OverlayText, p2OverlayText;
 	[SerializeField]
 	private Text roundTimer_P1, roundTimer_P2;
 	private float setTimerTime = 0.5f; //testing set 0.5f, actual 3.0f
-	public float countdownTimer, inGameCountdownTimer;
+	public float countdownTimer, inGameCountdownTimer, nextroundTimer;
 	//change this time for debugging
 	public bool PanelisActive = true;
-	private bool P1Touched, P2Touched = false;
+	private bool P1Touched, P2Touched, roundEnded = false;
 
 	private PauseScript _PauseScript;
 	private Level_Control _Level_Control;
-
 	private HealthManager _HealthManager;
+	private RoundsIndicator _roundsIndicator;
 
 	// Use this for initialization
 	void Start ()
 	{
+		_roundsIndicator = GetComponent<RoundsIndicator> ();
 
 		//start the timer
 		countdownTimer = setTimerTime;
-		inGameCountdownTimer = PlayerPrefs.GetInt ("time");
-		_PauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
+		inGameCountdownTimer = 20.0f;//PlayerPrefs.GetInt ("time");
+		_PauseScript = GetComponent<PauseScript> ();
 
+		//initialize the health manager script
+		_HealthManager = GetComponent<HealthManager>();
+
+		//initialize the level control script
+		_Level_Control = GetComponent<Level_Control>();
 
 		//single player
 		if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
-			p1Timer = GameObject.Find ("P1 Timer").GetComponent<Text> ();
-			p1Timer.text = ("Player 1 place finger here!");
+			p1OverlayText = GameObject.Find ("P1 Timer").GetComponent<Text> ();
+			p1OverlayText.text = ("Place your finger here!");
 
 			//set the time for the round to be player setting
 			roundTimer_P1.text = inGameCountdownTimer.ToString ();
@@ -42,11 +47,11 @@ public class Overlay_Control : MonoBehaviour
 
 		} else {
 			//multiplayer
-			p1Timer = GameObject.Find ("P1 Timer").GetComponent<Text> ();
-			p2Timer = GameObject.Find ("P2 Timer").GetComponent<Text> ();
+			p1OverlayText = GameObject.Find ("P1 Timer").GetComponent<Text> ();
+			p2OverlayText = GameObject.Find ("P2 Timer").GetComponent<Text> ();
 
-			p1Timer.text = ("Player 1 place finger here!");
-			p2Timer.text = ("Player 2 place finger here!");
+			p1OverlayText.text = ("Player 1 place finger here!");
+			p2OverlayText.text = ("Player 2 place finger here!");
 
 			//set the time for the round to be player setting
 			roundTimer_P1.text = inGameCountdownTimer.ToString ();
@@ -54,7 +59,6 @@ public class Overlay_Control : MonoBehaviour
 
 			roundTimer_P2.text = roundTimer_P1.text;
 			roundTimer_P2.GetComponent<Text> ().enabled = false;
-
 		}
 	}
 	
@@ -64,13 +68,32 @@ public class Overlay_Control : MonoBehaviour
 		//start countdown timer only when finger is on screen
 		CheckPress ();
 
+		//start the next round timer when the round concluded 
+		if (nextroundTimer != 0.0f) {
+			nextroundTimer -= Time.deltaTime;
+
+			//Set Panel to false when timer hits 0
+			if (nextroundTimer <= 0) {
+				var tempRound = PlayerPrefs.GetInt ("rounds");
+
+				//if player neither players have hit the amount of rounds require to win the game, send them back to loadout selection
+				if (PlayerPrefs.GetInt ("roundWon_P1") < tempRound && PlayerPrefs.GetInt ("roundWon_P2") < tempRound) {
+					_Level_Control.loadLoadout2pSelect ();
+				} else {
+					//goes to win page
+					Debug.Log ("goes to win page");
+				}
+
+			}
+		}
+
 		//bring the overlay back to game if game is paused
 		if (_PauseScript.Paused == true) {
 			PanelisActive = true;
 		}
 		//when game is not paused
 		else {
-			
+
 			//animation of the timer//
 			float roundTimer_P1_x = roundTimer_P1.transform.localScale.x;
 			float roundTimer_P1_y = roundTimer_P1.transform.localScale.y;
@@ -93,11 +116,51 @@ public class Overlay_Control : MonoBehaviour
 				
 				roundTimer_P2.text = roundTimer_P1.text;
 			}
+
 			//when the round has ended
-			if (inGameCountdownTimer <= 0) {
-				//_Level_Control.loadLocal2P ();
-				//for testing, show who win who lose first before going to loadout page
-				//SceneManager.LoadScene ("Stage_Select");
+			if ( (int)inGameCountdownTimer == 0.0f && roundEnded == false) {
+				roundEnded = true;
+
+				//check which player has more health, that player wins the round
+
+				//if player 1 health > player 2
+				if (_HealthManager.P1Health.CurrentVal > _HealthManager.P2Health.CurrentVal) {
+					//plus the rounds if not end of rounds set
+					if (PlayerPrefs.GetInt ("roundWon_P1") < PlayerPrefs.GetInt ("rounds")) {
+						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt("roundWon_P1") + 1;
+						PlayerPrefs.SetInt("roundWon_P1", _roundsIndicator.roundWon_P1);
+
+						//display round winner then change back to loadout seelct screen after intended time
+						panel.SetActive(true);
+						p1OverlayText.text = ("YOU WON");
+						p2OverlayText.text = ("YOU LOSE");
+
+						nextroundTimer = 2.0f; //setTimerTime;
+					}
+
+				}
+				//if player 2 health > player 1
+				else if (_HealthManager.P2Health.CurrentVal > _HealthManager.P1Health.CurrentVal) {
+					//plus the rounds if not end of rounds set
+					if (PlayerPrefs.GetInt ("roundWon_P2") < PlayerPrefs.GetInt ("rounds")) {
+						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt("roundWon_P2") + 1;
+						PlayerPrefs.SetInt("roundWon_P2", _roundsIndicator.roundWon_P1);
+
+						//display round winner then change back to loadout seelct screen after intended time
+						panel.SetActive(true);
+						p1OverlayText.text = ("YOU LOSE");
+						p2OverlayText.text = ("YOU WIN");
+
+						nextroundTimer = 2.0f; //setTimerTime;
+
+					}
+
+				}
+				//same health at the end of the round
+				else {
+					//ends the round, no player gets a score
+
+				}
 			}
 		}
 			
@@ -132,18 +195,18 @@ public class Overlay_Control : MonoBehaviour
 
 			//single player
 			if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
-				p1Timer.GetComponent<Text> ().fontSize = 120;
-				p1Timer.text = countdownTimer.ToString ("f0");
+				p1OverlayText.GetComponent<Text> ().fontSize = 120;
+				p1OverlayText.text = countdownTimer.ToString ("f0");
 			}
 
 			//multiplayer
 			else {
 				//change the font size
-				p1Timer.GetComponent<Text> ().fontSize = 120;
-				p2Timer.GetComponent<Text> ().fontSize = 120;
+				p1OverlayText.GetComponent<Text> ().fontSize = 120;
+				p2OverlayText.GetComponent<Text> ().fontSize = 120;
 
-				p1Timer.text = countdownTimer.ToString ("f0");
-				p2Timer.text = p1Timer.text;
+				p1OverlayText.text = countdownTimer.ToString ("f0");
+				p2OverlayText.text = p1OverlayText.text;
 			}
 		} else {
 			//single player
@@ -152,7 +215,7 @@ public class Overlay_Control : MonoBehaviour
 				P1Touched = false;
 
 				//Set font size back to 50
-				p1Timer.GetComponent<Text> ().fontSize = 50;
+				p1OverlayText.GetComponent<Text> ().fontSize = 50;
 
 				//Set roundtimer text to visible
 				roundTimer_P1.GetComponent<Text> ().enabled = true;
@@ -165,8 +228,8 @@ public class Overlay_Control : MonoBehaviour
 				P2Touched = false;
 
 				//Set font size back to 50
-				p1Timer.GetComponent<Text> ().fontSize = 50;
-				p2Timer.GetComponent<Text> ().fontSize = 50;
+				p1OverlayText.GetComponent<Text> ().fontSize = 50;
+				p2OverlayText.GetComponent<Text> ().fontSize = 50;
 
 				//Set roundtimer text to visible
 				roundTimer_P1.GetComponent<Text> ().enabled = true;
@@ -202,20 +265,20 @@ public class Overlay_Control : MonoBehaviour
 						
 						//player 1 touched
 						P1Touched = true;
-						p1Timer.text = ("waiting for player 2!");
+						p1OverlayText.text = ("waiting for player 2!");
 					}
 					//multiplayer
 					else {
 						//player 1 touched
 						if (touchPosition.y < 0) {
 							P1Touched = true;
-							p1Timer.text = ("waiting for player 2!");
+							p1OverlayText.text = ("waiting for player 2!");
 						}
 								
 						//player 2 touched
 						if (touchPosition.y > 0) {
 							P2Touched = true;
-							p2Timer.text = ("waiting for player 1!");
+							p2OverlayText.text = ("waiting for player 1!");
 						}
 					}
 
@@ -225,7 +288,7 @@ public class Overlay_Control : MonoBehaviour
 
 						//single player
 					if (gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
-						p1Timer.text = ("Place finger here to start!");
+						p1OverlayText.text = ("Place finger here to start!");
 
 						if (P1Touched) {
 						} else { //not touching 
@@ -234,8 +297,8 @@ public class Overlay_Control : MonoBehaviour
 					}
 						//multiplayer
 						else {
-						p1Timer.text = ("Player 1 place finger here!");
-						p2Timer.text = ("Player 2 place finger here!");
+						p1OverlayText.text = ("Player 1 place finger here!");
+						p2OverlayText.text = ("Player 2 place finger here!");
 
 						if (P1Touched && P2Touched) {
 						} else { //either one not touching 

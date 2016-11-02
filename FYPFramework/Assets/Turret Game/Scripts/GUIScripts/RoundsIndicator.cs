@@ -9,7 +9,10 @@ public class RoundsIndicator : MonoBehaviour {
 	[SerializeField]
 	private Sprite filledOrb;
 
+	//number of rounds set by the player
 	private int noOfRounds;
+	//number of rounds won individually by each player
+	public int roundWon_P1, roundWon_P2;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +22,8 @@ public class RoundsIndicator : MonoBehaviour {
 		//TODO: need to add how many rounds each player have achieved
 		switch(noOfRounds){
 		case 1:
+
+
 			rounds_P1_2.gameObject.SetActive (false);
 			rounds_P1_3.gameObject.SetActive (false);
 

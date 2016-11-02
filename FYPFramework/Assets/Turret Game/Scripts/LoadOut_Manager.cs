@@ -13,6 +13,8 @@ public class LoadOut_Manager : MonoBehaviour {
 	frameImage_P1_turret, frameImage_P1_bullet, frameImage_P1_wall, frameImage_P2_turret, frameImage_P2_bullet, frameImage_P2_wall;
 	[SerializeField]
 	private Sprite[] confirmed_sprite_P1, confirmed_sprite_P2;
+	[SerializeField]
+	private Button confirmedButton_P1, confirmedButton_P2;
 
 	private GameObject P1_Selections, P2_Selections, GO;
 	private Vector3 lastSelectedTurretPos_P1, lastSelectedBulletPos_P1, lastSelectedWallPos_P1, lastSelectedTurretPos_P2, lastSelectedBulletPos_P2, lastSelectedWallPos_P2;
@@ -23,6 +25,7 @@ public class LoadOut_Manager : MonoBehaviour {
 	private bool isConfirmed_P1, isConfirmed_P2;
 
 	public Level_Control _Level_Control;
+
 
 	// Use this for initialization
 	void Start () { 
@@ -219,44 +222,46 @@ public class LoadOut_Manager : MonoBehaviour {
 		case "Turret_Icon_P1":
 			turretPanel_P1.SetActive (true);
 			P1_Selections.SetActive (false);
-
+			confirmedButton_P1.gameObject.SetActive (false);
 			frameImage_P1_turret.gameObject.SetActive (true);
 			break;
 		case "Bullet_Icon_P1":
 			bulletPanel_P1.SetActive (true);
 			P1_Selections.SetActive (false);
-
+			confirmedButton_P1.gameObject.SetActive (false);
 			frameImage_P1_bullet.gameObject.SetActive (true);
 			break;
 		case "Wall_Icon_P1":
 			wallPanel_P1.SetActive (true);
 			P1_Selections.SetActive (false);
-
+			confirmedButton_P1.gameObject.SetActive (false);
 			frameImage_P1_wall.gameObject.SetActive (true);
 			break;
 		case "Turret_Icon_P2":
 			turretPanel_P2.SetActive (true);
 			P2_Selections.SetActive (false);
-
+			confirmedButton_P2.gameObject.SetActive (false);
 			frameImage_P2_turret.gameObject.SetActive (true);
 			break;
 		case "Bullet_Icon_P2":
 			bulletPanel_P2.SetActive (true);
 			P2_Selections.SetActive (false);
-
+			confirmedButton_P2.gameObject.SetActive (false);
 			frameImage_P2_bullet.gameObject.SetActive (true);
 			break;
 		case "Wall_Icon_P2":
 			wallPanel_P2.SetActive (true);
 			P2_Selections.SetActive (false);
-
+			confirmedButton_P2.gameObject.SetActive (false);
 			frameImage_P2_wall.gameObject.SetActive (true);
 			break;
 		case "Confirm Button_P1":
+			P1_Selections.SetActive (true);
+			confirmedButton_P1.gameObject.SetActive (true);
+
 			turretPanel_P1.SetActive (false);
 			bulletPanel_P1.SetActive (false);
 			wallPanel_P1.SetActive (false);
-			P1_Selections.SetActive (true);
 
 			//Set the frames to false
 			frameImage_P1_turret.gameObject.SetActive (false);
@@ -264,10 +269,12 @@ public class LoadOut_Manager : MonoBehaviour {
 			frameImage_P1_wall.gameObject.SetActive (false);
 			break;
 		case "Confirm Button_P2":
+			P2_Selections.SetActive (true);
+			confirmedButton_P2.gameObject.SetActive (true);
+
 			turretPanel_P2.SetActive (false);
 			bulletPanel_P2.SetActive (false);
 			wallPanel_P2.SetActive (false);
-			P2_Selections.SetActive (true);
 
 			//Set the frames to false
 			frameImage_P2_turret.gameObject.SetActive (false);
