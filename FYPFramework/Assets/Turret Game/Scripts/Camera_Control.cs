@@ -216,7 +216,6 @@ public class Camera_Control : MonoBehaviour
 					// Limit the camera within the background zone
 					if ((new_cam_pos.y > 0) && (new_cam_pos.y < bg_world_size.y * num_bg - height)) {
 						Camera.main.transform.position = new Vector3 (Camera.main.transform.position.x, new_cam_pos.y, Camera.main.transform.position.z);
-						;
 					}
 				}
             }
@@ -237,16 +236,15 @@ public class Camera_Control : MonoBehaviour
 
             GameObject[] all_bullets = null;
             int nbBullet = 0;
-
             if (this.CompareTag("Player1"))
-            {
+			{
                 // Find all gameobject with tag : bullet_1
                 all_bullets = GameObject.FindGameObjectsWithTag("Bullet_1");
                 nbBullet = all_bullets.Length;
             }
 
             if (this.CompareTag("Player2"))
-            {
+			{
                 // Find all gameobject with tag : bullet_2
                 all_bullets = GameObject.FindGameObjectsWithTag("Bullet_2");
                 nbBullet = all_bullets.Length;
@@ -302,7 +300,7 @@ public class Camera_Control : MonoBehaviour
     {
         if ((this.CompareTag("Player1") && !mcontrol.card_menu_P1) || (this.CompareTag("Player2") && !mcontrol.card_menu_P2))
         {
-            camera_switch_no++;
+			camera_switch_no++;
 
             GameObject[] all_bullets = null;
             int nbBullet = 0;

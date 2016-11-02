@@ -48,28 +48,42 @@ public class Player_Control : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        mcontrol = GameObject.Find("Scripts").GetComponent<Mode_Control>();
+		mcontrol = GameObject.Find("Scripts").GetComponent<Mode_Control>();
         _pauseScript = GameObject.Find("Scripts").GetComponent<PauseScript>();
 
         Turret_anim = GetComponent<Animator>();
+		shoot_location = this.transform.Find("bullet_pos").gameObject;
         //m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
+
         if (mcontrol.game_mode_Single)
         {
             //game_mode_Single = true;
-            if (GameObject.Find("Reload") != null)
+			if (GameObject.Find("Reload") != null)
             {
                 Reload = GameObject.Find("Reload");
                 Reload.GetComponent<Slider>().minValue = 0;
                 Reload.GetComponent<Slider>().maxValue = -1;
                 Reload_Alpha = Reload.transform.GetChild(1).GetChild(0).GetComponent<Image>();
             }
+
+			for (int i = 0; i < 10; i++) {
+				if (LayerMask.LayerToName (this.gameObject.layer) == "Player 1") {
+					GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+					new_clone.tag = "Bullet_Rest";
+					new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+				}
+
+				GameObject new_effect = Instantiate (Resources.Load (effect_name), GameObject.Find ("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
+				new_effect.tag = "Bullet_Effect_Stop";
+				new_effect.transform.SetParent (GameObject.Find ("Bullet_Effect").transform);
+			}
         }
         else
         {
             P2Cam = GameObject.Find("Top Camera").GetComponent<Camera>();
             P1Cam = GameObject.Find("Bottom Camera").GetComponent<Camera>();
 
-            if (this.tag == "Player1" && GameObject.Find("Reload P1") != null)
+			if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1" && GameObject.Find("Reload P1") != null)
             {
                 Reload = GameObject.Find("Reload P1");
 
@@ -78,41 +92,31 @@ public class Player_Control : MonoBehaviour
                 Reload_Alpha = Reload.transform.GetChild(1).GetChild(0).GetComponent<Image>();
             }
 
-            if (this.tag == "Player2" && GameObject.Find("Reload P2") != null)
+			if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2" && GameObject.Find("Reload P2") != null)
             {
-                Reload = GameObject.Find("Reload P2");
+				Reload = GameObject.Find("Reload P2");
 
                 Reload.GetComponent<Slider>().minValue = 0;
                 Reload.GetComponent<Slider>().maxValue = -1;
                 Reload_Alpha = Reload.transform.GetChild(1).GetChild(0).GetComponent<Image>();
             }
-        }
 
-        shoot_location = this.transform.Find("bullet_pos").gameObject;
-    }
-
-    void Awake()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-
-            if (this.CompareTag("Player1"))
-            {
-                GameObject new_clone = Instantiate(Resources.Load(bullet_name), GameObject.Find("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
-                new_clone.tag = "Bullet_Rest";
-                new_clone.transform.SetParent(GameObject.Find("Bullet_Rest").transform);
-            }
-            else if (this.CompareTag("Player2"))
-            {
-                GameObject new_clone = Instantiate(Resources.Load(bullet_name_2), GameObject.Find("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
-                new_clone.tag = "Bullet_Rest_2";
-                new_clone.transform.SetParent(GameObject.Find("Bullet_Rest").transform);
-            }
+			for (int i = 0; i < 10; i++) {
+				if (LayerMask.LayerToName (this.gameObject.layer) == "Player 1") {
+					GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+					new_clone.tag = "Bullet_Rest";
+					new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+				} else if (LayerMask.LayerToName (this.gameObject.layer) == "Player 2") {
+					GameObject new_clone = Instantiate (Resources.Load (bullet_name_2), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+					new_clone.tag = "Bullet_Rest_2";
+					new_clone.transform.SetParent (GameObject.Find ("Bullet_Rest").transform);
+				}
 
 
-            GameObject new_effect = Instantiate(Resources.Load(effect_name), GameObject.Find("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
-            new_effect.tag = "Bullet_Effect_Stop";
-            new_effect.transform.SetParent(GameObject.Find("Bullet_Effect").transform);
+				GameObject new_effect = Instantiate (Resources.Load (effect_name), GameObject.Find ("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
+				new_effect.tag = "Bullet_Effect_Stop";
+				new_effect.transform.SetParent (GameObject.Find ("Bullet_Effect").transform);
+			}
         }
     }
 
@@ -160,13 +164,13 @@ public class Player_Control : MonoBehaviour
 
                     TouchPhase phase = touch.phase;
 
-                    if (this.CompareTag("Player1"))
+					if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
                     {
                         if (mcontrol.card_menu_P1 || !mcontrol.move_player_P1)
                             phase = TouchPhase.Ended;
                     }
 
-                    if (this.CompareTag("Player2"))
+					if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
                     {
                         if (mcontrol.card_menu_P2 || !mcontrol.move_player_P2)
                             phase = TouchPhase.Ended;
@@ -175,14 +179,14 @@ public class Player_Control : MonoBehaviour
                     switch (phase)
                     {
                         case TouchPhase.Began:
-                            if (this.tag == "Player1")
+							if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
                             {
                                 Vector2 touchPosition = P1Cam.ScreenToWorldPoint(touch.position);
                                 overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(touchPosition);
                                 offset = new Vector3(this.transform.position.x, 0, 0) - new Vector3(touchPosition.x, 0, 0);
                             }
 
-                            if (this.tag == "Player2")
+							if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
                             {
                                 Vector2 touchPosition = P2Cam.ScreenToWorldPoint(touch.position);
                                 overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(touchPosition);
@@ -216,12 +220,12 @@ public class Player_Control : MonoBehaviour
                         case TouchPhase.Moved: //Dragging
                             if (touch_point == i)
                             {
-                                if (this.tag == "Player1")
+								if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
                                 {
                                     Vector2 touchPosition = P1Cam.ScreenToWorldPoint(touch.position);
                                     Dragging_touch(width, height, player_world_size, touchPosition);
                                 }
-                                if (this.tag == "Player2")
+								if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
                                 {
                                     Vector2 touchPosition = P2Cam.ScreenToWorldPoint(touch.position);
                                     Dragging_touch(width, height, player_world_size, touchPosition);
@@ -358,7 +362,7 @@ public class Player_Control : MonoBehaviour
         Turret_anim.SetInteger("turretState", 1);
         Vector3 shoot_position = shoot_location.transform.position;
 
-        if (this.CompareTag("Player1"))
+		if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
         {
             GameObject new_bullet = GameObject.FindGameObjectWithTag("Bullet_Rest");
             if (new_bullet != null)
@@ -385,7 +389,7 @@ public class Player_Control : MonoBehaviour
                 new_effect.transform.SetParent(GameObject.Find("Bullet_Effect").transform);
             }
         }
-        else if (this.CompareTag("Player2"))
+		else if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
         {
             GameObject new_bullet = GameObject.FindGameObjectWithTag("Bullet_Rest_2");
             if (new_bullet != null)

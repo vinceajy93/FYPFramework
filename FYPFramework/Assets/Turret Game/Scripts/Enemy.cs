@@ -75,7 +75,11 @@ public class Enemy : MonoBehaviour
         Turret_anim = this.GetComponent<Animator>();
 
         currentEnemyState = EnemyState.Turret_Move;
-        Enemy_Turret = GameObject.FindGameObjectWithTag("Enemy");
+		foreach(Transform child in GameObject.FindGameObjectWithTag("Enemy").transform)
+		{
+			if (LayerMask.LayerToName (child.gameObject.layer) == "Enemy")
+				Enemy_Turret = child.gameObject;
+		}
 
         // Get Enemy Turret Size in worldspace
         Vector2 sprite_size = Enemy_Turret.GetComponent<SpriteRenderer>().sprite.rect.size;
@@ -458,7 +462,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                next_pos = new Vector3(GameObject.FindGameObjectWithTag("Player1").transform.position.x, current_bullet.transform.position.y, current_bullet.transform.position.z);
+				next_pos = new Vector3(GameObject.FindGameObjectWithTag("Player1").transform.GetChild(0).position.x, current_bullet.transform.position.y, current_bullet.transform.position.z);
                 nearestGO = null;
             }
         }

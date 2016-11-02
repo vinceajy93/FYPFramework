@@ -5,16 +5,10 @@ using UnityEngine.UI;
 public class Card_Control : MonoBehaviour {
 	private Mode_Control mcontrol;
 	private PauseScript _pauseScript;
-	private HealthManager _HealthManager;
-
-	// Canvas Varibles (Only usable in canvas)
-	private GameObject MainCanvas;
-	private float MainCanvas_Height;
 
 	// Card_Menu Needed Material
 	private GameObject card_button;
 	private GameObject card_menu;
-	private bool overSprite = false;
 
 	private string name_card_left;
 	private string name_card_middle;
@@ -28,11 +22,6 @@ public class Card_Control : MonoBehaviour {
 	void Start () {
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
 		_pauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
-		_HealthManager = GameObject.Find("Scripts").GetComponent<HealthManager>();
-
-		// Get Canvas as Gameobject
-		MainCanvas = GameObject.Find("Canvas");
-		MainCanvas_Height = MainCanvas.GetComponent<RectTransform> ().rect.height;
 
 		if (mcontrol.game_mode_Single) {
 			// Menu
@@ -48,16 +37,19 @@ public class Card_Control : MonoBehaviour {
 			Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 			Card_Left.transform.SetParent (card_menu.transform, false);
 			Card_Left.transform.position = card_menu.transform.GetChild(0).position;
+			Card_Left.transform.localScale = card_menu.transform.GetChild (0).localScale;
 			Card_Left.tag = "Card_P1";
 
 			Card_Middle = Instantiate (Resources.Load (name_card_middle), Vector3.zero, Quaternion.identity) as GameObject;
 			Card_Middle.transform.SetParent (card_menu.transform, false);
 			Card_Middle.transform.position = card_menu.transform.GetChild(1).position;
+			Card_Middle.transform.localScale = card_menu.transform.GetChild(1).localScale;
 			Card_Middle.tag = "Card_P1";
 
 			Card_Right = Instantiate (Resources.Load (name_card_right), Vector3.zero, Quaternion.identity) as GameObject;
 			Card_Right.transform.SetParent (card_menu.transform, false);
 			Card_Right.transform.position = card_menu.transform.GetChild(2).position;
+			Card_Right.transform.localScale = card_menu.transform.GetChild(2).localScale;
 			Card_Right.tag = "Card_P1";
 		} else {
 			if (this.CompareTag("Card_P1")) {
@@ -74,16 +66,19 @@ public class Card_Control : MonoBehaviour {
 				Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Left.transform.SetParent (card_menu.transform, false);
 				Card_Left.transform.position = card_menu.transform.GetChild(0).position;
+				Card_Left.transform.localScale = card_menu.transform.GetChild(0).localScale;
 				Card_Left.tag = "Card_P1";
 
 				Card_Middle = Instantiate (Resources.Load (name_card_middle), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Middle.transform.SetParent (card_menu.transform, false);
 				Card_Middle.transform.position = card_menu.transform.GetChild(1).position;
+				Card_Middle.transform.localScale = card_menu.transform.GetChild(1).localScale;
 				Card_Middle.tag = "Card_P1";
 
 				Card_Right = Instantiate (Resources.Load (name_card_right), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Right.transform.SetParent (card_menu.transform, false);
 				Card_Right.transform.position = card_menu.transform.GetChild(2).position;
+				Card_Right.transform.localScale = card_menu.transform.GetChild(2).localScale;
 				Card_Right.tag = "Card_P1";
 			} else {
 				// Menu
@@ -99,16 +94,22 @@ public class Card_Control : MonoBehaviour {
 				Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Left.transform.SetParent (card_menu.transform, false);
 				Card_Left.transform.position = card_menu.transform.GetChild(0).position;
+				Card_Left.transform.rotation = card_menu.transform.GetChild (0).rotation;
+				Card_Left.transform.localScale = card_menu.transform.GetChild(0).localScale;
 				Card_Left.tag = "Card_P2";
 
 				Card_Middle = Instantiate (Resources.Load (name_card_middle), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Middle.transform.SetParent (card_menu.transform, false);
 				Card_Middle.transform.position = card_menu.transform.GetChild(1).position;
+				Card_Middle.transform.rotation = card_menu.transform.GetChild (1).rotation;
+				Card_Middle.transform.localScale = card_menu.transform.GetChild(1).localScale;
 				Card_Middle.tag = "Card_P2";
 
 				Card_Right = Instantiate (Resources.Load (name_card_right), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Right.transform.SetParent (card_menu.transform, false);
 				Card_Right.transform.position = card_menu.transform.GetChild(2).position;
+				Card_Right.transform.rotation = card_menu.transform.GetChild (2).rotation;
+				Card_Right.transform.localScale = card_menu.transform.GetChild(2).localScale;
 				Card_Right.tag = "Card_P2";
 			}
 		}

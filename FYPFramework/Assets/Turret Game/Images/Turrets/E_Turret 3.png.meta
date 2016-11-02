@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: b8cb99a8cda8422439661b2af600255e
+timeCreated: 1477968023
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: E_Turret 3_0
+    21300002: E_Turret 3_1
+    21300004: E_Turret 3_2
+    21300006: E_Turret 3_3
+    21300008: E_Turret 3_4
+    21300010: E_Turret 3_5
+    21300012: E_Turret 3_6
+    21300014: E_Turret 3_7
+    21300016: E_Turret 3_8
+    21300018: E_Turret 3_9
+    21300020: E_Turret 3_10
+    21300022: E_Turret 3_11
+    21300024: E_Turret 3_12
+    21300026: E_Turret 3_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: E_Turret 3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 136}
+        - {x: -83.5, y: 60}
+        - {x: -89.5, y: 31}
+        - {x: -89.5, y: -9}
+        - {x: -83.5, y: -17}
+        - {x: -72.5, y: -32}
+        - {x: -62.5, y: -63}
+        - {x: -40.5, y: -87}
+        - {x: 39.5, y: -87}
+        - {x: 89.5, y: -47}
+        - {x: 89.5, y: 61}
+        - {x: 53.5, y: 136}
+    - name: E_Turret 3_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 544
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62.5, y: 120}
+        - {x: -44.5, y: 120}
+        - {x: -89.5, y: 80}
+        - {x: -89.5, y: -29}
+        - {x: -62.5, y: -63}
+        - {x: -41.5, y: -87}
+        - {x: 36.5, y: -87}
+        - {x: 57.5, y: -65}
+        - {x: 89.5, y: -43}
+        - {x: 89.5, y: 61}
+    - name: E_Turret 3_2
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 544
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.5, y: 98}
+        - {x: -36.5, y: 98}
+        - {x: -83.5, y: 60}
+        - {x: -89.5, y: 31}
+        - {x: -89.5, y: -32}
+        - {x: -41.5, y: -99}
+        - {x: 36.5, y: -99}
+        - {x: 42.5, y: -97}
+        - {x: 89.5, y: -35}
+        - {x: 89.5, y: 37}
+        - {x: 73.5, y: 83}
+    - name: E_Turret 3_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 544
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.5, y: 93}
+        - {x: -32.5, y: 93}
+        - {x: -53.5, y: 86}
+        - {x: -83.5, y: 59}
+        - {x: -89.5, y: 39}
+        - {x: -89.5, y: -21}
+        - {x: -28.5, y: -118}
+        - {x: 33.5, y: -118}
+        - {x: 89.5, y: -26}
+        - {x: 89.5, y: 33}
+        - {x: 68.5, y: 74}
+    - name: E_Turret 3_4
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 544
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: 93}
+        - {x: -82.5, y: 59}
+        - {x: -89.5, y: 40}
+        - {x: -89.5, y: -30}
+        - {x: -41.5, y: -123}
+        - {x: -25.5, y: -136}
+        - {x: 30.5, y: -136}
+        - {x: 89.5, y: -31}
+        - {x: 89.5, y: 50}
+        - {x: 51.5, y: 93}
+    - name: E_Turret 3_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.5, y: 93}
+        - {x: -36.5, y: 93}
+        - {x: -82.5, y: 59}
+        - {x: -89.5, y: 34}
+        - {x: -89.5, y: -18}
+        - {x: -29.5, y: -131}
+        - {x: 30.5, y: -131}
+        - {x: 89.5, y: -19}
+        - {x: 89.5, y: 33}
+        - {x: 68.5, y: 74}
+    - name: E_Turret 3_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 272
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77.5, y: 82}
+        - {x: 53.5, y: 93}
+        - {x: -42.5, y: 93}
+        - {x: -83.5, y: 59}
+        - {x: -89.5, y: 37}
+        - {x: -89.5, y: -20}
+        - {x: -29.5, y: -124}
+        - {x: 27.5, y: -124}
+        - {x: 63.5, y: -64}
+        - {x: 89.5, y: -32}
+        - {x: 89.5, y: 42}
+    - name: E_Turret 3_7
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 272
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40.5, y: 93}
+        - {x: -40.5, y: 93}
+        - {x: -83.5, y: 59}
+        - {x: -89.5, y: 38}
+        - {x: -89.5, y: -19}
+        - {x: -29.5, y: -117}
+        - {x: 27.5, y: -117}
+        - {x: 89.5, y: -11}
+        - {x: 89.5, y: 33}
+        - {x: 68.5, y: 74}
+    - name: E_Turret 3_8
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 272
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: 93}
+        - {x: -43.5, y: 93}
+        - {x: -89.5, y: 62}
+        - {x: -89.5, y: -12}
+        - {x: -61.5, y: -63}
+        - {x: -23.5, y: -107}
+        - {x: 23.5, y: -107}
+        - {x: 89.5, y: -29}
+        - {x: 89.5, y: 41}
+        - {x: 78.5, y: 84}
+    - name: E_Turret 3_9
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 272
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 97}
+        - {x: -37.5, y: 97}
+        - {x: -87.5, y: 62}
+        - {x: -89.5, y: 49}
+        - {x: -89.5, y: -39}
+        - {x: -41.5, y: -100}
+        - {x: 33.5, y: -100}
+        - {x: 89.5, y: -28}
+        - {x: 89.5, y: 33}
+        - {x: 68.5, y: 74}
+    - name: E_Turret 3_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: 106}
+        - {x: -38.5, y: 106}
+        - {x: -86.5, y: 61}
+        - {x: -89.5, y: 42}
+        - {x: -89.5, y: -16}
+        - {x: -66.5, y: -66}
+        - {x: -36.5, y: -91}
+        - {x: 53.5, y: -91}
+        - {x: 89.5, y: -9}
+        - {x: 89.5, y: 48}
+        - {x: 68.5, y: 74}
+    - name: E_Turret 3_11
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 88}
+        - {x: 34.5, y: 115}
+        - {x: -34.5, y: 115}
+        - {x: -89.5, y: 47}
+        - {x: -89.5, y: -16}
+        - {x: -69.5, y: -69}
+        - {x: -41.5, y: -87}
+        - {x: 44.5, y: -87}
+        - {x: 89.5, y: -33}
+        - {x: 89.5, y: 37}
+    - name: E_Turret 3_12
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 0
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89.5, y: -7}
+        - {x: -83.5, y: -17}
+        - {x: -72.5, y: -32}
+        - {x: -62.5, y: -63}
+        - {x: -54.5, y: -87}
+        - {x: 41.5, y: -87}
+        - {x: 89.5, y: -63}
+        - {x: 89.5, y: 81}
+        - {x: 58.5, y: 123}
+        - {x: -39.5, y: 123}
+        - {x: -89.5, y: 42}
+    - name: E_Turret 3_13
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 0
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 130}
+        - {x: -34.5, y: 129}
+        - {x: -83.5, y: 60}
+        - {x: -89.5, y: 31}
+        - {x: -89.5, y: -9}
+        - {x: -83.5, y: -17}
+        - {x: -72.5, y: -32}
+        - {x: -62.5, y: -63}
+        - {x: -40.5, y: -87}
+        - {x: 39.5, y: -87}
+        - {x: 89.5, y: -49}
+        - {x: 89.5, y: 63}
+        - {x: 56.5, y: 130}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

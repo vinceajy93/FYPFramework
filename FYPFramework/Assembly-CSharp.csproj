@@ -64,6 +64,8 @@
      <Compile Include="Assets\Turret Game\Scripts\Indicator.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LevelSelectScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Level_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\LoadOut_Card.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\LoadOut_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Manager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Mode_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\OS_Checker.cs" />
