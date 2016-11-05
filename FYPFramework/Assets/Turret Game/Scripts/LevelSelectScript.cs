@@ -50,15 +50,22 @@ public class LevelSelectScript : MonoBehaviour {
 	void Start () {
 
 		//Set the text of the string array
-		Description_String[0] = "Stage: Ice Studio \n\n conditions are harsh. \n beware of lifeforms floating about. Give sweets if needed";
+		Description_String[0] = "Stage: Ice Studio \n\nconditions are harsh.\nbeware of lifeforms floating about. Give sweets if needed";
 		Description_String [1] = "Stage: Hakuna Marteena \n\n Hail the queen of marteena!";
-		Description_String[2] = "Stage: Arki Island \n\n Your turret give me cancer";
-		Description_String [3] = "Stage: Random \n\n Venture into warp vortex and appear on a random map";
+		Description_String[2] = "Stage: Arki Island \n\nYour turret give me cancer";
+		Description_String [3] = "Stage: Random \n\nVenture into warp vortex and appear on a random map";
 
 		//Set the description text to show the first stage description
 		Description_Text.text = Description_String[0];
 
-		//change the color of the selected button to highlighted color (yellow)
+		//Set the color of the deafult selected stage to highlighted color
+		Component[] tempComponent;
+
+		tempComponent = GameObject.Find("stage_1").GetComponentsInChildren<Image> ();
+		foreach (Image ImageCol in tempComponent) {
+			ImageCol.color = color;
+		}
+		//change the color of the selected button to highlighted color
 		colorBlockSelected.normalColor = color;
 		colorBlockSelected.highlightedColor = color;
 		colorBlockSelected.pressedColor = color;
@@ -109,7 +116,6 @@ public class LevelSelectScript : MonoBehaviour {
 			Displaytime_Image.sprite = spr_90s;
 			break;
 		}
-
 		//Set the number of rounds to match with the one shown in the setting
 		Displayrounds_Text.text = rounds.ToString ();
 
@@ -318,19 +324,55 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			//DisplayEnlargeImage.sprite = GO.transform.FindGetComponent<Image>().sprite;
+			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
 			break;
 		case "stage_2":
 			//set the description text 
 			Description_Text.text = Description_String [1];
+			//change the color of the selected rest to white, selected image to blue
+			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = Color.white;
+			}
+			tempCol = GO.GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = color;
+			}
+
+			//Set the enlarge image to be the select image one
+			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
 			break;
 		case "stage_3":
 			//set the description text 
 			Description_Text.text = Description_String [2];
+			//change the color of the selected rest to white, selected image to blue
+			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = Color.white;
+			}
+			tempCol = GO.GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = color;
+			}
+
+			//Set the enlarge image to be the select image one
+			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
 			break;
 		case "stage_4":
 			//set the description text 
 			Description_Text.text = Description_String [3];
+			//change the color of the selected rest to white, selected image to blue
+			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = Color.white;
+			}
+			tempCol = GO.GetComponentsInChildren<Image> ();
+			foreach (Image ImageCol in tempCol) {
+				ImageCol.color = color;
+			}
+
+			//Set the enlarge image to be the select image one
+			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
 			break;
 
 		}
