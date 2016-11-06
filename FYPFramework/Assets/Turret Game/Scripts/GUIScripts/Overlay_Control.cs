@@ -23,6 +23,9 @@ public class Overlay_Control : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		//Set the overlay panel to be active if its inactive
+		if (!panel.activeSelf)
+			panel.SetActive (true);
 		_roundsIndicator = GetComponent<RoundsIndicator> ();
 
 		//start the timer

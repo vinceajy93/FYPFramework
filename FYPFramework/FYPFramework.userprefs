@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\LoadOut_Manager.cs">
     <Files>
-      <File FileName="Assets\Turret Game\Scripts\LoadOut_Manager.cs" Line="329" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\LoadOut_Manager.cs" Line="312" Column="23" />
       <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="1" Column="1" />
       <File FileName="Assets\Turret Game\Scripts\LevelSelectScript.cs" Line="1" Column="1" />
     </Files>

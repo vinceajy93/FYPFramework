@@ -37,6 +37,9 @@ TagManager:
   - Bullet_Ghost_Right
   - Loadout_Tab
   - Loadout_Panel
+  - Buttons
+  - CardChoice_P1
+  - CardChoice_P2
   layers:
   - Default
   - TransparentFX

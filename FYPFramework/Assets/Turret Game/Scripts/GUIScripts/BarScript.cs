@@ -20,7 +20,7 @@ public class BarScript : MonoBehaviour {
 		set {
             //store the string before colon into a temp string array
             string[] tmp = valueText.text.Split(':');
-            valueText.text = tmp[0] + ": " + value;
+			valueText.text = value.ToString();//tmp[0] + ": " +  value;
 			fillAmount = Map (value, 0, MaxValue);
 		}
 	}
