@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Turret Game\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Barrier_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Destroy.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
@@ -61,6 +60,7 @@
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\RoundsIndicator.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\ScrollScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\Stat.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\GUIScripts\TutorialSceneScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Indicator.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LevelSelectScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Level_Control.cs" />
@@ -69,11 +69,17 @@
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Manager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Turret.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Mode_Control.cs" />
-     <Compile Include="Assets\Turret Game\Scripts\OS_Checker.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Obstacles_Spawner.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Player_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashLoader.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\testReadWriteFile.cs" />
+     <None Include="Assets\Turret Game\Prefabs\Resources\Text\Cost_P1.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

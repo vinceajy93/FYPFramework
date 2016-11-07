@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Turret Game/Scenes/Scene-Overlay.unity
+  - enabled: 1
+    path: Assets/Turret Game/Scenes/test scene.unity
   - enabled: 1
     path: Assets/Turret Game/Scenes/Splash.unity
   - enabled: 1
@@ -22,8 +22,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Turret Game/Scenes/Single.unity
   - enabled: 1
-    path: Assets/Turret Game/Scenes/test scene.unity
-  - enabled: 1
     path: Assets/Turret Game/Scenes/Logbook.unity
   - enabled: 1
     path: Assets/Turret Game/Scenes/Options.unity
@@ -37,3 +35,5 @@ EditorBuildSettings:
     path: Assets/Turret Game/Scenes/Arcade.unity
   - enabled: 1
     path: Assets/Turret Game/Scenes/AI.unity
+  - enabled: 1
+    path: Assets/Turret Game/Scenes/LoseWinScene.unity

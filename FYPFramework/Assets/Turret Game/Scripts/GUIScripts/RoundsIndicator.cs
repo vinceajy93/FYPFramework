@@ -18,17 +18,46 @@ public class RoundsIndicator : MonoBehaviour {
 	void Start () {
 		noOfRounds = PlayerPrefs.GetInt ("rounds");
 
+
+		//Set the number of rounds won to filled orb sprite
+		switch(PlayerPrefs.GetInt("roundWon_P1")){
+		case 1:
+			rounds_P1_1.GetComponent<Image> ().sprite = filledOrb_P1;
+			break;
+		case 2:
+			rounds_P1_1.GetComponent<Image> ().sprite = filledOrb_P1;
+			rounds_P1_2.GetComponent<Image> ().sprite = filledOrb_P1;
+			break;
+		case 3:
+			rounds_P1_1.GetComponent<Image> ().sprite = filledOrb_P1;
+			rounds_P1_2.GetComponent<Image> ().sprite = filledOrb_P1;
+			rounds_P1_3.GetComponent<Image> ().sprite = filledOrb_P1;
+			break;
+		}
+		switch(PlayerPrefs.GetInt("roundWon_P2")){
+		case 1:
+			rounds_P2_1.GetComponent<Image> ().sprite = filledOrb_P2;
+			break;
+		case 2:
+			rounds_P2_1.GetComponent<Image> ().sprite = filledOrb_P2;
+			rounds_P2_2.GetComponent<Image> ().sprite = filledOrb_P2;
+			break;
+		case 3:
+			rounds_P2_1.GetComponent<Image> ().sprite = filledOrb_P2;
+			rounds_P2_2.GetComponent<Image> ().sprite = filledOrb_P2;
+			rounds_P2_3.GetComponent<Image> ().sprite = filledOrb_P2;
+			break;
+		}
+
 		//displays the number of rounds set and number of wins
-		//TODO: need to add how many rounds each player have achieved
 		switch(noOfRounds){
 		case 1:
-
-
 			rounds_P1_2.gameObject.SetActive (false);
 			rounds_P1_3.gameObject.SetActive (false);
 
 			rounds_P2_2.gameObject.SetActive (false);
 			rounds_P2_3.gameObject.SetActive (false);
+
 			break;
 		case 2:
 			rounds_P1_3.gameObject.SetActive (false);
@@ -41,7 +70,5 @@ public class RoundsIndicator : MonoBehaviour {
 			Debug.Log ("number of rounds exceeeded 3, no of rounds = " + noOfRounds);
 			break;
 		}
-		//for testing
-		rounds_P1_1.GetComponent<Image> ().sprite = filledOrb_P1;
 	}
 }

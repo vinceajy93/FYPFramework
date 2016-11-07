@@ -49,6 +49,9 @@ public class LevelSelectScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		//Reset the roundsPassed back to 0 (starting a new game)
+		PlayerPrefs.SetInt("roundsPassed", 1);
+
 		//Set the text of the string array
 		Description_String[0] = "Stage: Ice Studio \n\nconditions are harsh.\nbeware of lifeforms floating about. Give sweets if needed";
 		Description_String [1] = "Stage: Hakuna Marteena \n\n Hail the queen of marteena!";
@@ -58,7 +61,7 @@ public class LevelSelectScript : MonoBehaviour {
 		//Set the description text to show the first stage description
 		Description_Text.text = Description_String[0];
 
-		//Set the color of the deafult selected stage to highlighted color
+		//Set the color of the default selected stage to highlighted color
 		Component[] tempComponent;
 
 		tempComponent = GameObject.Find("stage_1").GetComponentsInChildren<Image> ();

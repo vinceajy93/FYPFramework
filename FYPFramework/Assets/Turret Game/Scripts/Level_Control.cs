@@ -5,11 +5,8 @@ using System.Collections;
 
 public class Level_Control : MonoBehaviour {
 
-	public Text debugText;
-
 	// Use this for initialization
 	void Start () {
-		//debugText.text = ("Stage: " + SceneManager.GetActiveScene().name);
 	}
 
 	//load the main menu scene
@@ -56,13 +53,20 @@ public class Level_Control : MonoBehaviour {
 		SceneManager.LoadScene ("Local_Multiplayer");
 	}
 
-	//for testing purpose
+	//loadout localplayer select
 	public void loadLoadout2pSelect(){
 		SceneManager.LoadScene ("Loadout Select");
+	}
+
+	//loadout localplayer select
+	public void loadLoseWinScene(){
+		SceneManager.LoadScene ("LoseWinScene");
 	}
 
 	//for testing purpose
 	public void loadTest(){
 		SceneManager.LoadScene ("test scene");
 	}
+
+
 }

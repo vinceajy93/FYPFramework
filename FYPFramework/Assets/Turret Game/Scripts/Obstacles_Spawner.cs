@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 public class Obstacles_Spawner : MonoBehaviour {
@@ -8,6 +9,12 @@ public class Obstacles_Spawner : MonoBehaviour {
 	//obstacle game object
 	[SerializeField]
 	private GameObject obstacles_Prefab;
+
+	//debugging purpose
+	private Text debugText;
+
+	private int numberof_Obstacles;
+
 	//list of obstacles
 	//public List<GameObject> Obstacles_List = new List<GameObject>();
 	public List<int> ObstaclesHealth_List = new List<int>();
@@ -15,14 +22,19 @@ public class Obstacles_Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//initialize the number of obstacles
+		/*numberof_Obstacles = PlayerPrefs.GetInt ("no_obstacles");
 
+		debugText = GameObject.Find ("noofobstacles").GetComponent<Text>();
+
+		debugText.text = PlayerPrefs.GetInt ("no_obstacles").ToString();
 		//Debug.Log ("no of obstacles" +PlayerPrefs.GetInt("no_obstacles"));
-		//testInt = _LevelSelectScript.no_obstacles;
-//		for (int i = 0; i < _LevelSelectScript.no_obstacles; i++) {
-//			//Instantiate (obstacles_Prefab);
-//			ObstaclesGO_List.Add (obstacles_Prefab);
-//			ObstaclesHealth_List.Add (i);
-//		}
+		/*
+		for (int i = 0; i < numberof_Obstacles; i++) {
+			Instantiate (obstacles_Prefab);
+			ObstaclesGO_List.Add (obstacles_Prefab);
+			ObstaclesHealth_List.Add (i);
+		}*/
 	}
 	
 	// Update is called once per frame

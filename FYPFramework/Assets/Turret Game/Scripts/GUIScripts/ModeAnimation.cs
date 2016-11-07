@@ -12,8 +12,11 @@ public class ModeAnimation : MonoBehaviour
 	private float currentTimePassed;
 
 	private bool isTop = false;
+
 	[SerializeField]
 	private Animator Anim;
+
+	private GameObject _particleSystem;
 
 	// Use this for initialization
 	void Start ()
@@ -23,6 +26,11 @@ public class ModeAnimation : MonoBehaviour
 		currentTimePassed = 0.0f;
 		upperTreshHold = 0.5f;
 		lowerTreshhold = 0.0f;
+
+		//caching
+		_particleSystem = GameObject.Find ("Particle System");
+
+		_particleSystem.GetComponent<ParticleSystem> ().Play ();
 	}
 	
 	// Update is called once per frame

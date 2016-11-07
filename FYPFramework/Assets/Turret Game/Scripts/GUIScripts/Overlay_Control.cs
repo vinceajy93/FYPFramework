@@ -15,14 +15,22 @@ public class Overlay_Control : MonoBehaviour
 	public bool PanelisActive = true;
 	private bool P1Touched, P2Touched, roundEnded = false;
 
+	//non serialized field
 	private PauseScript _PauseScript;
 	private Level_Control _Level_Control;
 	private HealthManager _HealthManager;
 	private RoundsIndicator _roundsIndicator;
+	private string tempP1Text, tempP2Text;
+	private int roundsPassed;
 
 	// Use this for initialization
 	void Start ()
 	{
+		//get the numberof rounds passed form player pref then save it to an int
+		if(PlayerPrefs.HasKey("roundsPassed"))
+			roundsPassed = PlayerPrefs.GetInt("roundsPassed");
+
+		Debug.Log (roundsPassed);
 		//Set the overlay panel to be active if its inactive
 		if (!panel.activeSelf)
 			panel.SetActive (true);
@@ -50,11 +58,11 @@ public class Overlay_Control : MonoBehaviour
 
 		} else {
 			//multiplayer
-			p1OverlayText = GameObject.Find ("P1 Timer").GetComponent<Text> ();
-			p2OverlayText = GameObject.Find ("P2 Timer").GetComponent<Text> ();
+			p1OverlayText = GameObject.Find ("P1 OverlayText").GetComponent<Text> ();
+			p2OverlayText = GameObject.Find ("P2 OverlayText").GetComponent<Text> ();
 
-			p1OverlayText.text = ("Player 1 place finger here!");
-			p2OverlayText.text = ("Player 2 place finger here!");
+			p1OverlayText.text = ("Round: "  + roundsPassed + "\n Player 1 place finger here!");
+			p2OverlayText.text = ("Round: "  + roundsPassed + "\n Player 2 place finger here!");
 
 			//set the time for the round to be player setting
 			roundTimer_P1.text = inGameCountdownTimer.ToString ();
@@ -73,10 +81,19 @@ public class Overlay_Control : MonoBehaviour
 
 		//start the next round timer when the round concluded 
 		if (nextroundTimer != 0.0f) {
+			//Set the overlay text to display who won and next round starting time
+			p1OverlayText.text = (tempP1Text + " round begins in: " + nextroundTimer.ToString("f0"));
+			p2OverlayText.text = (tempP2Text + " round begins in: " + nextroundTimer.ToString ("f0"));
+
+			//decrease/start the timer with time.deltatime
 			nextroundTimer -= Time.deltaTime;
 
 			//Set Panel to false when timer hits 0
 			if (nextroundTimer <= 0) {
+				//Add 1 to the current roundsPassed count, then update it in the player prefs
+				roundsPassed += 1;
+
+				PlayerPrefs.SetInt ("roundsPassed", roundsPassed);
 				var tempRound = PlayerPrefs.GetInt ("rounds");
 
 				//if player neither players have hit the amount of rounds require to win the game, send them back to loadout selection
@@ -84,7 +101,7 @@ public class Overlay_Control : MonoBehaviour
 					_Level_Control.loadLoadout2pSelect ();
 				} else {
 					//goes to win page
-					//Debug.Log ("goes to win page");
+					_Level_Control.loadLoseWinScene();
 				}
 
 			}
@@ -107,6 +124,10 @@ public class Overlay_Control : MonoBehaviour
 
 			//update the time for roundTimers
 			inGameCountdownTimer -= Time.deltaTime;
+			//Set the ingamecountdowntimer to not go under 0
+			if (inGameCountdownTimer < 0)
+				inGameCountdownTimer = 0;
+			
 			roundTimer_P1.text = inGameCountdownTimer.ToString ("f0");
 
 			if (!gameObject.GetComponent<Mode_Control> ().game_mode_Single) {
@@ -130,15 +151,20 @@ public class Overlay_Control : MonoBehaviour
 				if (_HealthManager.P1Health.CurrentVal > _HealthManager.P2Health.CurrentVal) {
 					//plus the rounds if not end of rounds set
 					if (PlayerPrefs.GetInt ("roundWon_P1") < PlayerPrefs.GetInt ("rounds")) {
-						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt("roundWon_P1") + 1;
-						PlayerPrefs.SetInt("roundWon_P1", _roundsIndicator.roundWon_P1);
+						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt ("roundWon_P1") + 1;
+						PlayerPrefs.SetInt ("roundWon_P1", _roundsIndicator.roundWon_P1);
 
-						//display round winner then change back to loadout seelct screen after intended time
-						panel.SetActive(true);
-						p1OverlayText.text = ("YOU WON");
-						p2OverlayText.text = ("YOU LOSE");
+						//display round winner then change back to loadout select screen after intended time
+						panel.SetActive (true);
+						tempP1Text = ("YOU WON!");
+						tempP2Text = ("YOU LOSE!");
 
-						nextroundTimer = 2.0f; //setTimerTime;
+						nextroundTimer = 3.0f; //setTimerTime;
+					}
+					//when the player won the number of rounds set
+					else {
+						nextroundTimer = 3.0f; //setTimerTime;
+						_Level_Control.loadLoseWinScene ();
 					}
 
 				}
@@ -146,23 +172,31 @@ public class Overlay_Control : MonoBehaviour
 				else if (_HealthManager.P2Health.CurrentVal > _HealthManager.P1Health.CurrentVal) {
 					//plus the rounds if not end of rounds set
 					if (PlayerPrefs.GetInt ("roundWon_P2") < PlayerPrefs.GetInt ("rounds")) {
-						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt("roundWon_P2") + 1;
-						PlayerPrefs.SetInt("roundWon_P2", _roundsIndicator.roundWon_P1);
+						_roundsIndicator.roundWon_P1 = PlayerPrefs.GetInt ("roundWon_P2") + 1;
+						PlayerPrefs.SetInt ("roundWon_P2", _roundsIndicator.roundWon_P1);
 
-						//display round winner then change back to loadout seelct screen after intended time
-						panel.SetActive(true);
-						p1OverlayText.text = ("YOU LOSE");
-						p2OverlayText.text = ("YOU WIN");
+						//display round winner then change back to loadout select screen after intended time
+						panel.SetActive (true);
+						tempP1Text = ("YOU LOSE!");
+						tempP2Text = ("YOU WIN!");
 
-						nextroundTimer = 2.0f; //setTimerTime;
+						nextroundTimer = 3.0f; //setTimerTime;
 
+					}
+					//when the player won the number of rounds set
+					else {
+						nextroundTimer = 3.0f; //setTimerTime;
+						_Level_Control.loadLoseWinScene ();
 					}
 
 				}
 				//same health at the end of the round
 				else {
 					//ends the round, no player gets a score
-
+					panel.SetActive(true);
+					tempP1Text = ("DRAW!");
+					tempP2Text = ("DRAW!");
+					nextroundTimer = 3.0f;
 				}
 			}
 		}

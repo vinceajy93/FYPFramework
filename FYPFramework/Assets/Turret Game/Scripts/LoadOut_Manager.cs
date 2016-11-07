@@ -12,8 +12,7 @@ public class LoadOut_Manager : MonoBehaviour
 	//Display Images and frames
 	[SerializeField]
 	private Image turretImageP1, turretImageP2, bulletImageP1, bulletImageP2, wallImageP1, wallImageP2, 
-		frameImage_P1_turret, frameImage_P1_bullet, frameImage_P1_wall, frameImage_P2_turret, frameImage_P2_bullet, frameImage_P2_wall,
-		upgradeImageDisplay_P1, upgradeImageDisplay_P2;
+		frameImage_P1_turret, frameImage_P1_bullet, frameImage_P1_wall, frameImage_P2_turret, frameImage_P2_bullet, frameImage_P2_wall, upgradeImageDisplay_P1, upgradeImageDisplay_P2;
 
 	[SerializeField]
 	private Image[] cardImage_P1, cardImage_P2;
@@ -37,9 +36,10 @@ public class LoadOut_Manager : MonoBehaviour
 	private bool isConfirmed_P1, isConfirmed_P2;
 	private Level_Control _Level_Control;
 
-	//creds used to spend on purchasing/ upgradng 
+	//creds used to spend on purchasing/ upgradng
 	int credsAmt_P1, credsAmt_P2;
-
+	//temp go_cost to store the cost of the individual objects
+	int tempGO_Cost_P1, tempGO_Cost_P2;
 	//TempGO stores the tag of GO and uses it to set which panel to be active
 	GameObject tempGO;
 
@@ -50,11 +50,12 @@ public class LoadOut_Manager : MonoBehaviour
 		credsAmt_P1 = 5;
 		credsAmt_P2 = 5;
 
-		creds_P1.text = "Credits: " + credsAmt_P1.ToString();
-		creds_P2.text = "Credits: " + credsAmt_P2.ToString();
+		creds_P1.text = "CRDs: " + credsAmt_P1.ToString ();
+		creds_P2.text = "CRDs: " + credsAmt_P2.ToString ();
 
 		//initialize the tempGO gameobject
 		tempGO = new GameObject ();
+		tempGO.name = "TempGO";
 
 		//Set relevant panels to true so that its child components can be accessed
 		turretPanel_P1.SetActive (true);
@@ -65,7 +66,7 @@ public class LoadOut_Manager : MonoBehaviour
 		turretPanel_P2.SetActive (true);
 		bulletPanel_P2.SetActive (true);
 		wallPanel_P2.SetActive (true);
-		cardPanel_P2.SetActive(true);
+		cardPanel_P2.SetActive (true);
 			
 		//Set the Image frame to be at the defualt selected turret/bullet/wall
 		frameImage_P1_turret.gameObject.transform.position = GameObject.Find ("turret_1_P1").transform.position;
@@ -111,12 +112,14 @@ public class LoadOut_Manager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if(Input.GetKeyDown (KeyCode.W)){
+			Debug.Log (GO.name);
+		}
 	}
 
 	//calls when a turret button is pressed
 	public void turretSelect ()
 	{
-		
 		//Set GO to be the current selected game object by player
 		GO = EventSystem.current.currentSelectedGameObject;
 
@@ -216,8 +219,8 @@ public class LoadOut_Manager : MonoBehaviour
 		GO = EventSystem.current.currentSelectedGameObject;
 
 		if (GO.CompareTag ("WallChoice_P1")) {
-			//set the selected turret's image to turret image
-			wallImageP1.transform.Find ("wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("wall_Preview").GetComponent<Image> ().sprite;
+			//set the selected turret's image to wall image
+			wallImageP1.transform.Find ("wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("Panel/wall_Preview").GetComponent<Image> ().sprite;
 			//Set the temp string fireRate_P1_Str to get the current selected turret's speed text then split and store in an array
 			//Save this Stat to playerPrefs to be use later
 			Health_P1_str = GO.transform.Find ("Stat").GetComponent<Text> ().text.Split (' ');
@@ -234,8 +237,8 @@ public class LoadOut_Manager : MonoBehaviour
 			//TODO: save selected bullets last position to player prefs, its upgrade level 
 		} else if (GO.CompareTag ("WallChoice_P2")) {
 			//set the selected turret's image to turret image
-			wallImageP2.transform.Find ("wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("wall_Preview").GetComponent<Image> ().sprite;
-			//Set the temp string fireRate_P1_Str to get the current selected turret's speed text then split and store in an array
+			wallImageP2.transform.Find ("wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("Panel/wall_Preview").GetComponent<Image> ().sprite;
+			//Set the temp string health_P2 to get the current selected turret's speed text then split and store in an array
 			//Save this Stat to playerPrefs to be use later
 			Health_P2_str = GO.transform.Find ("Stat").GetComponent<Text> ().text.Split (' ');
 			PlayerPrefs.SetInt ("Local_wallP2_Stat", int.Parse (Health_P2_str [1]));
@@ -255,7 +258,8 @@ public class LoadOut_Manager : MonoBehaviour
 		toggleStars ();
 	}
 
-	public void CardSelect(){
+	public void CardSelect ()
+	{
 		//Set GO to be the current selected game object by player
 		GO = EventSystem.current.currentSelectedGameObject;
 	}
@@ -287,6 +291,9 @@ public class LoadOut_Manager : MonoBehaviour
 			frameImage_P1_wall.gameObject.SetActive (true);
 			break;
 		case "Card_Icon_P1":
+			cardPanel_P1.SetActive (true);
+			P1_Selections.SetActive (false);
+			confirmedButton_P1.gameObject.SetActive (false);
 			break;
 		case "Turret_Icon_P2":
 			tempGO.tag = GO.tag;
@@ -310,6 +317,9 @@ public class LoadOut_Manager : MonoBehaviour
 			frameImage_P2_wall.gameObject.SetActive (true);
 			break;
 		case "Card_Icon_P2":
+			cardPanel_P2.SetActive (true);
+			P2_Selections.SetActive (false);
+			confirmedButton_P2.gameObject.SetActive (false);
 			break;
 		case "Confirm Button_P1":
 			P1_Selections.SetActive (true);
@@ -318,6 +328,7 @@ public class LoadOut_Manager : MonoBehaviour
 			turretPanel_P1.SetActive (false);
 			bulletPanel_P1.SetActive (false);
 			wallPanel_P1.SetActive (false);
+			cardPanel_P1.SetActive (false);
 
 			//Set the frames to false
 			frameImage_P1_turret.gameObject.SetActive (false);
@@ -368,7 +379,6 @@ public class LoadOut_Manager : MonoBehaviour
 			}	
 			break;
 		case "UBButton": //upgrade back button
-			
 			if (tempGO.CompareTag ("TurretChoice_P1")) {
 				//set the upgrade panel p1 to false and turret panel to true 
 				upgradePanel_P1.SetActive (false);
@@ -398,7 +408,6 @@ public class LoadOut_Manager : MonoBehaviour
 			}
 			break;
 		}
-		Debug.Log ("tag: " + tempGO.tag);
 	}
 
 	public void toggleStars ()
@@ -436,6 +445,7 @@ public class LoadOut_Manager : MonoBehaviour
 
 	public void upgradeFunction ()
 	{
+
 		string[] credCost_P1;
 //		credCost_P1 = 
 //
@@ -458,15 +468,19 @@ public class LoadOut_Manager : MonoBehaviour
 			wallPanel_P2.SetActive (false);
 			upgradePanel_P2.SetActive (true);
 		}
-			
-		
+
+		Debug.Log ("wall via findchild: " + GO.transform.FindChild("Panel/wall_Preview"));
+		Debug.Log ("wall via find: " + GO.transform.Find("Panel/wall_Preview"));
+		Debug.Log (GO.name);
+
 		//set the image of upgradable object, its stats and cost based on select
 		if (GO.CompareTag ("TurretChoice_P1")) {
 			upgradeImageDisplay_P1.GetComponent<Image> ().sprite = GO.transform.Find ("turret_Preview").GetComponent<Image> ().sprite;
 		} else if (GO.CompareTag ("BulletChoice_P1")) {
 			upgradeImageDisplay_P1.GetComponent<Image> ().sprite = GO.transform.Find ("bullet_Preview").GetComponent<Image> ().sprite;
 		} else if (GO.CompareTag ("WallChoice_P1")) {
-			upgradeImageDisplay_P1.GetComponent<Image> ().sprite = GO.transform.Find ("wall_Preview").GetComponent<Image> ().sprite;
+			Debug.Log ("works");
+			//upgradeImageDisplay_P1.GetComponent<Image> ().sprite = GO.transform.Find ("wall_Preview").GetComponent<Image> ().sprite;
 		}
 		if (GO.CompareTag ("TurretChoice_P2")) {
 			upgradeImageDisplay_P2.GetComponent<Image> ().sprite = GO.transform.Find ("turret_Preview").GetComponent<Image> ().sprite;
