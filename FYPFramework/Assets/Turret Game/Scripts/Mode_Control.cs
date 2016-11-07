@@ -24,9 +24,9 @@ public class Mode_Control : MonoBehaviour {
 			game_mode_Single = true;
 
 			if (PlayerPrefs.HasKey ("S_P1_T"))
-				turret_name_P1 = "Turret/Turret_" + PlayerPrefs.GetInt("LM_P1_T").ToString();
+				turret_name_P1 = "Turret/Turret " + PlayerPrefs.GetInt("S_P1_T").ToString();
 			else
-				turret_name_P1 = "Turret/Turret_" + "5";
+				turret_name_P1 = "Turret/Turret " + "5";
 			
 			Spawn_P1 = GameObject.FindGameObjectWithTag ("Player1");
 			GameObject clone_P1 = Instantiate(Resources.Load(turret_name_P1)) as GameObject;
@@ -37,9 +37,9 @@ public class Mode_Control : MonoBehaviour {
 			clone_P1.tag = "Player1";
 
 			if (PlayerPrefs.HasKey ("S_E_T"))
-				turret_name_E = "Turret/Enemy_" + PlayerPrefs.GetInt("LM_E_T").ToString();
+				turret_name_E = "Turret/Enemy " + PlayerPrefs.GetInt("S_E_T").ToString();
 			else 
-				turret_name_E = "Turret/Enemy_" + "1";
+				turret_name_E = "Turret/Enemy " + "1";
 			
 			Spawn_E = GameObject.FindGameObjectWithTag ("Enemy");
 			GameObject clone_E = Instantiate(Resources.Load(turret_name_E)) as GameObject;
@@ -54,9 +54,9 @@ public class Mode_Control : MonoBehaviour {
 			game_mode_Single = false;
 
 			if (PlayerPrefs.HasKey ("LM_P1_T"))
-				turret_name_P1 = "Turret/Turret_" + PlayerPrefs.GetInt("LM_P1_T").ToString();
+				turret_name_P1 = "Turret/Turret " + PlayerPrefs.GetInt("LM_P1_T").ToString();
 			else
-				turret_name_P1 = "Turret/Turret_" + "1";
+				turret_name_P1 = "Turret/Turret " + "1";
 			
 			Spawn_P1 = GameObject.FindGameObjectWithTag ("Player1");
 			GameObject clone_P1 = Instantiate(Resources.Load(turret_name_P1)) as GameObject;
@@ -67,9 +67,9 @@ public class Mode_Control : MonoBehaviour {
 			clone_P1.tag = "Player1";
 
 			if (PlayerPrefs.HasKey ("LM_P2_T"))
-				turret_name_P2 = "Turret/Turret_" + PlayerPrefs.GetInt("LM_P2_T").ToString();
+				turret_name_P2 = "Turret/Turret " + PlayerPrefs.GetInt("LM_P2_T").ToString();
 			else
-				turret_name_P2 = "Turret/Turret_" + "2";
+				turret_name_P2 = "Turret/Turret " + "2";
 			
 			Spawn_P2 = GameObject.FindGameObjectWithTag ("Player2");
 			GameObject clone_P2 = Instantiate(Resources.Load(turret_name_P2)) as GameObject;

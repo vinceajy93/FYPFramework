@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 3415e9fca3c548841a2955aa8e4f6693
+timeCreated: 1478495759
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bullet 4_0
+    21300002: Bullet 4_1
+    21300004: Bullet 4_2
+    21300006: Bullet 4_3
+    21300008: Bullet 4_4
+    21300010: Bullet 4_5
+    21300012: Bullet 4_6
+    21300014: Bullet 4_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bullet 4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 179
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 87.5}
+        - {x: -37, y: 57.5}
+        - {x: -37, y: -74.5}
+        - {x: -36, y: -86.5}
+        - {x: 38, y: -86.5}
+        - {x: 38, y: 53.5}
+        - {x: 17, y: 87.5}
+    - name: Bullet 4_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 179
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 86.5}
+        - {x: -37, y: 40.5}
+        - {x: -37, y: -48.5}
+        - {x: -31, y: -86.5}
+        - {x: -19, y: -89.5}
+        - {x: 32, y: -89.5}
+        - {x: 38, y: -65.5}
+        - {x: 38, y: 54.5}
+        - {x: 7, y: 86.5}
+    - name: Bullet 4_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 179
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 85.5}
+        - {x: -36, y: 47.5}
+        - {x: -36, y: -47.5}
+        - {x: -32, y: -71.5}
+        - {x: 1, y: -85.5}
+        - {x: 33, y: -85.5}
+        - {x: 39, y: -62.5}
+        - {x: 39, y: 55.5}
+        - {x: 7, y: 85.5}
+    - name: Bullet 4_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 179
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: -67.5}
+        - {x: -13, y: -86.5}
+        - {x: 41, y: -86.5}
+        - {x: 41, y: 84.5}
+        - {x: -8, y: 84.5}
+        - {x: -17, y: 76.5}
+        - {x: -31, y: 46.5}
+    - name: Bullet 4_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 87.5}
+        - {x: -38, y: 57.5}
+        - {x: -38, y: -27.5}
+        - {x: -31, y: -86.5}
+        - {x: 37, y: -86.5}
+        - {x: 37, y: 53.5}
+        - {x: 16, y: 87.5}
+    - name: Bullet 4_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 78.5}
+        - {x: 7, y: 86.5}
+        - {x: -6, y: 86.5}
+        - {x: -38, y: 54.5}
+        - {x: -38, y: -54.5}
+        - {x: -33, y: -89.5}
+        - {x: 25, y: -89.5}
+        - {x: 37, y: -61.5}
+        - {x: 37, y: 33.5}
+        - {x: 35, y: 41.5}
+    - name: Bullet 4_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 0
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 85.5}
+        - {x: -5, y: 85.5}
+        - {x: -16, y: 82.5}
+        - {x: -39, y: 44.5}
+        - {x: -39, y: -54.5}
+        - {x: -35, y: -85.5}
+        - {x: -1, y: -85.5}
+        - {x: 28, y: -73.5}
+        - {x: 32, y: -63.5}
+        - {x: 36, y: -49.5}
+        - {x: 36, y: 47.5}
+    - name: Bullet 4_7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 84.5}
+        - {x: -41, y: 58.5}
+        - {x: -41, y: -86.5}
+        - {x: 2, y: -86.5}
+        - {x: 31, y: -65.5}
+        - {x: 31, y: 65.5}
+        - {x: 11, y: 84.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

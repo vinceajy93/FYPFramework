@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EBullet 3
+  m_Controller: {fileID: 9100000, guid: fee74f018868a4e44972f0be6db17458, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 26ff7e6f0154cfb4b91452bf8e6a29cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 189efdb0eea1fc044bdd87b537e64be4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 59c5cea29f7185c48aeeb2a71d789496, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e516b489017957a4e86b015b3ba03045, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bdf93d4a945edea4c8f6041531020a32, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ad7a645e63c09bf43865aea9cd65bca2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 298fb4e66ef3d464da2147d3ebcbe9b1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 92f19bc796ac98f4f8ac50c085d9ccfb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 19ae63c2f36212c41b64b096ff368848, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 15863c35ba8dd334aace15d840be1c91, type: 2}

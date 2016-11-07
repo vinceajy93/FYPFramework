@@ -86,11 +86,14 @@ public class Camera_Control : MonoBehaviour
 
 					if (((this.CompareTag ("Player1") && !mcontrol.card_menu_P1) || (this.CompareTag ("Player2") && !mcontrol.card_menu_P2)) && (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)) {
 						if (Move_Left) {
-							if (current_gameobject.CompareTag ("Bullet_1"))
-								animator.SetBool ("Right", true);
+							if (animator != null) {
+								if (current_gameobject.CompareTag ("Bullet_1"))
+									animator.SetBool ("Left", true);
 
-							if (current_gameobject.CompareTag ("Bullet_2"))
-								animator.SetBool ("Left", true);
+								if (current_gameobject.CompareTag ("Bullet_2"))
+									animator.SetBool ("Right", true);
+							}
+
 							Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 							Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 							Vector3 current_world_size = local_sprite_size;
@@ -104,11 +107,14 @@ public class Camera_Control : MonoBehaviour
 						}
 
 						if (Move_Right) {
-							if (current_gameobject.CompareTag ("Bullet_1"))
-								animator.SetBool ("Left", true);
+							if (animator != null) {
+								if (current_gameobject.CompareTag ("Bullet_1"))
+									animator.SetBool ("Right", true);
 
-							if (current_gameobject.CompareTag ("Bullet_2"))
-								animator.SetBool ("Right", true);
+								if (current_gameobject.CompareTag ("Bullet_2"))
+									animator.SetBool ("Left", true);
+							}
+
 							Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 							Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 							Vector3 current_world_size = local_sprite_size;
@@ -121,8 +127,10 @@ public class Camera_Control : MonoBehaviour
 							}
 						}
 					} else {
-						animator.SetBool ("Left", false);
-						animator.SetBool ("Right", false);
+						if (animator != null) {
+							animator.SetBool ("Left", false);
+							animator.SetBool ("Right", false);
+						}
 					}
 
 					if (this.CompareTag ("Player1")) {
@@ -175,11 +183,14 @@ public class Camera_Control : MonoBehaviour
 				} else {
 					if (!mcontrol.card_menu_P1 && (current_gameobject.transform.position.y < (total_bg_height - height) && current_gameobject.transform.position.y > 0)) {
 						if (Move_Left) {
-							if (current_gameobject.CompareTag ("Bullet_1"))
-								animator.SetBool ("Right", true);
+							if (animator != null) {
+								if (current_gameobject.CompareTag ("Bullet_1"))
+									animator.SetBool ("Left", true);
 
-							if (current_gameobject.CompareTag ("Bullet_2"))
-								animator.SetBool ("Left", true);
+								if (current_gameobject.CompareTag ("Bullet_2"))
+									animator.SetBool ("Right", true);
+							}
+
 							Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 							Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 							Vector3 current_world_size = local_sprite_size;
@@ -192,11 +203,14 @@ public class Camera_Control : MonoBehaviour
 						}
 
 						if (Move_Right) {
-							if (current_gameobject.CompareTag ("Bullet_1"))
-								animator.SetBool ("Left", true);
+							if (animator != null) {
+								if (current_gameobject.CompareTag ("Bullet_1"))
+									animator.SetBool ("Right", true);
 
-							if (current_gameobject.CompareTag ("Bullet_2"))
-								animator.SetBool ("Right", true);
+								if (current_gameobject.CompareTag ("Bullet_2"))
+									animator.SetBool ("Left", true);
+							}
+
 							Vector2 sprite_size = current_gameobject.GetComponent<SpriteRenderer> ().sprite.rect.size;
 							Vector2 local_sprite_size = sprite_size / current_gameobject.GetComponent<SpriteRenderer> ().sprite.pixelsPerUnit;
 							Vector3 current_world_size = local_sprite_size;
@@ -208,8 +222,10 @@ public class Camera_Control : MonoBehaviour
 							}
 						}
 					} else {
-						animator.SetBool ("Left", false);
-						animator.SetBool ("Right", false);
+						if (animator != null) {
+							animator.SetBool ("Left", false);
+							animator.SetBool ("Right", false);
+						}
 					}
 
 					Vector3 new_cam_pos = current_gameobject.transform.position + new Vector3 (0, 2, -10);
@@ -371,10 +387,10 @@ public class Camera_Control : MonoBehaviour
                 if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
                 {
                     if (current_gameobject.CompareTag("Bullet_1"))
-                        animator.SetBool("Right", true);
+                        animator.SetBool("Left", true);
 
                     if (current_gameobject.CompareTag("Bullet_2"))
-                        animator.SetBool("Left", true);
+                        animator.SetBool("Right", true);
                 }
                 else
                 {
@@ -396,10 +412,10 @@ public class Camera_Control : MonoBehaviour
                 if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
                 {
                     if (current_gameobject.CompareTag("Bullet_1"))
-                        animator.SetBool("Right", false);
+                        animator.SetBool("Left", false);
 
                     if (current_gameobject.CompareTag("Bullet_2"))
-                        animator.SetBool("Left", false);
+                        animator.SetBool("Right", false);
                 }
                 else
                 {
@@ -421,10 +437,10 @@ public class Camera_Control : MonoBehaviour
                 if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
                 {
                     if (current_gameobject.CompareTag("Bullet_1"))
-                        animator.SetBool("Left", true);
+                        animator.SetBool("Right", true);
 
                     if (current_gameobject.CompareTag("Bullet_2"))
-                        animator.SetBool("Right", true);
+                        animator.SetBool("Left", true);
                 }
                 else
                 {
@@ -446,10 +462,10 @@ public class Camera_Control : MonoBehaviour
                 if (current_gameobject.transform.position.y < total_bg_height - (PCam_Height * 2) && current_gameobject.transform.position.y > 0)
                 {
                     if (current_gameobject.CompareTag("Bullet_1"))
-                        animator.SetBool("Left", false);
+                        animator.SetBool("Right", false);
 
                     if (current_gameobject.CompareTag("Bullet_2"))
-                        animator.SetBool("Right", false);
+                        animator.SetBool("Left", false);
                 }
                 else
                 {

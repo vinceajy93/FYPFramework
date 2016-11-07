@@ -24,8 +24,8 @@ public class Player_Control : MonoBehaviour
     private Camera P2Cam;
     private int touch_point = -1;
 
-    private string bullet_name = "Bullet/Bullet";
-    private string bullet_name_2 = "Bullet/Bullet"; // Player_2
+    private string bullet_name;
+    private string bullet_name_2; // Player_2
     private GameObject shoot_location;
 
     private string effect_name = "Bullet/Bullet_Destroy";
@@ -66,6 +66,11 @@ public class Player_Control : MonoBehaviour
                 Reload_Alpha = Reload.transform.GetChild(1).GetChild(0).GetComponent<Image>();
             }
 
+			if (PlayerPrefs.HasKey ("S_P1_B"))
+				bullet_name = "Bullet/Bullet " + PlayerPrefs.GetInt("LM_P1_B").ToString();
+			else
+				bullet_name = "Bullet/Bullet " + "6";
+			
 			for (int i = 0; i < 10; i++) {
 				if (LayerMask.LayerToName (this.gameObject.layer) == "Player 1") {
 					GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
@@ -101,6 +106,17 @@ public class Player_Control : MonoBehaviour
                 Reload_Alpha = Reload.transform.GetChild(1).GetChild(0).GetComponent<Image>();
             }
 
+
+			if (PlayerPrefs.HasKey ("LM_P1_B"))
+				bullet_name = "Bullet/Bullet " + PlayerPrefs.GetInt("LM_P1_B").ToString();
+			else
+				bullet_name = "Bullet/Bullet " + "1";
+
+			if (PlayerPrefs.HasKey ("LM_P2_B"))
+				bullet_name_2 = "Bullet/Bullet " + PlayerPrefs.GetInt("LM_P2_B").ToString();
+			else
+				bullet_name_2 = "Bullet/Bullet " + "2";
+			
 			for (int i = 0; i < 10; i++) {
 				if (LayerMask.LayerToName (this.gameObject.layer) == "Player 1") {
 					GameObject new_clone = Instantiate (Resources.Load (bullet_name), GameObject.Find ("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;

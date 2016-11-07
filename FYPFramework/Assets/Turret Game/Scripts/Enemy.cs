@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     private float fixed_diff = 0f;
 
     // Shooting
-    private string bullet_name = "Bullet/Bullet";
+    private string bullet_name;
     private GameObject shoot_location;
     private string effect_name = "Bullet/Bullet_Destroy";
     private float fireRate = 1.0f;
@@ -102,6 +102,11 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+		if (PlayerPrefs.HasKey ("S_E_T"))
+			bullet_name = "Bullet/EBullet " + PlayerPrefs.GetInt("S_E_T").ToString();
+		else 
+			bullet_name = "Bullet/EBullet " + "1";
+		
         for (int i = 0; i < 10; i++)
         {
             GameObject new_clone = Instantiate(Resources.Load(bullet_name), GameObject.Find("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;

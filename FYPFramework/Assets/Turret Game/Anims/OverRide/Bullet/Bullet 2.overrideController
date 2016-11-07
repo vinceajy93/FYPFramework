@@ -6,5 +6,15 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Bullet 2
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: fee74f018868a4e44972f0be6db17458, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 26ff7e6f0154cfb4b91452bf8e6a29cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7863ca1b49060b448a5f855d6a242277, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 59c5cea29f7185c48aeeb2a71d789496, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cd3c195e37199024ca6e4cec4e1682e8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bdf93d4a945edea4c8f6041531020a32, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6d8b918f9c5a1904795b2e13bae81cdb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 298fb4e66ef3d464da2147d3ebcbe9b1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 03d63258343d9bb4da40b11688eb7c3b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 19ae63c2f36212c41b64b096ff368848, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed9beae97638cec4980402166acc0d46, type: 2}

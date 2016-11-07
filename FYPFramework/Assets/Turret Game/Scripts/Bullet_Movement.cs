@@ -40,6 +40,9 @@ public class Bullet_Movement : MonoBehaviour
 	private Color32 Ghost_Color = new Color32 (150, 150, 150, 180);
 	private Color Solid_Color = new Color(1f, 1f, 1f, 1f);
 
+	private bool Animation_Exist = true;
+	private RectTransform rectTransform;
+
     // Use this for initialization
     void Start()
     {
@@ -70,6 +73,11 @@ public class Bullet_Movement : MonoBehaviour
         bullet_world_size = local_sprite_size;
         bullet_world_size.x *= this.transform.lossyScale.x;
         bullet_world_size.y *= this.transform.lossyScale.y;
+
+		if (this.GetComponent<Animator> () == null) {
+			Animation_Exist = false;
+			rectTransform = gameObject.GetComponent<RectTransform> ();
+		}
     }
 
     // Update is called once per frame
@@ -89,6 +97,10 @@ public class Bullet_Movement : MonoBehaviour
                     gameObject.transform.position = Bullet_Rest.transform.position;
                     gameObject.transform.SetParent(Bullet_Rest.transform);
                 }
+
+				if (!Animation_Exist) {
+					rectTransform.Rotate(Vector3.back * 2f);
+				}
             }
             else if (gameObject.CompareTag("Bullet_2"))
             {
@@ -101,6 +113,10 @@ public class Bullet_Movement : MonoBehaviour
                     gameObject.transform.position = Bullet_Rest.transform.position;
                     gameObject.transform.SetParent(Bullet_Rest.transform);
                 }
+
+				if (!Animation_Exist) {
+					rectTransform.Rotate(Vector3.forward * 2f);
+				}
             }
             else if (gameObject.CompareTag("Bullet_E"))
             {
