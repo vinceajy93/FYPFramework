@@ -7,7 +7,7 @@ public class RoundsIndicator : MonoBehaviour {
 	[SerializeField]
 	private Image rounds_P1_1, rounds_P1_2, rounds_P1_3, rounds_P2_1, rounds_P2_2, rounds_P2_3;
 	[SerializeField]
-	private Sprite filledOrb;
+	private Sprite filledOrb_P1, filledOrb_P2;
 
 	//number of rounds set by the player
 	private int noOfRounds;
@@ -42,6 +42,6 @@ public class RoundsIndicator : MonoBehaviour {
 			break;
 		}
 		//for testing
-		rounds_P1_1.GetComponent<Image> ().sprite = filledOrb;
+		rounds_P1_1.GetComponent<Image> ().sprite = filledOrb_P1;
 	}
 }

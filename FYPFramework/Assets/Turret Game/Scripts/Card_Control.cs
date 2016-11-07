@@ -30,9 +30,9 @@ public class Card_Control : MonoBehaviour {
 			card_menu.SetActive (false);
 
 			// Indivial Card
-			name_card_left = "Card/" + "Card_Yoosung";
-			name_card_middle = "Card/" + "Card_Jaehee";
-			name_card_right = "Card/" + "Card_Zen";
+			name_card_left = "Card/" + PlayerPrefs.GetString("Card_Left", "Card_GhostBullet");
+			name_card_middle = "Card/" + PlayerPrefs.GetString ("Card_Middle", "Card_Barrier");
+			name_card_right = "Card/" + PlayerPrefs.GetString ("Card_Right", "Card_Health");
 
 			Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 			Card_Left.transform.SetParent (card_menu.transform, false);
@@ -59,9 +59,9 @@ public class Card_Control : MonoBehaviour {
 				card_menu.SetActive (false);
 
 				// Indivial Card
-				name_card_left = "Card/" + "Card_707";
-				name_card_middle = "Card/" + "Card_Jumin";
-				name_card_right = "Card/" + "Card_Zen";
+				name_card_left = "Card/" + PlayerPrefs.GetString("Card_Left_P1", "Card_FireRate");
+				name_card_middle = "Card/" + PlayerPrefs.GetString("Card_Middle_P1", "Card_BulletSpeed");
+				name_card_right = "Card/" + PlayerPrefs.GetString("Card_Right_P1", "Card_Health");
 
 				Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Left.transform.SetParent (card_menu.transform, false);
@@ -87,9 +87,9 @@ public class Card_Control : MonoBehaviour {
 				card_menu.SetActive (false);
 
 				// Indivial Card
-				name_card_left = "Card/" + "Card_Jaehee";
-				name_card_middle = "Card/" + "Card_Yoosung";
-				name_card_right = "Card/" + "Card_Zen";
+				name_card_left = "Card/" + PlayerPrefs.GetString("Card_Left_P2", "Card_Barrier");
+				name_card_middle = "Card/" + PlayerPrefs.GetString ("Card_Middle_P2", "Card_GhostBullet");
+				name_card_right = "Card/" + PlayerPrefs.GetString ("Card_Right_P2", "Card_Health");
 
 				Card_Left = Instantiate (Resources.Load (name_card_left), Vector3.zero, Quaternion.identity) as GameObject;
 				Card_Left.transform.SetParent (card_menu.transform, false);

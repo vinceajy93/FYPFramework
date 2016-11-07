@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\LoadOut_Manager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Level_Control.cs">
     <Files>
+      <File FileName="Assets\Turret Game\Scripts\GUIScripts\RoundsIndicator.cs" Line="38" Column="10" />
       <File FileName="Assets\Turret Game\Scripts\LoadOut_Manager.cs" Line="312" Column="23" />
-      <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="21" Column="27" />
       <File FileName="Assets\Turret Game\Scripts\LevelSelectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\LoadOut_Control.cs" Line="10" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

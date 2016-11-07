@@ -10,21 +10,75 @@ public class LoadOut_Control : MonoBehaviour {
 		Card_Canvas
 	};
 
-	private Tab Active_Tab = Tab.Card_Canvas;
+	private Tab Active_Tab = Tab.Turret_Canvas;
 
 	private GameObject[] All_Canvas;
 	private GameObject[] All_Tab;
 	private GameObject[] All_Background;
-	private Color32 Color_hidden = new Color32 (255, 255, 255, 100);
-	private Color Color_show = new Color (1f, 1f, 1f, 1f);
+	private GameObject[] All_Panel;
+
+	private Color Color_hidden = new Color (1, 1, 1, 0);
+	private Color Color_show = new Color (1, 1, 1, 1);
+
+	private Text Credit;
+	private Text Crystal;
+
+	private GameObject Turret;
+
+	private GameObject Card_Left;
+	private GameObject Card_Middle;
+	private GameObject Card_Right;
 
 	// Use this for initialization
 	void Start () {
 		All_Canvas = GameObject.FindGameObjectsWithTag ("Canvas");
 		All_Tab = GameObject.FindGameObjectsWithTag ("Loadout_Tab");
 		All_Background = GameObject.FindGameObjectsWithTag ("Background");
+		All_Panel = GameObject.FindGameObjectsWithTag ("Loadout_Panel");
 
 		Switch_Tab ( Active_Tab.ToString() );
+
+		Credit = GameObject.FindGameObjectWithTag ("Credit").GetComponentInChildren<Text> ();
+		Crystal = GameObject.FindGameObjectWithTag ("Crystal").GetComponentInChildren<Text> ();
+
+		Credit.text = PlayerPrefs.GetInt ("Credit", 99999).ToString();
+		Crystal.text = PlayerPrefs.GetInt ("Crystal", 99999).ToString();
+
+		GameObject Turret_Parent = GameObject.FindGameObjectWithTag ("Loadout_Turret");
+		Turret = Turret_Parent.transform.GetChild (0).gameObject;
+
+		if (PlayerPrefs.HasKey ("S_T")) {
+			Turret.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Turret/Sprite/" + PlayerPrefs.GetString ("S_T"));
+		}
+
+		GameObject Card_Button_Parent = GameObject.FindGameObjectWithTag ("Card_P1");
+		Card_Left = Card_Button_Parent.transform.GetChild (3).gameObject;
+		Card_Middle = Card_Button_Parent.transform.GetChild (4).gameObject;
+		Card_Right = Card_Button_Parent.transform.GetChild (5).gameObject;
+
+		if (PlayerPrefs.HasKey ("Card_Left") && PlayerPrefs.GetString ("Card_Left") != "") {
+			Card_Left.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Card/Sprite/" + PlayerPrefs.GetString ("Card_Left"));
+			Card_Left.GetComponent<Image> ().color = Color_show;
+		} else {
+			Card_Left.GetComponent<Image> ().sprite = null;
+			Card_Left.GetComponent<Image> ().color = Color_hidden;
+		}
+
+		if (PlayerPrefs.HasKey ("Card_Middle") && PlayerPrefs.GetString ("Card_Middle") != "") {
+			Card_Middle.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Card/Sprite/" + PlayerPrefs.GetString ("Card_Middle"));
+			Card_Middle.GetComponent<Image> ().color = Color_show;
+		} else {
+			Card_Middle.GetComponent<Image> ().sprite = null;
+			Card_Middle.GetComponent<Image> ().color = Color_hidden;
+		}
+
+		if (PlayerPrefs.HasKey ("Card_Right") && PlayerPrefs.GetString ("Card_Right") != "") {
+			Card_Right.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Card/Sprite/" + PlayerPrefs.GetString ("Card_Right"));
+			Card_Right.GetComponent<Image> ().color = Color_show;
+		} else {
+			Card_Right.GetComponent<Image> ().sprite = null;
+			Card_Right.GetComponent<Image> ().color = Color_hidden;
+		}
 	}
 	
 	// Update is called once per frame
@@ -68,15 +122,6 @@ public class LoadOut_Control : MonoBehaviour {
 		}
 
 		// ^^^^ Same Process
-		foreach (GameObject ea_Tab in All_Tab) {
-			if (LayerMask.LayerToName (ea_Tab.layer) == name) {
-				ea_Tab.GetComponent<Image> ().color = Color_show;
-			} else {
-				ea_Tab.GetComponent<Image> ().color = Color_hidden;
-			}
-		}
-
-		// ^^^^ Same Process
 		foreach (GameObject ea_Bg in All_Background) {
 			if (LayerMask.LayerToName (ea_Bg.layer) == name) {
 				ea_Bg.SetActive (true);
@@ -84,5 +129,14 @@ public class LoadOut_Control : MonoBehaviour {
 				ea_Bg.SetActive (false);
 			}
 		}
+
+		foreach (GameObject ea_panel in All_Panel) {
+			ea_panel.GetComponent<ScrollRect> ().verticalNormalizedPosition = 1;
+		}
+	}
+
+	public void UnEquip (Button button) {
+		button.gameObject.GetComponent<Image> ().sprite = null;
+		button.gameObject.GetComponent<Image> ().color = Color_hidden;
 	}
 }

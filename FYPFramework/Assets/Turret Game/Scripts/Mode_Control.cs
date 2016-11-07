@@ -23,7 +23,7 @@ public class Mode_Control : MonoBehaviour {
 		if (GameObject.Find ("Top Camera") == null && GameObject.Find ("Bottom Camera") == null) {
 			game_mode_Single = true;
 
-			if (PlayerPrefs.HasKey ("LM_P1_T"))
+			if (PlayerPrefs.HasKey ("S_P1_T"))
 				turret_name_P1 = "Turret/Turret_" + PlayerPrefs.GetInt("LM_P1_T").ToString();
 			else
 				turret_name_P1 = "Turret/Turret_" + "5";
@@ -36,7 +36,7 @@ public class Mode_Control : MonoBehaviour {
 			clone_P1.transform.SetParent(Spawn_P1.transform);
 			clone_P1.tag = "Player1";
 
-			if (PlayerPrefs.HasKey ("LM_E_T"))
+			if (PlayerPrefs.HasKey ("S_E_T"))
 				turret_name_E = "Turret/Enemy_" + PlayerPrefs.GetInt("LM_E_T").ToString();
 			else 
 				turret_name_E = "Turret/Enemy_" + "1";

@@ -24,7 +24,7 @@ public class Level_Control : MonoBehaviour {
 
 	//load the campaign scene
 	public void loadCampaign(){
-		SceneManager.LoadScene ("Single");
+		SceneManager.LoadScene ("Arcade");
 	}
 	//load the loadout scene
 	public void loadLoadout(){
