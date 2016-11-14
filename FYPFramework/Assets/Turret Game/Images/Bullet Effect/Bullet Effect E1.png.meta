@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: 46a486a67993b7444ad4395111fc627b
+timeCreated: 1478868291
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bullet Effect E1_0
+    21300002: Bullet Effect E1_1
+    21300004: Bullet Effect E1_2
+    21300006: Bullet Effect E1_3
+    21300008: Bullet Effect E1_4
+    21300010: Bullet Effect E1_5
+    21300012: Bullet Effect E1_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bullet Effect E1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 133}
+        - {x: -55, y: 50}
+        - {x: -57, y: -4}
+        - {x: -55, y: -6}
+        - {x: -54, y: -6}
+        - {x: -51, y: -3}
+        - {x: -57, y: -9}
+        - {x: -60, y: -10}
+        - {x: -60, y: -133}
+        - {x: 28, y: -133}
+        - {x: 60, y: -107}
+        - {x: 60, y: 71}
+        - {x: 40, y: 133}
+      - - {x: -60, y: -53}
+        - {x: -60, y: -55}
+        - {x: -57, y: -58}
+        - {x: -54, y: -57}
+        - {x: -53, y: -53}
+        - {x: -55, y: -51}
+        - {x: -58, y: -51}
+      - - {x: -52, y: -43}
+        - {x: -51, y: -46}
+        - {x: -48, y: -46}
+        - {x: -46, y: -44}
+        - {x: -47, y: -41}
+        - {x: -50, y: -41}
+      - - {x: -57, y: 10}
+        - {x: -57, y: 8}
+        - {x: -54, y: 5}
+        - {x: -51, y: 6}
+        - {x: -50, y: 10}
+        - {x: -52, y: 12}
+        - {x: -55, y: 12}
+      - - {x: -49, y: 20}
+        - {x: -48, y: 17}
+        - {x: -45, y: 17}
+        - {x: -43, y: 19}
+        - {x: -44, y: 22}
+        - {x: -47, y: 22}
+    - name: Bullet Effect E1_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 39}
+        - {x: 44, y: 39}
+        - {x: 48, y: 39}
+        - {x: 50, y: 41}
+        - {x: 51, y: 45}
+        - {x: 37, y: 133}
+        - {x: -40, y: 133}
+        - {x: -60, y: 67}
+        - {x: -60, y: -109}
+        - {x: -24, y: -133}
+        - {x: 38, y: -133}
+        - {x: 60, y: -127}
+        - {x: 60, y: 14}
+        - {x: 51, y: 34}
+      - - {x: 53, y: -44}
+        - {x: 56, y: -43}
+        - {x: 56, y: -40}
+        - {x: 53, y: -39}
+        - {x: 51, y: -41}
+      - - {x: 53, y: 8}
+        - {x: 56, y: 5}
+        - {x: 59, y: 6}
+        - {x: 59, y: 10}
+        - {x: 58, y: 12}
+        - {x: 55, y: 12}
+        - {x: 53, y: 11}
+      - - {x: 46, y: 17}
+        - {x: 46, y: 16}
+        - {x: 48, y: 14}
+        - {x: 49, y: 14}
+        - {x: 52, y: 17}
+        - {x: 52, y: 19}
+        - {x: 49, y: 20}
+    - name: Bullet Effect E1_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 115}
+        - {x: -45, y: 104}
+        - {x: -54, y: 35}
+        - {x: -54, y: -68}
+        - {x: -49, y: -68}
+        - {x: -54, y: -68}
+        - {x: -54, y: -126}
+        - {x: -23, y: -133}
+        - {x: 36, y: -133}
+        - {x: 60, y: -111}
+        - {x: 60, y: 25}
+        - {x: 46, y: 115}
+      - - {x: -60, y: -88}
+        - {x: -57, y: -87}
+        - {x: -57, y: -65}
+        - {x: -59, y: -63}
+        - {x: -60, y: -63}
+    - name: Bullet Effect E1_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47, y: 33}
+        - {x: 44, y: 33}
+        - {x: 45, y: 33}
+        - {x: 54, y: 32}
+        - {x: 42, y: 133}
+        - {x: -27, y: 133}
+        - {x: -56, y: 107}
+        - {x: -60, y: 76}
+        - {x: -60, y: -114}
+        - {x: -41, y: -133}
+        - {x: 28, y: -133}
+        - {x: 60, y: -98}
+        - {x: 60, y: -23}
+        - {x: 49, y: 30}
+      - - {x: -60, y: -52}
+        - {x: -60, y: -56}
+        - {x: -58, y: -58}
+        - {x: -55, y: -57}
+        - {x: -54, y: -53}
+        - {x: -56, y: -51}
+        - {x: -59, y: -51}
+      - - {x: -58, y: -2}
+        - {x: -58, y: -4}
+        - {x: -56, y: -6}
+        - {x: -55, y: -6}
+        - {x: -49, y: -1}
+        - {x: -50, y: 2}
+        - {x: -54, y: 2}
+      - - {x: -58, y: 10}
+        - {x: -58, y: 8}
+        - {x: -55, y: 5}
+        - {x: -52, y: 6}
+        - {x: -51, y: 10}
+        - {x: -53, y: 12}
+        - {x: -56, y: 12}
+      - - {x: 46, y: 14}
+        - {x: 47, y: 11}
+        - {x: 50, y: 11}
+        - {x: 52, y: 13}
+        - {x: 51, y: 16}
+        - {x: 48, y: 16}
+      - - {x: 45, y: 42}
+        - {x: 46, y: 39}
+        - {x: 49, y: 39}
+        - {x: 51, y: 41}
+        - {x: 50, y: 44}
+        - {x: 47, y: 44}
+    - name: Bullet Effect E1_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 38}
+        - {x: 44, y: 38}
+        - {x: 48, y: 38}
+        - {x: 54, y: 37}
+        - {x: 37, y: 133}
+        - {x: -40, y: 133}
+        - {x: -60, y: 124}
+        - {x: -60, y: -133}
+        - {x: 60, y: -133}
+        - {x: 60, y: 27}
+        - {x: 53, y: 34}
+      - - {x: 56, y: -52}
+        - {x: 57, y: -56}
+        - {x: 59, y: -58}
+        - {x: 60, y: -58}
+        - {x: 60, y: -50}
+        - {x: 58, y: -50}
+      - - {x: 53, y: -45}
+        - {x: 56, y: -44}
+        - {x: 56, y: -41}
+        - {x: 53, y: -40}
+        - {x: 51, y: -42}
+      - - {x: 53, y: 7}
+        - {x: 56, y: 4}
+        - {x: 59, y: 5}
+        - {x: 59, y: 9}
+        - {x: 58, y: 11}
+        - {x: 55, y: 11}
+        - {x: 53, y: 10}
+      - - {x: 46, y: 16}
+        - {x: 46, y: 15}
+        - {x: 48, y: 13}
+        - {x: 49, y: 13}
+        - {x: 52, y: 16}
+        - {x: 52, y: 18}
+        - {x: 49, y: 19}
+    - name: Bullet Effect E1_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: -69}
+        - {x: 51, y: -70}
+        - {x: 52, y: -69}
+        - {x: 54, y: -69}
+        - {x: 57, y: -68}
+        - {x: 57, y: -16}
+        - {x: 44, y: 105}
+        - {x: 11, y: 114}
+        - {x: -36, y: 114}
+        - {x: -57, y: 29}
+        - {x: -57, y: -91}
+        - {x: -54, y: -110}
+        - {x: -26, y: -133}
+        - {x: 54, y: -133}
+        - {x: 57, y: -128}
+        - {x: 57, y: -71}
+      - - {x: -60, y: -89}
+        - {x: -57, y: -88}
+        - {x: -57, y: -66}
+        - {x: -59, y: -64}
+        - {x: -60, y: -64}
+      - - {x: 57, y: -83}
+        - {x: 59, y: -85}
+        - {x: 60, y: -85}
+        - {x: 60, y: -57}
+        - {x: 57, y: -58}
+    - name: Bullet Effect E1_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 120
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 38}
+        - {x: 47, y: 38}
+        - {x: 53, y: 37}
+        - {x: 49, y: 110}
+        - {x: 37, y: 133}
+        - {x: -40, y: 133}
+        - {x: -60, y: 106}
+        - {x: -60, y: -133}
+        - {x: 60, y: -133}
+        - {x: 60, y: 32}
+        - {x: 45, y: 38}
+      - - {x: 57, y: -50}
+        - {x: 55, y: -52}
+        - {x: 56, y: -56}
+        - {x: 58, y: -58}
+        - {x: 60, y: -57}
+        - {x: 60, y: -51}
+        - {x: 59, y: -50}
+      - - {x: 52, y: -45}
+        - {x: 55, y: -44}
+        - {x: 55, y: -41}
+        - {x: 52, y: -40}
+        - {x: 50, y: -42}
+      - - {x: 52, y: 7}
+        - {x: 55, y: 4}
+        - {x: 58, y: 5}
+        - {x: 58, y: 9}
+        - {x: 57, y: 11}
+        - {x: 54, y: 11}
+        - {x: 52, y: 10}
+      - - {x: 45, y: 16}
+        - {x: 45, y: 15}
+        - {x: 47, y: 13}
+        - {x: 48, y: 13}
+        - {x: 51, y: 16}
+        - {x: 51, y: 18}
+        - {x: 48, y: 19}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

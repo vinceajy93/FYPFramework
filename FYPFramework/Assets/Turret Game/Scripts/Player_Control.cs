@@ -11,6 +11,9 @@ public class Player_Control : MonoBehaviour
 {
 
     // Check mouse and player's turret position
+	Vector3 player_world_size;
+	private Animator animator;
+
     private bool overSprite = false;
     private Vector3 offset;
 
@@ -41,6 +44,8 @@ public class Player_Control : MonoBehaviour
     private GameObject Reload;
     private Image Reload_Alpha;
 
+	private RectTransform P1_Screen;
+	private RectTransform P2_Screen;
 
     //deltaTime
     private float delTime;
@@ -54,6 +59,16 @@ public class Player_Control : MonoBehaviour
         Turret_anim = GetComponent<Animator>();
 		shoot_location = this.transform.Find("bullet_pos").gameObject;
         //m_Overlay_Control = GameObject.Find ("Scripts").GetComponent<Overlay_Control> ();
+
+		// Get Player_1 Size in worldspace
+		Vector2 sprite_size = this.GetComponent<SpriteRenderer>().sprite.rect.size;
+		Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+		player_world_size = local_sprite_size;
+		player_world_size.x *= this.transform.lossyScale.x;
+		player_world_size.y *= this.transform.lossyScale.y;
+
+		if(this.transform.FindChild("Effect") != null)
+			animator = this.transform.Find("Effect").GetComponent<Animator>();
 
         if (mcontrol.game_mode_Single)
         {
@@ -87,6 +102,9 @@ public class Player_Control : MonoBehaviour
         {
             P2Cam = GameObject.Find("Top Camera").GetComponent<Camera>();
             P1Cam = GameObject.Find("Bottom Camera").GetComponent<Camera>();
+
+			P1_Screen = GameObject.FindGameObjectWithTag ("Screen_P1").GetComponent<RectTransform> ();
+			P2_Screen = GameObject.FindGameObjectWithTag ("Screen_P2").GetComponent<RectTransform> ();
 
 			if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1" && GameObject.Find("Reload P1") != null)
             {
@@ -144,13 +162,6 @@ public class Player_Control : MonoBehaviour
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
 
-        // Get Player_1 Size in worldspace
-        Vector2 sprite_size = this.GetComponent<SpriteRenderer>().sprite.rect.size;
-        Vector2 local_sprite_size = sprite_size / this.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
-        Vector3 player_world_size = local_sprite_size;
-        player_world_size.x *= this.transform.lossyScale.x;
-        player_world_size.y *= this.transform.lossyScale.y;
-
         //Allow players to play only when overlay panel is gone
         if (!GameObject.Find("Scripts").GetComponent<Overlay_Control>().PanelisActive && _pauseScript.Paused == false)
         {
@@ -163,7 +174,6 @@ public class Player_Control : MonoBehaviour
                 Reload.GetComponent<Slider>().value = delTime;
             }
         }
-
     }
 
     void Control(float width, float height, Vector3 player_world_size)
@@ -172,136 +182,197 @@ public class Player_Control : MonoBehaviour
         { //multiplayer
             int nbTouches = Input.touchCount;
 
-            if (nbTouches > 0)
-            {
-                for (int i = 0; i < nbTouches; i++)
-                {
-                    Touch touch = Input.GetTouch(i);
+			if (nbTouches > 0) {
+				for (int i = 0; i < nbTouches; i++) {
+					Touch touch = Input.GetTouch (i);
 
-                    TouchPhase phase = touch.phase;
+					TouchPhase phase = touch.phase;
 
-					if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
-                    {
-                        if (mcontrol.card_menu_P1 || !mcontrol.move_player_P1)
-                            phase = TouchPhase.Ended;
-                    }
+					if (this.CompareTag("Player1")) {
+						if (mcontrol.card_menu_P1 || !mcontrol.move_player_P1 || !RectTransformUtility.RectangleContainsScreenPoint (P1_Screen, touch.position))
+							phase = TouchPhase.Ended;
+					}
 
-					if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
-                    {
-                        if (mcontrol.card_menu_P2 || !mcontrol.move_player_P2)
-                            phase = TouchPhase.Ended;
-                    }
+					if (this.CompareTag("Player2")) {
+						if (mcontrol.card_menu_P2 || !mcontrol.move_player_P2 || !RectTransformUtility.RectangleContainsScreenPoint (P2_Screen, touch.position))
+							phase = TouchPhase.Ended;
+					}
 
-                    switch (phase)
-                    {
-                        case TouchPhase.Began:
-							if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
-                            {
-                                Vector2 touchPosition = P1Cam.ScreenToWorldPoint(touch.position);
-                                overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(touchPosition);
-                                offset = new Vector3(this.transform.position.x, 0, 0) - new Vector3(touchPosition.x, 0, 0);
-                            }
+					switch (phase) {
+					case TouchPhase.Began:
+						if (this.CompareTag ("Player1") && RectTransformUtility.RectangleContainsScreenPoint (P1_Screen, touch.position)) {
+							RaycastHit2D hit = Physics2D.Raycast (P1Cam.ScreenToWorldPoint (touch.position), this.transform.position);
+							if (hit.collider != null && hit.transform.gameObject == this.gameObject) {
+								overSprite = true;
 
-							if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
-                            {
-                                Vector2 touchPosition = P2Cam.ScreenToWorldPoint(touch.position);
-                                overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(touchPosition);
-                                offset = new Vector3(this.transform.position.x, 0, 0) - new Vector3(touchPosition.x, 0, 0);
-                            }
+								Vector2 touchPosition = P1Cam.ScreenToWorldPoint (touch.position);
+								offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (touchPosition.x, 0, 0);
+							}
+						}
+
+						if (this.CompareTag ("Player2") && RectTransformUtility.RectangleContainsScreenPoint (P2_Screen, touch.position)) {
+							RaycastHit2D hit = Physics2D.Raycast (P2Cam.ScreenToWorldPoint (touch.position), this.transform.position);
+							if (hit.collider != null && hit.transform.gameObject == this.gameObject) {
+								overSprite = true;
+
+								Vector2 touchPosition = P2Cam.ScreenToWorldPoint (touch.position);
+								offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (touchPosition.x, 0, 0);
+							}
+						}
 
                             // if player tap on the player 2 twice, shoot. Else, increase tap_count(button_count)++
-                            if (overSprite)
-                            {
-                                touch_point = i;
+						if (overSprite) {
+							touch_point = i;
 
-                                button_count += 1;
-                                button_cooldown = set_cooldown;
-                                if (button_count > 1)
-                                {
+							button_count += 1;
+							button_cooldown = set_cooldown;
+							if (button_count > 1) {
 
-                                    if (delTime > nextFire)
-                                    {
-                                        nextFire = delTime + fireRate;
-                                        Reload.GetComponent<Slider>().minValue = delTime;
-                                        Reload.GetComponent<Slider>().maxValue = nextFire;
-                                        Reload_Alpha.canvasRenderer.SetAlpha(0.0f);
-                                        Reload_Alpha.CrossFadeAlpha(1f, fireRate, false);
-                                        Shoot();
-                                    }
-                                    button_count = 0;
-                                }
-                            }
-                            break;
+								if (delTime > nextFire) {
+									nextFire = delTime + fireRate;
+									Reload.GetComponent<Slider> ().minValue = delTime;
+									Reload.GetComponent<Slider> ().maxValue = nextFire;
+									Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
+									Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
+									Shoot ();
+								}
+								button_count = 0;
+							}
+						}
+						break;
 
-                        case TouchPhase.Moved: //Dragging
-                            if (touch_point == i)
-                            {
-								if (LayerMask.LayerToName(this.gameObject.layer) == "Player 1")
-                                {
-                                    Vector2 touchPosition = P1Cam.ScreenToWorldPoint(touch.position);
-                                    Dragging_touch(width, height, player_world_size, touchPosition);
-                                }
-								if (LayerMask.LayerToName(this.gameObject.layer) == "Player 2")
-                                {
-                                    Vector2 touchPosition = P2Cam.ScreenToWorldPoint(touch.position);
-                                    Dragging_touch(width, height, player_world_size, touchPosition);
-                                }
-                            }
-                            break;
+					case TouchPhase.Moved: //Dragging
+						if (touch_point == i) {
+							if (this.CompareTag ("Player1")) {
+								Vector2 touchPosition = P1Cam.ScreenToWorldPoint (touch.position);
+								Dragging (width, player_world_size, touchPosition);
+							}
 
-                        case TouchPhase.Stationary:
-                            break;
+							if (this.CompareTag ("Player2")) {
+								Vector2 touchPosition = P2Cam.ScreenToWorldPoint (touch.position);
+								Dragging (width, player_world_size, touchPosition);
+							}
+						}
+						break;
 
-                        case TouchPhase.Ended: // Release touch from screen
-                            if (touch_point == i)
-                            {
-                                overSprite = false;
-                                touch_point = -1;
-                            }
-                            break;
+					case TouchPhase.Ended: // Release touch from screen
+						if (touch_point == i) {
+							overSprite = false;
+							touch_point = -1;
 
-                        case TouchPhase.Canceled:
-                            break;
-                    }
-                }
-            }
+							if (animator != null) {
+								animator.SetBool ("Left", false);
+								animator.SetBool ("Right", false);
+							}
+						}
+						break;
+					}
+				}
+			}
+
+			if (Input.GetMouseButtonDown(0))
+			{
+				if (this.CompareTag ("Player1") && RectTransformUtility.RectangleContainsScreenPoint (P1_Screen, Input.mousePosition)) {
+					RaycastHit2D hit = Physics2D.Raycast (P1Cam.ScreenToWorldPoint (Input.mousePosition), this.transform.position);
+					if (hit.collider != null && hit.transform.gameObject == this.gameObject) {
+						overSprite = true;
+
+						Vector2 mousePosition = P1Cam.ScreenToWorldPoint (Input.mousePosition);
+						offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (mousePosition.x, 0, 0);
+					}
+				}
+
+				if (this.CompareTag ("Player2") && RectTransformUtility.RectangleContainsScreenPoint (P2_Screen, Input.mousePosition)) {
+					RaycastHit2D hit = Physics2D.Raycast (P2Cam.ScreenToWorldPoint (Input.mousePosition), this.transform.position);
+					if (hit.collider != null && hit.transform.gameObject == this.gameObject) {
+						overSprite = true;
+
+						Vector2 mousePosition = P2Cam.ScreenToWorldPoint (Input.mousePosition);
+						offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (mousePosition.x, 0, 0);
+					}
+				}
+
+				if (overSprite) {
+					button_count += 1;
+					button_cooldown = set_cooldown;
+
+					if (button_count > 1) {
+						if (delTime > nextFire) {
+							nextFire = delTime + fireRate;
+							Reload.GetComponent<Slider> ().minValue = delTime;
+							Reload.GetComponent<Slider> ().maxValue = nextFire;
+							Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
+							Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
+							Shoot ();
+						}
+						button_count = 0;
+					}
+				}
+			}
+
+			if (Input.GetMouseButton (0) && overSprite) {
+				if (this.CompareTag ("Player1")) {
+					Vector2 mousePosition = P1Cam.ScreenToWorldPoint (Input.mousePosition);
+					Dragging (width, player_world_size, mousePosition);
+				}
+
+				if (this.CompareTag ("Player2")) {
+					Vector2 mousePosition = P2Cam.ScreenToWorldPoint (Input.mousePosition);
+					Dragging (width, player_world_size, mousePosition);
+				}
+			} else {
+				overSprite = false;
+
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
+			}
         }
         else
         { //single player
             if (Input.GetMouseButtonDown(0) && !mcontrol.card_menu_P1)
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(mousePosition);
-                offset = new Vector3(this.transform.position.x, 0, 0) - new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 0, 0);
+                if (this.CompareTag ("Player1")) {
+					RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), this.transform.position);
+					if (hit.collider != null && hit.transform.gameObject == this.gameObject) {
+						overSprite = true;
 
-                if (overSprite)
-                {
-                    button_count += 1;
-                    button_cooldown = set_cooldown;
+						Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+						offset = new Vector3 (this.transform.position.x, 0, 0) - new Vector3 (mousePosition.x, 0, 0);
+					}
+				}
 
-                    if (button_count > 1)
-                    {
-                        if (delTime > nextFire)
-                        {
-                            nextFire = delTime + fireRate;
-                            Reload.GetComponent<Slider>().minValue = delTime;
-                            Reload.GetComponent<Slider>().maxValue = nextFire;
-                            Reload_Alpha.canvasRenderer.SetAlpha(0.0f);
-                            Reload_Alpha.CrossFadeAlpha(1f, fireRate, false);
-                            Shoot();
-                        }
-                        button_count = 0;
-                    }
-                }
+				if (overSprite) {
+					button_count += 1;
+					button_cooldown = set_cooldown;
+
+					if (button_count > 1) {
+						if (delTime > nextFire) {
+							nextFire = delTime + fireRate;
+							Reload.GetComponent<Slider> ().minValue = delTime;
+							Reload.GetComponent<Slider> ().maxValue = nextFire;
+							Reload_Alpha.canvasRenderer.SetAlpha (0.0f);
+							Reload_Alpha.CrossFadeAlpha (1f, fireRate, false);
+							Shoot ();
+						}
+						button_count = 0;
+					}
+				}
             }
 
-            if (Input.GetMouseButton(0) && overSprite)
-            {
-                Dragging(width, height, player_world_size);
-            }
+			if (Input.GetMouseButton (0) && overSprite) {
+				Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				Dragging (width, player_world_size, mousePosition);
+			}
             else
             {
                 overSprite = false;
+
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
             }
         }
 
@@ -317,11 +388,64 @@ public class Player_Control : MonoBehaviour
     }
 
     //Single PLayer Dragging
-    void Dragging(float width, float height, Vector3 player_world_size)
+	void Dragging(float width, Vector3 player_world_size, Vector2 Dragging_Position)
     {
         // Dragging of Player turret
         Vector3 prev_pos = this.transform.position;
-        Vector3 new_pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, prev_pos.y, prev_pos.z) + offset;
+		Vector3 new_pos = new Vector3 (Dragging_Position.x, prev_pos.y, prev_pos.z);// + offset;
+
+		if (prev_pos.x > Dragging_Position.x) {
+			new_pos = this.transform.position + (Vector3.left * 0.2f); //+ offset;
+		
+			if (animator != null) {
+				if (this.CompareTag ("Player1")) {
+					animator.SetBool ("Left", true);
+					animator.SetBool ("Right", false);
+				}
+
+				if (this.CompareTag ("Player2")) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", true);
+				}
+			}
+
+			if (new_pos.x < Dragging_Position.x) {
+				new_pos = new Vector3 (Dragging_Position.x, prev_pos.y, prev_pos.z);
+
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
+			}
+		} else if (prev_pos.x < Dragging_Position.x) {
+			new_pos = this.transform.position + (Vector3.right * 0.2f); // + offset;
+		
+			if (animator != null) {
+				if (this.CompareTag ("Player1")) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", true);
+				}
+
+				if (this.CompareTag ("Player2")) {
+					animator.SetBool ("Left", true);
+					animator.SetBool ("Right", false);
+				}
+			}
+
+			if (new_pos.x > Dragging_Position.x) {
+				new_pos = new Vector3 (Dragging_Position.x, prev_pos.y, prev_pos.z);
+
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
+			}
+		} else {
+			if (animator != null) {
+				animator.SetBool ("Left", false);
+				animator.SetBool ("Right", false);
+			}
+		}
 
         // Check if turret is still within camera
         if (new_pos.x >= -width / 2 + player_world_size.x / 2 &&
@@ -336,6 +460,11 @@ public class Player_Control : MonoBehaviour
             {
                 new_pos = new Vector3(-width / 2 + player_world_size.x / 2, prev_pos.y, prev_pos.z);
                 this.transform.position = new_pos;
+
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
             }
 
             // if turret exceed the right border, snap back to the right border within the camera space
@@ -343,32 +472,11 @@ public class Player_Control : MonoBehaviour
             {
                 new_pos = new Vector3(width / 2 - player_world_size.x / 2, prev_pos.y, prev_pos.z);
                 this.transform.position = new_pos;
-            }
-        }
-    }
 
-    //Multiplayer Dragging : Added Touch_position to deduce repeated calculation
-    void Dragging_touch(float width, float height, Vector3 player_world_size, Vector2 touch_position)
-    {
-        Vector3 prev_pos = this.transform.position;
-        Vector3 new_pos = new Vector3(touch_position.x, prev_pos.y, prev_pos.z);
-
-        if (new_pos.x >= -width / 2 + player_world_size.x / 2 &&
-            new_pos.x <= width / 2 - player_world_size.x / 2)
-        {
-            this.transform.position = new_pos;
-        }
-        else
-        {
-            if (new_pos.x < -width / 2 + player_world_size.x / 2)
-            {
-                new_pos = new Vector3(-width / 2 + player_world_size.x / 2, prev_pos.y, prev_pos.z);
-                this.transform.position = new_pos;
-            }
-            else if (new_pos.x > width / 2 - player_world_size.x / 2)
-            {
-                new_pos = new Vector3(width / 2 - player_world_size.x / 2, prev_pos.y, prev_pos.z);
-                this.transform.position = new_pos;
+				if (animator != null) {
+					animator.SetBool ("Left", false);
+					animator.SetBool ("Right", false);
+				}
             }
         }
     }
@@ -432,6 +540,11 @@ public class Player_Control : MonoBehaviour
             }
         }
     }
+
+	public void Message ()
+	{
+		Debug.Log ("This works");
+	}
 
     public void PlayAnimationIdle()
     {

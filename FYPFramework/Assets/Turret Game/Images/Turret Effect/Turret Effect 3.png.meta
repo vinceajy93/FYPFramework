@@ -1,0 +1,654 @@
+fileFormatVersion: 2
+guid: df4ef73e47b7d7543b3c3ada2cc1da7e
+timeCreated: 1478868363
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Turret Effect 3_0
+    21300002: Turret Effect 3_1
+    21300004: Turret Effect 3_2
+    21300006: Turret Effect 3_3
+    21300008: Turret Effect 3_4
+    21300010: Turret Effect 3_5
+    21300012: Turret Effect 3_6
+    21300014: Turret Effect 3_7
+    21300016: Turret Effect 3_8
+    21300018: Turret Effect 3_9
+    21300020: Turret Effect 3_10
+    21300022: Turret Effect 3_11
+    21300024: Turret Effect 3_12
+    21300026: Turret Effect 3_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Turret Effect 3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: -73}
+        - {x: 34, y: -73}
+        - {x: 32, y: -74}
+        - {x: 32, y: -78}
+        - {x: 36, y: -87}
+        - {x: 43, y: -89}
+        - {x: 51, y: -89}
+        - {x: 51, y: -85}
+        - {x: 44, y: -75}
+      - - {x: 45, y: 89}
+        - {x: 0, y: 61}
+        - {x: 0, y: -65}
+        - {x: 167, y: -65}
+        - {x: 186, y: -59}
+        - {x: 186, y: 60}
+        - {x: 133, y: 89}
+    - name: Turret Effect 3_1
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 630
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38, y: -73}
+        - {x: 35, y: -73}
+        - {x: 33, y: -74}
+        - {x: 33, y: -78}
+        - {x: 37, y: -87}
+        - {x: 44, y: -89}
+        - {x: 52, y: -89}
+        - {x: 52, y: -85}
+        - {x: 45, y: -75}
+      - - {x: 141, y: -39}
+        - {x: 144, y: -39}
+        - {x: 169, y: -38}
+        - {x: 186, y: -36}
+        - {x: 186, y: -20}
+        - {x: 181, y: -15}
+        - {x: 169, y: 48}
+        - {x: 115, y: 89}
+        - {x: 52, y: 89}
+        - {x: 1, y: 58}
+        - {x: 1, y: -66}
+        - {x: 158, y: -66}
+        - {x: 158, y: -60}
+        - {x: 154, y: -47}
+        - {x: 148, y: -42}
+      - - {x: -186, y: -35}
+        - {x: -181, y: -33}
+        - {x: -181, y: -28}
+        - {x: -185, y: -23}
+        - {x: -186, y: -23}
+      - - {x: 153, y: 24}
+        - {x: 150, y: 21}
+        - {x: 152, y: 18}
+        - {x: 155, y: 18}
+        - {x: 158, y: 19}
+        - {x: 158, y: 22}
+        - {x: 156, y: 24}
+    - name: Turret Effect 3_2
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 630
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: -73}
+        - {x: 17, y: -73}
+        - {x: 15, y: -74}
+        - {x: 15, y: -78}
+        - {x: 19, y: -87}
+        - {x: 26, y: -89}
+        - {x: 34, y: -89}
+        - {x: 34, y: -85}
+        - {x: 27, y: -75}
+      - - {x: 74, y: -73}
+        - {x: 71, y: -73}
+        - {x: 69, y: -75}
+        - {x: 69, y: -83}
+        - {x: 78, y: -89}
+        - {x: 88, y: -89}
+        - {x: 88, y: -85}
+        - {x: 81, y: -75}
+      - - {x: 177, y: -39}
+        - {x: 168, y: -39}
+        - {x: 167, y: -42}
+        - {x: 162, y: -38}
+        - {x: 186, y: -38}
+        - {x: 186, y: 59}
+        - {x: 178, y: 79}
+        - {x: 150, y: 89}
+        - {x: 41, y: 89}
+        - {x: -17, y: 66}
+        - {x: -17, y: -65}
+        - {x: 186, y: -65}
+        - {x: 186, y: -45}
+        - {x: 184, y: -42}
+      - - {x: -186, y: -22}
+        - {x: -186, y: -36}
+        - {x: -185, y: -36}
+        - {x: -180, y: -32}
+        - {x: -180, y: -28}
+        - {x: -185, y: -22}
+    - name: Turret Effect 3_3
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 630
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: -73}
+        - {x: 37, y: -74}
+        - {x: 37, y: -79}
+        - {x: 41, y: -88}
+        - {x: 47, y: -90}
+        - {x: 54, y: -90}
+        - {x: 56, y: -89}
+        - {x: 56, y: -86}
+        - {x: 55, y: -84}
+        - {x: 48, y: -77}
+        - {x: 42, y: -73}
+      - - {x: 91, y: -82}
+        - {x: 96, y: -86}
+        - {x: 102, y: -90}
+        - {x: 110, y: -90}
+        - {x: 110, y: -85}
+        - {x: 104, y: -75}
+        - {x: 99, y: -73}
+        - {x: 91, y: -73}
+      - - {x: 58, y: 89}
+        - {x: 5, y: 54}
+        - {x: 5, y: -2}
+        - {x: 13, y: -9}
+        - {x: 5, y: -22}
+        - {x: 5, y: -56}
+        - {x: 8, y: -66}
+        - {x: 186, y: -66}
+        - {x: 186, y: 67}
+        - {x: 153, y: 89}
+      - - {x: -186, y: -46}
+        - {x: -186, y: -65}
+        - {x: -180, y: -65}
+        - {x: -175, y: -59}
+        - {x: -175, y: -54}
+        - {x: -184, y: -46}
+      - - {x: -179, y: -8}
+        - {x: -186, y: -8}
+        - {x: -186, y: -38}
+        - {x: -155, y: -38}
+        - {x: -144, y: -35}
+        - {x: -144, y: -26}
+        - {x: -152, y: -11}
+      - - {x: -186, y: 24}
+        - {x: -186, y: 18}
+        - {x: -179, y: 18}
+        - {x: -177, y: 19}
+        - {x: -177, y: 22}
+        - {x: -178, y: 24}
+      - - {x: -179, y: 50}
+        - {x: -186, y: 50}
+        - {x: -186, y: 30}
+        - {x: -183, y: 30}
+        - {x: -177, y: 34}
+        - {x: -173, y: 42}
+        - {x: -173, y: 47}
+    - name: Turret Effect 3_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: -73}
+        - {x: 53, y: -74}
+        - {x: 53, y: -79}
+        - {x: 57, y: -88}
+        - {x: 63, y: -90}
+        - {x: 70, y: -90}
+        - {x: 72, y: -89}
+        - {x: 72, y: -86}
+        - {x: 71, y: -84}
+        - {x: 64, y: -77}
+        - {x: 58, y: -73}
+      - - {x: 107, y: -82}
+        - {x: 112, y: -86}
+        - {x: 118, y: -90}
+        - {x: 126, y: -90}
+        - {x: 126, y: -85}
+        - {x: 120, y: -75}
+        - {x: 115, y: -73}
+        - {x: 107, y: -73}
+      - - {x: 176, y: 70}
+        - {x: 167, y: 70}
+        - {x: 178, y: 70}
+        - {x: 177, y: 89}
+        - {x: 63, y: 89}
+        - {x: 21, y: 41}
+        - {x: 21, y: -2}
+        - {x: 29, y: -9}
+        - {x: 41, y: -15}
+        - {x: 21, y: -32}
+        - {x: 21, y: -53}
+        - {x: 27, y: -63}
+        - {x: 58, y: -66}
+        - {x: 186, y: -66}
+        - {x: 186, y: 67}
+    - name: Turret Effect 3_5
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 420
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 66, y: -82}
+        - {x: 71, y: -86}
+        - {x: 77, y: -90}
+        - {x: 85, y: -90}
+        - {x: 85, y: -85}
+        - {x: 79, y: -75}
+        - {x: 74, y: -73}
+        - {x: 66, y: -73}
+      - - {x: 120, y: -82}
+        - {x: 125, y: -86}
+        - {x: 131, y: -90}
+        - {x: 139, y: -90}
+        - {x: 139, y: -85}
+        - {x: 133, y: -75}
+        - {x: 128, y: -73}
+        - {x: 120, y: -73}
+      - - {x: -118, y: -12}
+        - {x: -124, y: 40}
+        - {x: -162, y: 68}
+        - {x: -186, y: 68}
+        - {x: -186, y: -66}
+        - {x: -141, y: -66}
+        - {x: -133, y: -60}
+        - {x: -106, y: -42}
+        - {x: -106, y: -25}
+      - - {x: 186, y: -66}
+        - {x: 186, y: 70}
+        - {x: 180, y: 70}
+        - {x: 186, y: 70}
+        - {x: 186, y: 89}
+        - {x: 76, y: 89}
+        - {x: 34, y: 41}
+        - {x: 34, y: -2}
+        - {x: 42, y: -9}
+        - {x: 54, y: -15}
+        - {x: 34, y: -32}
+        - {x: 34, y: -53}
+        - {x: 40, y: -63}
+        - {x: 71, y: -66}
+    - name: Turret Effect 3_6
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 420
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: -82}
+        - {x: 82, y: -86}
+        - {x: 88, y: -90}
+        - {x: 96, y: -90}
+        - {x: 96, y: -85}
+        - {x: 90, y: -75}
+        - {x: 85, y: -73}
+        - {x: 77, y: -73}
+      - - {x: 131, y: -82}
+        - {x: 136, y: -86}
+        - {x: 142, y: -90}
+        - {x: 150, y: -90}
+        - {x: 150, y: -85}
+        - {x: 144, y: -75}
+        - {x: 139, y: -73}
+        - {x: 131, y: -73}
+      - - {x: 100, y: 89}
+        - {x: 45, y: 50}
+        - {x: 45, y: -61}
+        - {x: 52, y: -67}
+        - {x: 186, y: -67}
+        - {x: 186, y: 89}
+      - - {x: -186, y: 70}
+        - {x: -186, y: -65}
+        - {x: -184, y: -66}
+        - {x: -104, y: -66}
+        - {x: -93, y: -59}
+        - {x: -93, y: 57}
+        - {x: -153, y: 70}
+    - name: Turret Effect 3_7
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 420
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -73}
+        - {x: -36, y: -73}
+        - {x: -44, y: -75}
+        - {x: -50, y: -85}
+        - {x: -50, y: -88}
+        - {x: -48, y: -89}
+        - {x: -43, y: -88}
+        - {x: -36, y: -85}
+        - {x: -32, y: -80}
+        - {x: -31, y: -75}
+      - - {x: -121, y: 89}
+        - {x: -186, y: 73}
+        - {x: -186, y: -67}
+        - {x: -6, y: -67}
+        - {x: 1, y: -65}
+        - {x: 1, y: 47}
+        - {x: -53, y: 89}
+      - - {x: -186, y: 87}
+        - {x: -186, y: 71}
+        - {x: -184, y: 70}
+        - {x: -175, y: 70}
+        - {x: -173, y: 71}
+        - {x: -173, y: 78}
+        - {x: -179, y: 87}
+    - name: Turret Effect 3_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: -73}
+        - {x: -38, y: -73}
+        - {x: -46, y: -75}
+        - {x: -52, y: -85}
+        - {x: -52, y: -88}
+        - {x: -50, y: -89}
+        - {x: -45, y: -88}
+        - {x: -38, y: -85}
+        - {x: -34, y: -80}
+        - {x: -33, y: -75}
+      - - {x: -118, y: 89}
+        - {x: -164, y: 46}
+        - {x: -161, y: 29}
+        - {x: -186, y: -15}
+        - {x: -186, y: -38}
+        - {x: -159, y: -65}
+        - {x: -155, y: -66}
+        - {x: -3, y: -66}
+        - {x: -1, y: -58}
+        - {x: -1, y: 55}
+        - {x: -49, y: 89}
+      - - {x: -158, y: 20}
+        - {x: -157, y: 18}
+        - {x: -153, y: 18}
+        - {x: -150, y: 19}
+        - {x: -150, y: 21}
+        - {x: -151, y: 24}
+        - {x: -156, y: 24}
+        - {x: -158, y: 23}
+    - name: Turret Effect 3_9
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 210
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: -89}
+        - {x: -77, y: -89}
+        - {x: -67, y: -85}
+        - {x: -67, y: -73}
+        - {x: -72, y: -73}
+        - {x: -80, y: -75}
+        - {x: -86, y: -85}
+      - - {x: -14, y: -73}
+        - {x: -18, y: -73}
+        - {x: -26, y: -75}
+        - {x: -32, y: -85}
+        - {x: -32, y: -88}
+        - {x: -30, y: -89}
+        - {x: -25, y: -88}
+        - {x: -18, y: -85}
+        - {x: -14, y: -80}
+        - {x: -13, y: -75}
+      - - {x: -132, y: 89}
+        - {x: -148, y: 85}
+        - {x: -131, y: 71}
+        - {x: -128, y: 71}
+        - {x: -150, y: 71}
+        - {x: -186, y: 66}
+        - {x: -186, y: -65}
+        - {x: 19, y: -65}
+        - {x: 19, y: 76}
+        - {x: -6, y: 89}
+    - name: Turret Effect 3_10
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 210
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: -73}
+        - {x: -102, y: -75}
+        - {x: -107, y: -84}
+        - {x: -107, y: -90}
+        - {x: -98, y: -90}
+        - {x: -92, y: -88}
+        - {x: -88, y: -80}
+        - {x: -88, y: -73}
+      - - {x: -39, y: -73}
+        - {x: -47, y: -75}
+        - {x: -53, y: -84}
+        - {x: -53, y: -90}
+        - {x: -44, y: -90}
+        - {x: -35, y: -82}
+        - {x: -34, y: -75}
+        - {x: -36, y: -73}
+      - - {x: -162, y: 89}
+        - {x: -168, y: 88}
+        - {x: -156, y: 72}
+        - {x: -152, y: 70}
+        - {x: -149, y: 70}
+        - {x: -157, y: 70}
+        - {x: -186, y: 69}
+        - {x: -186, y: -66}
+        - {x: -2, y: -66}
+        - {x: -2, y: 79}
+        - {x: -19, y: 89}
+    - name: Turret Effect 3_11
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 210
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -109, y: -73}
+        - {x: -118, y: -75}
+        - {x: -123, y: -84}
+        - {x: -123, y: -90}
+        - {x: -114, y: -90}
+        - {x: -108, y: -88}
+        - {x: -104, y: -80}
+        - {x: -104, y: -73}
+      - - {x: -58, y: -73}
+        - {x: -69, y: -83}
+        - {x: -69, y: -90}
+        - {x: -61, y: -90}
+        - {x: -50, y: -84}
+        - {x: -50, y: -74}
+        - {x: -52, y: -73}
+      - - {x: -160, y: 89}
+        - {x: -172, y: 80}
+        - {x: -172, y: 72}
+        - {x: -168, y: 70}
+        - {x: -165, y: 70}
+        - {x: -173, y: 70}
+        - {x: -184, y: 68}
+        - {x: -185, y: 65}
+        - {x: -185, y: -66}
+        - {x: -18, y: -66}
+        - {x: -18, y: 50}
+        - {x: -66, y: 89}
+    - name: Turret Effect 3_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -132, y: -75}
+        - {x: -138, y: -85}
+        - {x: -138, y: -90}
+        - {x: -129, y: -90}
+        - {x: -119, y: -85}
+        - {x: -119, y: -75}
+        - {x: -121, y: -73}
+        - {x: -124, y: -73}
+      - - {x: -70, y: -73}
+        - {x: -79, y: -75}
+        - {x: -84, y: -84}
+        - {x: -84, y: -90}
+        - {x: -75, y: -90}
+        - {x: -69, y: -88}
+        - {x: -65, y: -80}
+        - {x: -65, y: -73}
+      - - {x: -186, y: 89}
+        - {x: -186, y: 71}
+        - {x: -183, y: 70}
+        - {x: -180, y: 70}
+        - {x: -186, y: 70}
+        - {x: -186, y: -66}
+        - {x: -33, y: -66}
+        - {x: -33, y: 52}
+        - {x: -51, y: 89}
+    - name: Turret Effect 3_13
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 0
+        width: 371.5
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -131, y: -73}
+        - {x: -134, y: -73}
+        - {x: -142, y: -75}
+        - {x: -148, y: -85}
+        - {x: -148, y: -89}
+        - {x: -146, y: -90}
+        - {x: -141, y: -89}
+        - {x: -134, y: -86}
+        - {x: -130, y: -81}
+        - {x: -129, y: -75}
+      - - {x: -80, y: -73}
+        - {x: -89, y: -75}
+        - {x: -94, y: -84}
+        - {x: -94, y: -90}
+        - {x: -85, y: -90}
+        - {x: -79, y: -88}
+        - {x: -75, y: -80}
+        - {x: -75, y: -73}
+      - - {x: -186, y: 89}
+        - {x: -186, y: -67}
+        - {x: -59, y: -67}
+        - {x: -43, y: -62}
+        - {x: -43, y: 68}
+        - {x: -93, y: 89}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

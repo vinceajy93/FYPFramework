@@ -290,7 +290,12 @@ public class Enemy : MonoBehaviour
             {
                 currentEnemyState = EnemyState.Idle;
                 current_bullet = null;
-                Bullet_anim = null;
+				if (Bullet_anim != null)
+				{
+					Bullet_anim.SetBool("Left", false);
+					Bullet_anim.SetBool("Right", false);
+				}
+				Bullet_anim = null;
                 setState = true;
             }
         }
@@ -328,7 +333,12 @@ public class Enemy : MonoBehaviour
             {
                 currentEnemyState = EnemyState.Idle;
                 current_bullet = null;
-                Bullet_anim = null;
+				if (Bullet_anim != null)
+				{
+					Bullet_anim.SetBool("Left", false);
+					Bullet_anim.SetBool("Right", false);
+				}
+				Bullet_anim = null;
                 setState = true;
             }
             else
@@ -341,7 +351,12 @@ public class Enemy : MonoBehaviour
         {
             currentEnemyState = EnemyState.Idle;
             current_bullet = null;
-            Bullet_anim = null;
+			if (Bullet_anim != null)
+			{
+				Bullet_anim.SetBool("Left", false);
+				Bullet_anim.SetBool("Right", false);
+			}
+			Bullet_anim = null;
             setState = true;
         }
     }
@@ -396,6 +411,12 @@ public class Enemy : MonoBehaviour
         if (current_bullet == null)
         {
             Move_Bullet_Random_Bullet(enemy_bullet);
+
+			if (Bullet_anim != null)
+			{
+				Bullet_anim.SetBool("Left", false);
+				Bullet_anim.SetBool("Right", false);
+			}
             Bullet_anim = null;
         }
     }
@@ -493,8 +514,8 @@ public class Enemy : MonoBehaviour
                 {
                     if (Bullet_anim != null)
                     {
-                        Bullet_anim.SetBool("Left", true);
-                        Bullet_anim.SetBool("Right", false);
+                        Bullet_anim.SetBool("Left", false);
+                        Bullet_anim.SetBool("Right", true);
                     }
                     current_bullet.transform.position += Vector3.left * 0.05f;
                 }
@@ -503,8 +524,8 @@ public class Enemy : MonoBehaviour
                 {
                     if (Bullet_anim != null)
                     {
-                        Bullet_anim.SetBool("Left", false);
-                        Bullet_anim.SetBool("Right", true);
+                        Bullet_anim.SetBool("Left", true);
+                        Bullet_anim.SetBool("Right", false);
                     }
                     current_bullet.transform.position += Vector3.right * 0.05f;
                 }
@@ -563,8 +584,8 @@ public class Enemy : MonoBehaviour
                 {
                     if (Bullet_anim != null)
                     {
-                        Bullet_anim.SetBool("Left", true);
-                        Bullet_anim.SetBool("Right", false);
+						Bullet_anim.SetBool("Left", false);
+                        Bullet_anim.SetBool("Right", true);
                     }
                     current_bullet.transform.position += Vector3.left * 0.05f;
                 }
@@ -573,8 +594,8 @@ public class Enemy : MonoBehaviour
                 {
                     if (Bullet_anim != null)
                     {
-                        Bullet_anim.SetBool("Left", false);
-                        Bullet_anim.SetBool("Right", true);
+                        Bullet_anim.SetBool("Left", true);
+                        Bullet_anim.SetBool("Right", false);
                     }
                     current_bullet.transform.position += Vector3.right * 0.05f;
                 }

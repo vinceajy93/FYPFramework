@@ -84,7 +84,7 @@ public class Overlay_Control : MonoBehaviour
 					_Level_Control.loadLoadout2pSelect ();
 				} else {
 					//goes to win page
-					Debug.Log ("goes to win page");
+					//Debug.Log ("goes to win page");
 				}
 
 			}
@@ -319,6 +319,11 @@ public class Overlay_Control : MonoBehaviour
 			if (Input.GetMouseButtonDown (0)) {
 				P1Touched = true;
 			}
-		}
+		}/* else {
+			if (Input.GetMouseButtonDown (0)) {
+				P1Touched = true;
+				P2Touched = true;
+			}
+		}*/
 	}
 }

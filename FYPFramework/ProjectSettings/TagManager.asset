@@ -40,6 +40,10 @@ TagManager:
   - Buttons
   - CardChoice_P1
   - CardChoice_P2
+  - Boundary_P1
+  - Boundary_P2
+  - Screen_P1
+  - Screen_P2
   layers:
   - Default
   - TransparentFX
@@ -58,7 +62,7 @@ TagManager:
   - Base_Canvas
   - Card_Canvas
   - Enemy
-  - 
+  - Last
   - 
   - 
   - 

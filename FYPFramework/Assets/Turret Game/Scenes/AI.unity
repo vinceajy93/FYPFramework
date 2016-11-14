@@ -637,7 +637,7 @@ GameObject:
   - 212: {fileID: 411532947}
   m_Layer: 0
   m_Name: Border E
-  m_TagString: Untagged
+  m_TagString: Boundary_P2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - 212: {fileID: 785763631}
   m_Layer: 0
   m_Name: Border P1
-  m_TagString: Untagged
+  m_TagString: Boundary_P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

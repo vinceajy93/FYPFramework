@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Bullet_Effect 4
+  m_Controller: {fileID: 9100000, guid: fd88dabc724300f40bfda398981f084e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d5c7375e0b8d00447968920efd6bd3d1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9b0bb6e75c06ed3418a3686780b80bde, type: 2}
