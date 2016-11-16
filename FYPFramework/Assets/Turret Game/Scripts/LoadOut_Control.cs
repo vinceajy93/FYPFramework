@@ -16,6 +16,7 @@ public class LoadOut_Control : MonoBehaviour {
 	private GameObject[] All_Tab;
 	private GameObject[] All_Background;
 	private GameObject[] All_Panel;
+	public GameObject Stat;
 
 	private Color Color_hidden = new Color (1, 1, 1, 0);
 	private Color Color_show = new Color (1, 1, 1, 1);
@@ -23,7 +24,9 @@ public class LoadOut_Control : MonoBehaviour {
 	private Text Credit;
 	private Text Crystal;
 
-	private GameObject Turret;
+	private Image Turret;
+	private Image Bullet;
+	private Image Hover;
 
 	private GameObject Card_Left;
 	private GameObject Card_Middle;
@@ -35,6 +38,7 @@ public class LoadOut_Control : MonoBehaviour {
 		All_Tab = GameObject.FindGameObjectsWithTag ("Loadout_Tab");
 		All_Background = GameObject.FindGameObjectsWithTag ("Background");
 		All_Panel = GameObject.FindGameObjectsWithTag ("Loadout_Panel");
+		Stat = GameObject.FindGameObjectWithTag ("Loadout_Stats").transform.GetChild(0).gameObject;
 
 		Switch_Tab ( Active_Tab.ToString() );
 
@@ -45,10 +49,24 @@ public class LoadOut_Control : MonoBehaviour {
 		Crystal.text = PlayerPrefs.GetInt ("Crystal", 99999).ToString();
 
 		GameObject Turret_Parent = GameObject.FindGameObjectWithTag ("Loadout_Turret");
-		Turret = Turret_Parent.transform.GetChild (0).gameObject;
+		Turret = Turret_Parent.transform.GetChild (0).GetComponentInChildren<Image> ();
+
+		GameObject Bullet_Parent = GameObject.FindGameObjectWithTag ("Loadout_Bullet");
+		Bullet = Bullet_Parent.transform.GetChild (0).GetComponentInChildren<Image> ();
+
+		GameObject Hover_Parent = GameObject.FindGameObjectWithTag ("Loadout_Base");
+		Hover = Hover_Parent.transform.GetChild (0).GetComponentInChildren<Image> ();
 
 		if (PlayerPrefs.HasKey ("S_T")) {
-			Turret.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Turret/Sprite/" + PlayerPrefs.GetString ("S_T"));
+			Turret.sprite = Resources.Load<Sprite> ("Turret/Sprite/" + PlayerPrefs.GetString ("S_T"));
+		}
+
+		if (PlayerPrefs.HasKey ("S_B")) {
+			Bullet.sprite = Resources.Load<Sprite> ("Bullet/Sprite/" + PlayerPrefs.GetString ("S_B"));
+		}
+
+		if (PlayerPrefs.HasKey ("S_H")) {
+			Hover.sprite = Resources.Load<Sprite> ("Base/Sprite/" + PlayerPrefs.GetString ("S_H"));
 		}
 
 		GameObject Card_Button_Parent = GameObject.FindGameObjectWithTag ("Card_P1");
@@ -132,6 +150,12 @@ public class LoadOut_Control : MonoBehaviour {
 
 		foreach (GameObject ea_panel in All_Panel) {
 			ea_panel.GetComponent<ScrollRect> ().verticalNormalizedPosition = 1;
+		}
+
+		if (name == "Card_Canvas") {
+			Stat.SetActive (false);
+		} else {
+			Stat.SetActive (true);
 		}
 	}
 

@@ -242,7 +242,7 @@ public class Player_Control : MonoBehaviour
 						break;
 
 					case TouchPhase.Moved: //Dragging
-						if (touch_point == i) {
+						if (touch_point == i && overSprite) {
 							if (this.CompareTag ("Player1")) {
 								Vector2 touchPosition = P1Cam.ScreenToWorldPoint (touch.position);
 								Dragging (width, player_world_size, touchPosition);

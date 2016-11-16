@@ -20,10 +20,10 @@ public class LoadOut_Turret : MonoBehaviour {
 	private Sprite Original;
 	public Sprite Full;
 	public Sprite Equiped;
-	private Sprite Turret_Image;
+	private Sprite Option_Image;
 
-	// The current Equiped Turret
-	private Image Screen_Turret;
+	// The current Equiped Image
+	private Image Screen_Image;
 
 	public bool Upgrade_Mode = false;
 	private GameObject Equip_Button;
@@ -34,30 +34,48 @@ public class LoadOut_Turret : MonoBehaviour {
 	private Text Buy_Text;
 
 	public int Upgrade_Level;
+	private int Max_Level = 5;
 
 	public int Original_Stat;
 	private Text Original_Stat_Text;
-	public GameObject Upgrade_GO;
+	private GameObject Upgrade_GO;
 	public int Upgrade_Stat;
 	private Text Upgrade_Stat_Text;
 
+	private GameObject Stats;
+	private Slider Stats_Slider;
+
 	// Use this for initialization
 	void Start () {
+		Stats = GameObject.Find ("Script").GetComponent<LoadOut_Control> ().Stat;
+
 		// Get Player's Credit & Crytstal
 		Credit = GameObject.FindGameObjectWithTag ("Credit").GetComponentInChildren<Text> ();
 		Crystal = GameObject.FindGameObjectWithTag ("Crystal").GetComponentInChildren<Text> ();
 
 		// Check if Payment is Credit or Crystal
 		if (Price_Payment == Price_Property.Credit) {
+			
 			this.transform.GetChild (3).GetChild (2).gameObject.SetActive (false);
 			Price_Image = this.transform.GetChild (3).GetChild (1).gameObject;
 		} else {
 			this.transform.GetChild (3).GetChild (1).gameObject.SetActive (false);
 			Price_Image = this.transform.GetChild (3).GetChild (2).gameObject;
 		}
-			
-		Screen_Turret = GameObject.FindGameObjectWithTag ("Loadout_Turret").GetComponentInChildren<Image> ();
-		Turret_Image = Resources.Load<Sprite> ("Turret/Sprite/" + this.name);
+
+		if (LayerMask.LayerToName (this.gameObject.layer) == "Turret_Canvas") {
+			Screen_Image = GameObject.FindGameObjectWithTag ("Loadout_Turret").GetComponentInChildren<Image> ();
+			Option_Image = Resources.Load<Sprite> ("Turret/Sprite/" + this.name);
+			Stats_Slider = Stats.transform.GetChild (0).GetComponentInChildren<Slider> ();
+		} else if (LayerMask.LayerToName (this.gameObject.layer) == "Bullet_Canvas") {
+			Screen_Image = GameObject.FindGameObjectWithTag ("Loadout_Bullet").GetComponentInChildren<Image> ();
+			Option_Image = Resources.Load<Sprite> ("Bullet/Sprite/" + this.name);
+			Stats_Slider = Stats.transform.GetChild (1).GetComponentInChildren<Slider> ();
+		} else if (LayerMask.LayerToName (this.gameObject.layer) == "Base_Canvas") {
+			Screen_Image = GameObject.FindGameObjectWithTag ("Loadout_Base").GetComponentInChildren<Image> ();
+			Option_Image = Resources.Load<Sprite> ("Base/Sprite/" + this.name);
+			Stats_Slider = Stats.transform.GetChild (2).GetComponentInChildren<Slider> ();
+		}
 
 		Equip_Button = this.transform.GetChild (2).GetChild (0).gameObject;
 		Original = Equip_Button.GetComponent<Image> ().sprite;
@@ -77,7 +95,7 @@ public class LoadOut_Turret : MonoBehaviour {
 		}
 
 		Upgrade_Level = PlayerPrefs.GetInt(this.name + "_L", Upgrade_Level);
-		if (Upgrade_Level >= 5) {
+		if (Upgrade_Level >= Max_Level) {
 			Upgrade_Text.text = "MAX";
 			Upgrade_Text.transform.localScale = new Vector3 (0.4f, 0.4f, 1f);
 			Upgrade_Button.GetComponent<Image> ().sprite = Full;
@@ -119,7 +137,7 @@ public class LoadOut_Turret : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ( (Price_Payment == Price_Property.Credit && int.Parse (Credit.text) < Price) || (Price_Payment == Price_Property.Crystal && int.Parse (Crystal.text) < Price) ) {
-			if (int.Parse (Credit.text) < Price) {
+			if (int.Parse (Credit.text) < Price && Upgrade_Level < Max_Level) {
 				if (Upgrade_Mode) {
 					Upgrade_Text.text = "POOR";
 					Upgrade_Text.transform.localScale = new Vector3 (0.4f, 0.4f, 1f);
@@ -134,11 +152,20 @@ public class LoadOut_Turret : MonoBehaviour {
 			}
 		}
 
-		if (Screen_Turret.sprite == Turret_Image) {
+		if (Screen_Image.sprite == Option_Image) {
 			Equip_Text.text = "Equiped";
 			Equip_Text.transform.localScale = new Vector3 (0.25f, 0.3f, 1f);
 			Equip_Button.GetComponent<Image> ().sprite = Equiped;
 			Equip_Button.GetComponent<Button> ().interactable = false;
+
+			int final_value = (int)Stats_Slider.maxValue - int.Parse (Original_Stat_Text.text);
+			if (Stats_Slider.value != final_value) {
+				if (Stats_Slider.value < final_value) {
+					Stats_Slider.value += 1f;
+				} else if (Stats_Slider.value > final_value) {
+					Stats_Slider.value -= 1f;
+				}
+			}
 		} else {
 			Equip_Text.text = "Equip";
 			Equip_Text.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
@@ -148,7 +175,7 @@ public class LoadOut_Turret : MonoBehaviour {
 	}
 
 	public void Equip () {
-		Screen_Turret.sprite = Turret_Image;
+		Screen_Image.sprite = Option_Image;
 	}
 
 	public void Upgrade () {
@@ -166,7 +193,7 @@ public class LoadOut_Turret : MonoBehaviour {
 		Original_Stat_Text.text = (Original_Stat + (Upgrade_Stat * (Upgrade_Level - 1))).ToString();
 
 		// Check if Upgrade level is max out
-		if (Upgrade_Level >= 5) {
+		if (Upgrade_Level >= Max_Level) {
 			Upgrade_Text.text = "MAX";
 			Upgrade_Text.transform.localScale = new Vector3 (0.4f, 0.4f, 1f);
 			Upgrade_Button.GetComponent<Image> ().sprite = Full;

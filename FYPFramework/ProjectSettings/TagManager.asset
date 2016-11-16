@@ -44,6 +44,14 @@ TagManager:
   - Boundary_P2
   - Screen_P1
   - Screen_P2
+  - Loadout_Turret
+  - Crystal
+  - Credit
+  - Loadout_Bullet
+  - Loadout_Base
+  - Loadout_Stats
+  - Menu_Pause
+  - Menu_Quit
   layers:
   - Default
   - TransparentFX
