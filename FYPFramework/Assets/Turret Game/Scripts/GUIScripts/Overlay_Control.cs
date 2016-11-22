@@ -30,7 +30,6 @@ public class Overlay_Control : MonoBehaviour
 		if(PlayerPrefs.HasKey("roundsPassed"))
 			roundsPassed = PlayerPrefs.GetInt("roundsPassed");
 
-		Debug.Log (roundsPassed);
 		//Set the overlay panel to be active if its inactive
 		if (!panel.activeSelf)
 			panel.SetActive (true);

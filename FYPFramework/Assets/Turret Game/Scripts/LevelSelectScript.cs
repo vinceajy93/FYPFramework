@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿//Ignore warnings, should get rid 
+#pragma warning disable 0649
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
-public class LevelSelectScript : MonoBehaviour {
+public class LevelSelectScript : MonoBehaviour
+{
 
 
 	private string GO_Name;
@@ -32,10 +36,10 @@ public class LevelSelectScript : MonoBehaviour {
 	private Sprite spr_30s, spr_60s, spr_90s;
 	//number of obstacles
 	[SerializeField]
-	private Text obstacles_Text, Displayrounds_Text, Displayobstacles_Text, Description_Text;
+	private Text obstacles_Text, Displayrounds_Text, Displayobstacles_Text, Description_Text, time_Text;
 
 	//color for selected buttons (changable)
-	private Color color = new Color(0.5f, 0.83f, 0.88f);
+	private Color color = new Color (0.5f, 0.83f, 0.88f);
 
 	//Color block to set the color of UI buttons (highlighted)
 	ColorBlock colorBlockSelected = ColorBlock.defaultColorBlock;
@@ -43,28 +47,27 @@ public class LevelSelectScript : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject Panel;
-
 	private GameObject[] buttons;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+	{
 		//Reset the roundsPassed back to 0 (starting a new game)
-		PlayerPrefs.SetInt("roundsPassed", 1);
+		PlayerPrefs.SetInt ("roundsPassed", 1);
 
 		//Set the text of the string array
-		Description_String[0] = "Stage: Ice Studio \n\nconditions are harsh.\nbeware of lifeforms floating about. Give sweets if needed";
+		Description_String [0] = "Stage: Ice Studio \n\nconditions are harsh.\nbeware of lifeforms floating about. Give sweets if needed";
 		Description_String [1] = "Stage: Hakuna Marteena \n\n Hail the queen of marteena!";
-		Description_String[2] = "Stage: Arki Island \n\nYour turret give me cancer";
+		Description_String [2] = "Stage: Arki Island \n\nYour turret give me cancer";
 		Description_String [3] = "Stage: Random \n\nVenture into warp vortex and appear on a random map";
 
 		//Set the description text to show the first stage description
-		Description_Text.text = Description_String[0];
+		Description_Text.text = Description_String [0];
 
 		//Set the color of the default selected stage to highlighted color
 		Component[] tempComponent;
 
-		tempComponent = GameObject.Find("stage_1").GetComponentsInChildren<Image> ();
+		tempComponent = GameObject.Find ("stage_1").GetComponentsInChildren<Image> ();
 		foreach (Image ImageCol in tempComponent) {
 			ImageCol.color = color;
 		}
@@ -86,44 +89,36 @@ public class LevelSelectScript : MonoBehaviour {
 		no_obstacles = 4;
 
 		//reset the number of rounds won by each player to 0
-		if(PlayerPrefs.HasKey("roundWon_P1"))
-			PlayerPrefs.SetInt("roundWon_P1", 0);
+		if (PlayerPrefs.HasKey ("roundWon_P1"))
+			PlayerPrefs.SetInt ("roundWon_P1", 0);
 
-		if(PlayerPrefs.HasKey("roundWon_P2"))
-			PlayerPrefs.SetInt("roundWon_P2", 0);
+		if (PlayerPrefs.HasKey ("roundWon_P2"))
+			PlayerPrefs.SetInt ("roundWon_P2", 0);
 		
 		//Set current selected button color to selected color
 		button_60s.colors = colorBlockSelected;
 		button_round2.colors = colorBlockSelected;
 
 		//Send default settings to playerprefs
-		PlayerPrefs.SetInt("no_obstacles", no_obstacles);
+		PlayerPrefs.SetInt ("no_obstacles", no_obstacles);
 		PlayerPrefs.SetInt ("time", time);
-		PlayerPrefs.SetInt("rounds", rounds);
+		PlayerPrefs.SetInt ("rounds", rounds);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		//Set the text of the obstacles_text to the no_obstacles
-		obstacles_Text.text = (no_obstacles.ToString());
+		obstacles_Text.text = (no_obstacles.ToString ());
 
 		//Set the image of display timer to match the shown one in the setting
-		switch (time) {
-		case 30:
-			Displaytime_Image.sprite = spr_30s;
-			break;
-		case 60:
-			Displaytime_Image.sprite = spr_60s;
-			break;
-		case 90:
-			Displaytime_Image.sprite = spr_90s;
-			break;
-		}
+		time_Text.text = time.ToString ();
+
 		//Set the number of rounds to match with the one shown in the setting
 		Displayrounds_Text.text = rounds.ToString ();
 
 		//Set the numer of Obstacles to match the one shown in the setting
-		Displayobstacles_Text.text = no_obstacles.ToString();
+		Displayobstacles_Text.text = no_obstacles.ToString ();
 
 		//Move the panel if ispanelmoving = true 
 		if (isPanelMoving) {
@@ -147,7 +142,7 @@ public class LevelSelectScript : MonoBehaviour {
 
 				//if panel is out of place, put it back in place
 				if (Panel.transform.localPosition.x <= 0) {
-					EnableAllButtons(); //enable the interactability of all buttons
+					EnableAllButtons (); //enable the interactability of all buttons
 					isToSettingsPanel = true;
 					isPanelMoving = false;
 					Panel.transform.localPosition = new Vector3 (0, 0, 0);
@@ -157,7 +152,8 @@ public class LevelSelectScript : MonoBehaviour {
 		}
 	}
 
-	public void SetTime(){
+	public void SetTime ()
+	{
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 
 		switch (GO_Name) {
@@ -198,7 +194,8 @@ public class LevelSelectScript : MonoBehaviour {
 		}
 	}
 
-	public void SetRounds(){
+	public void SetRounds ()
+	{
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 
 		switch (GO_Name) {
@@ -240,7 +237,8 @@ public class LevelSelectScript : MonoBehaviour {
 	}
 
 	//visual feedback on button press /mouse down
-	public void OnButtonDown(){
+	public void OnButtonDown ()
+	{
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 		GO_Scale = EventSystem.current.currentSelectedGameObject.GetComponent<Image> ();
 
@@ -273,7 +271,8 @@ public class LevelSelectScript : MonoBehaviour {
 	}
 
 	//on button release /mouse up
-	public void OnButtonUp(){
+	public void OnButtonUp ()
+	{
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 		GO_Scale = EventSystem.current.currentSelectedGameObject.GetComponent<Image> ();
 
@@ -305,11 +304,12 @@ public class LevelSelectScript : MonoBehaviour {
 		}
 	}
 
-	public void SelectStageFunction(){
+	public void SelectStageFunction ()
+	{
 		GO_Name = EventSystem.current.currentSelectedGameObject.name;
 		GO = EventSystem.current.currentSelectedGameObject;
 
-		switch(GO_Name){
+		switch (GO_Name) {
 		case "stage_1":
 			//set the description text 
 			Description_Text.text = Description_String [0];
@@ -319,7 +319,8 @@ public class LevelSelectScript : MonoBehaviour {
 
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
-				ImageCol.color = Color.white;
+				if (ImageCol.name != "stage_3")
+					ImageCol.color = Color.white;
 			}
 			tempCol = GO.GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
@@ -327,7 +328,7 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
+			DisplayEnlargeImage.sprite = GO.transform.Find ("Image").GetComponent<Image> ().sprite;
 			break;
 		case "stage_2":
 			//set the description text 
@@ -335,7 +336,8 @@ public class LevelSelectScript : MonoBehaviour {
 			//change the color of the selected rest to white, selected image to blue
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
-				ImageCol.color = Color.white;
+				if (ImageCol.name != "stage_3")
+					ImageCol.color = Color.white;
 			}
 			tempCol = GO.GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
@@ -343,7 +345,7 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
+			DisplayEnlargeImage.sprite = GO.transform.Find ("Image").GetComponent<Image> ().sprite;
 			break;
 		case "stage_3":
 			//set the description text 
@@ -359,7 +361,7 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
+			DisplayEnlargeImage.sprite = GO.transform.Find ("Image").GetComponent<Image> ().sprite;
 			break;
 		case "stage_4":
 			//set the description text 
@@ -367,7 +369,8 @@ public class LevelSelectScript : MonoBehaviour {
 			//change the color of the selected rest to white, selected image to blue
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
-				ImageCol.color = Color.white;
+				if (ImageCol.name != "stage_3")
+					ImageCol.color = Color.white;
 			}
 			tempCol = GO.GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
@@ -375,21 +378,23 @@ public class LevelSelectScript : MonoBehaviour {
 			}
 
 			//Set the enlarge image to be the select image one
-			DisplayEnlargeImage.sprite = GO.transform.Find("Image").GetComponent<Image>().sprite;
+			DisplayEnlargeImage.sprite = GO.transform.Find ("Image").GetComponent<Image> ().sprite;
 			break;
 
 		}
 	}
 
 	//Increase the amount of obstacles in the game
-	public void Increment_Obstacles(){
+	public void Increment_Obstacles ()
+	{
 		if (no_obstacles < max_Obstacle) {
 			no_obstacles += 2;
 		}
 	}
 
 	//Decrease the amount of obstacles in the game
-	public void Decrement_Obstacles(){
+	public void Decrement_Obstacles ()
+	{
 		if (no_obstacles > 0) {
 			no_obstacles -= 2;
 		}
@@ -408,16 +413,18 @@ public class LevelSelectScript : MonoBehaviour {
 
 	}
 
-	public void DisableAllButtons(){
-		buttons = GameObject.FindGameObjectsWithTag("Buttons");
+	public void DisableAllButtons ()
+	{
+		buttons = GameObject.FindGameObjectsWithTag ("Buttons");
 
 		foreach (GameObject button in buttons) {
 			button.GetComponent<Button> ().interactable = false;
 		}
 	}
 
-	public void EnableAllButtons(){
-		buttons = GameObject.FindGameObjectsWithTag("Buttons");
+	public void EnableAllButtons ()
+	{
+		buttons = GameObject.FindGameObjectsWithTag ("Buttons");
 
 		foreach (GameObject button in buttons) {
 			button.GetComponent<Button> ().interactable = true;

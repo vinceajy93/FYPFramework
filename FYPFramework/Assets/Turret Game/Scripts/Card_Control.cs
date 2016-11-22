@@ -22,7 +22,6 @@ public class Card_Control : MonoBehaviour {
 	void Start () {
 		mcontrol = GameObject.Find ("Scripts").GetComponent<Mode_Control> ();
 		_pauseScript = GameObject.Find ("Scripts").GetComponent<PauseScript> ();
-
 		if (mcontrol.game_mode_Single) {
 			// Menu
 			card_button = GameObject.Find ("Canvas/Card/Card_Button");

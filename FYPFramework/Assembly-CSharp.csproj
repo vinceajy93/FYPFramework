@@ -71,6 +71,7 @@
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Manager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\LoadOut_Turret.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Loadout_MultiScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Mode_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Obstacles_Spawner.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Player_Control.cs" />

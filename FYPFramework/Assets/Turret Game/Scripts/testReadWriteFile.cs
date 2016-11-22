@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class testReadWriteFile : MonoBehaviour
 {
 
+	//not using, but keep for reference of next batch
 	[SerializeField]
 	private TextAsset P1CostTextFile, P2CostTextFile;
 	private string wholeString_P1, wholeString_P2;

@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadOut_Manager : MonoBehaviour
 {
+
+	public static LoadOut_Manager instance;
+
 	//Panels
 	[SerializeField]
 	private GameObject turretPanel_P1, turretPanel_P2, bulletPanel_P1, bulletPanel_P2, wallPanel_P1, wallPanel_P2, upgradePanel_P1, upgradePanel_P2, cardPanel_P1, cardPanel_P2;
@@ -42,6 +45,17 @@ public class LoadOut_Manager : MonoBehaviour
 	int tempGO_Cost_P1, tempGO_Cost_P2;
 	//TempGO stores the tag of GO and uses it to set which panel to be active
 	GameObject tempGO;
+
+	void Awake(){
+		if (instance != null) {
+			if (instance != this) {
+				Destroy (this.gameObject); //change to remove component if not other scripts will be destroyed as well
+			}
+		} else {
+			instance = this;
+			DontDestroyOnLoad (this);
+		}
+	}
 
 	// Use this for initialization
 	void Start ()
@@ -164,7 +178,7 @@ public class LoadOut_Manager : MonoBehaviour
 		}
 
 		//update the stars according to the level of the current selected object
-		toggleStars ();
+		//toggleStars ();
 	}
 
 	public void bulletSelect ()
@@ -209,7 +223,7 @@ public class LoadOut_Manager : MonoBehaviour
 		} 
 
 		//update the stars according to the level of the current selected object
-		toggleStars ();
+		//toggleStars ();
 
 	}
 
@@ -219,8 +233,8 @@ public class LoadOut_Manager : MonoBehaviour
 		GO = EventSystem.current.currentSelectedGameObject;
 
 		if (GO.CompareTag ("WallChoice_P1")) {
-			//set the selected turret's image to wall image
-			wallImageP1.transform.Find ("wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("Panel/wall_Preview").GetComponent<Image> ().sprite;
+			//set the selected wall's image to wall image
+			wallImageP1.transform.Find ("Panel/wall_Preview").GetComponent<Image> ().sprite = GO.transform.Find ("Panel/wall_Preview").GetComponent<Image> ().sprite;
 			//Set the temp string fireRate_P1_Str to get the current selected turret's speed text then split and store in an array
 			//Save this Stat to playerPrefs to be use later
 			Health_P1_str = GO.transform.Find ("Stat").GetComponent<Text> ().text.Split (' ');
@@ -255,13 +269,15 @@ public class LoadOut_Manager : MonoBehaviour
 		} 
 
 		//update the stars according to the level of the current selected object
-		toggleStars ();
+		//toggleStars ();
 	}
 
 	public void CardSelect ()
 	{
 		//Set GO to be the current selected game object by player
 		GO = EventSystem.current.currentSelectedGameObject;
+
+		Debug.Log (GO.name);
 	}
 
 	public void togglePanels ()
@@ -357,7 +373,7 @@ public class LoadOut_Manager : MonoBehaviour
 			} else if (tempGO.CompareTag ("BulletChoice_P1")) {
 				//set the upgrade panel p1 to false and bullet panel to true 
 				upgradePanel_P1.SetActive (false);
-				bulletPanel_P1.SetActive (true);
+//				bulletPanel_P1.SetActive (true);
 			} else if (tempGO.CompareTag ("WallChoice_P1")) {
 				//set the upgrade panel p1 to false and wall panel to true 
 				upgradePanel_P1.SetActive (false);
@@ -446,9 +462,6 @@ public class LoadOut_Manager : MonoBehaviour
 	public void upgradeFunction ()
 	{
 
-		string[] credCost_P1;
-//		credCost_P1 = 
-//
 //		//TODO: only allow upgrade if enough credits and then deduct the required credits thereafter
 //		if (credsAmt_P1 > int.Parse (tempCred_P1 [1])) {
 //			upgradePanel_P1.transform.FindChild ("UCButton").GetComponent<Button> ().interactable = false;
