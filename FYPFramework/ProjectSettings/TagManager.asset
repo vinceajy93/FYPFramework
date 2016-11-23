@@ -3,7 +3,63 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player1
+  - Player2
+  - Canvas
+  - Bullet_1
+  - Bullet_2
+  - Background
+  - GameLnN
+  - Indicator
+  - player1_wall
+  - player2_wall
+  - Bullet_Rest
+  - Obstacle
+  - Bullet_Effect_Play
+  - Bullet_Effect_Stop
+  - Enemy
+  - enemy_wall
+  - Bullet_E
+  - Bullet_Rest_E
+  - Bullet_Rest_2
+  - TurretChoice_P1
+  - BulletChoice_P1
+  - WallChoice_P1
+  - TurretChoice_P2
+  - BulletChoice_P2
+  - WallChoice_P2
+  - Card_P1
+  - Barrier_P1
+  - Barrier_P2
+  - Card_P2
+  - Bullet_Ghost_Left
+  - Bullet_Ghost_Right
+  - Loadout_Tab
+  - Loadout_Panel
+  - Buttons
+  - CardChoice_P1
+  - CardChoice_P2
+  - Boundary_P1
+  - Boundary_P2
+  - Screen_P1
+  - Screen_P2
+  - Loadout_Turret
+  - Crystal
+  - Credit
+  - Loadout_Bullet
+  - Loadout_Base
+  - Loadout_Stats
+  - Menu_Pause
+  - Menu_Quit
+  - P1_Obstacle
+  - P2_Obstacle
+  - Menu_End
+  - Card_Left
+  - Card_Middle
+  - Card_Right
+  - Barrier_E
+  - Barrier Orb
   layers:
   - Default
   - TransparentFX
@@ -13,17 +69,17 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player 1
+  - Player 2
+  - Canvas
+  - Turret_Canvas
+  - Bullet_Canvas
+  - Base_Canvas
+  - Card_Canvas
+  - Enemy
+  - Last
+  - Obstacles
   - 
   - 
   - 

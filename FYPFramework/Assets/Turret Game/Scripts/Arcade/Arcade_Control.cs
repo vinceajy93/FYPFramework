@@ -90,7 +90,7 @@ public class Arcade_Control : MonoBehaviour
 		GO_Player.GetComponent<Player_Control> ().enabled = false;
 		GO_Player.AddComponent <Arcade_Player> ();
 
-		GO_Base = Instantiate (Resources.Load ("Base/" + PlayerPrefs.GetString ("S_B", "Hovercraft 1"))) as GameObject;
+		GO_Base = Instantiate (Resources.Load ("Base/" + PlayerPrefs.GetString ("S_H", "Hovercraft 1"))) as GameObject;
 		GO_Base.transform.position = GO_Player.transform.position + new Vector3 (0f, 0.25f, 0f);
 		GO_Base.transform.localScale = new Vector3 (0.7f, 0.7f, 0.7f);
 		GO_Base.transform.SetParent (GO_Player.transform);
@@ -237,7 +237,7 @@ public class Arcade_Control : MonoBehaviour
 		int ran = Random.Range (0, total_state - 1);
 		switch (ran) {
 		case (int) Arcade_Enemy.enemy_state.Follow:
-			Enemy_Dash ();
+			Enemy_Follow ();
 			break;
 
 		case (int) Arcade_Enemy.enemy_state.Dash:
@@ -245,7 +245,7 @@ public class Arcade_Control : MonoBehaviour
 			break;
 
 		case (int) Arcade_Enemy.enemy_state.None:
-			Enemy_Dash ();
+			Enemy_Line ();
 			break;
 
 		default:
