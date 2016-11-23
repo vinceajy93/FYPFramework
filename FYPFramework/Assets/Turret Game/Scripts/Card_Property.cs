@@ -216,9 +216,6 @@ public class Card_Property : MonoBehaviour {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) { // If bullet is being followed, and burst shot has not been done be4
 						bullet.SendMessage ("SetBurstShot", true);
 						button.gameObject.SetActive (false);
-
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-						all_Card.SendMessage ("DisableMenu", true);
 						break;
 					}
 				}
@@ -231,9 +228,6 @@ public class Card_Property : MonoBehaviour {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow && !bullet.GetComponent<Bullet_Movement> ().bullet_burstshot) {
 						bullet.SendMessage ("SetBurstShot", true);
 						button.gameObject.SetActive (false);
-
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-						all_Card.SendMessage ("DisableMenu", false);
 						break;
 					}
 				}
@@ -247,18 +241,12 @@ public class Card_Property : MonoBehaviour {
 				_HealthManager.objHealth = HealthManager.ObjectsHealth.player1;
 				_HealthManager.SendMessage ("AddHealth", 1); //damage done
 				button.gameObject.SetActive (false);
-
-				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-				all_Card.SendMessage ("DisableMenu", true);
 			}
 		} else {
 			if (_HealthManager.P2Health.CurrentVal != _HealthManager.P2Health.MaxVal) {
 				_HealthManager.objHealth = HealthManager.ObjectsHealth.player2;
 				_HealthManager.SendMessage ("AddHealth", 1); //damage done
 				button.gameObject.SetActive (false);
-
-				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-				all_Card.SendMessage ("DisableMenu", false);
 			}
 		}
 	}
@@ -269,18 +257,12 @@ public class Card_Property : MonoBehaviour {
 				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P1");
 				barrier.SendMessage ("SetBarrier", true);
 				button.gameObject.SetActive (false);
-
-				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-				all_Card.SendMessage ("DisableMenu", true);
 			}
 		} else {
 			if (mcontrol.move_player_P1) {
 				GameObject barrier = GameObject.FindGameObjectWithTag ("Barrier_P2");
 				barrier.SendMessage ("SetBarrier", true);
 				button.gameObject.SetActive (false);
-
-				GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-				all_Card.SendMessage ("DisableMenu", false);
 			}
 		}
 	}
@@ -290,16 +272,10 @@ public class Card_Property : MonoBehaviour {
 			GameObject Player = GameObject.FindGameObjectWithTag ("Player1").transform.GetChild(0).gameObject;
 			Player.SendMessage ("SetFireRate", new_fireRate);
 			button.gameObject.SetActive (false);
-
-			GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-			all_Card.SendMessage ("DisableMenu", true);
 		} else {
 			GameObject Player = GameObject.FindGameObjectWithTag ("Player2").transform.GetChild(0).gameObject;
 			Player.SendMessage ("SetFireRate", new_fireRate);
 			button.gameObject.SetActive (false);
-
-			GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-			all_Card.SendMessage ("DisableMenu", false);
 		}
 	}
 
@@ -312,9 +288,6 @@ public class Card_Property : MonoBehaviour {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow) { // If bullet is being followed, 
 						bullet.SendMessage ("SetBulletSpeed", bullet_speed);
 						button.gameObject.SetActive (false);
-
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P1");
-						all_Card.SendMessage ("DisableMenu", true);
 						break;
 					}
 				}
@@ -327,9 +300,6 @@ public class Card_Property : MonoBehaviour {
 					if (bullet.GetComponent<Bullet_Movement> ().bullet_follow) {
 						bullet.SendMessage ("SetBulletSpeed", bullet_speed);
 						button.gameObject.SetActive (false);
-
-						GameObject all_Card = GameObject.FindGameObjectWithTag ("Card_P2");
-						all_Card.SendMessage ("DisableMenu", false);
 						break;
 					}
 				}

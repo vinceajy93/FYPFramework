@@ -11,6 +11,7 @@ GameObject:
   - 222: {fileID: 22204428}
   - 114: {fileID: 11476820}
   - 114: {fileID: 11433902}
+  - 114: {fileID: 11449582}
   m_Layer: 5
   m_Name: Icon_Card_BulletSpeed
   m_TagString: Untagged
@@ -56,9 +57,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11476820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11449582}
+        m_MethodName: Button_Click
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11433902}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11449582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05698661150d1b644b24be29ca84c7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_Health: 0
+  b_Ghost_BurstShot: 0
+  b_Barrier: 0
+  b_FireRate: 0
+  b_BulletSpeed: 1
 --- !u!114 &11476820
 MonoBehaviour:
   m_ObjectHideFlags: 1
