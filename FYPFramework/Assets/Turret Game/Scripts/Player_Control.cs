@@ -13,9 +13,9 @@ public class Player_Control : MonoBehaviour
     // Check mouse and player's turret position
 	Vector3 player_world_size;
 	private Animator animator;
+	private Vector3 offset;
 
     private bool overSprite = false;
-    private Vector3 offset;
 
     // Check interver between each mouse down
     private const float set_cooldown = 0.5f;
@@ -541,18 +541,15 @@ public class Player_Control : MonoBehaviour
         }
     }
 
-	public void Message ()
-	{
-		Debug.Log ("This works");
-	}
-
     public void PlayAnimationIdle()
     {
 
         //reset the animation to idle
         //to be called in the animation_fire
-
-        Turret_anim.SetInteger("turretState", 0);
+		if (Turret_anim == null) {
+			Turret_anim = this.GetComponent<Animator> ();
+		}
+		Turret_anim.SetInteger ("turretState", 0);
     }
 
     public void SetFireRate(float new_fireRate)

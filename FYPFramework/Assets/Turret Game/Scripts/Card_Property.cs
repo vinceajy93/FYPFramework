@@ -13,7 +13,6 @@ public class Card_Property : MonoBehaviour {
 	private float new_fireRate = 0.5f;
 
 	public bool b_Health;
-	public bool b_Invinciblity;
 	public bool b_Ghost_BurstShot;
 	public bool b_Barrier;
 	public bool b_FireRate;
@@ -40,10 +39,8 @@ public class Card_Property : MonoBehaviour {
 		}
 
 		if (b_Barrier) {
-			if (b_Ghost_BurstShot) {
-				Image color = this.GetComponent<Image> ();
-				color.color = Useable;
-			}
+			Image color = this.GetComponent<Image> ();
+			color.color = Useable;
 		}
 	}
 	
@@ -208,18 +205,6 @@ public class Card_Property : MonoBehaviour {
 		if (b_Health) {
 			Health (button);
 		} 
-
-		if (b_Invinciblity) {
-			Invinciblity (button);
-		}
-	}
-
-	private void Invinciblity (Button button) {
-		if (button.CompareTag ("Card_P1")) {
-
-		} else {
-
-		}
 	}
 
 	private void Ghost_BurstShot (Button button) {

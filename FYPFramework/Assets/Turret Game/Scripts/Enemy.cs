@@ -98,33 +98,30 @@ public class Enemy : MonoBehaviour
         numbg = GameObject.FindGameObjectsWithTag("Background").Length;
 
         shoot_location = Enemy_Turret.transform.FindChild("bullet_pos").gameObject;
-    }
 
-    void Awake()
-    {
 		if (PlayerPrefs.HasKey ("S_E_T"))
 			bullet_name = "Bullet/EBullet " + PlayerPrefs.GetInt("S_E_T").ToString();
 		else 
 			bullet_name = "Bullet/EBullet " + "1";
-		
-        for (int i = 0; i < 10; i++)
-        {
-            GameObject new_clone = Instantiate(Resources.Load(bullet_name), GameObject.Find("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
-            new_clone.tag = "Bullet_Rest_E";
-            new_clone.transform.SetParent(GameObject.Find("Bullet_Rest").transform);
 
-            GameObject new_effect = Instantiate(Resources.Load(effect_name), GameObject.Find("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
-            new_effect.tag = "Bullet_Effect_Stop";
-            new_effect.transform.SetParent(GameObject.Find("Bullet_Effect").transform);
-        }
+		for (int i = 0; i < 10; i++)
+		{
+			GameObject new_clone = Instantiate(Resources.Load(bullet_name), GameObject.Find("Bullet_Rest").transform.position, Quaternion.identity) as GameObject;
+			new_clone.tag = "Bullet_Rest_E";
+			new_clone.transform.SetParent(GameObject.Find("Bullet_Rest").transform);
 
-        // Get Enemy Bullet Size in worldspace
-        GameObject enemy_bullet = GameObject.FindGameObjectWithTag("Bullet_Rest_E");
-        Vector2 sprite_size = enemy_bullet.GetComponent<SpriteRenderer>().sprite.rect.size;
-        Vector2 local_sprite_size = sprite_size / enemy_bullet.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
-        bullet_world_size = local_sprite_size;
-        bullet_world_size.x *= enemy_bullet.transform.lossyScale.x;
-        bullet_world_size.y *= enemy_bullet.transform.lossyScale.y;
+			GameObject new_effect = Instantiate(Resources.Load(effect_name), GameObject.Find("Bullet_Effect").transform.position, Quaternion.identity) as GameObject;
+			new_effect.tag = "Bullet_Effect_Stop";
+			new_effect.transform.SetParent(GameObject.Find("Bullet_Effect").transform);
+		}
+
+		// Get Enemy Bullet Size in worldspace
+		GameObject enemy_bullet = GameObject.FindGameObjectWithTag("Bullet_Rest_E");
+		sprite_size = enemy_bullet.GetComponent<SpriteRenderer>().sprite.rect.size;
+		local_sprite_size = sprite_size / enemy_bullet.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+		bullet_world_size = local_sprite_size;
+		bullet_world_size.x *= enemy_bullet.transform.lossyScale.x;
+		bullet_world_size.y *= enemy_bullet.transform.lossyScale.y;
     }
 
     // Update is called once per frame
@@ -629,6 +626,9 @@ public class Enemy : MonoBehaviour
     {
         //reset the animation to idle
         //to be called in the animation_fire
+		if (Turret_anim == null) {
+			Turret_anim = this.GetComponent<Animator> ();
+		}
         Turret_anim.SetInteger("turretState", 0);
     }
 }

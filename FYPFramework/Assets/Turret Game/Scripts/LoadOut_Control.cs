@@ -16,6 +16,7 @@ public class LoadOut_Control : MonoBehaviour {
 	private GameObject[] All_Tab;
 	private GameObject[] All_Background;
 	private GameObject[] All_Panel;
+	public GameObject Stat_Menu;
 	public GameObject Stat;
 
 	private Color Color_hidden = new Color (1, 1, 1, 0);
@@ -39,14 +40,26 @@ public class LoadOut_Control : MonoBehaviour {
 		All_Background = GameObject.FindGameObjectsWithTag ("Background");
 		All_Panel = GameObject.FindGameObjectsWithTag ("Loadout_Panel");
 		Stat = GameObject.FindGameObjectWithTag ("Loadout_Stats").transform.GetChild(0).gameObject;
+		Stat_Menu = GameObject.FindGameObjectWithTag ("Loadout_Stats");
 
 		Switch_Tab ( Active_Tab.ToString() );
 
 		Credit = GameObject.FindGameObjectWithTag ("Credit").GetComponentInChildren<Text> ();
 		Crystal = GameObject.FindGameObjectWithTag ("Crystal").GetComponentInChildren<Text> ();
 
-		Credit.text = PlayerPrefs.GetInt ("Credit", 99999).ToString();
-		Crystal.text = PlayerPrefs.GetInt ("Crystal", 99999).ToString();
+		if (PlayerPrefs.HasKey ("Credit")) {
+			Credit.text = PlayerPrefs.GetInt ("Credit").ToString ();
+		} else {
+			PlayerPrefs.SetInt ("Credit", 500);
+			Credit.text = PlayerPrefs.GetInt ("Credit").ToString ();
+		}
+
+		if (PlayerPrefs.HasKey ("Crystal")) {
+			Crystal.text = PlayerPrefs.GetInt ("Crystal").ToString ();
+		} else {
+			PlayerPrefs.SetInt ("Crystal", 5);
+			Crystal.text = PlayerPrefs.GetInt ("Crystal").ToString ();
+		}
 
 		GameObject Turret_Parent = GameObject.FindGameObjectWithTag ("Loadout_Turret");
 		Turret = Turret_Parent.transform.GetChild (0).GetComponentInChildren<Image> ();
@@ -59,13 +72,22 @@ public class LoadOut_Control : MonoBehaviour {
 
 		if (PlayerPrefs.HasKey ("S_T")) {
 			Turret.sprite = Resources.Load<Sprite> ("Turret/Sprite/" + PlayerPrefs.GetString ("S_T"));
+		} else {
+			PlayerPrefs.SetString ("S_T", "Turret 1");
+			Turret.sprite = Resources.Load<Sprite> ("Turret/Sprite/" + PlayerPrefs.GetString ("S_T"));
 		}
 
 		if (PlayerPrefs.HasKey ("S_B")) {
 			Bullet.sprite = Resources.Load<Sprite> ("Bullet/Sprite/" + PlayerPrefs.GetString ("S_B"));
+		} else {
+			PlayerPrefs.SetString ("S_B", "Bullet 1");
+			Bullet.sprite = Resources.Load<Sprite> ("Bullet/Sprite/" + PlayerPrefs.GetString ("S_B"));
 		}
 
 		if (PlayerPrefs.HasKey ("S_H")) {
+			Hover.sprite = Resources.Load<Sprite> ("Base/Sprite/" + PlayerPrefs.GetString ("S_H"));
+		} else {
+			PlayerPrefs.SetString ("S_H", "Hovercraft 1");
 			Hover.sprite = Resources.Load<Sprite> ("Base/Sprite/" + PlayerPrefs.GetString ("S_H"));
 		}
 
@@ -153,14 +175,16 @@ public class LoadOut_Control : MonoBehaviour {
 		}
 
 		if (name == "Card_Canvas") {
-			Stat.SetActive (false);
+			Stat_Menu.SetActive (false);
 		} else {
-			Stat.SetActive (true);
+			Stat_Menu.SetActive (true);
 		}
 	}
 
 	public void UnEquip (Button button) {
 		button.gameObject.GetComponent<Image> ().sprite = null;
 		button.gameObject.GetComponent<Image> ().color = Color_hidden;
+
+		PlayerPrefs.DeleteKey (button.gameObject.tag);
 	}
 }

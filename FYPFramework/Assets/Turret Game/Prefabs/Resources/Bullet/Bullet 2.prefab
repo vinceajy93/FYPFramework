@@ -165,6 +165,7 @@ MonoBehaviour:
   bullet_burstshot: 0
   bullet_ghost: 0
   ghost_owner: {fileID: 0}
+  isAllowedToTrigger: 1
 --- !u!114 &11460994
 MonoBehaviour:
   m_ObjectHideFlags: 1

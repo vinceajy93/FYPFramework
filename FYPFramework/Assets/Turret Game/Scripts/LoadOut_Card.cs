@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class LoadOut_Card : MonoBehaviour {
 
 	public enum Card_Property {
-		Card_GhostBullet,
 		Card_Barrier,
 		Card_Health,
 		Card_FireRate,
@@ -68,6 +67,13 @@ public class LoadOut_Card : MonoBehaviour {
 		if (PlayerPrefs.HasKey (card_ability.ToString ())) {
 			Amount_Card.text = PlayerPrefs.GetInt (card_ability.ToString ()).ToString ();
 
+			if (int.Parse (Amount_Card.text) < 10) {
+				Amount_Card.text = "0" + Amount_Card.text;
+			}
+		} else {
+			PlayerPrefs.SetInt (card_ability.ToString (), 1);
+
+			Amount_Card.text = PlayerPrefs.GetInt (card_ability.ToString ()).ToString ();
 			if (int.Parse (Amount_Card.text) < 10) {
 				Amount_Card.text = "0" + Amount_Card.text;
 			}
@@ -143,14 +149,15 @@ public class LoadOut_Card : MonoBehaviour {
 		if (Card_Left.GetComponent<Image> ().sprite == null) {
 			Card_Left.GetComponent<Image> ().sprite = Card_Image;
 			Card_Left.GetComponent<Image> ().color = shown;
+			PlayerPrefs.SetString ("Card_Left", card_ability.ToString ());
 		} else if (Card_Middle.GetComponent<Image> ().sprite == null) {
 			Card_Middle.GetComponent<Image> ().sprite = Card_Image;
 			Card_Middle.GetComponent<Image> ().color = shown;
+			PlayerPrefs.SetString ("Card_Middle", card_ability.ToString ());
 		} else if (Card_Right.GetComponent<Image> ().sprite == null) {
 			Card_Right.GetComponent<Image> ().sprite = Card_Image;
 			Card_Right.GetComponent<Image> ().color = shown;
-		} else {
-			Debug.Log ("Unable to Equip");
+			PlayerPrefs.SetString ("Card_Right", card_ability.ToString ());
 		}
 	}
 
@@ -174,5 +181,9 @@ public class LoadOut_Card : MonoBehaviour {
 		} else {
 			Crystal.text = (int.Parse (Crystal.text) - Price).ToString ();
 		}
+
+		PlayerPrefs.SetInt (card_ability.ToString (), int.Parse (Amount_Card.text));
+		PlayerPrefs.SetInt ("Credit", int.Parse (Credit.text));
+		PlayerPrefs.SetInt ("Crystal", int.Parse (Crystal.text));
 	}
 }

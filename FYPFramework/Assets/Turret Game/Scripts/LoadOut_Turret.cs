@@ -55,7 +55,6 @@ public class LoadOut_Turret : MonoBehaviour {
 
 		// Check if Payment is Credit or Crystal
 		if (Price_Payment == Price_Property.Credit) {
-			
 			this.transform.GetChild (3).GetChild (2).gameObject.SetActive (false);
 			Price_Image = this.transform.GetChild (3).GetChild (1).gameObject;
 		} else {
@@ -91,10 +90,13 @@ public class LoadOut_Turret : MonoBehaviour {
 		Price_Text = this.transform.GetChild (3).GetComponentInChildren<Text> ();
 
 		if (PlayerPrefs.HasKey (this.name + "_L")) {
-			Upgrade_Mode = true;
+			Upgrade_Level = PlayerPrefs.GetInt(this.name + "_L");
+			if (Upgrade_Level > 0)
+				Upgrade_Mode = true;
+		} else {
+			PlayerPrefs.SetInt (this.name + "_L", Upgrade_Level);
 		}
 
-		Upgrade_Level = PlayerPrefs.GetInt(this.name + "_L", Upgrade_Level);
 		if (Upgrade_Level >= Max_Level) {
 			Upgrade_Text.text = "MAX";
 			Upgrade_Text.transform.localScale = new Vector3 (0.4f, 0.4f, 1f);
@@ -176,6 +178,17 @@ public class LoadOut_Turret : MonoBehaviour {
 
 	public void Equip () {
 		Screen_Image.sprite = Option_Image;
+
+		if (LayerMask.LayerToName (this.gameObject.layer) == "Turret_Canvas") {
+			PlayerPrefs.SetString ("S_T", this.name);
+			PlayerPrefs.SetInt("S_Speed", int.Parse (Original_Stat_Text.text));
+		} else if (LayerMask.LayerToName (this.gameObject.layer) == "Bullet_Canvas") {
+			PlayerPrefs.SetString ("S_B", this.name);
+			PlayerPrefs.SetInt("S_Damage", int.Parse (Original_Stat_Text.text));
+		} else if (LayerMask.LayerToName (this.gameObject.layer) == "Base_Canvas") {
+			PlayerPrefs.SetString ("S_H", this.name);
+			PlayerPrefs.SetInt("S_Health", int.Parse (Original_Stat_Text.text));
+		}
 	}
 
 	public void Upgrade () {
@@ -205,6 +218,9 @@ public class LoadOut_Turret : MonoBehaviour {
 			Upgrade_GO.SetActive (false);
 			Upgrade_Stat_Text.text = "";
 		}
+		PlayerPrefs.SetInt (this.name + "_L", Upgrade_Level);
+		PlayerPrefs.SetInt ("Credit", int.Parse (Credit.text));
+		PlayerPrefs.SetInt ("Crystal", int.Parse (Crystal.text));
 	}
 
 	public void Buy () {
@@ -226,5 +242,8 @@ public class LoadOut_Turret : MonoBehaviour {
 		Price_Upgrade = Price_Upgrade + Price_Upgrade;
 		Price_Text.text = Price.ToString ();
 		Upgrade_Stat_Text.text = Upgrade_Stat.ToString();
+		PlayerPrefs.SetInt (this.name + "_L", Upgrade_Level);
+		PlayerPrefs.SetInt ("Credit", int.Parse (Credit.text));
+		PlayerPrefs.SetInt ("Crystal", int.Parse (Crystal.text));
 	}
 }

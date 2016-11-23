@@ -20,7 +20,8 @@ public class BarScript : MonoBehaviour {
 		set {
             //store the string before colon into a temp string array
             //string[] tmp = valueText.text.Split(':');
-			valueText.text = value.ToString();//tmp[0] + ": " +  value;
+			if(valueText != null)
+				valueText.text = value.ToString();//tmp[0] + ": " +  value;
 			fillAmount = Map (value, 0, MaxValue);
 		}
 	}
@@ -31,8 +32,12 @@ public class BarScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(fillAmount != content.fillAmount)
-			HandleBar ();
+		if (fillAmount != content.fillAmount) {
+			if (lerpSpeed == 0f)
+				content.fillAmount = fillAmount;
+			else
+				HandleBar ();
+		}
 	}
 
 	void HandleBar(){

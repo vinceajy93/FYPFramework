@@ -45,7 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Turret Game\Scripts\Arcade_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Background.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Bullet.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Card.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Control.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Enemy.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Obstacle.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\Arcade\Arcade_Player.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Barrier_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Destroy.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Bullet_Movement.cs" />
@@ -54,8 +60,6 @@
      <Compile Include="Assets\Turret Game\Scripts\Card_Property.cs" />
      <Compile Include="Assets\Turret Game\Scripts\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Turret Game\Scripts\GUIScripts\Arcade_Bullet.cs" />
-     <Compile Include="Assets\Turret Game\Scripts\GUIScripts\Arcade_Player.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\BarScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\HealthManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\ModeAnimation.cs" />
