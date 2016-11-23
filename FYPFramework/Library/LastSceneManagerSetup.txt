@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Turret Game/Scenes/Loadout.unity
+- path: Assets/Turret Game/Scenes/Arcade.unity
   isLoaded: 1
   isActive: 1
