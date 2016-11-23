@@ -624,15 +624,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2041128, guid: 35b8690302e8d9b4fa3b46da993da6ad, type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0.4
+      value: 0.26859862
       objectReference: {fileID: 0}
     - target: {fileID: 2041128, guid: 35b8690302e8d9b4fa3b46da993da6ad, type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0.4862745
+      value: 0.49529302
       objectReference: {fileID: 0}
     - target: {fileID: 2041128, guid: 35b8690302e8d9b4fa3b46da993da6ad, type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0.6
+      value: 0.7941176
       objectReference: {fileID: 0}
     - target: {fileID: 11440616, guid: 35b8690302e8d9b4fa3b46da993da6ad, type: 2}
       propertyPath: m_Enabled

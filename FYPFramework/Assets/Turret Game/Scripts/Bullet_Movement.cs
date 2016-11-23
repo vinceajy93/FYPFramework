@@ -43,9 +43,14 @@ public class Bullet_Movement : MonoBehaviour
 	private bool Animation_Exist = true;
 	private RectTransform rectTransform;
 
+	private Obstacles_Spawner _Obstacles_Spawner;
+
     // Use this for initialization
     void Start()
     {
+		//caching
+		_Obstacles_Spawner = GameObject.Find("Scripts").GetComponent<Obstacles_Spawner> ();
+
         //pass by reference from pauseScript
         _pauseScript = GameObject.Find("Scripts").GetComponent<PauseScript>();
         //pass by reference from health Manaager
@@ -670,48 +675,90 @@ public class Bullet_Movement : MonoBehaviour
             ResetVarible(gameObject);
         }
         //obstacle 1
-        if (coll.gameObject.CompareTag("Obstacle"))
+		if (coll.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
+			switch (coll.gameObject.name) {
+			case "Obstacle1":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle1;
+				_HealthManager.SendMessage ("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health [0] <= 0) {
 
-            if (coll.gameObject.name == "OBSTY TEST")
-            {
-                _HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle1;
+					Destroy (coll.gameObject);
 
-                _HealthManager.SendMessage("ApplyDamage", 1); //damage done
-
-                if (_HealthManager.obstacle1_health <= 0)
-                    Destroy(coll.gameObject);
-
-            }
-            else if (coll.gameObject.name == "OBSTY TEST 2")
-            {
-                _HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle2;
-
-                _HealthManager.SendMessage("ApplyDamage", 1); //damage done
-
-                if (_HealthManager.obstacle2_health <= 0)
-                    Destroy(coll.gameObject);
-
-            }
-            else if (coll.gameObject.name == "OBSTY TEST 3")
-            {
-                _HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle3;
-
-                _HealthManager.SendMessage("ApplyDamage", 1); //damage done
-
-                if (_HealthManager.obstacle3_health <= 0)
-                    Destroy(coll.gameObject);
-
-            }
-            else if (coll.gameObject.name == "OBSTY TEST 4")
-            {
-                _HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle4;
-
-                _HealthManager.SendMessage("ApplyDamage", 1); //damage done
-
-                if (_HealthManager.obstacle4_health <= 0)
-                    Destroy(coll.gameObject);
-            }
+					if (coll.gameObject.CompareTag ("P1_Obstacle"))
+						_Obstacles_Spawner.ObstacleCount_P1--;
+					else if(coll.gameObject.CompareTag ("P2_Obstacle"))
+						_Obstacles_Spawner.ObstacleCount_P2--;
+				}
+					
+				
+					
+				break;
+			case "Obstacle2":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle2;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[1] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle3":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle3;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[2] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle4":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle4;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[3] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle5":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle5;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[4] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle6":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle6;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[5] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle7":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle7;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[6] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle8":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle8;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[7] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle9":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle9;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[8] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			case "Obstacle10":
+				_HealthManager.objHealth = HealthManager.ObjectsHealth.obstacle10;
+				_HealthManager.SendMessage("ApplyDamage", 1); //damage done
+				//If health reaches 0
+				if (_HealthManager.obstacle_health[9] <= 0)
+					Destroy(coll.gameObject);
+				break;
+			}
 
             GameObject Bullet_Destroy_1 = GameObject.FindGameObjectWithTag("Bullet_Effect_Stop");
             Bullet_Destroy_1.tag = "Bullet_Effect_Play";

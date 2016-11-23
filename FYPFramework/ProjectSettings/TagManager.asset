@@ -52,6 +52,8 @@ TagManager:
   - Loadout_Stats
   - Menu_Pause
   - Menu_Quit
+  - P1_Obstacle
+  - P2_Obstacle
   layers:
   - Default
   - TransparentFX
@@ -71,7 +73,7 @@ TagManager:
   - Card_Canvas
   - Enemy
   - Last
-  - 
+  - Obstacles
   - 
   - 
   - 

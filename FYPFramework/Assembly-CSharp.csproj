@@ -52,6 +52,7 @@
      <Compile Include="Assets\Turret Game\Scripts\Camera_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Card_Control.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Card_Property.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Enemy.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\Arcade_Bullet.cs" />
      <Compile Include="Assets\Turret Game\Scripts\GUIScripts\Arcade_Player.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\Turret Game\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashAnimSwitcher.cs" />
      <Compile Include="Assets\Turret Game\Scripts\Splash\SplashLoader.cs" />
+     <Compile Include="Assets\Turret Game\Scripts\WinLoseScript.cs" />
      <Compile Include="Assets\Turret Game\Scripts\testReadWriteFile.cs" />
      <None Include="Assets\Turret Game\Prefabs\Resources\Text\Cost_P1.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

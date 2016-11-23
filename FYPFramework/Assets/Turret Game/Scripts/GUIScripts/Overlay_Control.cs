@@ -37,7 +37,7 @@ public class Overlay_Control : MonoBehaviour
 
 		//start the timer
 		countdownTimer = setTimerTime;
-		inGameCountdownTimer = 20.0f;//PlayerPrefs.GetInt ("time");
+		inGameCountdownTimer = PlayerPrefs.GetInt ("time");
 		_PauseScript = GetComponent<PauseScript> ();
 
 		//initialize the health manager script
@@ -219,7 +219,6 @@ public class Overlay_Control : MonoBehaviour
 				//Set Panel to false when timer hits 0
 				if (countdownTimer <= 0)
 					PanelisActive = false;
-				//Debug.Log ("entered");
 				Panel ();
 			}
 		}

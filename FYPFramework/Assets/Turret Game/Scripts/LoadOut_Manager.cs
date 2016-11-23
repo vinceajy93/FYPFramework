@@ -122,14 +122,6 @@ public class LoadOut_Manager : MonoBehaviour
 
 		_Level_Control = GetComponent<Level_Control> ();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		if(Input.GetKeyDown (KeyCode.W)){
-			Debug.Log (GO.name);
-		}
-	}
 
 	//calls when a turret button is pressed
 	public void turretSelect ()
@@ -461,14 +453,6 @@ public class LoadOut_Manager : MonoBehaviour
 
 	public void upgradeFunction ()
 	{
-
-//		//TODO: only allow upgrade if enough credits and then deduct the required credits thereafter
-//		if (credsAmt_P1 > int.Parse (tempCred_P1 [1])) {
-//			upgradePanel_P1.transform.FindChild ("UCButton").GetComponent<Button> ().interactable = false;
-//		} else {
-//			upgradePanel_P1.transform.FindChild ("UCButton").GetComponent<Button> ().interactable = true;
-//		}
-
 		//hides the other panels, show the respective player's upgrade panel
 		if (tempGO.CompareTag ("TurretChoice_P1") || tempGO.CompareTag ("BulletChoice_P1") || tempGO.CompareTag ("WallChoice_P1")) {
 			turretPanel_P1.SetActive (false);

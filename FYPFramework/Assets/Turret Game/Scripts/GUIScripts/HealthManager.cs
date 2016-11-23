@@ -5,7 +5,7 @@ using System.Collections;
 public class HealthManager : MonoBehaviour {
 
 	//for testing
-	public int obstacle1_health = 3 , obstacle2_health = 3, obstacle3_health = 3, obstacle4_health = 3;
+	public int[] obstacle_health;
 
 	public enum ObjectsHealth{
 		player1 =1,
@@ -17,7 +17,13 @@ public class HealthManager : MonoBehaviour {
 		obstacle1,
 		obstacle2,
 		obstacle3,
-		obstacle4
+		obstacle4,
+		obstacle5,
+		obstacle6,
+		obstacle7,
+		obstacle8,
+		obstacle9,
+		obstacle10
 
 	};
 
@@ -44,6 +50,7 @@ public class HealthManager : MonoBehaviour {
 		
 	// Use this for initialization
 	void Start (){
+		
 	}
 	
 	// Update is called once per frame
@@ -70,20 +77,44 @@ public class HealthManager : MonoBehaviour {
 				P2Health.CurrentVal -= damage;
 			break;
 		case ObjectsHealth.obstacle1:
-			if (obstacle1_health > 0)
-				obstacle1_health -= damage;
+			if (obstacle_health[0] > 0)
+				obstacle_health[0] -= damage;
 			break;
 		case ObjectsHealth.obstacle2:
-			if (obstacle2_health > 0)
-				obstacle2_health -= damage;
+			if (obstacle_health[1] > 0)
+				obstacle_health[1] -= damage;
 			break;
 		case ObjectsHealth.obstacle3:
-			if (obstacle3_health > 0)
-				obstacle3_health -= damage;
+			if (obstacle_health[2] > 0)
+				obstacle_health[2] -= damage;
 			break;
 		case ObjectsHealth.obstacle4:
-			if (obstacle4_health > 0)
-				obstacle4_health -= damage;
+			if (obstacle_health[3] > 0)
+				obstacle_health[3] -= damage;
+			break;
+		case ObjectsHealth.obstacle5:
+			if (obstacle_health[4] > 0)
+				obstacle_health[4] -= damage;
+			break;
+		case ObjectsHealth.obstacle6:
+			if (obstacle_health[5] > 0)
+				obstacle_health[5] -= damage;
+			break;
+		case ObjectsHealth.obstacle7:
+			if (obstacle_health[6] > 0)
+				obstacle_health[6] -= damage;
+			break;
+		case ObjectsHealth.obstacle8:
+			if (obstacle_health[7] > 0)
+				obstacle_health[7] -= damage;
+			break;
+		case ObjectsHealth.obstacle9:
+			if (obstacle_health[8] > 0)
+				obstacle_health[8] -= damage;
+			break;
+		case ObjectsHealth.obstacle10:
+			if (obstacle_health[9] > 0)
+				obstacle_health[9] -= damage;
 			break;
 		}
 	}

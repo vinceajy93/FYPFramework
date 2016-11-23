@@ -49,9 +49,15 @@ public class LevelSelectScript : MonoBehaviour
 	private GameObject Panel;
 	private GameObject[] buttons;
 
+	public GameObject ObjectToDestroy;
 	// Use this for initialization
 	void Start ()
 	{
+		
+		if (GameObject.Find ("Loadout") != null) {
+			Destroy (GameObject.Find("Loadout"));
+		}
+			
 		//Reset the roundsPassed back to 0 (starting a new game)
 		PlayerPrefs.SetInt ("roundsPassed", 1);
 
@@ -314,6 +320,8 @@ public class LevelSelectScript : MonoBehaviour
 			//set the description text 
 			Description_Text.text = Description_String [0];
 
+			//Set/update the selected stage playerpref
+			PlayerPrefs.SetInt ("Selected_Stage", 1);
 			//change the color of the selected rest to white, selected image to blue
 			Component[] tempCol;
 
@@ -333,6 +341,10 @@ public class LevelSelectScript : MonoBehaviour
 		case "stage_2":
 			//set the description text 
 			Description_Text.text = Description_String [1];
+
+			//Set/update the selected stage playerpref
+			PlayerPrefs.SetInt ("Selected_Stage", 2);
+
 			//change the color of the selected rest to white, selected image to blue
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
@@ -350,6 +362,9 @@ public class LevelSelectScript : MonoBehaviour
 		case "stage_3":
 			//set the description text 
 			Description_Text.text = Description_String [2];
+
+			//Set/update the selected stage playerpref
+			PlayerPrefs.SetInt ("Selected_Stage", 3);
 			//change the color of the selected rest to white, selected image to blue
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {
@@ -366,6 +381,9 @@ public class LevelSelectScript : MonoBehaviour
 		case "stage_4":
 			//set the description text 
 			Description_Text.text = Description_String [3];
+			int randStage = Random.Range (1, 3);
+			//Set/update the selected stage playerpref
+			PlayerPrefs.SetInt ("Selected_Stage", randStage);
 			//change the color of the selected rest to white, selected image to blue
 			tempCol = GameObject.Find ("Grid").GetComponentsInChildren<Image> ();
 			foreach (Image ImageCol in tempCol) {

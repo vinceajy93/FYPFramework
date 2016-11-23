@@ -5,8 +5,17 @@ using System.Collections;
 
 public class Level_Control : MonoBehaviour {
 
+	private Slider _SFXSlider;
+	private Toggle _SFXToggle;
+
+	private float vol;
+
 	// Use this for initialization
 	void Start () {
+		if (GameObject.Find ("Slider SFX") != null)
+			_SFXSlider = GameObject.Find ("Slider SFX").GetComponent<Slider>();
+		if (GameObject.Find ("Toggle SFX") != null)
+			_SFXToggle = GameObject.Find ("Toggle SFX").GetComponent<Toggle>();
 	}
 
 	//load the main menu scene
@@ -68,5 +77,40 @@ public class Level_Control : MonoBehaviour {
 		SceneManager.LoadScene ("test scene");
 	}
 
+	public void SFXSliderFunction(){
+		
+		if (PlayerPrefs.HasKey ("vol"))
+			vol = PlayerPrefs.GetFloat ("vol");
+		else
+			vol = 1.0f;
 
+		vol = _SFXSlider.value;
+
+		AudioListener.volume = vol;
+		PlayerPrefs.SetFloat ("vol", vol);
+	}
+
+	public void SFXOnOffFunction(){
+		if (PlayerPrefs.HasKey ("toggleVol"))
+			vol = PlayerPrefs.GetInt("toggleVol");
+		else
+			_SFXToggle.isOn = true;
+
+		if (_SFXToggle.isOn) {
+			AudioListener.volume = PlayerPrefs.GetFloat ("vol");
+			PlayerPrefs.SetInt("toggleVol", 1);
+			_SFXSlider.interactable = true;
+		}
+		else {
+			AudioListener.volume = 0f;
+			PlayerPrefs.SetInt("toggleVol", 0);
+			_SFXSlider.interactable = false;
+		}
+	}
+	void Update(){
+		if (_SFXSlider != null) {
+			_SFXSlider.value = PlayerPrefs.GetFloat ("vol");
+		}
+			
+	}
 }

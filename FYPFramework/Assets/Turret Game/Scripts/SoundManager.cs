@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 [System.Serializable]
 public class Sound {
 	public string name;
@@ -35,7 +34,7 @@ public class Sound {
 	public void Stop(){
 		source.Stop ();
 	}
-
+		
 }
 
 public class SoundManager : MonoBehaviour {
@@ -55,6 +54,7 @@ public class SoundManager : MonoBehaviour {
 			DontDestroyOnLoad (this);
 		}
 	}
+
 	void Start(){
 		for(int i = 0; i < sounds.Length; i ++){
 			GameObject _go = new GameObject ("Sound_" + i + "_" + sounds[i].name);
@@ -62,7 +62,6 @@ public class SoundManager : MonoBehaviour {
 			sounds[i].SetSource (_go.AddComponent<AudioSource> ());
 
 		}
-			
 	}
 
 	public void PlaySound(string _name){
@@ -89,6 +88,8 @@ public class SoundManager : MonoBehaviour {
 		Debug.LogWarning("SoundManager: Sound not found in list: " + _name);
 	}
 
+
+
 	//for debugging, remove when done
 	void Update(){
 
@@ -100,4 +101,5 @@ public class SoundManager : MonoBehaviour {
 		}
 
 	}
+		
 }

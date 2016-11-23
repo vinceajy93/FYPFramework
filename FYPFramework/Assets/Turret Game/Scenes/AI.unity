@@ -2766,10 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3388e73012438cd4f82f747e4fd95b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle1_health: 3
-  obstacle2_health: 3
-  obstacle3_health: 3
-  obstacle4_health: 3
+  obstacle_health: 
   P1Health:
     bar: {fileID: 1370746406}
     maxVal: 5
@@ -2836,7 +2833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67230d7d50d5ecd4795f14627453ddf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugText: {fileID: 0}
 --- !u!1 &1442277976
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,7 +3330,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a351efcce52dcb94d83c87d6175c1885, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d2d4fc43e682194fb13c62b9bda869a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4013,7 +4009,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 780feecd62e3b2648bb24e41aaed6288, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c296d46114d03b542bdc9bd612d89b6e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
