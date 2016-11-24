@@ -1,24 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< a0a958384f33eaf50251ff59a1fa69feb2239d7c
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Arcade\Arcade_Control.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Loadout_MultiScript.cs">
     <Files>
-      <File FileName="Assets\Turret Game\Scripts\Card_Control.cs" Line="29" Column="32" />
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="423" Column="5" />
-      <File FileName="Assets\Turret Game\Scripts\Arcade\Arcade_Control.cs" Line="248" Column="14" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Turret Game\Scripts\Level_Control.cs">
-    <Files>
-      <File FileName="Assets\Turret Game\Scripts\Player_Control.cs" Line="543" Column="1" />
-      <File FileName="Assets\Turret Game\Scripts\Loadout_MultiScript.cs" Line="422" Column="19" />
-      <File FileName="Assets\Turret Game\Scripts\Obstacles_Spawner.cs" Line="49" Column="46" />
-      <File FileName="Assets\Turret Game\Scripts\GUIScripts\Overlay_Control.cs" Line="31" Column="54" />
-      <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="28" Column="2" />
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Movement.cs" Line="694" Column="6" NotebookId="1" />
-      <File FileName="Assets\Turret Game\Scripts\GUIScripts\HealthManager.cs" Line="112" Column="31" NotebookId="1" />
-      <File FileName="Assets\Turret Game\Scripts\SoundManager.cs" Line="66" Column="5" NotebookId="1" />
-      <File FileName="Assets\Turret Game\Scripts\Bullet_Destroy.cs" Line="21" Column="47" NotebookId="1" />
->>>>>>> 6ebc23d74f2b0d4b8255b7d25f67ddaea918fb38
+      <File FileName="Assets\Turret Game\Scripts\Camera_Control.cs" Line="25" Column="39" />
+      <File FileName="Assets\Turret Game\Scripts\Loadout_MultiScript.cs" Line="963" Column="30" />
+      <File FileName="Assets\Turret Game\Scripts\Level_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Obstacles_Spawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\GUIScripts\Overlay_Control.cs" Line="1" Column="1" />
+      <File FileName="Assets\Turret Game\Scripts\Card_Control.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

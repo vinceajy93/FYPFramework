@@ -74,14 +74,14 @@ public class Obstacles_Spawner : MonoBehaviour
 		//Calculate the middle position between player 1 and player 2 obstacles spawn point 
 		BoundforObstaclesSpawn_center = 0.5f * (bulletbound_P2.transform.position - bulletbound_P1.transform.position);
 
-
+		spawnObstacle ();
 	}
 
 	void Update(){
 
 		if (!isRespawning) {
 			isRespawning = true;
-			spawnObstacle ();
+			//spawnObstacle ();
 		}
 
 
@@ -123,16 +123,16 @@ public class Obstacles_Spawner : MonoBehaviour
 				ArrayGO [i] = go;
 				ArrayGO_Health [i] = obstacles_health;
 
-				foreach (GameObject ea_GO in ArrayGO) {
-					if (ea_GO != null) {
-						if (ea_GO != ArrayGO [i]) {
-							while (ArrayGO [i].GetComponent<Renderer> ().bounds.Intersects (ea_GO.GetComponent<Renderer> ().bounds)) {
-								TempFloatY = Random.Range (obstacle_world_size.y * 0.5f, BoundforObstaclesSpawn_center.y - obstacle_world_size.y * 0.5f);
-								ArrayGO [i].transform.position = new Vector3 (ArrayGO [i].transform.position.x, TempFloatY, ArrayGO [i].transform.position.z);
-							}
-						}
-					}
-				}
+//				foreach (GameObject ea_GO in ArrayGO) {
+//					if (ea_GO != null) {
+//						if (ea_GO != ArrayGO [i]) {
+//							while (ArrayGO [i].GetComponent<Renderer> ().bounds.Intersects (ea_GO.GetComponent<Renderer> ().bounds)) {
+//								TempFloatY = Random.Range (obstacle_world_size.y * 0.5f, BoundforObstaclesSpawn_center.y - obstacle_world_size.y * 0.5f);
+//								ArrayGO [i].transform.position = new Vector3 (ArrayGO [i].transform.position.x, TempFloatY, ArrayGO [i].transform.position.z);
+//							}
+//						}
+//					}
+//				}
 
 			} else if (ObstacleCount_P2 < (numberof_Obstacles * 0.5f)) {
 				ObstacleCount_P2++;
@@ -145,16 +145,16 @@ public class Obstacles_Spawner : MonoBehaviour
 				go.tag = "P2_Obstacle";
 				go.name = "Obstacle" + (i + 1);
 
-				foreach (GameObject ea_GO in ArrayGO) {
-					if (ea_GO != null) {
-						if (ea_GO != ArrayGO [i]) {
-							while (ArrayGO [i].GetComponent<Renderer> ().bounds.Intersects (ea_GO.GetComponent<Renderer> ().bounds)) {
-								TempFloatY = Random.Range (obstacle_world_size.y * 0.5f, BoundforObstaclesSpawn_center.y - obstacle_world_size.y * 0.5f);
-								ArrayGO [i].transform.position = new Vector3 (ArrayGO [i].transform.position.x, TempFloatY, ArrayGO [i].transform.position.z);
-							}
-						}
-					}
-				}
+//				foreach (GameObject ea_GO in ArrayGO) {
+//					if (ea_GO != null) {
+//						if (ea_GO != ArrayGO [i]) {
+//							while (ArrayGO [i].GetComponent<Renderer> ().bounds.Intersects (ea_GO.GetComponent<Renderer> ().bounds)) {
+//								TempFloatY = Random.Range (obstacle_world_size.y * 0.5f, BoundforObstaclesSpawn_center.y - obstacle_world_size.y * 0.5f);
+//								ArrayGO [i].transform.position = new Vector3 (ArrayGO [i].transform.position.x, TempFloatY, ArrayGO [i].transform.position.z);
+//							}
+//						}
+//					}
+//				}
 			}
 		}
 	}

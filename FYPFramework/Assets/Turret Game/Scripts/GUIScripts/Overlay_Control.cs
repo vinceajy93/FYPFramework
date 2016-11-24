@@ -69,6 +69,10 @@ public class Overlay_Control : MonoBehaviour
 
 			roundTimer_P2.text = roundTimer_P1.text;
 			roundTimer_P2.GetComponent<Text> ().enabled = false;
+
+
+			roundTimer_P1.transform.localScale = new Vector2 (0.7f, 0.7f);
+			roundTimer_P2.transform.localScale = new Vector2 (0.7f, 0.7f);
 		}
 	}
 	
@@ -114,13 +118,13 @@ public class Overlay_Control : MonoBehaviour
 		else {
 
 			//animation of the timer//
-			float roundTimer_P1_x = roundTimer_P1.transform.localScale.x;
-			float roundTimer_P1_y = roundTimer_P1.transform.localScale.y;
+			//float roundTimer_P1_x = roundTimer_P1.transform.localScale.x;
+			//float roundTimer_P1_y = roundTimer_P1.transform.localScale.y;
 
 			//p1 roundtimer resizing
-			if (roundTimer_P1_y >= 0.7f) //either x or y will work
+			/*if (roundTimer_P1_y >= 0.7f) //either x or y will work
 				roundTimer_P1.transform.localScale = new Vector2 (roundTimer_P1_x -= Time.deltaTime, roundTimer_P1_y -= Time.deltaTime);
-
+			*/
 			//update the time for roundTimers
 			inGameCountdownTimer -= Time.deltaTime;
 			//Set the ingamecountdowntimer to not go under 0
@@ -134,9 +138,9 @@ public class Overlay_Control : MonoBehaviour
 				float roundTimer_P2_y = roundTimer_P2.transform.localScale.y;
 
 				//p2 roundtimer resizing
-				if (roundTimer_P2_y >= 0.7f)
+				/*if (roundTimer_P2_y >= 0.7f)
 					roundTimer_P2.transform.localScale = new Vector2 (roundTimer_P2_x -= Time.deltaTime, roundTimer_P2_y -= Time.deltaTime);
-				
+				*/
 				roundTimer_P2.text = roundTimer_P1.text;
 			}
 

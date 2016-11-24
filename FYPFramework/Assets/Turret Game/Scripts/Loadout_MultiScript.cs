@@ -83,6 +83,8 @@ public class Loadout_MultiScript : MonoBehaviour
 	string currentStat;
 	string nextStat, nextnextStat;
 
+	string[] tempStringSplit;
+
 	//string of stats
 	//E.g. turret_1_2:[0], turret_1_3:[1], turret_2_2:[2], turret_2_3:[3] , etc
 	public float[] turretStat;
@@ -967,6 +969,28 @@ public class Loadout_MultiScript : MonoBehaviour
 
 		//goes to main gameplay after both player has confirmed their selection
 		if (isConfirmed_P1 && isConfirmed_P2) {
+			//Set the cards
+			PlayerPrefs.SetString("LM_Card_Left_P1", CardImages[0].sprite.name);
+			PlayerPrefs.SetString("LM_Card_Middle_P1", CardImages[1].sprite.name);
+			PlayerPrefs.SetString("LM_Card_Right_P1", CardImages[2].sprite.name);
+
+			PlayerPrefs.SetString("LM_Card_Left_P2", CardImages[3].sprite.name);
+			PlayerPrefs.SetString("LM_Card_Middle_P2", CardImages[4].sprite.name);
+			PlayerPrefs.SetString("LM_Card_Right_P2", CardImages[5].sprite.name);
+
+			//Set the turrets
+			tempStringSplit = DisplayImages[0].transform.Find("turret_Preview").GetComponent<Image>().sprite.name.Split(' ');
+
+			PlayerPrefs.SetInt("LM_P1_T", int.Parse(tempStringSplit[1]));
+			tempStringSplit = DisplayImages[3].transform.Find("turret_Preview").GetComponent<Image>().sprite.name.Split(' ');
+			PlayerPrefs.SetInt("LM_P2_T", int.Parse(tempStringSplit[1]));
+
+			//Set the bullets
+			tempStringSplit = DisplayImages[1].transform.Find("bullet_Preview").GetComponent<Image>().sprite.name.Split(' ');
+			PlayerPrefs.SetInt("LM_P1_B", int.Parse(tempStringSplit[1]));
+			tempStringSplit = DisplayImages[4].transform.Find("bullet_Preview").GetComponent<Image>().sprite.name.Split(' ');
+			PlayerPrefs.SetInt("LM_P2_B", int.Parse(tempStringSplit[1]));
+
 			//reset all component to interactable 
 			Component[] tempComponent;
 			tempComponent = PlayerSelections [0].GetComponentsInChildren<Button> ();
