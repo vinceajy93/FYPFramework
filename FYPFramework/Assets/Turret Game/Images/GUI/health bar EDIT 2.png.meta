@@ -1,0 +1,249 @@
+fileFormatVersion: 2
+guid: c0f4739ee5bdfd3408d912a3cd9c58e8
+timeCreated: 1479918601
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: health bar EDIT 2_0
+    21300002: health bar EDIT 2_1
+    21300004: health bar EDIT 2_2
+    21300006: health bar EDIT 2_3
+    21300008: health bar EDIT 2_4
+    21300010: health bar EDIT 2_5
+    21300012: health bar EDIT 2_6
+    21300014: health bar EDIT 2_7
+    21300016: health bar EDIT 2_8
+    21300018: health bar EDIT 2_9
+    21300020: health bar EDIT 2_10
+    21300022: health bar EDIT 2_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: health bar EDIT 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 691
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -296.5, y: 12}
+        - {x: -94.5, y: 11}
+        - {x: -77.5, y: 25}
+        - {x: 345.5, y: 26}
+        - {x: 345.5, y: 38}
+        - {x: 339.5, y: 69}
+        - {x: 336.5, y: 72}
+        - {x: -238.5, y: 73}
+        - {x: -243.5, y: 105}
+        - {x: -271.5, y: 120}
+        - {x: -319.5, y: 120}
+        - {x: -345.5, y: 104}
+        - {x: -345.5, y: -120}
+        - {x: -271.5, y: -120}
+        - {x: -265.5, y: -115}
+        - {x: -261.5, y: -41}
+        - {x: -291.5, y: -33}
+    - name: health bar EDIT 2_1
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 400
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40}
+        - {x: -38.5, y: 37}
+        - {x: -38.5, y: -37}
+        - {x: -35.5, y: -40}
+        - {x: 37.5, y: -40}
+        - {x: 38.5, y: -39}
+        - {x: 38.5, y: 40}
+    - name: health bar EDIT 2_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 379
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 363
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 339
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 323
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 691
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -296.5, y: 12}
+        - {x: -94.5, y: 11}
+        - {x: -77.5, y: 25}
+        - {x: 345.5, y: 26}
+        - {x: 345.5, y: 38}
+        - {x: 339.5, y: 69}
+        - {x: 336.5, y: 72}
+        - {x: -238.5, y: 73}
+        - {x: -243.5, y: 105}
+        - {x: -271.5, y: 120}
+        - {x: -319.5, y: 120}
+        - {x: -345.5, y: 104}
+        - {x: -345.5, y: -120}
+        - {x: -271.5, y: -120}
+        - {x: -265.5, y: -115}
+        - {x: -261.5, y: -41}
+        - {x: -291.5, y: -33}
+    - name: health bar EDIT 2_7
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 80
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40}
+        - {x: -38.5, y: 37}
+        - {x: -38.5, y: -37}
+        - {x: -35.5, y: -40}
+        - {x: 37.5, y: -40}
+        - {x: 38.5, y: -39}
+        - {x: 38.5, y: 40}
+    - name: health bar EDIT 2_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 59
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 43
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 19
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: health bar EDIT 2_11
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 3
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

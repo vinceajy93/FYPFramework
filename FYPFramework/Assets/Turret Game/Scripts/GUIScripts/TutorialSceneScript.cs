@@ -51,7 +51,7 @@ public class TutorialSceneScript : MonoBehaviour
 
 		//set all panels to inactive 
 		foreach (GameObject panels in Panels) {
-			if (panels.name == "tut_3_Panel")
+			if (panels.name == "tut_2_Panel")
 				continue;
 			panels.SetActive (false);
 		}
@@ -104,19 +104,18 @@ public class TutorialSceneScript : MonoBehaviour
 				Gesture [0].transform.Translate (-2.5f, 0f, 0f);
 				turrets [0].transform.Translate (-1.5f, 0f, 0f);
 			}
-		}
-		else if (Panels[1].activeSelf){
+		} else if (Panels [1].activeSelf) {
 
 			bool tempBool = false;
 
 			if (boo) {	
 				bullet [0].SetActive (true);
-				Gesture [1].transform.position = new Vector3 (Gesture[1].transform.position.x, 100f, 0f);
+				Gesture [1].transform.position = new Vector3 (Gesture [1].transform.position.x, Gesture [1].transform.position.y + .5f, 0f);
 			} else {
-				Gesture [1].transform.position = new Vector3 (Gesture[1].transform.position.x, 80f, 0f);
+				Gesture [1].transform.position = new Vector3 (Gesture [1].transform.position.x, Gesture [1].transform.position.y - .5f, 0f);
 			}
 
-			if (bullet [0].activeSelf){
+			if (bullet [0].activeSelf) {
 				bullet [0].transform.Translate (0f, 2f, 0f);
 			}
 
@@ -124,16 +123,25 @@ public class TutorialSceneScript : MonoBehaviour
 				tempBool = true;
 				bullet [0].transform.position = (turrets [1].transform.position + new Vector3 (0, 1.5f, 0));
 			}	
-		}
-		else if (Panels[2].activeSelf){
+		} else if (Panels [2].activeSelf) {
 			if (boo) {	
-				Gesture [2].transform.position = new Vector3 (Gesture[2].transform.position.x, 160f, 0f);
-				Gesture [3].transform.position = new Vector3 (Gesture[3].transform.position.x, 140f, 0f);
-				bullet [1].transform.Translate (2f, 0, 0);
+				Gesture [2].transform.position = new Vector3 (Gesture [2].transform.position.x, Gesture [2].transform.position.y + 1f, 0f);
+				Gesture [3].transform.position = new Vector3 (Gesture [3].transform.position.x, Gesture [3].transform.position.y - 1f, 0f);
+				bullet [1].SetActive (true);
+				bullet [2].SetActive (false);
 			} else {
-				Gesture [2].transform.position = new Vector3 (Gesture[2].transform.position.x, 140f, 0f);
-				Gesture [3].transform.position = new Vector3 (Gesture[3].transform.position.x, 160f, 0f);
-				bullet [1].transform.Translate (-2f, 0, 0);
+				Gesture [2].transform.position = new Vector3 (Gesture [2].transform.position.x, Gesture [2].transform.position.y -1f, 0f);
+				Gesture [3].transform.position = new Vector3 (Gesture [3].transform.position.x, Gesture [3].transform.position.y + 1f, 0f);
+				bullet [1].SetActive (false);
+				bullet [2].SetActive (true);
+			}
+		} else if (Panels [4].activeSelf) {
+			if (boo) {	
+				turrets [2].transform.position = new Vector3 (turrets [2].transform.position.x +2f, turrets [2].transform.position.y, 0f);
+				turrets [3].transform.position = new Vector3 (turrets [3].transform.position.x -2f, turrets [3].transform.position.y, 0f);
+			} else {
+				turrets [2].transform.position = new Vector3 (turrets [2].transform.position.x -2f, turrets [2].transform.position.y, 0f);
+				turrets [3].transform.position = new Vector3 (turrets [3].transform.position.x +2f, turrets [3].transform.position.y, 0f);
 			}
 		}
 

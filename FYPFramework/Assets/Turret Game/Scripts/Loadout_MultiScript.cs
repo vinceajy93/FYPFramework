@@ -89,6 +89,9 @@ public class Loadout_MultiScript : MonoBehaviour
 	public float[] bulletStat;
 	public float[] wallStat;
 
+	int roundsPassed;
+	int currentRound;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -134,6 +137,7 @@ public class Loadout_MultiScript : MonoBehaviour
 		Creds_P1 = 5;
 		DisplayTexts [4].text = "Creds: " + Creds_P1;
 		//P2 cred
+		Creds_P2 = 5;
 		DisplayTexts [5].text = "Creds: " + Creds_P2;
 
 		//gameobject
@@ -189,6 +193,12 @@ public class Loadout_MultiScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		roundsPassed = PlayerPrefs.GetInt("roundsPassed");
+		if (roundsPassed > currentRound) {
+			Creds_P1 += 5;
+			Creds_P2 += 5;
+			currentRound = roundsPassed;
+		}
 		upgradePanelCreds [0].text = "Creds: " + Creds_P1;
 		upgradePanelCreds [1].text = "Creds: " + Creds_P2;
 
@@ -414,6 +424,8 @@ public class Loadout_MultiScript : MonoBehaviour
 					textGO_P1.SetActive (true);
 					GO.transform.Find ("card_Preview").GetComponent<Image> ().color = new Color (0.278f, 0.278f, 0.278f, 1.0f);
 
+					//Debug.Log(GO.transform.Find ("Card_Name").GetComponent<Text> ().text);
+
 					//set the image of the card
 					for (int i = 0; i < 3; i++) {
 						if (CardImages [i].GetComponent<Image> ().sprite == null) {
@@ -509,7 +521,6 @@ public class Loadout_MultiScript : MonoBehaviour
 
 	public void UpgradeConfirm ()
 	{
-		
 		//P1
 		if (_TempGO.CompareTag ("TurretChoice_P1")) {
 			//Check if enough Creds to buy, if yes, do deduction and upgrade, else nothing
@@ -532,19 +543,42 @@ public class Loadout_MultiScript : MonoBehaviour
 
 			}
 		} else if (_TempGO.CompareTag ("WallChoice_P1")) {
-			Panels [8].SetActive (false);
-			Panels [2].SetActive (true);
+			if ((Creds_P1 - 1) >= 0) {
+				Creds_P1--;
+
+				//Update the Creds text 
+				DisplayTexts [4].text = "Creds: " + Creds_P1;
+				Panels [8].transform.Find ("Stats").GetComponent<Text> ().text = "HP: " + currentStat + " >> " + nextStat;
+			}
 		}
 		//P2
 		if (_TempGO.CompareTag ("TurretChoice_P2")) {
-			Panels [9].SetActive (false);
-			Panels [4].SetActive (true);
+			if ((Creds_P2 - 1) >= 0) {
+				Creds_P2--;
+
+				//Update the Creds text 
+				DisplayTexts [5].text = "Creds: " + Creds_P2;
+				Panels [9].transform.Find ("Stats").GetComponent<Text> ().text = "SPD: " + currentStat + " >> " + nextStat;
+
+			}
 		} else if (_TempGO.CompareTag ("BulletChoice_P2")) {
-			Panels [9].SetActive (false);
-			Panels [5].SetActive (true);
+			if ((Creds_P2 - 1) >= 0) {
+				Creds_P2--;
+
+				//Update the Creds text 
+				DisplayTexts [5].text = "Creds: " + Creds_P2;
+				Panels [9].transform.Find ("Stats").GetComponent<Text> ().text = "DMG: " + currentStat + " >> " + nextStat;
+
+			}
 		} else if (_TempGO.CompareTag ("WallChoice_P2")) {
-			Panels [9].SetActive (false);
-			Panels [6].SetActive (true);
+			if ((Creds_P2 - 1) >= 0) {
+				Creds_P2--;
+
+				//Update the Creds text 
+				DisplayTexts [5].text = "Creds: " + Creds_P2;
+				Panels [9].transform.Find ("Stats").GetComponent<Text> ().text = "HP: " + currentStat + " >> " + nextStat;
+
+			}
 		}
 	}
 

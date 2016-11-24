@@ -40,6 +40,8 @@ public class Obstacles_Spawner : MonoBehaviour
 	private static float countdownTreshhold = 10.0f;
 	private int i;
 	private int obs_no;
+
+	bool isRespawning = false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -76,6 +78,31 @@ public class Obstacles_Spawner : MonoBehaviour
 	}
 
 	void Update(){
+
+		if (!isRespawning) {
+			isRespawning = true;
+			spawnObstacle ();
+		}
+
+
+		//total number of obstacles spawned
+		obs_no = ObstacleCount_P1 + ObstacleCount_P2;
+
+		if (obs_no < i) {
+			//Update the countdownTimer
+			countdowntimer += Time.deltaTime;
+		}
+
+		//If timer above trreshhold, deduct I to spawn obstacle
+		if (countdowntimer > countdownTreshhold) {
+			i = obs_no;
+			countdowntimer = 0;
+			isRespawning = false;
+		}
+
+	}
+
+	void spawnObstacle(){
 
 		//for i is lesser than number of obstacles set by player
 		for (i = i; i < numberof_Obstacles; i++)
@@ -130,21 +157,7 @@ public class Obstacles_Spawner : MonoBehaviour
 				}
 			}
 		}
-		//Debug.Log ("countdownTimer: " +countdowntimer);
-		//total number of obstacles spawned
-		obs_no = ObstacleCount_P1 + ObstacleCount_P2;
-
-		if (obs_no < i) {
-			//Update the countdownTimer
-			countdowntimer += Time.deltaTime;
-		}
-
-		//If timer above trreshhold, deduct I to spawn obstacle
-		if (countdowntimer > countdownTreshhold) {
-			i = obs_no;
-			countdowntimer = 0;
-		}
-
 	}
+
 }
 

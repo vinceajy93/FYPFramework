@@ -187,11 +187,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 164981177}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134, y: -11}
-  m_SizeDelta: {x: 412, y: 133}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.18333335}
+  m_AnchorMax: {x: 1, y: 0.725}
+  m_AnchoredPosition: {x: 237, y: -1.2}
+  m_SizeDelta: {x: 472, y: 91.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &94016395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2671,6 +2671,7 @@ MonoBehaviour:
   Description_Text: {fileID: 260089594}
   time_Text: {fileID: 439687225}
   Panel: {fileID: 1747140399}
+  ObjectToDestroy: {fileID: 0}
 --- !u!1 &911168764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,8 +4336,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103, y: 11}
-  m_SizeDelta: {x: 412, y: 133}
+  m_AnchoredPosition: {x: 133, y: 39}
+  m_SizeDelta: {x: 407, y: 274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601663518
 MonoBehaviour:
@@ -4364,7 +4365,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 6
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

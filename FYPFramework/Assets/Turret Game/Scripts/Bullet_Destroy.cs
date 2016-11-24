@@ -6,10 +6,11 @@ public class Bullet_Destroy : MonoBehaviour {
 	private GameObject Bullet_Effect;
 	public bool isAllowedToTrigger = false;
 
+	private SoundManager _SoundManager;
 	// Use this for initialization
 	void Start () {
 		animator = this.GetComponent<Animator> ();
-
+		_SoundManager = GameObject.Find ("SoundManager").GetComponent<SoundManager> ();
 		Bullet_Effect = GameObject.Find ("Bullet_Effect");
 	}
 	
@@ -17,14 +18,11 @@ public class Bullet_Destroy : MonoBehaviour {
 	void Update () {
 		if (animator.GetBool ("Destroy")) {
 			if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Destroy") && animator.GetCurrentAnimatorStateInfo (0).normalizedTime >= 1 && !animator.IsInTransition(0)) {
-				if (!isAllowedToTrigger) {
-					animator.SetBool ("Destroy", false);
-					gameObject.tag = "Bullet_Effect_Stop";
-					gameObject.transform.position = Bullet_Effect.transform.position;
-					gameObject.transform.SetParent (Bullet_Effect.transform);
-				} else {
-					Destroy (this.gameObject);
-				}
+				animator.SetBool ("Destroy", false);
+				_SoundManager.PlaySound ("bulletDestroy");
+				gameObject.tag = "Bullet_Effect_Stop";
+				gameObject.transform.position = Bullet_Effect.transform.position;
+				gameObject.transform.SetParent (Bullet_Effect.transform);
 			}
 		}
 	}

@@ -9,6 +9,7 @@ public class Level_Control : MonoBehaviour {
 	private Toggle _SFXToggle;
 
 	private float vol;
+	private SoundManager _SoundManager;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,23 @@ public class Level_Control : MonoBehaviour {
 			_SFXSlider = GameObject.Find ("Slider SFX").GetComponent<Slider>();
 		if (GameObject.Find ("Toggle SFX") != null)
 			_SFXToggle = GameObject.Find ("Toggle SFX").GetComponent<Toggle>();
+	
+		_SoundManager = GameObject.Find ("SoundManager").GetComponent<SoundManager> ();
+
+
+	}
+
+	//Play Menu BGMs
+	public void playMenuBGM(){
+		if (_SoundManager.GetComponent<AudioSource> ().isPlaying)
+			return;
+		else
+			_SoundManager.PlaySound ("theme song");
+	}
+
+	//play press sound
+	public void playPressSound(){
+		_SoundManager.PlaySound ("pressSound");
 	}
 
 	//load the main menu scene

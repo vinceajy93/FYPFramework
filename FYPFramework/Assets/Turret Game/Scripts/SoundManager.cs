@@ -62,6 +62,8 @@ public class SoundManager : MonoBehaviour {
 			sounds[i].SetSource (_go.AddComponent<AudioSource> ());
 
 		}
+
+		//PlaySound ("theme song");	
 	}
 
 	public void PlaySound(string _name){
@@ -92,14 +94,7 @@ public class SoundManager : MonoBehaviour {
 
 	//for debugging, remove when done
 	void Update(){
-
-		if (Time.time > 5.0f) {
-			StopSound ("test");
-		}
-		if(Input.GetKeyDown(KeyCode.W)){
-			PlaySound ("test");
-		}
-
+		
 	}
 		
 }

@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 25b7f6120f916ed40aa6d4359f6d0cab
+timeCreated: 1479918824
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SP health bar EDIT 1_0
+    21300002: SP health bar EDIT 1_1
+    21300004: SP health bar EDIT 1_2
+    21300006: SP health bar EDIT 1_3
+    21300008: SP health bar EDIT 1_4
+    21300010: SP health bar EDIT 1_5
+    21300012: SP health bar EDIT 1_6
+    21300014: SP health bar EDIT 1_7
+    21300016: SP health bar EDIT 1_8
+    21300018: SP health bar EDIT 1_9
+    21300020: SP health bar EDIT 1_10
+    21300022: SP health bar EDIT 1_11
+    21300024: SP health bar EDIT 1_12
+    21300026: SP health bar EDIT 1_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SP health bar EDIT 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 442
+        width: 691
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 343.5, y: 5}
+        - {x: -239.5, y: 9}
+        - {x: -241.5, y: 13}
+        - {x: -243.5, y: 19}
+        - {x: -245.5, y: 24}
+        - {x: -250.5, y: 33}
+        - {x: -268.5, y: 53}
+        - {x: -323.5, y: 53}
+        - {x: -345.5, y: 30}
+        - {x: -345.5, y: -31}
+        - {x: -324.5, y: -53}
+        - {x: -91.5, y: -53}
+        - {x: -77.5, y: -42}
+        - {x: 345.5, y: -43}
+        - {x: 345.5, y: -18}
+    - name: SP health bar EDIT 1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 357
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 40}
+        - {x: -38.5, y: -39}
+        - {x: -37.5, y: -40}
+        - {x: 35.5, y: -40}
+        - {x: 38.5, y: -37}
+        - {x: 38.5, y: 37}
+        - {x: 35.5, y: 40}
+    - name: SP health bar EDIT 1_2
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 357
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40}
+        - {x: -38.5, y: 37}
+        - {x: -38.5, y: -37}
+        - {x: -35.5, y: -40}
+        - {x: 37.5, y: -40}
+        - {x: 38.5, y: -39}
+        - {x: 38.5, y: 40}
+    - name: SP health bar EDIT 1_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 336
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 320
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 296
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 280
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 691
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 343.5, y: 5}
+        - {x: -239.5, y: 9}
+        - {x: -241.5, y: 13}
+        - {x: -243.5, y: 19}
+        - {x: -245.5, y: 24}
+        - {x: -250.5, y: 33}
+        - {x: -268.5, y: 53}
+        - {x: -323.5, y: 53}
+        - {x: -345.5, y: 30}
+        - {x: -345.5, y: -31}
+        - {x: -324.5, y: -53}
+        - {x: -91.5, y: -53}
+        - {x: -77.5, y: -42}
+        - {x: 345.5, y: -43}
+        - {x: 345.5, y: -18}
+    - name: SP health bar EDIT 1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 40}
+        - {x: -38.5, y: -39}
+        - {x: -37.5, y: -40}
+        - {x: 35.5, y: -40}
+        - {x: 38.5, y: -37}
+        - {x: 38.5, y: 37}
+        - {x: 35.5, y: 40}
+    - name: SP health bar EDIT 1_9
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 81
+        width: 77
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40}
+        - {x: -38.5, y: 37}
+        - {x: -38.5, y: -37}
+        - {x: -35.5, y: -40}
+        - {x: 37.5, y: -40}
+        - {x: 38.5, y: -39}
+        - {x: 38.5, y: 40}
+    - name: SP health bar EDIT 1_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 60
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_11
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 44
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 20
+        width: 564
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SP health bar EDIT 1_13
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 4
+        width: 159
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
